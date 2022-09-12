@@ -1,0 +1,15 @@
+.buttonGroupContainer {
+  display: flex;
+  > * {
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 1120px) {
+  .buttonGroupContainer {
+    flex-direction: column;
+    > * {
+      margin: 0.5rem 0rem;
+    }
+  }
+}

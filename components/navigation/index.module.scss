@@ -1,0 +1,39 @@
+.menuContainer {
+    display: flex;
+    justify-content: space-between;
+    h1 {
+        font-size: 1.5rem;
+    }
+    a {
+        color: goldenrod
+    }
+}
+
+.desktopMenu {
+    // display: flex;
+    // align-self: center;
+    margin: 1rem 0;
+    > :first-child {
+        display: flex;
+        > * {
+            display: flex;
+            margin: 1rem 0.5rem;
+            align-self: center;
+        }
+    }
+    > :last-child {
+        display: none;
+    }
+}
+
+
+@media (max-width: 1120px) {
+    .desktopMenu {
+        > :first-child {
+            display: none;
+        }
+        > :last-child {
+            display: flex;
+        }
+    }
+}
