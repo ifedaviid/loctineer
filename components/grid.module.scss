@@ -1,0 +1,36 @@
+@import './common.scss';
+
+.grid {
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* width: 80%; */
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 3rem;
+
+  div {
+      padding: 3rem;
+      min-width: 300px;
+      max-width: 50px;
+      text-align: center;
+    }
+}
+
+@media (max-width: 1120px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .grid div {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .grid div {
+    min-width: 100%;
+  }
+}
