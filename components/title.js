@@ -5,7 +5,7 @@ const Styledh1 = styled.h1`
   font-size: 50px;
   text-align: center;
   > a {
-    color: goldenrod;
+    color: #761d38;
   }
 `;
 
