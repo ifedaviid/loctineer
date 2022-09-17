@@ -1,54 +1,30 @@
 import React, { useState } from "react";
-import Title from "../components/title";
 import CustomButton from "../components/button";
 import Layout from "../components/layout";
 import Link from "next/link";
 import styles from "./booking.module.scss";
-import {
-    SelectService,
-    SelectServiceType,
-    SelectInstallationStyle
-} from '../components/booking/index';
-import { useSelector } from "react-redux";
-import type { RootState } from "../store";
+import useBooking from "../components/booking/useBooking";
+import Grid from "../components/grid";
 
 const Booking = () => {
-    const service = useSelector((state: RootState) => state.booking.service);
-    const [currentStageIndex, setCurrentStageIndex] = useState(0);
-
-    const bookingStages = [
-        {
-            title: "Choose a service",
-            component: <SelectService />,
-        },
-        {
-            title: `Book a ${service} appointment`,
-            component: <SelectServiceType />,
-        },
-        {
-            title: "Choose a style",
-            component: <SelectInstallationStyle />,
-        }
-    ];
-
-    console.log("============> currentStageIndex", currentStageIndex);
-
-    const goToStage = (index) => {
-        const isValidIndex = index >= 0 || index < bookingStages.length - 1
-        if (isValidIndex) setCurrentStageIndex(index);
-    };
-
+    const {
+        bookingStages,
+        currentStage,
+        currentStageIndex,
+        setCurrentStageIndex,
+        goToStage
+    } = useBooking();
     return (
         <Layout>
-            <Title>{bookingStages[currentStageIndex].title}</Title>
-            {bookingStages[currentStageIndex].component}
+            <h2 className={styles.bookingHeader}>{currentStage.title}</h2>
+            {currentStage.component}
             <div className={styles.buttonGroupContainer}>
                 <div className={styles.stageNavigationButtonGroup}>
                     {currentStageIndex !== 0 &&
                         <CustomButton
                             variant="outlined"
                             size="large"
-                            onClick={() => goToStage(currentStageIndex - 1)}
+                            onClick={() => goToStage(currentStageIndex - 1, false)}
                         >
                             <Link href="/booking">Back to Previous</Link>
                         </CustomButton>
@@ -57,13 +33,13 @@ const Booking = () => {
                         <CustomButton
                             variant="outlined"
                             size="large"
-                            onClick={() => goToStage(currentStageIndex + 1)}
+                            onClick={() => goToStage(currentStageIndex + 1, true)}
                         >
                             <Link href="/booking">Next Step</Link>
                         </CustomButton>
                     }
                 </div>
-                <CustomButton variant="link" size="large" onClick={() => setCurrentStageIndex(0)}>
+                <CustomButton variant="link" size="large">
                     <Link href="/">Exit Booking</Link>
                 </CustomButton>
             </div>

@@ -2,14 +2,14 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface BookingState {
+    interest: string;
     service: string;
-    serviceType: string;
     style: string;
 }
 
 const initialState: BookingState = {
+    interest: null,
     service: null,
-    serviceType: null,
     style: null
 };
 
@@ -22,13 +22,13 @@ export const bookingSlice = createSlice({
     name: "booking",
     initialState,
     reducers: {
-        setService: (state: BookingState, action: PayloadAction<string>) => {
+        updateInterest: (state: BookingState, action: PayloadAction<string>) => {
+            state.interest = action.payload;
+        },
+        updateService: (state: BookingState, action: PayloadAction<string>) => {
             state.service = action.payload;
         },
-        setServiceType: (state: BookingState, action: PayloadAction<string>) => {
-            state.serviceType = action.payload;
-        },
-        setStyle: (state: BookingState, action: PayloadAction<string>) => {
+        updateStyle: (state: BookingState, action: PayloadAction<string>) => {
             state.style = action.payload;
         }
     },
@@ -37,9 +37,9 @@ export const bookingSlice = createSlice({
 // Action creators are generated for each case reducer function
 
 export const {
-    setService,
-    setServiceType,
-    setStyle
+    updateInterest,
+    updateService,
+    updateStyle
 } = bookingSlice.actions;
 
 export default bookingSlice.reducer;

@@ -1,3 +1,3 @@
-export { default as SelectService } from "./select-service"
-export { default as SelectServiceType } from "./select-service-type";
-export { default as SelectInstallationStyle } from "./select-installation-style";
+export { default as SelectInterest } from "./select-interest"
+export { default as SelectService } from "./select-service";
+export { default as ConfirmBooking } from "./confirm-booking";

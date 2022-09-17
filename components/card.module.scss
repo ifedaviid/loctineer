@@ -1,0 +1,61 @@
+@import '../common.scss';
+
+.card {
+  margin: 1rem;
+  border: 1px solid $writing-color;
+  border-radius: 10px;
+  display: flex;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  animation: reveal 2s ease;
+  transition: background-color 1s ease;
+  background-color: transparent;
+  // label {
+  //   display: flex;
+  //   align-items: center;
+  //   flex-direction: column;
+  //   > input {
+  //     margin: 0.5rem 0;
+  //     accent-color: $writing-color;
+  //     transform: scale(1.7);
+  //   }
+  // }
+}
+  
+// .card:focus,
+// .card:active
+.card:hover {
+  background-color: $ready-pink;
+  // height: 15.5rem;
+  // width: 15.5rem;
+  // transition: all 0.5s ease-in-out;
+}
+  
+.card h2 {
+  align-self: end;
+  font-size: 1.5rem;
+  margin: unset
+}
+
+// .card p {
+//   margin: 0;
+//   font-size: 1.25rem;
+//   line-height: 1.5;
+// }
+
+.card > input { /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+
+// div styles (default)
+.card > input + div {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+// div styles (checked)
+.card > input:checked + div {
+  background-color: $dark-text;
+  color: $light-pink;
+}

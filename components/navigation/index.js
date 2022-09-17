@@ -17,7 +17,7 @@ const NavigationBar = () => {
         Loctineer <br />
         <a href="http://localhost:3000"> Bookings</a>
       </h1>
-      <div className={styles.desktopMenu}>
+      <div className={styles.topRightMenu}>
         <div>
           <p>Not sure what's best for you?</p>
           <CustomButton
@@ -28,9 +28,6 @@ const NavigationBar = () => {
             Try our Help Wizard
           </CustomButton>
         </div>
-        {/*****************************************/}
-        {/*********Mobile Menu Below***************/}
-        {/*****************************************/}
         <Hamburger />
       </div>
     </div>
