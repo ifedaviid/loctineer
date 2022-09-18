@@ -7,58 +7,47 @@
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   animation: reveal 2s ease;
   transition: background-color 0.1s ease-in;
-  background-color: transparent;
+  background-color: black;
   min-width: 263px;
   height: 13rem;
-  // label {
-  //   display: flex;
-  //   align-items: center;
-  //   flex-direction: column;
-  //   > input {
-  //     margin: 0.5rem 0;
-  //     accent-color: $writing-color;
-  //     transform: scale(1.7);
-  //   }
-  // }
-}
-  
-// .card:focus,
-// .card:active
-.card:hover {
-  background-color: $ready-pink;
-  // height: 15.5rem;
-  // width: 15.5rem;
-  // transition: all 0.5s ease-in-out;
-}
-  
-.card h2 {
-  align-self: end;
-  font-size: 1.5rem;
-  margin: 1rem;
-  text-align: left;
-}
-
-// .card p {
-//   margin: 0;
-//   font-size: 1.25rem;
-//   line-height: 1.5;
-// }
-
-.card > input { /* HIDE RADIO */
-  visibility: hidden; /* Makes input not-clickable */
-  position: absolute; /* Remove input from document flow */
-}
-
-// div styles (default)
-.card > input + div {
-  display: flex;
-  cursor: pointer;
-  border: 2px solid transparent;
-  border-radius: 10px;
+  width: 100%;
+  img {
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0.8 !important;
+  }
+  p {
+    align-self: end;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 1rem;
+    text-align: left;
+    position: absolute;
+    color: $light-pink;
+    text-shadow:
+    -1px -1px 0 $dark-text,  
+      1px -1px 0 $dark-text,
+      -1px 1px 0 $dark-text,
+      1px 1px 0 $dark-text;
+  }
+  // .card:focus,
+  // .card:active,
+  &:hover {
+    // opacity: 0.4;
+    transition: all 0.2s ease-in-out;
+    p {
+      // color: $dark-text;
+    }
+    img {
+      opacity: 0.5;
+      transform: scale(1.1);
+      border-radius: 10px;
+      transition: all 0.5s ease-in-out;
+    }
+  }
 }
 
-// div styles (checked)
 .card.highlight {
-  background-color: $dark-text;
-  color: $light-pink;
+  border: 7px solid $dark-text;
 }
