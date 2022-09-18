@@ -3,6 +3,7 @@ import { isMobile } from "react-device-detect";
 import styles from "./index.module.scss";
 import { Twirl as Hamburger } from "hamburger-react";
 import Button from "../button";
+import Link from "next/link";
 
 const NavigationBar = () => {
   // The default value is 'blue', it will be used during pre-rendering and the first render in the browser (hydration)
@@ -15,7 +16,7 @@ const NavigationBar = () => {
     <div className={styles.menuContainer}>
       <h1 className={styles.title}>
         Loctineer <br />
-        <a href="http://localhost:3000"> Bookings</a>
+        <Link href="/"> Bookings</Link>
       </h1>
       <div className={styles.topRightMenu}>
         <div>

@@ -24,4 +24,75 @@ export const BOX_BRAIDS_AND_TWISTS = "Box braids & twists";
 export const KINKY_PASSION_TWISTS = "Kinky/Passion twists";
 export const KNOTLESS_BRAIDS = "Knotless braids";
 
+export const dreadlocksServices = [
+    {
+        name: LOC_REPAIR,
+        serviceCategory: MAINTENANCE,
+        canUseExtensions: true
+    },
+    {
+        name: LOC_RETWIST,
+        serviceCategory: MAINTENANCE,
+        canUseExtensions: true
+    },
+    {
+        name: LOC_STYLING,
+        serviceCategory: MAINTENANCE,
+        canUseExtensions: true
+    },
+    {
+        name: NATURAL_INSTANT_DREADLOCKS,
+        serviceCategory: INSTALLATION,
+        canUseExtensions: true
+    },
+    {
+        name: TWO_STRAND_STARTER_LOCS,
+        serviceCategory: INSTALLATION,
+        canUseExtensions: false
+    },
+    {
+        name: SISTER_LOCS,
+        serviceCategory: INSTALLATION,
+        canUseExtensions: false
+    },
+];
+
+export const braidingServices = [
+    {
+        name: FAUX_LOCS,
+        serviceCategory: INSTALLATION,
+        canUseExtensions: true
+    },
+    {
+        name: SOFT_LOCS,
+        serviceCategory: INSTALLATION,
+        canUseExtensions: true
+    },
+    {
+        name: BUTTERFLY_DISTRESSED_LOCS,
+        serviceCategory: INSTALLATION,
+        canUseExtensions: true
+    },
+    {
+        name: NATURAL_BRAIDS_AND_TWISTS,
+        serviceCategory: INSTALLATION,
+        canUseExtensions: true
+    },
+    {
+        name: BOX_BRAIDS_AND_TWISTS,
+        serviceCategory: INSTALLATION,
+        canUseExtensions: false
+    },
+    {
+        name: KINKY_PASSION_TWISTS,
+        serviceCategory: INSTALLATION,
+        canUseExtensions: false
+    },
+    {
+        name: KNOTLESS_BRAIDS,
+        serviceCategory: INSTALLATION,
+        canUseExtensions: false
+    },
+];
+
 
