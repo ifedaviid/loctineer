@@ -15,6 +15,9 @@
 .topRightMenu {
     // display: flex;
     // align-self: center;
+    p {
+        font-weight: 600;
+    }
     margin: 1rem 0;
     > :first-child {
         display: flex;

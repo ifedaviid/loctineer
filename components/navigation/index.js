@@ -19,7 +19,7 @@ const NavigationBar = () => {
       </h1>
       <div className={styles.topRightMenu}>
         <div>
-          <p>Not sure what's best for you?</p>
+          <p>{`Not sure what's best for you?`}</p>
           <Button variant="primary" onClick={() => setBookingInProgress(true)}>
             Try our Help Wizard
           </Button>

@@ -10,19 +10,16 @@ interface Props {
 }
 
 const Card = ({ title, description, isSelected, onChange }: Props) => {
+    console.log("isselected:", isSelected)
     return (
-        <label className={styles.card} tabIndex={0} onKeyDown={onChange}>
-            <input
-                type="radio"
-                name="fav_language"
-                onChange={onChange}
-                checked={isSelected}
-            />
-            <div>
-                <h2>{title}</h2>
-                {description && <p>{description}</p>}
-            </div>
-        </label>
+        <div
+            className={`${styles.card} ${isSelected ? styles.highlight : null}`}
+            tabIndex={0}
+            onClick={onChange}
+            onKeyDown={onChange}>
+            <h2>{title}</h2>
+            {description && <p>{description}</p>}
+        </div>
     );
 }
 

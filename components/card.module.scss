@@ -1,13 +1,12 @@
 @import '../common.scss';
 
 .card {
-  margin: 1rem;
   border: 1px solid $writing-color;
   border-radius: 10px;
   display: flex;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   animation: reveal 2s ease;
-  transition: background-color 1s ease;
+  transition: background-color 0.1s ease-in;
   background-color: transparent;
   min-width: 263px;
   height: 13rem;
@@ -59,7 +58,7 @@
 }
 
 // div styles (checked)
-.card > input:checked + div {
+.card.highlight {
   background-color: $dark-text;
   color: $light-pink;
 }
