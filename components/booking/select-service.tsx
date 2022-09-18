@@ -1,109 +1,86 @@
 import React from "react";
 import Card from "../card";
 import Grid from "../grid";
-import { LOCS, BRAIDS_AND_TWISTS, CONSULTATION } from "../../data/services";
-import { useSelector } from "react-redux";
-import type { RootState } from "../../store";
-
-// Services (Locs)
-const LOC_REPAIR = "Loc Repair";
-const LOC_RETWIST = "Loc Retwist";
-const LOC_STYLING = "Loc Styling";
-const NATURAL_INSTANT_DREADLOCKS = "Natural Instant dreadlocks";
-const TWO_STRAND_STARTER_LOCS = "Two-strand starter locs";
-const SISTER_LOCS = "Sister locs";
-
-// Services (Braids & Twists)
-const FAUX_LOCS = "Faux locs";
-const SOFT_LOCS = "Soft locs";
-const BUTTERFLY_DISTRESSED_LOCS = "Butterfly/Distressed Locs";
-const NATURAL_BRAIDS_AND_TWISTS = "Natural hair braids & twists";
-const BOX_BRAIDS_AND_TWISTS = "Box braids & twists";
-const KINKY_PASSION_TWISTS = "Kinky/Passion twists";
-const KNOTLESS_BRAIDS = "Knotless braids";
-
-// Service Categories
-const INSTALLATION = "Installation";
-const MAINTENANCE = "Maintenance";
+import * as services from "../../data/services";
 
 const SelectService = ({ interest, service, setService }) => {
   const locServices = [
     {
-      name: LOC_REPAIR,
-      serviceCategory: MAINTENANCE,
+      name: services.LOC_REPAIR,
+      serviceCategory: services.MAINTENANCE,
       canUseExtensions: true
     },
     {
-      name: LOC_RETWIST,
-      serviceCategory: MAINTENANCE,
+      name: services.LOC_RETWIST,
+      serviceCategory: services.MAINTENANCE,
       canUseExtensions: true
     },
     {
-      name: LOC_STYLING,
-      serviceCategory: MAINTENANCE,
+      name: services.LOC_STYLING,
+      serviceCategory: services.MAINTENANCE,
       canUseExtensions: true
     },
     {
-      name: NATURAL_INSTANT_DREADLOCKS,
-      serviceCategory: INSTALLATION,
+      name: services.NATURAL_INSTANT_DREADLOCKS,
+      serviceCategory: services.INSTALLATION,
       canUseExtensions: true
     },
     {
-      name: TWO_STRAND_STARTER_LOCS,
-      serviceCategory: INSTALLATION,
+      name: services.TWO_STRAND_STARTER_LOCS,
+      serviceCategory: services.INSTALLATION,
       canUseExtensions: false
     },
     {
-      name: SISTER_LOCS,
-      serviceCategory: INSTALLATION,
+      name: services.SISTER_LOCS,
+      serviceCategory: services.INSTALLATION,
       canUseExtensions: false
     },
   ];
 
   const batServices = [
     {
-      name: FAUX_LOCS,
-      serviceCategory: INSTALLATION,
+      name: services.FAUX_LOCS,
+      serviceCategory: services.INSTALLATION,
       canUseExtensions: true
     },
     {
-      name: SOFT_LOCS,
-      serviceCategory: INSTALLATION,
+      name: services.SOFT_LOCS,
+      serviceCategory: services.INSTALLATION,
       canUseExtensions: true
     },
     {
-      name: BUTTERFLY_DISTRESSED_LOCS,
-      serviceCategory: INSTALLATION,
+      name: services.BUTTERFLY_DISTRESSED_LOCS,
+      serviceCategory: services.INSTALLATION,
       canUseExtensions: true
     },
     {
-      name: NATURAL_BRAIDS_AND_TWISTS,
-      serviceCategory: INSTALLATION,
+      name: services.NATURAL_BRAIDS_AND_TWISTS,
+      serviceCategory: services.INSTALLATION,
       canUseExtensions: true
     },
     {
-      name: BOX_BRAIDS_AND_TWISTS,
-      serviceCategory: INSTALLATION,
+      name: services.BOX_BRAIDS_AND_TWISTS,
+      serviceCategory: services.INSTALLATION,
       canUseExtensions: false
     },
     {
-      name: KINKY_PASSION_TWISTS,
-      serviceCategory: INSTALLATION,
+      name: services.KINKY_PASSION_TWISTS,
+      serviceCategory: services.INSTALLATION,
       canUseExtensions: false
     },
     {
-      name: KNOTLESS_BRAIDS,
-      serviceCategory: INSTALLATION,
+      name: services.KNOTLESS_BRAIDS,
+      serviceCategory: services.INSTALLATION,
       canUseExtensions: false
     },
   ];
 
   const getServices = () => {
     switch (interest) {
-      case LOCS:
+      case services.LOCS:
       default:
         return locServices;
-      case BRAIDS_AND_TWISTS:
+      case services.BRAIDS_AND_TWISTS:
         return batServices;
     }
   };
