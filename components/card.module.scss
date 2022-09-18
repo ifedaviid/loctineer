@@ -1,53 +1,72 @@
 @import '../common.scss';
 
 .card {
-  border: 1px solid $writing-color;
+  border: 6px solid $writing-color;
   border-radius: 10px;
   display: flex;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   animation: reveal 2s ease;
-  transition: background-color 0.1s ease-in;
+  transition: all 0.2s ease-in;
   background-color: black;
   min-width: 263px;
   height: 13rem;
   width: 100%;
   img {
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
+    transform: scale(1.2);
     opacity: 0.8 !important;
+    filter: grayscale(100%);
+    transition: all 0.2s ease-out;
   }
-  p {
-    align-self: end;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin: 1rem;
-    text-align: left;
-    position: absolute;
-    color: $light-pink;
-    text-shadow:
-    -1px -1px 0 $dark-text,  
-      1px -1px 0 $dark-text,
-      -1px 1px 0 $dark-text,
-      1px 1px 0 $dark-text;
-  }
-  // .card:focus,
   // .card:active,
   &:hover {
     opacity: 0.8;
-    transition: all 0.2s ease-out;
+    transform: scale(1.02);
     img {
-      opacity: 0.5;
-      transform: scale(1.1);
+      opacity: 0.3;
+      object-fit: cover;
+      // transform: scale(1.25);
       border-radius: 10px;
-      transition: all 0.5s ease-out;
+      transition: all 0.1s ease-out;
+      // filter: none;
+    }
+  }
+  > .cardDetails {
+    position: absolute;
+    align-self: end;
+    max-width: 250px;
+    margin: 1rem;
+    small {
+      background-color: $dark-text;
+      padding: 0.5rem 0.5rem;
+      margin-bottom: 0.5rem;
+      border-radius: 0.5rem;
+      color: $light-pink;
+      letter-spacing: 0.5px;
+    }
+    p {
+      margin-top: 1.5rem;
+      margin-bottom: unset;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-align: left;
+      color: $light-pink;
+      text-shadow: 
+      1px 1px 2px black, 
+      0 0 1em black, 
+      0 0 0.2em black;
     }
   }
 }
-
+.card:focus,
 .card.highlight {
-  border: 7px solid $dark-text;
+  border: 6px solid $dark-text;
+  // border-radius: 10px;
   img {
-    transform: scale(1.1);
+    opacity: 1 !important;
+    transform: scale(1.2);
+    filter: none;
   }
 }

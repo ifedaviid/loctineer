@@ -17,11 +17,12 @@ const SelectService = ({ interest, service, setService }) => {
   return (
     <Grid>
       {getServices().map((serviceObj, idx) => {
-        const { name } = serviceObj;
+        const { name, serviceCategory } = serviceObj;
         return (
           <Card
             key={idx}
             title={name}
+            category={serviceCategory}
             isSelected={service === name}
             onChange={() => setService(name)}
           />

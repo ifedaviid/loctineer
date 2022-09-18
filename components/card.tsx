@@ -6,12 +6,13 @@ interface Props {
     title: string;
     description?: string;
     onChange?: Function;
+    category?: string;
     isSelected?: boolean;
     image?: StaticImageData;
     imageAlt?: string;
 }
 
-const Card = ({ title, image, imageAlt, description, isSelected, onChange }: Props) => {
+const Card = ({ title, image, imageAlt, description, category, isSelected, onChange }: Props) => {
     const handleClick = () => onChange();
     return (
         <div
@@ -29,8 +30,11 @@ const Card = ({ title, image, imageAlt, description, isSelected, onChange }: Pro
                     placeholder="blur" // Optional blur-up while loading
                 />
             }
-            <p>{title}</p>
-            {description && <p>{description}</p>}
+            <div className={styles.cardDetails}>
+                {category && <small>{category}</small>}
+                <p>{title}</p>
+                {description && <p>{description}</p>}
+            </div>
         </div>
     );
 }
