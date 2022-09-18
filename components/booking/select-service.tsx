@@ -1,23 +1,14 @@
 import React from "react";
 import Card from "../card";
 import Grid from "../grid";
-import { LOCS, BRAIDS_AND_TWISTS, dreadlocksServices, braidingServices } from "../../data/services";
+import { services } from './../../data/services';
 
 const SelectService = ({ interest, service, setService }) => {
-  const getServices = () => {
-    switch (interest) {
-      case LOCS:
-      default:
-        return dreadlocksServices;
-      case BRAIDS_AND_TWISTS:
-        return braidingServices;
-    }
-  };
-
+  const serviceMenu = services.find(service => service.name === interest).services;
   return (
     <Grid>
-      {getServices().map((serviceObj, idx) => {
-        const { name, serviceCategory } = serviceObj;
+      {serviceMenu && serviceMenu.map((serviceOption, idx) => {
+        const { name, serviceCategory } = serviceOption;
         return (
           <Card
             key={idx}

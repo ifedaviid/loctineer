@@ -4,7 +4,7 @@ import Grid from "../grid";
 import dreadlocks from '../../images/dreadlocks.jpg';
 import braidsPhoto from '../../images/braids-and-twists.jpg';
 import consultationPhoto from '../../images/consultation.jpg';
-import { LOCS, BRAIDS_AND_TWISTS, CONSULTATION } from "../../data/services";
+import { LOCS, BRAIDS_AND_TWISTS, CONSULTATION } from "../../data/strings";
 
 const SelectInterest = ({ interest, setInterest }) => {
   return (
