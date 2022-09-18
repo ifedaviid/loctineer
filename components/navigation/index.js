@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { isMobile } from "react-device-detect";
 import styles from "./index.module.scss";
 import { Twirl as Hamburger } from "hamburger-react";
-import CustomButton from "../button";
+import Button from "../button";
 
 const NavigationBar = () => {
   // The default value is 'blue', it will be used during pre-rendering and the first render in the browser (hydration)
@@ -20,13 +20,9 @@ const NavigationBar = () => {
       <div className={styles.topRightMenu}>
         <div>
           <p>Not sure what's best for you?</p>
-          <CustomButton
-            variant="contained"
-            size="small"
-            onClick={() => setBookingInProgress(true)}
-          >
+          <Button variant="primary" onClick={() => setBookingInProgress(true)}>
             Try our Help Wizard
-          </CustomButton>
+          </Button>
         </div>
         <Hamburger />
       </div>
