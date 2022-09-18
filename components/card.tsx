@@ -11,7 +11,7 @@ interface Props {
 
 const Card = ({ title, description, isSelected, onChange }: Props) => {
     return (
-        <label className={styles.card}>
+        <label className={styles.card} tabIndex={0} onKeyDown={onChange}>
             <input
                 type="radio"
                 name="fav_language"
