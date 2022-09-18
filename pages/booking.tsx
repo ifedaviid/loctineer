@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import CustomButton from "../components/button";
+import Button from "../components/button";
 import Layout from "../components/layout";
 import Link from "next/link";
 import styles from "./booking.module.scss";
 import useBooking from "../components/booking/useBooking";
-import Grid from "../components/grid";
 
 const Booking = () => {
     const {
         bookingStages,
         currentStage,
         currentStageIndex,
-        setCurrentStageIndex,
         goToStage
     } = useBooking();
     return (
@@ -21,27 +19,25 @@ const Booking = () => {
             <div className={styles.buttonGroupContainer}>
                 <div className={styles.stageNavigationButtonGroup}>
                     {currentStageIndex !== 0 &&
-                        <CustomButton
-                            variant="outlined"
-                            size="large"
+                        <Button
+                            variant="secondary"
                             onClick={() => goToStage(currentStageIndex - 1, false)}
                         >
                             <Link href="/booking">Back to Previous</Link>
-                        </CustomButton>
+                        </Button>
                     }
                     {currentStageIndex !== bookingStages.length - 1 &&
-                        <CustomButton
-                            variant="outlined"
-                            size="large"
+                        <Button
+                            variant="primary"
                             onClick={() => goToStage(currentStageIndex + 1, true)}
                         >
                             <Link href="/booking">Next Step</Link>
-                        </CustomButton>
+                        </Button>
                     }
                 </div>
-                <CustomButton variant="link" size="large">
+                <Button variant="secondary" size="large">
                     <Link href="/">Exit Booking</Link>
-                </CustomButton>
+                </Button>
             </div>
         </Layout >
     );

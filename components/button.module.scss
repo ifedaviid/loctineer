@@ -1,0 +1,38 @@
+@import '../common.scss';
+
+button.default {
+  border-radius: 0.5rem;
+  background-color: $dark-text;
+  color: $light-pink;
+  padding: 1rem 1.5rem;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+
+  font-weight: 500;
+  font-size: 16px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+
+button.primary {
+  background-color: $dark-text;
+  color: $light-pink;
+  &:hover {
+    background-color: $light-dark;
+    transition: all 0.5s ease;
+  }
+}
+
+button.secondary {
+  background-color: transparent;
+  color: $dark-text;
+  border: 1px solid $dark-text;
+  font-weight: 600;
+  &:hover {
+    background-color: $ready-pink;
+    transition: all 0.5s ease;
+  }
+}
