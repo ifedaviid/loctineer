@@ -6,29 +6,29 @@ import braidsPhoto from '../../images/braids-and-twists.jpg';
 import consultationPhoto from '../../images/consultation.jpg';
 import { LOCS, BRAIDS_AND_TWISTS, CONSULTATION } from "../../data/strings";
 
-const SelectInterest = ({ interest, setInterest }) => {
+const SelectServiceType = ({ serviceCategory, setServiceCategory }) => {
   return (
     <Grid>
       <Card
         title={LOCS}
         image={dreadlocks}
-        isSelected={interest === LOCS}
-        onChange={() => setInterest(LOCS)}
+        isSelected={serviceCategory === LOCS}
+        onChange={() => setServiceCategory(LOCS)}
       />
       <Card
         title={BRAIDS_AND_TWISTS}
         image={braidsPhoto}
-        isSelected={interest === BRAIDS_AND_TWISTS}
-        onChange={() => setInterest(BRAIDS_AND_TWISTS)}
+        isSelected={serviceCategory === BRAIDS_AND_TWISTS}
+        onChange={() => setServiceCategory(BRAIDS_AND_TWISTS)}
       />
       <Card
         title={CONSULTATION}
         image={consultationPhoto}
-        isSelected={interest === CONSULTATION}
-        onChange={() => setInterest(CONSULTATION)}
+        isSelected={serviceCategory === CONSULTATION}
+        onChange={() => setServiceCategory(CONSULTATION)}
       />
     </Grid>
   );
 }
 
-export default SelectInterest; 
+export default SelectServiceType; 
