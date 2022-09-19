@@ -33,9 +33,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-@media (max-width: $tiny-screens) {
-  .grid div {
-    min-width: 100%;
-  }
-}
