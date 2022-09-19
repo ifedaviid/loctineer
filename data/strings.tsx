@@ -23,3 +23,6 @@ export const NATURAL_BRAIDS_AND_TWISTS = "Natural hair braids & twists";
 export const BOX_BRAIDS_AND_TWISTS = "Box braids & twists";
 export const KINKY_PASSION_TWISTS = "Kinky/Passion twists";
 export const KNOTLESS_BRAIDS = "Knotless braids";
+
+export const WILL_USE_EXTENSIONS = 'I want to use hair extensions';
+export const WILL_NOT_USE_EXTENSIONS = "I don't need hair extensions";
