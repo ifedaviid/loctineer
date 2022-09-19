@@ -3,19 +3,19 @@ import Card from "../card";
 import Grid from "../grid";
 import { services } from './../../data/services';
 
-const SelectService = ({ interest, service, setService }) => {
-  const serviceMenu = services.find(service => service.name === interest).services;
+const SelectService = ({ serviceCategory, serviceName, setServiceName }) => {
+  const serviceMenu = services.find(category => category.name === serviceCategory).services;
   return (
     <Grid>
       {serviceMenu && serviceMenu.map((serviceOption, idx) => {
-        const { name, serviceCategory } = serviceOption;
+        const { name, appointmentType } = serviceOption;
         return (
           <Card
             key={idx}
             title={name}
-            category={serviceCategory}
-            isSelected={service === name}
-            onChange={() => setService(name)}
+            category={appointmentType}
+            isSelected={serviceName === name}
+            onChange={() => setServiceName(name)}
           />
         );
       })}

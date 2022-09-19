@@ -4,27 +4,34 @@ import Link from "next/link";
 import Button from "../components/button";
 import Layout from "../components/layout";
 import {
-    SelectInterest,
+    SelectServiceType,
     SelectService,
+    SelectExtensionUsage,
+    SelectHairLength,
     ConfirmBooking
 } from '../components/booking/index';
-import { updateInterest, updateService } from './../actions/booking';
+import { updateServiceCategory, updateService } from './../actions/booking';
 import styles from "./booking.module.scss";
 
 const Booking = () => {
     const dispatch = useDispatch();
     const [currentStageIndex, setCurrentStageIndex] = useState(0);
-    const [interest, setInterest] = useState(null);
-    const [service, setService] = useState(null);
+    const [serviceCategory, setServiceCategory] = useState(null);
+    const [serviceName, setServiceName] = useState(null);
+    const [willUseExtensions, setWillUseExtensions] = useState(null);
 
     const bookingStages = [
         {
             title: "What are you interested in?",
-            component: <SelectInterest interest={interest} setInterest={setInterest} />,
+            component: <SelectServiceType serviceCategory={serviceCategory} setServiceCategory={setServiceCategory} />,
         },
         {
-            title: `Choose a ${interest} service`,
-            component: <SelectService interest={interest} service={service} setService={setService} />,
+            title: `Choose a ${serviceCategory} service`,
+            component: <SelectService serviceCategory={serviceCategory} serviceName={serviceName} setServiceName={setServiceName} />,
+        },
+        {
+            title: `Do you know ${serviceName} can be done with hair extensions?`,
+            component: <SelectExtensionUsage willUseExtensions={willUseExtensions} setWillUseExtensions={setWillUseExtensions} />,
         },
         {
             title: `Thank you! See you soon!`,
@@ -35,10 +42,10 @@ const Booking = () => {
     const saveSelection = () => {
         switch (currentStageIndex) {
             case 0:
-                dispatch(updateInterest(interest));
+                dispatch(updateServiceCategory(serviceCategory));
                 break;
             case 1:
-                dispatch(updateService(service));
+                dispatch(updateService(serviceName));
                 break;
             default:
                 break;

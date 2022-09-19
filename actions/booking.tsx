@@ -1,16 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export interface BookingState {
-    interest: string;
-    service: string;
-    style: string;
+export interface Service {
+    name: string;
+    appointmentType: string; // appointment type i.e. installation or maintenance because its already a child of either locs or braids.
+    canUseExtensions: boolean;
+}
+export interface ServiceCategory {
+    name: string;
+    services: Array<Service>;
+}
+export interface BookingInfo {
+    category: string;
+    service: Service;
+    extensionUsage: boolean;
 }
 
-const initialState: BookingState = {
-    interest: null,
+const initialState: BookingInfo = {
+    category: null,
     service: null,
-    style: null
+    extensionUsage: null
 };
 
 // Redux Toolkit allows us to write "mutating" logic in reducers. It
@@ -22,14 +31,15 @@ export const bookingSlice = createSlice({
     name: "booking",
     initialState,
     reducers: {
-        updateInterest: (state: BookingState, action: PayloadAction<string>) => {
-            state.interest = action.payload;
+        //update service category
+        updateServiceCategory: (state: BookingInfo, action: PayloadAction<string>) => {
+            state.category = action.payload;
         },
-        updateService: (state: BookingState, action: PayloadAction<string>) => {
+        updateService: (state: BookingInfo, action: PayloadAction<Service>) => {
             state.service = action.payload;
         },
-        updateStyle: (state: BookingState, action: PayloadAction<string>) => {
-            state.style = action.payload;
+        updateExtensionUsage: (state: BookingInfo, action: PayloadAction<boolean>) => {
+            state.extensionUsage = action.payload;
         }
     },
 });
@@ -37,9 +47,9 @@ export const bookingSlice = createSlice({
 // Action creators are generated for each case reducer function
 
 export const {
-    updateInterest,
+    updateServiceCategory,
     updateService,
-    updateStyle
+    updateExtensionUsage
 } = bookingSlice.actions;
 
 export default bookingSlice.reducer;

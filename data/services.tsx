@@ -5,32 +5,32 @@ export const services = [
         services: [
             {
                 name: strings.LOC_REPAIR,
-                serviceCategory: strings.MAINTENANCE,
+                appointmentType: strings.MAINTENANCE,
                 canUseExtensions: true
             },
             {
                 name: strings.LOC_RETWIST,
-                serviceCategory: strings.MAINTENANCE,
-                canUseExtensions: true
+                appointmentType: strings.MAINTENANCE,
+                canUseExtensions: false
             },
             {
                 name: strings.LOC_STYLING,
-                serviceCategory: strings.MAINTENANCE,
+                appointmentType: strings.MAINTENANCE,
                 canUseExtensions: true
             },
             {
                 name: strings.NATURAL_INSTANT_DREADLOCKS,
-                serviceCategory: strings.INSTALLATION,
+                appointmentType: strings.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.TWO_STRAND_STARTER_LOCS,
-                serviceCategory: strings.INSTALLATION,
+                appointmentType: strings.INSTALLATION,
                 canUseExtensions: false
             },
             {
                 name: strings.SISTER_LOCS,
-                serviceCategory: strings.INSTALLATION,
+                appointmentType: strings.INSTALLATION,
                 canUseExtensions: false
             }
         ]
@@ -40,38 +40,38 @@ export const services = [
         services: [
             {
                 name: strings.FAUX_LOCS,
-                serviceCategory: strings.INSTALLATION,
+                appointmentType: strings.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.SOFT_LOCS,
-                serviceCategory: strings.INSTALLATION,
+                appointmentType: strings.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.BUTTERFLY_DISTRESSED_LOCS,
-                serviceCategory: strings.INSTALLATION,
+                appointmentType: strings.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.NATURAL_BRAIDS_AND_TWISTS,
-                serviceCategory: strings.INSTALLATION,
+                appointmentType: strings.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.BOX_BRAIDS_AND_TWISTS,
-                serviceCategory: strings.INSTALLATION,
-                canUseExtensions: false
+                appointmentType: strings.INSTALLATION,
+                canUseExtensions: true
             },
             {
                 name: strings.KINKY_PASSION_TWISTS,
-                serviceCategory: strings.INSTALLATION,
-                canUseExtensions: false
+                appointmentType: strings.INSTALLATION,
+                canUseExtensions: true
             },
             {
                 name: strings.KNOTLESS_BRAIDS,
-                serviceCategory: strings.INSTALLATION,
-                canUseExtensions: false
+                appointmentType: strings.INSTALLATION,
+                canUseExtensions: true
             },
         ]
     },
