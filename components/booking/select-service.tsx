@@ -1,25 +1,31 @@
 import React from "react";
 import Card from "../card";
 import Grid from "../grid";
-import { services } from './../../data/services';
+import { useBookingContext } from "../../context/useBookingContext";
+import styles from "./select.module.scss";
 
-const SelectService = ({ serviceCategory, serviceName, setServiceName }) => {
-  const serviceMenu = services.find(category => category.name === serviceCategory).services;
+const SelectService = () => {
+  const { service, setService, serviceType } = useBookingContext();
+  const { services } = serviceType;
   return (
-    <Grid>
-      {serviceMenu && serviceMenu.map((serviceOption, idx) => {
-        const { name, appointmentType } = serviceOption;
-        return (
-          <Card
-            key={idx}
-            title={name}
-            category={appointmentType}
-            isSelected={serviceName === name}
-            onChange={() => setServiceName(name)}
-          />
-        );
-      })}
-    </Grid>
+    <>
+      <h2 className={styles.bookingHeader}>Choose a {serviceType.name} service</h2>
+      <Grid>
+        {services && services.map((option, idx) => {
+          const { name, category, canUseExtensions } = option;
+          return (
+            <Card
+              key={idx}
+              title={name}
+              category={category}
+              isSelected={service?.name === name}
+              description={canUseExtensions ? 'Can use hair extensions' : 'Natural hair only'}
+              onChange={() => setService(option)}
+            />
+          );
+        })}
+      </Grid>
+    </>
   );
 };
 

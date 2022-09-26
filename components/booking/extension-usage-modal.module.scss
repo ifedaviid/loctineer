@@ -1,0 +1,81 @@
+@import '../../common.scss';
+
+// The modal container
+// todo: move this block out of here (maybe to pages/booking.tsx where the buttons are)
+.modalContainer {
+  background: $light-pink;
+  color: $dark-text;
+  width: 50%;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  // The header and the cancel button
+  > :first-child {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 25px;
+      margin-bottom: 1.5rem;
+      // The header
+      > h4 {
+        margin: unset;
+      }
+  }
+  // The subtext
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.7rem;
+  }
+  // The radio button form
+  > form {
+    label {
+      display: flex;
+      margin-bottom: 1rem;
+      input,
+      p {
+        margin: unset;
+      }
+      input[type='radio'] {
+        align-self: center;
+        accent-color: $dark-text;
+        transform: scale(1.5);
+      }
+      p {
+        margin: unset;
+        font-weight: 600;
+        margin-left: 1rem;
+      }
+    }  
+  }
+}
+
+.modalButtonGroup {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  > * {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 1120px) {
+  .modalContainer {
+    width: 95%;
+    padding: 2rem;
+    margin: 0 2rem;
+  }
+  .modalButtonGroup {
+    display: flex;
+    // flex-direction: column-reverse;
+    > * {
+      margin: 0.5rem;
+    }
+  }
+}
+
+@media (max-width: $small-screens) {
+  .modalButtonGroup {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

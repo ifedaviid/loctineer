@@ -6,46 +6,17 @@ import braidsPhoto from '../../images/braids-and-twists.jpg';
 import consultationPhoto from '../../images/consultation.jpg';
 import { LOCS, BRAIDS_AND_TWISTS, CONSULTATION } from "../../data/strings";
 
-const SelectHairLength = ({ interest, setInterest }) => {
-
+const SelectHairLength = () => {
 
     return (
         <Grid>
             <Card
                 title={LOCS}
                 image={dreadlocks}
-                isSelected={interest === LOCS}
-                onChange={() => setInterest(LOCS)}
             />
             <Card
                 title={BRAIDS_AND_TWISTS}
                 image={braidsPhoto}
-                isSelected={interest === BRAIDS_AND_TWISTS}
-                onChange={() => setInterest(BRAIDS_AND_TWISTS)}
-            />
-            <Card
-                title={CONSULTATION}
-                image={consultationPhoto}
-                isSelected={interest === CONSULTATION}
-                onChange={() => setInterest(CONSULTATION)}
-            />
-            <Card
-                title={LOCS}
-                image={dreadlocks}
-                isSelected={interest === LOCS}
-                onChange={() => setInterest(LOCS)}
-            />
-            <Card
-                title={BRAIDS_AND_TWISTS}
-                image={braidsPhoto}
-                isSelected={interest === BRAIDS_AND_TWISTS}
-                onChange={() => setInterest(BRAIDS_AND_TWISTS)}
-            />
-            <Card
-                title={CONSULTATION}
-                image={consultationPhoto}
-                isSelected={interest === CONSULTATION}
-                onChange={() => setInterest(CONSULTATION)}
             />
         </Grid>
     );

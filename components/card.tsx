@@ -32,7 +32,7 @@ const Card = ({ title, image, imageAlt, description, category, isSelected, onCha
             }
             <div className={styles.cardDetails}>
                 {category && <small>{category}</small>}
-                <p>{title}</p>
+                <h4>{title}</h4>
                 {description && <p>{description}</p>}
             </div>
         </div>

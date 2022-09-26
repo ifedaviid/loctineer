@@ -21,9 +21,7 @@ const NavigationBar = () => {
       <div className={styles.topRightMenu}>
         <div>
           <p>{`Not sure what's best for you?`}</p>
-          <Button variant="primary" onClick={() => setBookingInProgress(true)}>
-            Try our Help Wizard
-          </Button>
+          <Button variant="primary">Try our Help Wizard</Button>
         </div>
         <Hamburger />
       </div>

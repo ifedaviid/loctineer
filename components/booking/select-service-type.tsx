@@ -1,33 +1,30 @@
 import React from "react";
 import Card from "../card";
 import Grid from "../grid";
-import dreadlocks from '../../images/dreadlocks.jpg';
-import braidsPhoto from '../../images/braids-and-twists.jpg';
-import consultationPhoto from '../../images/consultation.jpg';
-import { LOCS, BRAIDS_AND_TWISTS, CONSULTATION } from "../../data/strings";
+import { serviceMenu } from "../../data/service-categories";
+import { useBookingContext } from "../../context/useBookingContext";
+import styles from "./select.module.scss";
 
-const SelectServiceType = ({ serviceCategory, setServiceCategory }) => {
+const SelectServiceType = () => {
+  const { serviceType, setServiceType } = useBookingContext();
   return (
-    <Grid>
-      <Card
-        title={LOCS}
-        image={dreadlocks}
-        isSelected={serviceCategory === LOCS}
-        onChange={() => setServiceCategory(LOCS)}
-      />
-      <Card
-        title={BRAIDS_AND_TWISTS}
-        image={braidsPhoto}
-        isSelected={serviceCategory === BRAIDS_AND_TWISTS}
-        onChange={() => setServiceCategory(BRAIDS_AND_TWISTS)}
-      />
-      <Card
-        title={CONSULTATION}
-        image={consultationPhoto}
-        isSelected={serviceCategory === CONSULTATION}
-        onChange={() => setServiceCategory(CONSULTATION)}
-      />
-    </Grid>
+    <>
+      <h2 className={styles.bookingHeader}>What are you interested in?</h2>
+      <Grid>
+        {serviceMenu.map((option, idx) => {
+          const { name, photo } = option;
+          return (
+            <Card
+              key={idx}
+              title={name}
+              image={photo}
+              isSelected={serviceType?.name === name}
+              onChange={() => setServiceType(option)}
+            />
+          );
+        })}
+      </Grid>
+    </>
   );
 }
 

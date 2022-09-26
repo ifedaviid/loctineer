@@ -1,82 +1,87 @@
-import * as strings from './strings'
-export const services = [
+import * as strings from './strings';
+import { ServiceCategory } from '../actions/booking';
+
+export const serviceMenu = [
     {
         name: strings.LOCS,
+        photo: require('../images/dreadlocks.jpg'),
         services: [
             {
                 name: strings.LOC_REPAIR,
-                appointmentType: strings.MAINTENANCE,
+                category: ServiceCategory.MAINTENANCE,
                 canUseExtensions: true
             },
             {
                 name: strings.LOC_RETWIST,
-                appointmentType: strings.MAINTENANCE,
+                category: ServiceCategory.MAINTENANCE,
                 canUseExtensions: false
             },
             {
                 name: strings.LOC_STYLING,
-                appointmentType: strings.MAINTENANCE,
+                category: ServiceCategory.MAINTENANCE,
                 canUseExtensions: true
             },
             {
                 name: strings.NATURAL_INSTANT_DREADLOCKS,
-                appointmentType: strings.INSTALLATION,
+                category: ServiceCategory.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.TWO_STRAND_STARTER_LOCS,
-                appointmentType: strings.INSTALLATION,
+                category: ServiceCategory.INSTALLATION,
                 canUseExtensions: false
             },
             {
                 name: strings.SISTER_LOCS,
-                appointmentType: strings.INSTALLATION,
+                category: ServiceCategory.INSTALLATION,
                 canUseExtensions: false
             }
         ]
     },
     {
         name: strings.BRAIDS_AND_TWISTS,
+        photo: require('../images/braids-and-twists.jpg'),
         services: [
             {
                 name: strings.FAUX_LOCS,
-                appointmentType: strings.INSTALLATION,
+                category: ServiceCategory.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.SOFT_LOCS,
-                appointmentType: strings.INSTALLATION,
+                category: ServiceCategory.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.BUTTERFLY_DISTRESSED_LOCS,
-                appointmentType: strings.INSTALLATION,
+                category: ServiceCategory.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.NATURAL_BRAIDS_AND_TWISTS,
-                appointmentType: strings.INSTALLATION,
+                category: ServiceCategory.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.BOX_BRAIDS_AND_TWISTS,
-                appointmentType: strings.INSTALLATION,
+                category: ServiceCategory.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.KINKY_PASSION_TWISTS,
-                appointmentType: strings.INSTALLATION,
+                category: ServiceCategory.INSTALLATION,
                 canUseExtensions: true
             },
             {
                 name: strings.KNOTLESS_BRAIDS,
-                appointmentType: strings.INSTALLATION,
+                category: ServiceCategory.INSTALLATION,
                 canUseExtensions: true
             },
         ]
     },
     {
         name: strings.CONSULTATION,
+        photo: require('../images/consultation.jpg'),
     }
 ];
 
