@@ -9,16 +9,19 @@ import { LOCS, BRAIDS_AND_TWISTS, CONSULTATION } from "../../data/strings";
 const SelectHairLength = () => {
 
     return (
-        <Grid>
-            <Card
-                title={LOCS}
-                image={dreadlocks}
-            />
-            <Card
-                title={BRAIDS_AND_TWISTS}
-                image={braidsPhoto}
-            />
-        </Grid>
+        <>
+            <h2>Just a few questions about your hair length?</h2>
+            <Grid>
+                <Card
+                    title='234'
+                    image={null}
+                />
+                <Card
+                    title='111'
+                    image={null}
+                />
+            </Grid>
+        </>
     );
 }
 

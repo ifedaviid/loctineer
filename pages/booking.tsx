@@ -14,91 +14,108 @@ import {
 import styles from "./booking.module.scss";
 import { updateServiceType, updateService, updateBringingExtensions } from "../actions/booking";
 import { useDispatch } from 'react-redux';
+import { useRouter } from "next/router";
 
 const Booking = () => {
     const dispatch = useDispatch();
+    const router = useRouter();
     const [showModal, setShowModal] = useState(false);
     const {
         serviceType,
         service,
         bringingExtensions,
+        previousStageIndex,
         currentStageIndex,
+        setPreviousStageIndex,
         setCurrentStageIndex
     } = useBookingContext();
+
+    console.log("======> previousStageIndex: ", previousStageIndex);
+    console.log("======> currentStageIndex: ", currentStageIndex);
 
     const bookingStages = [
         {
             component: <SelectServiceType />,
             action: updateServiceType(serviceType),
+            onNext: () => {
+                setPreviousStageIndex(0);
+                setCurrentStageIndex(1);
+            },
             validation: serviceType !== null
         },
         {
             component: <SelectService />,
             action: updateService(service),
+            onPrevious: () => {
+                setPreviousStageIndex(0);
+                setCurrentStageIndex(1);
+            },
+            onNext: () => {
+                if (service.canUseExtensions) {
+                    setShowModal(true);
+                } else {
+                    setPreviousStageIndex(1);
+                    setCurrentStageIndex(3);
+                }
+            },
             validation: service !== null
         },
         {
             component: <SelectExtensionInfo />,
             action: updateBringingExtensions(bringingExtensions),
+            onPrevious: () => {
+                setPreviousStageIndex(0);
+                setCurrentStageIndex(1);
+            },
+            onNext: () => {
+                setPreviousStageIndex(3);
+                setCurrentStageIndex(4);
+            },
             validation: service !== null
         },
         {
             component: <SelectHairLength />,
             action: updateService(service),
+            onPrevious: () => {
+                setPreviousStageIndex(bringingExtensions ? 1 : 0);
+                setCurrentStageIndex(bringingExtensions ? 2 : 1);
+            },
+            onNext: () => {
+                setPreviousStageIndex(3);
+                setCurrentStageIndex(4);
+            },
             validation: service !== null
         },
         {
             component: <ConfirmBooking />,
-            action: updateServiceType(serviceType)
+            action: updateServiceType(serviceType),
+            onNext: () => router.push('/'),
         }
     ];
 
-    const isValidIndex = (index) => index >= 0 || index < bookingStages.length - 1;
-
-    const handleNavigation = (currentIndex, nextIndex) => {
-        if (!isValidIndex(nextIndex)) return;
-        // Forward or Backward
-        if (nextIndex > currentIndex) {
-            // Valid or invalid selection
-            if (bookingStages[currentIndex].validation) {
-                // Save in Redux store
-                dispatch(bookingStages[currentIndex].action);
-                // Show Modal or Proceed
-                if (nextIndex === 2) {
-                    if (service.canUseExtensions) {
-                        setShowModal(true)
-                    }
-                    setCurrentStageIndex(nextIndex + 1);
-                } else {
-                    setCurrentStageIndex(nextIndex);
-                }
-            }
-        } else {
-            setCurrentStageIndex(nextIndex);
-        }
-    }
+    const starting = currentStageIndex === 0;
+    const ending = currentStageIndex > bookingStages.length - 2;
+    const ended = currentStageIndex === bookingStages.length - 1;
 
     return (
         <Layout>
             {bookingStages[currentStageIndex].component}
             <div className={styles.buttonGroupContainer}>
                 <div className={styles.stageNavigationButtonGroup}>
-                    {currentStageIndex !== 0 &&
+                    {!starting || !ended &&
                         <Button
                             variant="secondary"
-                            onClick={() => handleNavigation(currentStageIndex, currentStageIndex - 1)}
+                            onClick={() => bookingStages[currentStageIndex].onPrevious()}
                         >
                             Back to Previous
                         </Button>
                     }
-                    {currentStageIndex !== bookingStages.length - 1 &&
-                        <Button
-                            variant="primary"
-                            onClick={() => handleNavigation(currentStageIndex, currentStageIndex + 1)}
-                        >
-                            Next Step
-                        </Button>
-                    }
+                    <Button
+                        variant="secondary"
+                        onClick={() => bookingStages[currentStageIndex].onNext()}
+                    >
+                        {!ending ? 'Next' : 'Submit'}
+                    </Button>
                 </div>
                 <Button variant="secondary" size="large">
                     <Link href="/">Exit Booking</Link>

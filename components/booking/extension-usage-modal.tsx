@@ -13,15 +13,18 @@ const ExtensionUsageModal = ({ setShowModal }) => {
         currentStageIndex,
         setCurrentStageIndex,
         bringingExtensions,
+        setPreviousStageIndex,
         setBringingExtensions
     } = useBookingContext();
 
-    const handleModalResponse = (bringingExts) => {
-        if (bringingExts && service.canUseExtensions) {
-            setBringingExtensions(bringingExts)
-            dispatch(updateBringingExtensions(bringingExts))
+    const handleModalResponse = (isBringingExtensions) => {
+        if (isBringingExtensions && service.canUseExtensions) {
+            setBringingExtensions(isBringingExtensions)
+            dispatch(updateBringingExtensions(isBringingExtensions));
+            setPreviousStageIndex(currentStageIndex);
             setCurrentStageIndex(currentStageIndex + 1);
         } else {
+            setPreviousStageIndex(currentStageIndex);
             setCurrentStageIndex(currentStageIndex + 2);
         }
         setShowModal(false)
@@ -53,4 +56,4 @@ const ExtensionUsageModal = ({ setShowModal }) => {
     );
 }
 
-export default ExtensionUsageModal; 
+export default ExtensionUsageModal;
