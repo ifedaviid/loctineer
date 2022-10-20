@@ -1,5 +1,9 @@
 import * as strings from './strings';
-import { ServiceCategory } from '../actions/booking';
+
+enum ServiceCategory {
+    INSTALLATION = 'Installation',
+    MAINTENANCE = 'Maintenance'
+}
 
 export const serviceMenu = [
     {

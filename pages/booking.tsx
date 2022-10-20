@@ -1,124 +1,89 @@
-import React, { useState } from "react";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { useActor } from '@xstate/react';
 import Button from "../components/button";
 import Layout from "../components/layout";
-import { useBookingContext } from "../context/useBookingContext";
 import {
     ExtensionUsageModal,
     SelectServiceType,
     SelectService,
-    SelectExtensionInfo,
+    SelectExtensionLength,
     SelectHairLength,
     ConfirmBooking
 } from '../components/booking/index';
 import styles from "./booking.module.scss";
-import { updateServiceType, updateService, updateBringingExtensions } from "../actions/booking";
-import { useDispatch } from 'react-redux';
-import { useRouter } from "next/router";
+import { bookingMachine } from '../context/booking-machine';
+import { useBookingService } from '../context/useBookingService';
 
-const Booking = () => {
-    const dispatch = useDispatch();
+export const Booking = () => {
     const router = useRouter();
+    // const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
-    const {
-        serviceType,
-        service,
-        bringingExtensions,
-        previousStageIndex,
-        currentStageIndex,
-        setPreviousStageIndex,
-        setCurrentStageIndex
-    } = useBookingContext();
 
-    console.log("======> previousStageIndex: ", previousStageIndex);
-    console.log("======> currentStageIndex: ", currentStageIndex);
+    // const [state, send] = useMachine(bookingFlowMachine);
+    const { bookingService } = useBookingService();
+    const [state, send] = useActor(bookingService);
 
-    const bookingStages = [
-        {
-            component: <SelectServiceType />,
-            action: updateServiceType(serviceType),
-            onNext: () => {
-                setPreviousStageIndex(0);
-                setCurrentStageIndex(1);
-            },
-            validation: serviceType !== null
-        },
-        {
-            component: <SelectService />,
-            action: updateService(service),
-            onPrevious: () => {
-                setPreviousStageIndex(0);
-                setCurrentStageIndex(1);
-            },
-            onNext: () => {
-                if (service.canUseExtensions) {
-                    setShowModal(true);
-                } else {
-                    setPreviousStageIndex(1);
-                    setCurrentStageIndex(3);
+    const { service } = state.context;
+    const { initialState } = bookingMachine;
+
+    const handleSendEvent = (event, currentStage) => {
+        switch (currentStage) {
+            case 'selectService':
+                if (service) {
+                    send({ type: event })
+                    if (service.canUseExtensions) setShowModal(true)
                 }
-            },
-            validation: service !== null
-        },
-        {
-            component: <SelectExtensionInfo />,
-            action: updateBringingExtensions(bringingExtensions),
-            onPrevious: () => {
-                setPreviousStageIndex(0);
-                setCurrentStageIndex(1);
-            },
-            onNext: () => {
-                setPreviousStageIndex(3);
-                setCurrentStageIndex(4);
-            },
-            validation: service !== null
-        },
-        {
-            component: <SelectHairLength />,
-            action: updateService(service),
-            onPrevious: () => {
-                setPreviousStageIndex(bringingExtensions ? 1 : 0);
-                setCurrentStageIndex(bringingExtensions ? 2 : 1);
-            },
-            onNext: () => {
-                setPreviousStageIndex(3);
-                setCurrentStageIndex(4);
-            },
-            validation: service !== null
-        },
-        {
-            component: <ConfirmBooking />,
-            action: updateServiceType(serviceType),
-            onNext: () => router.push('/'),
+                break;
+            default:
+                send(event)
+                break;
         }
-    ];
+    };
 
-    const starting = currentStageIndex === 0;
-    const ending = currentStageIndex > bookingStages.length - 2;
-    const ended = currentStageIndex === bookingStages.length - 1;
+    console.log("here: ", state.context);
+
+    const renderNavigationButtons = () => {
+        return (
+            <>
+                {state.value !== initialState.value &&
+                    <Button
+                        variant="secondary"
+                        onClick={() => send('PREV')}
+                    >
+                        Back to Previous
+                    </Button>
+                }
+                {!state.done &&
+                    <Button
+                        variant="secondary"
+                        onClick={() => handleSendEvent('NEXT', state.value)}
+                    >
+                        Next
+                    </Button>
+                }
+            </>
+        );
+    }
 
     return (
         <Layout>
-            {bookingStages[currentStageIndex].component}
+            {state.matches('selectServiceType') && <SelectServiceType />}
+            {(state.matches('selectService') || state.matches('selectExtensionUsage')) && <SelectService />}
+            {state.matches('selectExtensionLength') && <SelectExtensionLength />}
+            {state.matches('reviewInfo') && <ConfirmBooking />}
             <div className={styles.buttonGroupContainer}>
                 <div className={styles.stageNavigationButtonGroup}>
-                    {!starting || !ended &&
-                        <Button
-                            variant="secondary"
-                            onClick={() => bookingStages[currentStageIndex].onPrevious()}
-                        >
-                            Back to Previous
-                        </Button>
-                    }
-                    <Button
-                        variant="secondary"
-                        onClick={() => bookingStages[currentStageIndex].onNext()}
-                    >
-                        {!ending ? 'Next' : 'Submit'}
-                    </Button>
+                    {!state.done && renderNavigationButtons()}
                 </div>
-                <Button variant="secondary" size="large">
-                    <Link href="/">Exit Booking</Link>
+                <Button
+                    variant="secondary"
+                    size="large"
+                    onClick={() => {
+                        router.push('/')
+                    }}
+                >
+                    Exit Booking
                 </Button>
             </div>
             {showModal && <ExtensionUsageModal setShowModal={setShowModal} />}

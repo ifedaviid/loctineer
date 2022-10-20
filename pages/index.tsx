@@ -1,10 +1,11 @@
 import React from "react";
-import Link from "next/link";
+import { useRouter } from "next/router";
 import Button from "../components/button";
 import Layout from "../components/layout";
 import styles from "./index.module.scss";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <Layout>
       <h1 className={styles.homeHeader}>
@@ -12,11 +13,16 @@ export default function Home() {
         <a href="https://bougieebraids.com">Loctineer.com</a>?
       </h1>
       <div className={styles.buttonGroupContainer}>
-        <Button variant="primary">
-          <Link href="/booking">Book an appointment</Link>
+        <Button variant="primary" size="large" onClick={() => {
+          router.push('/booking')
+        }}>
+          Book an appointment
         </Button>
-        <Button variant="secondary">
-          <Link href="https://loctineer.com"> Visit Loctineer.com </Link>
+
+        <Button variant="secondary" size="large" onClick={() => {
+          router.push('https://loctineer.com')
+        }}>
+          Visit Loctineer.com
         </Button>
       </div>
     </Layout>

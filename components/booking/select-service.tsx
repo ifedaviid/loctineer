@@ -1,12 +1,20 @@
 import React from "react";
 import Card from "../card";
 import Grid from "../grid";
-import { useBookingContext } from "../../context/useBookingContext";
+import { useActor } from "@xstate/react";
 import styles from "./select.module.scss";
+import { bookingMachine } from "../../context/booking-machine";
+import { useBookingService } from '../../context/useBookingService';
 
 const SelectService = () => {
-  const { service, setService, serviceType } = useBookingContext();
+  // const [state, send] = useMachine(bookingMachine);
+
+  const { bookingService } = useBookingService();
+  const [state, send] = useActor(bookingService);
+
+  const { serviceType, service } = state.context;
   const { services } = serviceType;
+
   return (
     <>
       <h2 className={styles.bookingHeader}>Choose a {serviceType.name} service</h2>
@@ -20,7 +28,8 @@ const SelectService = () => {
               category={category}
               isSelected={service?.name === name}
               description={canUseExtensions ? 'Can use hair extensions' : 'Natural hair only'}
-              onChange={() => setService(option)}
+              onChange={() => send({ type: 'SET_SERVICE', service: option })
+              }
             />
           );
         })}

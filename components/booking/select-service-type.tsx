@@ -1,12 +1,18 @@
 import React from "react";
+import { useMachine, useActor } from "@xstate/react";
 import Card from "../card";
 import Grid from "../grid";
 import { serviceMenu } from "../../data/service-categories";
-import { useBookingContext } from "../../context/useBookingContext";
 import styles from "./select.module.scss";
+import { bookingMachine } from "../../context/booking-machine";
+import { useBookingService } from '../../context/useBookingService';
 
 const SelectServiceType = () => {
-  const { serviceType, setServiceType } = useBookingContext();
+  // const [state, send] = useMachine(bookingMachine);
+
+  const { bookingService } = useBookingService();
+  const [state, send] = useActor(bookingService);
+
   return (
     <>
       <h2 className={styles.bookingHeader}>What are you interested in?</h2>
@@ -18,8 +24,8 @@ const SelectServiceType = () => {
               key={idx}
               title={name}
               image={photo}
-              isSelected={serviceType?.name === name}
-              onChange={() => setServiceType(option)}
+              isSelected={state.context.serviceType?.name === name}
+              onChange={() => send({ type: 'SET_SERVICE_TYPE', serviceType: option })}
             />
           );
         })}
