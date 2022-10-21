@@ -33,6 +33,13 @@ interface Appointment {
   extensionLength: ExtensionLength;
 }
 
+const initialContextState: Appointment = {
+  serviceType: null,
+  service: null,
+  addingExtensions: false,
+  extensionLength: null,
+};
+
 type Event =
   | { type: "PREV" }
   | { type: "NEXT" }
@@ -42,18 +49,14 @@ type Event =
   | { type: "SET_SERVICE"; service: Service }
   | { type: "IGNORE_ADDING_EXTENSIONS"; addingExtensions: boolean }
   | { type: "ADDING_EXTENSIONS"; addingExtensions: boolean }
-  | { type: "NOT_ADDING_EXTENSIONS"; addingExtensions: boolean };
+  | { type: "NOT_ADDING_EXTENSIONS"; addingExtensions: boolean }
+  | { type: "EXIT" };
 
 export const bookingMachine =
   /** @xstate-layout N4IgpgJg5mDOIC5QCMD2qDWBLAdlAtAGYA2qA7gHSxjFgDGALgMpgBOAblnWACoCeABzABiAHIBRABo8A2gAYAuolADUsLAyyocykAA9EADgDMAdgoA2UwEZDAVmNWALHKcAmOwBoQfRAE57Cjs5OQs7Q1M-N1tIgF9Y7zRMXAIScioaemY2Tm4xKVlFXVV1TW1dAwQTcytbB2dXD29fBAs-OSCQ4wi5CMNraz94xPRsPCJSSmpaRhYOLhEJaRlrJSQQEo0tHXXK62M5NwpTYydHQzlgtyivH0RTC2sKduC-F1dTEzthkCSx1MmGRm2XmeQACgAlcQANXkaxUai25V2-j8T2iEWMfhOpjk2MMzX8xmMnUubmuWL8VKGCV+oxSE3S0yy4j0DDAOHU2gAqrAAIYwYQAQQAIiKAJKiADiAH0CuJRExxQB5RVw4qIso7UCVA5OCiGNz9OTWCxmbpuRyEhBnCwUDxyYyDNwWNymJxOCw-P4MtJTTKMVnsznbXkCxbKngy0US6Vy6QKpWqpjq9abLUVRB6g1G6wms0nQ1Wu5VEkhEJOd12E5OU2Gb308Z+oEstkcrk4MOC8VS0TKqHRsWS2XyxUqtVFNOa7aZhDZw3G03mosWa12NoUctOtGPGyfBvJJuA5mBtsh7QAGQ5UAYAAt8stJwjSjOUaWajZ7I53Y1bi03K4pIDA4JhnNWTgHv8jL+sCQbttsV54HewiQjCqbPki2r6EYZiWJ+9Q-u4f6IB65jBIcdjWJa66WoYXq0j6R5MgGDAABJ8lgrCITe96obCT4bNOyI6og+zrhQWKhHqlyGH4xLWsYLqbiEtjEnidjXPWDGNgCzHAuxnHcchfErPCgkvsJ2EIPslzPBYfTkrWETWE41r9CSLzkgE67YvskG+seLEGVx17IUshRmemr4idZwR2jW3SmA8+wetaeYuMpciRJ6HpmPRIyHrplB8gIqi4AwAC2HIMCKfLsihUL8ZFQlYXsBxHAl9mXIcNxpXiRzlnJrh+GEZpaQVUHNiVZU4JV1W1fV4XoeZmGzlSTxZf0AGRIpeV9bh5HZRYuUPP5TGUHQ2gMHyjBCjgEBgnyfBVbN4o4IQqAPhFGoWa1OEfnU34uERaWDCSwRUYcAF4hB2mFdBFCXbNN0MHdD1PS9DBvR9DVoQJUWWZU1R4YDDQgyWeayaSQ1OCN67dGdRWI9ohCcRVaMQmAnBgGQX3LQTf3We1xynOc3XXE0FMxJYVhou4gyHJcjMI0jrOsOz92c9zvMmfjLVrWi9oxFiOJ4p8oO1p0eYWGaTgRBpyt+sITDiFGLsQtC4oAMLiDKPAAJpguI-P62+7jWn4DjPNYpjRK6jqVmajuTM7rsyu7ns+yHv2zuHJafIYxzBOc7x2HYNK0jgqAQHAuiMUzJ4grkvCCGAP2rW+jwki4rpqbH654hHSUyychz9PZlpuMnelZHMzftxmb4DNEFCmi4Djl8Ydiem4bm9EEn6FuPoSmNPMGtsGHZdm3U452Hu8lsdRx5h8uK9IYhiemfLanpfCGhbeBe0UrLlyeIaHqFw2hhFMMRG0jgi5kkUmcXohxYYTQCjPRgwUjKANvh3GKpojSWB7qcH8VFXL53Ls8Mk2JvIDDRN-aaqByqYwWjfDCi8CHAQoLWHuHhFKfz6p-VeVh2rb3dLYfKdJ4bNiRtdW691HrPWqtjVAQDCaIHCN3eyEiLj2ACA-FoAwLiZS+FlZwNtv6qzZhzLmWAebqMFgMKizxP7fiSgBGOsDjGFzrMYwYcl1zf1YHYnmqjHGzkIYXY6UlKwuHIaDCII9I6fzXmcca0jJqTAiW+fAq4Sx5MyuWYp5YjTxHiEAA */
   createMachine(
     {
-      context: {
-        serviceType: null,
-        service: null,
-        addingExtensions: false,
-        extensionLength: null,
-      },
+      context: { ...initialContextState },
       tsTypes: {} as import("./booking-machine.typegen").Typegen0,
       schema: {
         context: {} as Appointment,
@@ -62,10 +65,23 @@ export const bookingMachine =
       preserveActionOrder: true,
       predictableActionArguments: true,
       id: "booking-flow",
-      initial: "selectServiceType",
+      initial: "idle",
       states: {
+        idle: {
+          // Eventless Transition:
+          // This immediately transitions into its target state
+          // Without waiting on an event to be fired.
+          always: [{ target: "selectServiceType" }],
+          // Reset context to initial form on exit.
+          exit: "resetContext",
+        },
         selectServiceType: {
           on: {
+            SET_SERVICE_TYPE: {
+              internal: true,
+              target: "selectServiceType",
+              actions: "saveServiceType",
+            },
             NEXT: {
               target: "selectService",
             },
@@ -73,6 +89,11 @@ export const bookingMachine =
         },
         selectService: {
           on: {
+            SET_SERVICE: {
+              internal: true,
+              target: "selectService",
+              actions: "saveService",
+            },
             NEXT: [
               {
                 target: "selectExtensionUsage",
@@ -142,40 +163,24 @@ export const bookingMachine =
         contactAndPaymentInfo: {
           on: {
             NEXT: {
-              target: "confirmAndReview",
+              target: "reviewInfo",
             },
             PREV: {
               target: "appointmentDate",
             },
           },
         },
-        confirmAndReview: {
+        reviewInfo: {
           on: {
-            NEXT: {
-              target: "reviewInfo",
-            },
-            PREV: {
-              target: "contactAndPaymentInfo",
-            },
+            NEXT: { target: "bookingCompleted" },
           },
         },
-        reviewInfo: {
+        bookingCompleted: {
           type: "final",
         },
       },
-      // internal self transitions
-      on: {
-        SET_SERVICE_TYPE: {
-          internal: true,
-          target: ".selectServiceType",
-          actions: "saveServiceType",
-        },
-        SET_SERVICE: {
-          internal: true,
-          target: ".selectService",
-          actions: "saveService",
-        },
-      },
+      // event definitions
+      on: { EXIT: { target: ".idle" } },
     },
     {
       // actions and guards
@@ -192,6 +197,13 @@ export const bookingMachine =
         }),
         saveExtensionUsage: assign({
           addingExtensions: (_context, event) => event["addingExtensions"],
+        }),
+        resetContext: assign({
+          serviceType: null,
+          service: null,
+          addingExtensions: false,
+          extensionLength: null,
+          ...initialContextState,
         }),
       },
       guards: {

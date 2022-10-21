@@ -3,6 +3,7 @@
 export interface Typegen0 {
   "@@xstate/typegen": true;
   internalEvents: {
+    "": { type: "" };
     "xstate.init": { type: "xstate.init" };
     "xstate.stop": { type: "xstate.stop" };
   };
@@ -14,12 +15,12 @@ export interface Typegen0 {
     delays: never;
   };
   eventsCausingActions: {
+    resetContext: "" | "xstate.stop";
     saveExtensionUsage:
       | "ADDING_EXTENSIONS"
+      | "EXIT"
       | "IGNORE_ADDING_EXTENSIONS"
       | "NOT_ADDING_EXTENSIONS"
-      | "SET_SERVICE"
-      | "SET_SERVICE_TYPE"
       | "xstate.stop";
     saveService: "SET_SERVICE";
     saveServiceType: "SET_SERVICE_TYPE";
@@ -34,8 +35,9 @@ export interface Typegen0 {
   eventsCausingDelays: {};
   matchesStates:
     | "appointmentDate"
-    | "confirmAndReview"
+    | "bookingCompleted"
     | "contactAndPaymentInfo"
+    | "idle"
     | "reviewInfo"
     | "selectExtensionLength"
     | "selectExtensionUsage"

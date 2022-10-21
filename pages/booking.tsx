@@ -80,6 +80,7 @@ export const Booking = () => {
                     variant="secondary"
                     size="large"
                     onClick={() => {
+                        send('EXIT')
                         router.push('/')
                     }}
                 >
