@@ -23,7 +23,7 @@ export const serviceMenu = [
             {
                 name: strings.LOC_STYLING,
                 category: ServiceCategory.MAINTENANCE,
-                canUseExtensions: true
+                canUseExtensions: false
             },
             {
                 name: strings.NATURAL_INSTANT_DREADLOCKS,

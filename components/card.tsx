@@ -5,7 +5,7 @@ import styles from './card.module.scss';
 interface Props {
     title: string;
     description?: string;
-    onChange?: Function;
+    onChange: Function;
     category?: string;
     isSelected?: boolean;
     image?: StaticImageData;

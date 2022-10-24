@@ -68,9 +68,9 @@ export const bookingMachine =
       initial: "idle",
       states: {
         idle: {
-          // Eventless Transition:
-          // This immediately transitions into its target state
-          // Without waiting on an event to be fired.
+          /* Eventless Transition:
+           This immediately transitions into its target state
+           Without waiting on an event to be fired. */
           always: [{ target: "selectServiceType" }],
           // Reset context to initial form on exit.
           exit: "resetContext",
@@ -146,37 +146,25 @@ export const bookingMachine =
               },
             ],
             NEXT: {
-              target: "appointmentDate",
+              target: "selectSchedule",
             },
           },
         },
-        appointmentDate: {
+        selectSchedule: {
           on: {
             PREV: {
               target: "selectHairLength",
             },
             NEXT: {
-              target: "contactAndPaymentInfo",
-            },
-          },
-        },
-        contactAndPaymentInfo: {
-          on: {
-            NEXT: {
               target: "reviewInfo",
-            },
-            PREV: {
-              target: "appointmentDate",
             },
           },
         },
         reviewInfo: {
           on: {
-            NEXT: { target: "bookingCompleted" },
+            NEXT: { target: "idle" },
+            PREV: { target: "selectSchedule" },
           },
-        },
-        bookingCompleted: {
-          type: "final",
         },
       },
       // event definitions

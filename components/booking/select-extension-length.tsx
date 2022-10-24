@@ -1,28 +1,30 @@
 import React from "react";
-import { useMachine } from '@xstate/react';
-import { bookingMachine } from "../../context/booking-machine";
+import { useActor } from "@xstate/react";
+import { useBookingService } from '../../context/useBookingService';
+import { hairLengthOptions } from "../../data/hair-length-options";
 import Card from "../card";
 import Grid from "../grid";
 import styles from "./select.module.scss";
 
 const SelectExtensionLength = () => {
-    const [state, send] = useMachine(bookingMachine);
+    const { bookingService } = useBookingService();
+    const [state, send] = useActor(bookingService);
+    const { service } = state.context;
     return (
         <>
-            <h2 className={styles.bookingHeader}>Just a few questions about your extensions?</h2>
+            <h2 className={styles.bookingHeader}>{`How long do you want your ${service.name} extensions to be?`}</h2>
             <Grid>
-                <Card
-                    title='Will bring my extensions'
-                    image={null}
-                    isSelected={state.context.addingExtensions}
-                    onChange={() => { }}
-                />
-                <Card
-                    title='Will purchase extensions from Loctineer'
-                    image={null}
-                    isSelected={!state.context.addingExtensions}
-                    onChange={() => { }}
-                />
+                {hairLengthOptions.map((option, idx) => {
+                    const { name } = option;
+                    return (
+                        <Card
+                            key={idx}
+                            title={name}
+                            isSelected={false}
+                            onChange={() => { }}
+                        />
+                    );
+                })}
             </Grid>
         </>
     );

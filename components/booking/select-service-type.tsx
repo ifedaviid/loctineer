@@ -1,15 +1,12 @@
 import React from "react";
-import { useMachine, useActor } from "@xstate/react";
+import { useActor } from "@xstate/react";
+import { useBookingService } from '../../context/useBookingService';
+import { serviceMenu } from "../../data/service-categories";
 import Card from "../card";
 import Grid from "../grid";
-import { serviceMenu } from "../../data/service-categories";
 import styles from "./select.module.scss";
-import { bookingMachine } from "../../context/booking-machine";
-import { useBookingService } from '../../context/useBookingService';
 
 const SelectServiceType = () => {
-  // const [state, send] = useMachine(bookingMachine);
-
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
 

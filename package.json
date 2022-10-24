@@ -12,7 +12,6 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.3",
-    "@reduxjs/toolkit": "^1.8.5",
     "@types/node": "^18.7.16",
     "@xstate/react": "^3.0.1",
     "classnames": "^2.3.2",

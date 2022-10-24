@@ -9,6 +9,7 @@ import {
     SelectService,
     SelectExtensionLength,
     SelectHairLength,
+    SelectSchedule,
     ConfirmBooking
 } from '../components/booking/index';
 import styles from "./booking.module.scss";
@@ -17,7 +18,6 @@ import { useBookingService } from '../context/useBookingService';
 
 export const Booking = () => {
     const router = useRouter();
-    // const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
 
     // const [state, send] = useMachine(bookingFlowMachine);
@@ -41,7 +41,8 @@ export const Booking = () => {
         }
     };
 
-    console.log("here: ", state.context);
+    // console.log("here: ", state.context);
+    console.log("===> current state: ", state.value);
 
     const renderNavigationButtons = () => {
         return (
@@ -71,6 +72,8 @@ export const Booking = () => {
             {state.matches('selectServiceType') && <SelectServiceType />}
             {(state.matches('selectService') || state.matches('selectExtensionUsage')) && <SelectService />}
             {state.matches('selectExtensionLength') && <SelectExtensionLength />}
+            {state.matches('selectHairLength') && <SelectHairLength />}
+            {state.matches('selectSchedule') && <SelectSchedule />}
             {state.matches('reviewInfo') && <ConfirmBooking />}
             <div className={styles.buttonGroupContainer}>
                 <div className={styles.stageNavigationButtonGroup}>

@@ -34,14 +34,12 @@ export interface Typegen0 {
   };
   eventsCausingDelays: {};
   matchesStates:
-    | "appointmentDate"
-    | "bookingCompleted"
-    | "contactAndPaymentInfo"
     | "idle"
     | "reviewInfo"
     | "selectExtensionLength"
     | "selectExtensionUsage"
     | "selectHairLength"
+    | "selectSchedule"
     | "selectService"
     | "selectServiceType";
   tags: never;
