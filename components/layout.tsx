@@ -4,7 +4,12 @@ import Image from "next/image";
 import styles from "./layout.module.scss";
 import NavigationBar from "./navigation";
 
-const Layout = ({ variant, children }) => {
+interface Props {
+  variant?: string;
+  children: React.ReactNode;
+}
+
+const Layout = ({ variant, children }: Props) => {
   return (
     <div className={styles.container}>
       <Head>
