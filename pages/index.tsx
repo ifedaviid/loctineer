@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Image from 'next/image'
 import Button from "../components/button";
 import Layout from "../components/layout";
+import Card from "../components/card";
 
 
 export default function Home() {
@@ -29,6 +30,44 @@ export default function Home() {
             }}>Book Online</Button>
         </section>
       </header>
+      <section className="services-section">
+        <h2>About Us</h2>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <h2>We specialize in...</h2>
+        <div className="services-content">
+          <div>
+            <div className="image-wrapper service">
+              <Image
+                src={require('../images/braids-and-twists.jpg')}
+                alt="A smiling client on a video phone call"
+              // placeholder="blur" // Optional blur-up while loading
+              />
+            </div>
+            <div>
+              <h2>Dreadlocks</h2>
+              <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <Button variant="primary">See Dreadlocks Services</Button>
+            </div>
+          </div>
+          <div>
+            <div className="image-wrapper services">
+              <Image
+                src={require('../images/braids-and-twists.jpg')}
+                alt="A smiling client on a video phone call"
+              // placeholder="blur" // Optional blur-up while loading
+              />
+            </div>
+            <div>
+              <h2>Braids & Twists</h2>
+              <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+              <Button variant="primary">See Braiding Services</Button>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="about-section">
         <div>
           <h2>About me</h2>

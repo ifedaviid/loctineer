@@ -1,10 +1,11 @@
-@import '../common.scss';
+@import "../common.scss";
 
 .card {
   border: 6px solid $writing-color;
   border-radius: 10px;
   display: flex;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   animation: reveal 2s ease;
   transition: all 0.2s ease-in;
   background-color: black;
@@ -40,7 +41,7 @@
       padding: 0.5rem 0.5rem;
       margin-bottom: 0.5rem;
       border-radius: 0.5rem;
-      color: $light-pink;
+      color: $dark-text;
       letter-spacing: 0.5px;
     }
     h4 {
@@ -50,14 +51,11 @@
       font-weight: 600;
       letter-spacing: 1px;
       text-align: left;
-      color: $light-pink;
-      text-shadow: 
-      1px 1px 2px black, 
-      0 0 1em black, 
-      0 0 0.2em black;
+      color: $dark-text;
+      text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
     }
     p {
-      color: $light-pink;
+      color: $dark-text;
     }
   }
 }

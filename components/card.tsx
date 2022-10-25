@@ -5,7 +5,7 @@ import styles from './card.module.scss';
 interface Props {
     title: string;
     description?: string;
-    onChange: Function;
+    onChange?: Function;
     category?: string;
     isSelected?: boolean;
     image?: StaticImageData;
@@ -13,13 +13,13 @@ interface Props {
 }
 
 const Card = ({ title, image, imageAlt, description, category, isSelected, onChange }: Props) => {
-    const handleClick = () => onChange();
+    // const handleClick = () => onChange();
     return (
         <div
             className={`${styles.card} ${isSelected ? styles.highlight : null}`}
             tabIndex={0}
-            onClick={() => handleClick()}
-            onKeyDown={() => handleClick()}>
+            onClick={onChange ? () => onChange() : null}
+            onKeyDown={onChange ? () => onChange() : null}>
             {image &&
                 <Image
                     src={image}
