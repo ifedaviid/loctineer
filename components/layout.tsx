@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./layout.module.scss";
 import NavigationBar from "./navigation";
 
-const Layout = ({ children }) => {
+const Layout = ({ variant, children }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
       </Head>
       <NavigationBar />
 
-      <main className={styles.main}>{children}</main>
+      <main className={variant}>{children}</main>
 
       <footer className={styles.footer}>
         <a
