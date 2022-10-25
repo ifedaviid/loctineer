@@ -1,4 +1,4 @@
-@import './../common.scss';
+@import "./../common.scss";
 
 h1.homeHeader {
   font-size: 40px;
@@ -16,7 +16,7 @@ h1.homeHeader {
   }
 }
 
-@media (max-width: $medium-screens) {
+@media (max-width: $md-screens) {
   h1.homeHeader {
     font-size: 30px;
   }

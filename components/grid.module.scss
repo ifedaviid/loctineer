@@ -1,4 +1,4 @@
-@import './common.scss';
+@import "./common.scss";
 
 .grid {
   /* flex-wrap: wrap; */
@@ -17,15 +17,14 @@
   }
 }
 
-@media (max-width: $large-screens) {
+@media (max-width: $lg-screens) {
   .grid {
     width: 100%;
     grid-template-columns: 1fr 1fr;
   }
 }
 
-
-@media (max-width: $medium-screens) {
+@media (max-width: $lg-screens) {
   .grid {
     grid-template-columns: 1fr;
   }

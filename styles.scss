@@ -1,0 +1,104 @@
+@import "./common.scss";
+
+html,
+body {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  font-family: "Domine", serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.loctineer-home {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  > header {
+    // height: 600px;
+    // width: 100vw;
+    background: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    // flex-direction: row;
+    // justify-content: center;
+    position: relative;
+    width: 100%;
+    // border-radius: 1rem;
+    // overflow: hidden;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    // ****************** hero image container
+    > :first-child {
+      // box-sizing: content-box;
+      // width: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+      > span {
+        height: 100% !important;
+      }
+    }
+
+    // ****************** hero text container
+    > :last-child {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      // background-color: black;
+      width: 100%;
+      text-align: center;
+      align-items: center;
+      align-self: center;
+      // height: 100%;
+      padding: 4rem;
+      color: white;
+      margin: 2rem;
+      p {
+        margin: unset;
+        letter-spacing: 2px;
+        line-height: 1.5rem;
+      }
+      h1 {
+        font-size: 40px;
+        letter-spacing: 2px;
+      }
+      button {
+        margin-top: 2rem;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: $lg-screens) {
+  .loctineer-home > header {
+    // ****************** hero image container
+    > :first-child {
+      width: 100%;
+    }
+    // ****************** hero text container
+    > :last-child {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: $writing-color;
+//   }
+// }

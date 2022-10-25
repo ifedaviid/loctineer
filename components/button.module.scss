@@ -1,4 +1,4 @@
-@import '../common.scss';
+@import "../common.scss";
 
 button.default {
   border-radius: 0.5rem;
@@ -15,15 +15,15 @@ button.default {
 
   font-weight: 500;
   font-size: 16px;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 button.primary {
   background-color: $dark-text;
   color: $light-pink;
   &:hover {
-    background-color: $light-dark;
+    background-color: invert($color: #000000);
     transition: all 0.5s ease;
   }
 }

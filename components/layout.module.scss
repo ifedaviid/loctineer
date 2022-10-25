@@ -1,74 +1,73 @@
-  @import '../common.scss';
-  
-  .container :global {
-  
-    /* display: flex;
+@import "../common.scss";
+
+.container :global {
+  /* display: flex;
     flex-direction: column; */
-    justify-content: center;
-    align-items: center;
-    min-width: $tiny-screens;
-    padding: 0 2rem;
-    // width: 100%;
-  }
-  
-  .main {
-    min-height: 80vh;
-    padding: 4rem 0;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  justify-content: center;
+  align-items: center;
+  min-width: $xs-screens;
+  padding: 2rem 0;
+  // width: 100%;
+}
 
-  .nav {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .footer {
-    display: flex;
-    flex: 1;
-    padding: 2rem 0;
-    border-top: 1px solid #eaeaea;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .footer a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-  }
-  
-  .logo {
-    height: 1em;
-    margin-left: 0.5rem;
-  }
+.main {
+  // min-height: 80vh;
+  // padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .top {
-    display: flex;
-    justify-content: space-between;
-  }
-  @media (max-width: $large-screens) {
-    .container {
-      padding: 0 1rem;
-      /* width: 90%; */
-      /* display: flex;
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: $lg-screens) {
+  .container {
+    padding: 1.5rem 0;
+    /* width: 90%; */
+    /* display: flex;
       flex-direction: column; */
-      /* justify-content: center; */
-      /* align-items: center; */
-    }
-    .main {
-      padding: 2rem 0;
-    }
+    /* justify-content: center; */
+    /* align-items: center; */
   }
-  @media (prefers-color-scheme: dark) {
-    .footer {
-      border-color: #222;
-    }
-    .logo img {
-      filter: invert(1);
-    }
+  // .main {
+  //   padding: 2rem 0;
+  // }
+}
+@media (prefers-color-scheme: dark) {
+  .footer {
+    border-color: #222;
   }
+  .logo img {
+    filter: invert(1);
+  }
+}
