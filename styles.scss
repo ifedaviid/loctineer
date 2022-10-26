@@ -56,21 +56,23 @@ main {
 main.home {
   display: flex;
   flex-direction: column;
-  // height: 100vh;
+  .about-section,
   .services-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3% 5%;
+    padding: 3% 10%;
     width: 100%;
-    > h3 {
-      margin-top: unset;
-    }
     > p {
       line-height: 2rem;
       text-align: center;
       width: 60%;
       // margin: 4% 5%;
+    }
+  }
+  .services-section {
+    > h3 {
+      margin-top: unset;
     }
     // The menu container
     .services-content {

@@ -21,10 +21,12 @@ export default function Home() {
           altText: 'ifes alt text'
         }}
       />
-      <section className="services-section">
+      <section className="about-section">
         <h2>About Us</h2>
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
+      </section>
+      <section className="services-section">
         <h2>We specialize in...</h2>
         <div className="services-content">
           <div>
