@@ -5,7 +5,7 @@ import styles from './hero.module.scss';
 
 interface Props {
     topText?: string;
-    mainText?: string;
+    mainText: string;
     bottomText?: string;
     image?: AppImage;
     callToAction?: Function;
@@ -14,19 +14,21 @@ interface Props {
 const Hero = ({ topText, mainText, bottomText, image, callToAction }: Props) => {
     return (
         <header className={styles['heroImage']}>
-            <div>
-                <Image
-                    src={image.path}
-                    alt={image.altText}
-                    width="100%"
-                    height="100%"
-                    layout='fill'
-                />
-            </div>
-            <section>
-                <p>{topText}</p>
+            {image &&
+                <div>
+                    <Image
+                        src={image.path}
+                        alt={image.altText}
+                        width="100%"
+                        height="100%"
+                        layout='fill'
+                    />
+                </div>
+            }
+            <section style={image ? null : { opacity: 'unset' }}>
+                {topText && <p>{topText}</p>}
                 <h1>{mainText}</h1>
-                <p>{bottomText}</p>
+                {bottomText && <p>{bottomText}</p>}
                 {callToAction &&
                     <Button
                         variant="primary"
