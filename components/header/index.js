@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { isMobile } from "react-device-detect";
 import { Twirl as Hamburger } from "hamburger-react";
-import Button from "../button";
+// import Button from "../button";
 import Link from "next/link";
 import LoctineerDesktopLogo from "../logo/loctineer-desktop-logo";
 import LoctineerMobileLogo from "../logo/loctineer-mobile-logo";
@@ -20,13 +20,19 @@ const Header = () => {
   const renderNavigationMenu = () => (
     <ul>
       <li>
-        <Link href="/">Home</Link>
+        <Link href="/">
+          <a>Home</a>
+        </Link>
       </li>
       <li>
-        <Link href="/">Services</Link>
+        <Link href="/">
+          <a>Services</a>
+        </Link>
       </li>
       <li>
-        <Link href="/">Contact Us</Link>
+        <Link href="/">
+          <a>Contact Us</a>
+        </Link>
       </li>
     </ul>
   );
@@ -35,12 +41,20 @@ const Header = () => {
     <div className={styles.menuContainer}>
       {/* Desktop Navigation */}
       <div>
-        <LoctineerDesktopLogo />
+        <Link href="/">
+          <a>
+            <LoctineerDesktopLogo />
+          </a>
+        </Link>
         {renderNavigationMenu()}
       </div>
       {/* Mobile Navigation */}
       <div>
-        <LoctineerMobileLogo />
+        <Link href="/">
+          <a>
+            <LoctineerMobileLogo />
+          </a>
+        </Link>
         <Hamburger />
       </div>
     </div>
