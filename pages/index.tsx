@@ -47,7 +47,7 @@ export default function Home() {
               <h3>Dreadlocks</h3>
               <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                 when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-              <Button variant="primary">> Dreadlocks Services</Button>
+              <Button variant="primary">See Dreadlocks Services</Button>
             </div>
           </div>
           <div>
@@ -62,7 +62,7 @@ export default function Home() {
               <h3>Braids & Twists</h3>
               <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                 when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-              <Button variant="primary">> Braiding Services</Button>
+              <Button variant="primary">See Braiding Services</Button>
             </div>
           </div>
         </div>
