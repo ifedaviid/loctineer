@@ -8,7 +8,7 @@ import LoctineerDesktopLogo from "../logo/loctineer-desktop-logo";
 import LoctineerMobileLogo from "../logo/loctineer-mobile-logo";
 import styles from "./index.module.scss";
 
-const NavigationBar = () => {
+const Header = () => {
   const router = useRouter();
   // The default value is 'blue', it will be used during pre-rendering and the first render in the browser (hydration)
   const [isMobileView, setIsMobileView] = useState(false);
@@ -17,7 +17,7 @@ const NavigationBar = () => {
   useEffect(() => setIsMobileView(isMobile), []);
   // As color is a state passed as a prop there is no mismatch between what was rendered server-side vs what was rendered in the first render. After useEffect runs the color is set to 'red'
 
-  const renderMenuList = () => (
+  const renderNavigationMenu = () => (
     <ul>
       <li>
         <Link href="/">Home</Link>
@@ -36,7 +36,7 @@ const NavigationBar = () => {
       {/* Desktop Navigation */}
       <div>
         <LoctineerDesktopLogo />
-        {renderMenuList()}
+        {renderNavigationMenu()}
       </div>
       {/* Mobile Navigation */}
       <div>
@@ -47,4 +47,4 @@ const NavigationBar = () => {
   );
 };
 
-export default NavigationBar;
+export default Header;
