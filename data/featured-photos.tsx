@@ -1,18 +1,65 @@
 import * as strings from './strings';
 
-
-export const serviceMenu = [
+export const featuredPhotos = [
     {
-        name: strings.LOCS,
-        photo: require('../images/dreadlocks.jpg'),
+        path: require('../images/dreadlocks.jpg'),
+        alt: '',
+        category: strings.LOCS,
     },
     {
-        name: strings.BRAIDS_AND_TWISTS,
-        photo: require('../images/braids-and-twists.jpg'),
+        path: require('../images/braids-and-twists.jpg'),
+        alt: '',
+        category: strings.BRAIDS_AND_TWISTS,
     },
     {
-        name: strings.CONSULTATION,
-        photo: require('../images/consultation.jpg'),
+        path: require('../images/consultation.jpg'),
+        alt: '',
+        category: strings.CONSULTATION,
+    },
+    {
+        path: require('../images/dreadlocks.jpg'),
+        alt: '',
+        category: strings.LOCS,
+    },
+    {
+        path: require('../images/braids-and-twists.jpg'),
+        alt: '',
+        category: strings.BRAIDS_AND_TWISTS,
+    },
+    {
+        path: require('../images/consultation.jpg'),
+        alt: '',
+        category: strings.CONSULTATION,
+    },
+    {
+        path: require('../images/dreadlocks.jpg'),
+        alt: '',
+        category: strings.LOCS,
+    },
+    {
+        path: require('../images/braids-and-twists.jpg'),
+        alt: '',
+        category: strings.BRAIDS_AND_TWISTS,
+    },
+    {
+        path: require('../images/consultation.jpg'),
+        alt: '',
+        category: strings.CONSULTATION,
+    },
+    {
+        path: require('../images/dreadlocks.jpg'),
+        alt: '',
+        category: strings.LOCS,
+    },
+    {
+        path: require('../images/braids-and-twists.jpg'),
+        alt: '',
+        category: strings.BRAIDS_AND_TWISTS,
+    },
+    {
+        path: require('../images/consultation.jpg'),
+        alt: '',
+        category: strings.CONSULTATION,
     }
 ];
 

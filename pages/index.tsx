@@ -3,13 +3,8 @@ import { useRouter } from "next/router";
 import Image from 'next/image'
 import Button from "../components/button";
 import Layout from "../components/layout";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Pagination, Scrollbar, A11y } from 'swiper';
-// Import Swiper styles
-import 'swiper/swiper.min.css';
-import 'swiper/css/pagination';
-import "swiper/css/free-mode";
-
+import { featuredPhotos } from "../data/featured-photos";
+import Carousel from "../components/carousel";
 
 export default function Home() {
   const router = useRouter();
@@ -20,7 +15,6 @@ export default function Home() {
           <Image
             src={require('../images/braids-and-twists.jpg')}
             alt="A smiling client on a video phone call"
-          // placeholder="blur" // Optional blur-up while loading
           />
         </div>
         <section>
@@ -78,92 +72,7 @@ export default function Home() {
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
         <div>
-          <Swiper
-            // install Swiper modules
-            breakpoints={{
-              320: { slidesPerView: 1.1 },
-              520: { slidesPerView: 2.1 },
-              768: { slidesPerView: 2.1 },
-              968: { slidesPerView: 2.1 },
-              1120: { slidesPerView: 3.1 },
-              1400: { slidesPerView: 4.1 },
-            }}
-            modules={[FreeMode, Pagination]}
-            spaceBetween={15}
-            // slidesPerView={4}
-            navigation
-            pagination={{ clickable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
-
-            freeMode={true}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <div className="image-wrapper gallery">
-                <Image
-                  src={require('../images/braids-and-twists.jpg')}
-                  alt="A smiling client on a video phone call"
-                // placeholder="blur" // Optional blur-up while loading
-                />
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="image-wrapper gallery">
-                <Image
-                  src={require('../images/braids-and-twists.jpg')}
-                  alt="A smiling client on a video phone call"
-                // placeholder="blur" // Optional blur-up while loading
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="image-wrapper gallery">
-                <Image
-                  src={require('../images/braids-and-twists.jpg')}
-                  alt="A smiling client on a video phone call"
-                // placeholder="blur" // Optional blur-up while loading
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="image-wrapper gallery">
-                <Image
-                  src={require('../images/braids-and-twists.jpg')}
-                  alt="A smiling client on a video phone call"
-                // placeholder="blur" // Optional blur-up while loading
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="image-wrapper gallery">
-                <Image
-                  src={require('../images/braids-and-twists.jpg')}
-                  alt="A smiling client on a video phone call"
-                // placeholder="blur" // Optional blur-up while loading
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="image-wrapper gallery">
-                <Image
-                  src={require('../images/braids-and-twists.jpg')}
-                  alt="A smiling client on a video phone call"
-                // placeholder="blur" // Optional blur-up while loading
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="image-wrapper gallery">
-                <Image
-                  src={require('../images/braids-and-twists.jpg')}
-                  alt="A smiling client on a video phone call"
-                // placeholder="blur" // Optional blur-up while loading
-                />
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <Carousel images={featuredPhotos} />
         </div>
 
         {/* <div>
