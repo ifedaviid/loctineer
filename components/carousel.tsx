@@ -2,11 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from 'swiper';
+import styles from './carousel.module.scss';
 import 'swiper/swiper.min.css';
 import 'swiper/css/pagination';
 import "swiper/css/free-mode";
 
-const Carousel = ({ images }) => {
+interface Props {
+    images: Array<AppImage>;
+}
+
+const Carousel = ({ images }: Props) => {
     return (
         <Swiper
             breakpoints={{
@@ -21,20 +26,16 @@ const Carousel = ({ images }) => {
             spaceBetween={15}
             navigation
             pagination={{ clickable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
-
             freeMode={true}
-            className="mySwiper"
         >
             {images.map((image, idx) => {
-                const { path, alt } = image;
+                const { path, altText } = image;
                 return (
                     <SwiperSlide key={idx}>
-                        <div className="image-wrapper gallery">
+                        <div className={styles['carousel-image']}>
                             <Image
                                 src={path}
-                                alt={alt}
+                                alt={altText}
                             />
                         </div>
                     </SwiperSlide>

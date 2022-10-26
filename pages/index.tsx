@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
-import Image from 'next/image'
+import Image from 'next/image';
+import Hero from "../components/hero";
 import Button from "../components/button";
 import Layout from "../components/layout";
 import { featuredPhotos } from "../data/featured-photos";
@@ -10,25 +11,16 @@ export default function Home() {
   const router = useRouter();
   return (
     <Layout variant="home">
-      <header>
-        <div className="image-wrapper hero">
-          <Image
-            src={require('../images/braids-and-twists.jpg')}
-            alt="A smiling client on a video phone call"
-          />
-        </div>
-        <section>
-          <p>{`Ottawa's favorite braider & loctician`}</p>
-          <h1>Creating your best Look</h1>
-          <p>Let me help you shine!</p>
-          <Button
-            variant="primary"
-            size="large"
-            onClick={() => {
-              router.push("/booking");
-            }}>Book Online</Button>
-        </section>
-      </header>
+      <Hero
+        topText="Ottawa's favorite braider & loctician"
+        mainText='Creating your best Look'
+        bottomText='Let me help you shine!'
+        callToAction={() => router.push('/booking')}
+        image={{
+          path: require('../images/braids-and-twists.jpg'),
+          altText: 'ifes alt text'
+        }}
+      />
       <section className="services-section">
         <h2>About Us</h2>
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,

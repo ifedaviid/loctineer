@@ -57,39 +57,6 @@ main.home {
   display: flex;
   flex-direction: column;
   // height: 100vh;
-  > header {
-    background: black;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    box-sizing: border-box;
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-    // ****************** hero image container
-    .image-wrapper.hero {
-      opacity: 0.2;
-    }
-
-    // ****************** hero text container
-    > section {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      text-align: center;
-      align-items: center;
-      align-self: center;
-      color: white;
-      padding: 5%;
-      h1 {
-        font-size: 3rem;
-        margin: 1rem;
-        letter-spacing: 2px;
-      }
-    }
-  }
   .services-section {
     display: flex;
     flex-direction: column;
@@ -149,19 +116,9 @@ main.home {
       text-align: center;
       margin: 2% 20%;
     }
+    //The carousel container
     > div {
       margin: 2rem 0;
-      // The image container
-      .image-wrapper.gallery {
-        width: 100%;
-        height: 100% !important;
-        object-fit: contain;
-        > span {
-          border: 3px solid #757575 !important;
-          height: 20rem !important;
-          border-radius: 1rem;
-        }
-      }
     }
     .swiper-horizontal > .swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal,
@@ -175,19 +132,6 @@ main.home {
 
 @media (max-width: $lg-screens) {
   main.home {
-    > header {
-      // ****************** hero image container
-      .image-wrapper.hero {
-        width: 100%;
-      }
-      // ****************** hero text container
-      > section {
-        padding: 10%;
-        h1 {
-          font-size: 2rem;
-        }
-      }
-    }
     .services-section {
       // The menu container
       .services-content {
