@@ -3,12 +3,9 @@ import Card from "../card";
 import Grid from "../grid";
 import { useActor } from "@xstate/react";
 import styles from "./select.module.scss";
-import { bookingMachine } from "../../context/booking-machine";
 import { useBookingService } from '../../context/useBookingService';
 
 const SelectService = () => {
-  // const [state, send] = useMachine(bookingMachine);
-
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
 

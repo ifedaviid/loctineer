@@ -43,16 +43,6 @@ main {
   align-items: center;
 }
 
-.image-wrapper {
-  object-fit: cover;
-  > span {
-    height: 100% !important;
-  }
-  img {
-    object-fit: cover;
-  }
-}
-
 main.home {
   display: flex;
   flex-direction: column;
@@ -61,44 +51,22 @@ main.home {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3% 10%;
+    padding: 3% 5%;
     width: 100%;
+    > h2 {
+      text-align: center;
+    }
     > p {
       line-height: 2rem;
       text-align: center;
-      width: 60%;
-      // margin: 4% 5%;
-    }
-  }
-  .services-section {
-    > h3 {
-      margin-top: unset;
+      width: 70%;
     }
     // The menu container
     .services-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 2rem;
+      grid-gap: 1.5rem;
       padding: 3%;
-      > * {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        background-color: rgb(34, 33, 33);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        color: whitesmoke;
-        border-radius: 1rem;
-        overflow: hidden;
-        border: 3px solid #444444;
-        // The text container
-        > :last-child {
-          text-align: right;
-          padding: 10%;
-          p {
-            line-height: 2rem;
-          }
-        }
-      }
     }
   }
   .gallery-section {
@@ -133,9 +101,16 @@ main.home {
 }
 
 @media (max-width: $lg-screens) {
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
   main.home {
-    .services-section {
-      // The menu container
+    .services-section > p {
+      margin: 5%;
+      width: 80%;
       .services-content {
         grid-template-columns: 1fr;
         row-gap: 1rem;
@@ -152,9 +127,7 @@ main.home {
     .services-section {
       // The menu container
       .services-content {
-        > * {
-          grid-template-columns: 1fr;
-        }
+        grid-template-columns: 1fr;
       }
     }
   }

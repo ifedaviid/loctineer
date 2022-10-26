@@ -1,21 +1,11 @@
 import { createMachine, assign } from "xstate";
 import { StaticImageData } from "next/image";
+import { ServiceType } from "../types/service-type";
+import { Service } from "../types/service";
 
 export enum ServiceCategory {
   INSTALLATION = "Installation",
   MAINTENANCE = "Maintenance",
-}
-
-export interface ServiceType {
-  name: string;
-  photo: StaticImageData;
-  services?: Array<Service>;
-}
-
-export interface Service {
-  name: string;
-  category: ServiceCategory;
-  canUseExtensions: boolean;
 }
 
 export interface ExtensionLength {

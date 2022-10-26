@@ -8,7 +8,12 @@ enum ServiceCategory {
 export const serviceMenu = [
     {
         name: strings.LOCS,
-        photo: require('../images/dreadlocks.jpg'),
+        description: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        slug: '/dreadlocks',
+        image: {
+            path: require('../images/dreadlocks.jpg'),
+            altText: '',
+        },
         services: [
             {
                 name: strings.LOC_REPAIR,
@@ -44,7 +49,12 @@ export const serviceMenu = [
     },
     {
         name: strings.BRAIDS_AND_TWISTS,
-        photo: require('../images/braids-and-twists.jpg'),
+        description: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        slug: '/braids-and-twists',
+        image: {
+            path: require('../images/braids-and-twists.jpg'),
+            altText: '',
+        },
         services: [
             {
                 name: strings.FAUX_LOCS,
@@ -85,7 +95,12 @@ export const serviceMenu = [
     },
     {
         name: strings.CONSULTATION,
-        photo: require('../images/consultation.jpg'),
+        description: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+        slug: '/consult',
+        image: {
+            path: require('../images/consultation.jpg'),
+            altText: '',
+        },
     }
 ];
 
