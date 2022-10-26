@@ -3,7 +3,12 @@ import { useRouter } from "next/router";
 import Image from 'next/image'
 import Button from "../components/button";
 import Layout from "../components/layout";
-import Card from "../components/card";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode, Pagination, Scrollbar, A11y } from 'swiper';
+// Import Swiper styles
+import 'swiper/swiper.min.css';
+import 'swiper/css/pagination';
+import "swiper/css/free-mode";
 
 
 export default function Home() {
@@ -45,10 +50,10 @@ export default function Home() {
               />
             </div>
             <div>
-              <h2>Dreadlocks</h2>
+              <h3>Dreadlocks</h3>
               <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                 when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-              <Button variant="primary">See Dreadlocks Services</Button>
+              <Button variant="primary">> Dreadlocks Services</Button>
             </div>
           </div>
           <div>
@@ -60,16 +65,108 @@ export default function Home() {
               />
             </div>
             <div>
-              <h2>Braids & Twists</h2>
+              <h3>Braids & Twists</h3>
               <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                 when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-              <Button variant="primary">See Braiding Services</Button>
+              <Button variant="primary">> Braiding Services</Button>
             </div>
           </div>
         </div>
       </section>
-      <section className="about-section">
+      <section className="gallery-section">
+        <h2>Gallery</h2>
+        <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
         <div>
+          <Swiper
+            // install Swiper modules
+            breakpoints={{
+              320: { slidesPerView: 1.1 },
+              520: { slidesPerView: 2.1 },
+              768: { slidesPerView: 2.1 },
+              968: { slidesPerView: 2.1 },
+              1120: { slidesPerView: 3.1 },
+              1400: { slidesPerView: 4.1 },
+            }}
+            modules={[FreeMode, Pagination]}
+            spaceBetween={15}
+            // slidesPerView={4}
+            navigation
+            pagination={{ clickable: true }}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log('slide change')}
+
+            freeMode={true}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <div className="image-wrapper gallery">
+                <Image
+                  src={require('../images/braids-and-twists.jpg')}
+                  alt="A smiling client on a video phone call"
+                // placeholder="blur" // Optional blur-up while loading
+                />
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="image-wrapper gallery">
+                <Image
+                  src={require('../images/braids-and-twists.jpg')}
+                  alt="A smiling client on a video phone call"
+                // placeholder="blur" // Optional blur-up while loading
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="image-wrapper gallery">
+                <Image
+                  src={require('../images/braids-and-twists.jpg')}
+                  alt="A smiling client on a video phone call"
+                // placeholder="blur" // Optional blur-up while loading
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="image-wrapper gallery">
+                <Image
+                  src={require('../images/braids-and-twists.jpg')}
+                  alt="A smiling client on a video phone call"
+                // placeholder="blur" // Optional blur-up while loading
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="image-wrapper gallery">
+                <Image
+                  src={require('../images/braids-and-twists.jpg')}
+                  alt="A smiling client on a video phone call"
+                // placeholder="blur" // Optional blur-up while loading
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="image-wrapper gallery">
+                <Image
+                  src={require('../images/braids-and-twists.jpg')}
+                  alt="A smiling client on a video phone call"
+                // placeholder="blur" // Optional blur-up while loading
+                />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="image-wrapper gallery">
+                <Image
+                  src={require('../images/braids-and-twists.jpg')}
+                  alt="A smiling client on a video phone call"
+                // placeholder="blur" // Optional blur-up while loading
+                />
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+
+        {/* <div>
           <h2>About me</h2>
           <p>{`Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -80,30 +177,14 @@ export default function Home() {
             when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}
           </p>
         </div>
-        <div className="image-wrapper about">
+        <div className="image-wrapper gallery">
           <Image
             src={require('../images/consultation.jpg')}
             alt="A smiling client on a video phone call"
           // placeholder="blur" // Optional blur-up while loading
           />
-        </div>
+        </div> */}
       </section>
-      {/* <h1 >
-        Liked what you saw at{" "}
-        <a href="https://bougieebraids.com">Loctineer.com</a>?
-      </h1>
-      <div className={styles.buttonGroupContainer}>
-        <Button variant="primary" size="large" onClick={() => {
-          router.push('/booking')
-        }}>
-          Book an appointment
-        </Button>
-        <Button variant="secondary" size="large" onClick={() => {
-          router.push('https://loctineer.com')
-        }}>
-          Visit Loctineer.com
-        </Button>
-      </div> */}
     </Layout >
   );
 }
