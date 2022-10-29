@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Button from "./button";
 import styles from './listing.module.scss';
+import { AppImage } from '../types/image';
 
 interface Props {
     image: AppImage;

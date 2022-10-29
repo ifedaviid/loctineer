@@ -10,7 +10,7 @@ import { serviceMenu } from "../data/service-categories";
 export default function Home() {
   const router = useRouter();
   return (
-    <Layout variant="home">
+    <Layout>
       <Hero
         topText="Ottawa's favorite braider & loctician"
         mainText='Creating your best Look'
@@ -21,12 +21,12 @@ export default function Home() {
           altText: 'ifes alt text'
         }}
       />
-      <section className="about-section">
+      <section>
         <h2>About Us</h2>
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
       </section>
-      <section className="services-section">
+      <section>
         <h2 style={{ marginTop: 'unset' }}>We specialize in...</h2>
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
@@ -48,13 +48,11 @@ export default function Home() {
           })}
         </div>
       </section>
-      <section className="gallery-section">
+      <section className="gallery">
         <h2>Gallery</h2>
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-        <div>
-          <Carousel images={featuredPhotos} />
-        </div>
+        <Carousel images={featuredPhotos} />
       </section>
     </Layout >
   );

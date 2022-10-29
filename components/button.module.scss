@@ -1,6 +1,6 @@
 @import "../common.scss";
 
-button.primary {
+.default {
   border-radius: 0.5rem;
   padding: 1rem 2rem;
   letter-spacing: 1px;
@@ -11,7 +11,9 @@ button.primary {
   font-size: 16px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
 
+.default.primary {
   background-color: $dark-text;
   color: black;
   &:hover {
@@ -20,7 +22,7 @@ button.primary {
   }
 }
 
-button.secondary {
+.default.secondary {
   background-color: transparent;
   border: 1px solid $dark-text;
 

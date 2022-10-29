@@ -15,12 +15,12 @@ const SelectServiceType = () => {
       <h2 className={styles.bookingHeader}>What are you interested in?</h2>
       <Grid>
         {serviceMenu.map((option, idx) => {
-          const { name, photo } = option;
+          const { name, image } = option;
           return (
             <Card
               key={idx}
               title={name}
-              image={photo}
+              image={image.path}
               isSelected={state.context.serviceType?.name === name}
               onChange={() => send({ type: 'SET_SERVICE_TYPE', serviceType: option })}
             />

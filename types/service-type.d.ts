@@ -1,5 +1,7 @@
 export interface ServiceType {
   name: string;
-  photo: StaticImageData;
+  description?: string;
+  slug?: string;
+  image: AppImage;
   services?: Array<Service>;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Button from "../components/button";
 import styles from './hero.module.scss';
+import { AppImage } from '../types/image';
 
 interface Props {
     topText?: string;
@@ -19,8 +20,6 @@ const Hero = ({ topText, mainText, bottomText, image, callToAction }: Props) => 
                     <Image
                         src={image.path}
                         alt={image.altText}
-                        width="100%"
-                        height="100%"
                         layout='fill'
                     />
                 </div>

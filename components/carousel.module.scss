@@ -1,14 +1,17 @@
 @import "../common.scss";
 
-.carousel-image {
+.carousel {
+  margin: 2rem 0;
   width: 100%;
   height: 100% !important;
-  > span {
-    border: 3px solid #757575 !important;
-    height: 20rem !important;
-    border-radius: 1rem;
-  }
-  img {
-    object-fit: cover;
+  div.image-wrapper {
+    > span {
+      border: 3px solid #757575 !important;
+      height: 20rem !important;
+      border-radius: 1rem;
+    }
+    img {
+      object-fit: cover;
+    }
   }
 }

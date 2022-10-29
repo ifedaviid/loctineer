@@ -69,28 +69,30 @@ export const Booking = () => {
 
     return (
         <Layout>
-            {state.matches('selectServiceType') && <SelectServiceType />}
-            {(state.matches('selectService') || state.matches('selectExtensionUsage')) && <SelectService />}
-            {state.matches('selectExtensionLength') && <SelectExtensionLength />}
-            {state.matches('selectHairLength') && <SelectHairLength />}
-            {state.matches('selectSchedule') && <SelectSchedule />}
-            {state.matches('reviewInfo') && <ConfirmBooking />}
-            <div className={styles.buttonGroupContainer}>
-                <div className={styles.stageNavigationButtonGroup}>
-                    {!state.done && renderNavigationButtons()}
+            <section className="gallery">
+                {state.matches('selectServiceType') && <SelectServiceType />}
+                {(state.matches('selectService') || state.matches('selectExtensionUsage')) && <SelectService />}
+                {state.matches('selectExtensionLength') && <SelectExtensionLength />}
+                {state.matches('selectHairLength') && <SelectHairLength />}
+                {state.matches('selectSchedule') && <SelectSchedule />}
+                {state.matches('reviewInfo') && <ConfirmBooking />}
+                <div className={styles.buttonGroupContainer}>
+                    <div className={styles.stageNavigationButtonGroup}>
+                        {!state.done && renderNavigationButtons()}
+                    </div>
+                    <Button
+                        variant="secondary"
+                        size="large"
+                        onClick={() => {
+                            send('EXIT')
+                            router.push('/')
+                        }}
+                    >
+                        Exit Booking
+                    </Button>
                 </div>
-                <Button
-                    variant="secondary"
-                    size="large"
-                    onClick={() => {
-                        send('EXIT')
-                        router.push('/')
-                    }}
-                >
-                    Exit Booking
-                </Button>
-            </div>
-            {showModal && <ExtensionUsageModal setShowModal={setShowModal} />}
+                {showModal && <ExtensionUsageModal setShowModal={setShowModal} />}
+            </section>
         </Layout >
     );
 };

@@ -4,11 +4,10 @@ import styles from "./layout.module.scss";
 import Header from "./header";
 
 interface Props {
-  variant?: string;
   children: React.ReactNode;
 }
 
-const Layout = ({ variant, children }: Props) => {
+const Layout = ({ children }: Props) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -18,7 +17,7 @@ const Layout = ({ variant, children }: Props) => {
       </Head>
       <Header />
 
-      <main className={variant}>{children}</main>
+      <main>{children}</main>
 
       <footer className={styles.footer}>
         <p>Copyright © 2022 Loctineer Ottawa - All Rights Reserved.</p>

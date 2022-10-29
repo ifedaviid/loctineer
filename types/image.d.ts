@@ -1,4 +1,5 @@
+import { StaticImageData } from "next/image";
 interface AppImage {
-  path: string;
+  path: StaticImageData;
   altText: string;
 }
