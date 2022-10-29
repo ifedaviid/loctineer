@@ -22,7 +22,7 @@ header.heroImage {
     }
   }
   // ****************** hero text container
-  > section {
+  > .content {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -38,12 +38,16 @@ header.heroImage {
       margin: 1rem;
       letter-spacing: 2px;
     }
+    p {
+      letter-spacing: 2px;
+      font-weight: 500;
+    }
   }
 }
 
 @media (max-width: $lg-screens) {
   header.heroImage {
-    > section {
+    > .content {
       padding: 10%;
       max-width: 80%;
       h1 {

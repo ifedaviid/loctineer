@@ -24,7 +24,7 @@ const Hero = ({ topText, mainText, bottomText, image, callToAction }: Props) => 
                     />
                 </div>
             }
-            <section style={image ? null : { opacity: 'unset' }}>
+            <div className={styles['content']} style={image ? null : { opacity: 'unset' }}>
                 {topText && <p>{topText}</p>}
                 <h1>{mainText}</h1>
                 {bottomText && <p>{bottomText}</p>}
@@ -37,7 +37,7 @@ const Hero = ({ topText, mainText, bottomText, image, callToAction }: Props) => 
                         Book Online
                     </Button>
                 }
-            </section>
+            </div>
         </header>
     )
 }

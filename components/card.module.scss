@@ -1,7 +1,7 @@
 @import "../common.scss";
 
 .card {
-  border: 6px solid $writing-color;
+  border: 3px solid $lighter-dark;
   border-radius: 10px;
   display: flex;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
@@ -13,6 +13,7 @@
   width: 100%;
   opacity: 0.85 !important;
   cursor: pointer;
+  overflow: hidden;
   img {
     object-fit: cover;
     border-radius: 15px;
@@ -61,7 +62,7 @@
 }
 .card:focus,
 .card.highlight {
-  border: 6px solid $dark-text;
+  border: 1px solid $dark-text;
   opacity: 1 !important;
   transform: scale(1.03);
   img {
