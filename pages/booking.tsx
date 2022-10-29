@@ -69,7 +69,7 @@ export const Booking = () => {
 
     return (
         <Layout>
-            <section className="gallery">
+            <section className="dark">
                 {state.matches('selectServiceType') && <SelectServiceType />}
                 {(state.matches('selectService') || state.matches('selectExtensionUsage')) && <SelectService />}
                 {state.matches('selectExtensionLength') && <SelectExtensionLength />}

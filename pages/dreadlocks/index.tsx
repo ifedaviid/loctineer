@@ -6,13 +6,17 @@ import Carousel from "../../components/carousel";
 import Listing from "../../components/listing";
 import { featuredPhotos } from "../../data/featured-photos";
 import { serviceMenu } from "../../data/service-categories";
+import * as strings from '../../data/strings';
 
 export default function Dreadlocks() {
     const router = useRouter();
+    const dreadlocksInfo = serviceMenu.find(service => service.name === strings.LOCS)
+    const { services } = dreadlocksInfo;
     return (
         <Layout>
             <Hero
-                mainText='Dreadlocks Services'
+                topText="Services"
+                mainText='Dreadlocks'
                 image={{
                     path: require('../../images/braids-and-twists.jpg'),
                     altText: 'ifes alt text'
@@ -20,8 +24,8 @@ export default function Dreadlocks() {
             />
             <section>
                 <div className="services-content">
-                    {serviceMenu.map((option, idx) => {
-                        const { image, name, description, slug } = option;
+                    {services.map((option, idx) => {
+                        const { image, name, description, category, bookingUrl } = option;
                         return (
                             <Listing
                                 key={idx}
@@ -29,15 +33,15 @@ export default function Dreadlocks() {
                                 title={name}
                                 description={description}
                                 callToAction={{
-                                    text: 'See Related Services',
-                                    action: () => router.push(slug),
+                                    text: 'Book an appointment',
+                                    action: () => router.push(bookingUrl),
                                 }}
                             />
                         );
                     })}
                 </div>
             </section>
-            <section className="gallery">
+            <section className="dark">
                 <h2>Gallery</h2>
                 <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
