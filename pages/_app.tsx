@@ -1,13 +1,13 @@
 import React from "react";
 import type { AppProps } from "next/app";
-import { GlobalStateProvider } from '../context/global-state-provider';
+import { BookingProvider } from '../context/booking-state';
 import '../styles.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <GlobalStateProvider>
+    <BookingProvider>
       <Component {...pageProps} />
-    </GlobalStateProvider>
+    </BookingProvider>
   );
 }
 

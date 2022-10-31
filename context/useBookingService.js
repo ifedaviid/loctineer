@@ -1,4 +1,4 @@
 import React from "react";
-import { GlobalStateContext } from "./global-state-provider";
+import { BookingContext } from "./booking-state";
 
-export const useBookingService = () => React.useContext(GlobalStateContext);
+export const useBookingService = () => React.useContext(BookingContext);

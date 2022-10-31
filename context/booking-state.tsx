@@ -3,14 +3,14 @@ import { useInterpret } from '@xstate/react';
 import { bookingMachine } from './booking-machine';
 import { InterpreterFrom } from 'xstate';
 
-export const GlobalStateContext = createContext({ bookingService: {} as InterpreterFrom<typeof bookingMachine> });
+export const BookingContext = createContext({ bookingService: {} as InterpreterFrom<typeof bookingMachine> });
 
-export const GlobalStateProvider = (props) => {
+export const BookingProvider = (props) => {
   const bookingService = useInterpret(bookingMachine);
 
   return (
-    <GlobalStateContext.Provider value={{ bookingService }}>
+    <BookingContext.Provider value={{ bookingService }}>
       {props.children}
-    </GlobalStateContext.Provider>
+    </BookingContext.Provider>
   );
 };

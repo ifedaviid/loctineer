@@ -19,8 +19,6 @@ import { useBookingService } from '../context/useBookingService';
 export const Booking = () => {
     const router = useRouter();
     const [showModal, setShowModal] = useState(false);
-
-    // const [state, send] = useMachine(bookingFlowMachine);
     const { bookingService } = useBookingService();
     const [state, send] = useActor(bookingService);
 
@@ -41,7 +39,6 @@ export const Booking = () => {
         }
     };
 
-    // console.log("here: ", state.context);
     console.log("===> current state: ", state.value);
 
     const renderNavigationButtons = () => {
