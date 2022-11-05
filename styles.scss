@@ -79,6 +79,9 @@ main {
       margin-top: 3rem;
     }
   }
+  > section.gray {
+    background-color: #dddddd;
+  }
 }
 
 @media (max-width: $lg-screens) {

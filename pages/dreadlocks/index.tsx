@@ -14,15 +14,10 @@ export default function Dreadlocks() {
     const { services } = dreadlocksInfo;
     return (
         <Layout>
-            <Hero
-                topText="Services"
-                mainText='Dreadlocks'
-                image={{
-                    path: require('../../images/dreadlocks.jpg'),
-                    altText: 'ifes alt text'
-                }}
-            />
-            <section>
+            <section className='gray'>
+                <h2 style={{ marginTop: 'unset' }}>{strings.LOCS} Services</h2>
+                <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+          when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
                 <div className="services-content">
                     {services.map((option, idx) => {
                         const { image, name, description, cta } = option;
