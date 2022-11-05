@@ -28,11 +28,12 @@
     }
     button {
       margin: 3% 0;
+      margin-left: 1rem;
     }
   }
 }
 
-@media (max-width: $lg-screens) {
+@media (max-width: $xl-screens) {
   .listing {
     grid-template-columns: 1fr;
   }
