@@ -1,4 +1,9 @@
+interface Action {
+  href: string;
+  text?: string;
+}
+
 interface CallToAction {
-  text: string;
-  action: Function;
+  primary: Action;
+  secondary?: Action;
 }

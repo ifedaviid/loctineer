@@ -1,7 +1,8 @@
 export interface ServiceType {
+  id: string;
   name: string;
   description?: string;
-  slug?: string;
+  cta: CallToAction;
   image: AppImage;
   services?: Array<Service>;
 }
