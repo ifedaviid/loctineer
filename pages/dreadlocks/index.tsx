@@ -18,24 +18,21 @@ export default function Dreadlocks() {
                 topText="Services"
                 mainText='Dreadlocks'
                 image={{
-                    path: require('../../images/braids-and-twists.jpg'),
+                    path: require('../../images/dreadlocks.jpg'),
                     altText: 'ifes alt text'
                 }}
             />
             <section>
                 <div className="services-content">
                     {services.map((option, idx) => {
-                        const { image, name, description, category, bookingUrl } = option;
+                        const { image, name, description, cta } = option;
                         return (
                             <Listing
                                 key={idx}
                                 image={image}
                                 title={name}
                                 description={description}
-                                callToAction={{
-                                    text: 'Book an appointment',
-                                    action: () => router.push(bookingUrl),
-                                }}
+                                cta={cta}
                             />
                         );
                     })}

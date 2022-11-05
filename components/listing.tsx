@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Button from "./button";
 import styles from './listing.module.scss';
 import { AppImage } from '../types/image';
@@ -8,9 +9,9 @@ interface Props {
     image: AppImage;
     title: string;
     description: string;
-    callToAction: CallToAction;
+    cta: CallToAction;
 }
-const Listing = ({ image, title, description, callToAction }: Props) => {
+const Listing = ({ image, title, description, cta }: Props) => {
     return (
         <div className={styles["listing"]}>
             <div>
@@ -23,9 +24,20 @@ const Listing = ({ image, title, description, callToAction }: Props) => {
             <div>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <Button variant="primary" onClick={callToAction.action}>
-                    {callToAction.text}
-                </Button>
+                {cta.primary && (
+                    <Link href={cta.primary.href}>
+                        <Button variant="primary">
+                            {cta.primary.text}
+                        </Button>
+                    </Link>
+                )}
+                {cta.secondary && (
+                    <Link href={cta.secondary.href}>
+                        <Button variant="secondary"                  >
+                            {cta.secondary.text}
+                        </Button>
+                    </Link>
+                )}
             </div>
         </div>
     )

@@ -25,17 +25,14 @@ export default function BraidsAndTwists() {
             <section>
                 <div className="services-content">
                     {services.map((option, idx) => {
-                        const { image, name, description, bookingUrl } = option;
+                        const { image, name, description, cta } = option;
                         return (
                             <Listing
                                 key={idx}
                                 image={image}
                                 title={name}
                                 description={description}
-                                callToAction={{
-                                    text: 'Book an appointment',
-                                    action: () => router.push(bookingUrl),
-                                }}
+                                cta={cta}
                             />
                         );
                     })}

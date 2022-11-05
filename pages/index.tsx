@@ -32,17 +32,14 @@ export default function Home() {
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
         <div className="services-content">
           {serviceMenu.map((option, idx) => {
-            const { image, name, description, slug } = option;
+            const { image, name, description, cta } = option;
             return (
               <Listing
                 key={idx}
                 image={image}
                 title={name}
                 description={description}
-                callToAction={{
-                  text: 'See Related Services',
-                  action: () => router.push(slug),
-                }}
+                cta={cta}
               />
             );
           })}
