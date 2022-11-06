@@ -1,26 +1,53 @@
 import React from "react";
 import Layout from "../../../components/layout";
 import Carousel from "../../../components/carousel";
+import ButtonGroupWrapper from "../../../components/button-group-wrapper";
 import { featuredPhotos } from "../../../data/featured-photos";
-import { serviceMenu } from "../../../data/service-categories";
+import { serviceTypes } from "../../../data";
 import * as strings from '../../../data/strings';
 import { Service } from "../../../types/service";
+import Image from "next/image";
+import Button from "../../../components/button";
+import Link from "next/link";
 
 interface Props {
     service: Service
 }
 
 const DreadlocksService = ({ service }: Props) => {
-    console.log("=====> service received: ", service);
+    const { name, description, image, cta } = service;
 
     return (
         <Layout>
             <section className='gray'>
                 <div className="services-content">
-                    <h2 style={{ marginTop: 'unset' }}>We specialize in...</h2>
-                    <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-          when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-                    details here
+                    <div>
+                        <h3>{name}</h3>
+                        <p>{description}</p>
+                        <ButtonGroupWrapper>
+                            {cta.primary && (
+                                <Link href={cta.primary.href}>
+                                    <Button variant="primary">
+                                        {cta.primary.text}
+                                    </Button>
+                                </Link>
+                            )}
+                            {cta.secondary && (
+                                <Link href={cta.secondary.href}>
+                                    <Button variant="secondary"                  >
+                                        {cta.secondary.text}
+                                    </Button>
+                                </Link>
+                            )}
+                        </ButtonGroupWrapper>
+                    </div>
+                    <div>
+                        <Image
+                            src={image.path}
+                            alt={image.altText}
+                            placeholder="blur"
+                        />
+                    </div>
                 </div>
             </section>
             <section className="dark">
@@ -49,7 +76,7 @@ export async function getStaticPaths() {
 
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params }) {
-    const dreadlocksInfo = serviceMenu.find(serviceObj => serviceObj.name === strings.LOCS);
+    const dreadlocksInfo = serviceTypes.find(serviceObj => serviceObj.name === strings.LOCS);
     const { services: dreadlocksServices } = dreadlocksInfo;
     const service = dreadlocksServices.find(dreadlockService => dreadlockService.id === params.serviceId);
     // will be passed to the page component as props

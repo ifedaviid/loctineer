@@ -10,7 +10,7 @@
   }
 }
 
-@media (max-width: $md-screens) {
+@media (max-width: $lg-screens) {
   .buttonGroupWrapper {
     flex-direction: column-reverse;
     > * {

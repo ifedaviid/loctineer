@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import Carousel from "../components/carousel";
 import Listing from "../components/listing";
 import { featuredPhotos } from "../data/featured-photos";
-import { serviceMenu } from "../data/service-categories";
+import { serviceTypes } from "../data";
 
 export default function Home() {
   const router = useRouter();
@@ -31,7 +31,7 @@ export default function Home() {
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
         <div className="services-content">
-          {serviceMenu.map((option, idx) => {
+          {serviceTypes.map((option, idx) => {
             const { image, name, description, cta } = option;
             return (
               <Listing
