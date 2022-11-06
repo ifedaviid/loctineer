@@ -2,11 +2,6 @@ import * as strings from './strings';
 import { braidsAndTwistsServices } from './braids-and-twists-services';
 import { dreadlocksServices } from './dreadlocks-services';
 
-enum ServiceCategory {
-    INSTALLATION = 'Installation',
-    MAINTENANCE = 'Maintenance'
-}
-
 export const serviceTypes = [
     {
         id: strings.LOCS_ID,
