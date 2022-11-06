@@ -1,9 +1,7 @@
 import React from "react";
 import Layout from "../../../components/layout";
-import Carousel from "../../../components/carousel";
 import ButtonGroupWrapper from "../../../components/button-group-wrapper";
-import { featuredPhotos } from "../../../data/featured-photos";
-import { serviceTypes } from "../../../data";
+import { dreadlocksServices } from "../../../data";
 import * as strings from '../../../data/strings';
 import { Service } from "../../../types/service";
 import CustomImage from "../../../components/custom-image";
@@ -34,7 +32,7 @@ const DreadlocksService = ({ service }: Props) => {
                             )}
                             {cta.secondary && (
                                 <Link href={cta.secondary.href}>
-                                    <Button variant="secondary"                  >
+                                    <Button variant="secondary">
                                         {cta.secondary.text}
                                     </Button>
                                 </Link>
@@ -43,12 +41,6 @@ const DreadlocksService = ({ service }: Props) => {
                     </div>
                     <CustomImage image={image} />
                 </div>
-            </section>
-            <section className="dark">
-                <h2>Gallery</h2>
-                <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-                <Carousel images={featuredPhotos} />
             </section>
         </Layout >
     )
@@ -64,16 +56,12 @@ export async function getStaticPaths() {
             { params: { serviceId: strings.NATURAL_INSTANT_DREADLOCKS_ID } },
             { params: { serviceId: strings.TWO_STRAND_STARTER_LOCS_ID } },
         ],
-        fallback: false, // can also be true or 'blocking'
+        fallback: false
     }
 }
 
-// `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params }) {
-    const dreadlocksInfo = serviceTypes.find(serviceObj => serviceObj.name === strings.LOCS);
-    const { services: dreadlocksServices } = dreadlocksInfo;
-    const service = dreadlocksServices.find(dreadlockService => dreadlockService.id === params.serviceId);
-    // will be passed to the page component as props
+    const service = dreadlocksServices.find(obj => obj.id === params.serviceId);
     return { props: { service: JSON.parse(JSON.stringify(service)) } };
 }
 
