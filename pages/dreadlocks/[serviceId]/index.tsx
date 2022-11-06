@@ -6,7 +6,7 @@ import { featuredPhotos } from "../../../data/featured-photos";
 import { serviceTypes } from "../../../data";
 import * as strings from '../../../data/strings';
 import { Service } from "../../../types/service";
-import Image from "next/image";
+import CustomImage from "../../../components/custom-image";
 import Button from "../../../components/button";
 import Link from "next/link";
 
@@ -41,13 +41,7 @@ const DreadlocksService = ({ service }: Props) => {
                             )}
                         </ButtonGroupWrapper>
                     </div>
-                    <div>
-                        <Image
-                            src={image.path}
-                            alt={image.altText}
-                            placeholder="blur"
-                        />
-                    </div>
+                    <CustomImage image={image} />
                 </div>
             </section>
             <section className="dark">

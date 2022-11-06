@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import CustomImage from './custom-image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Pagination } from 'swiper';
 import { AppImage } from '../types/image';
@@ -31,16 +31,9 @@ const Carousel = ({ images }: Props) => {
             className={styles['carousel']}
         >
             {images.map((image, idx) => {
-                const { path, altText } = image;
                 return (
                     <SwiperSlide key={idx}>
-                        <div className={styles['image-wrapper']}>
-                            <Image
-                                src={path}
-                                alt={altText}
-                                placeholder='blur'
-                            />
-                        </div>
+                        <CustomImage image={image} />
                     </SwiperSlide>
                 );
             })}

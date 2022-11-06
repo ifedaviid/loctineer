@@ -1,0 +1,12 @@
+@import "../common.scss";
+
+.custom-image {
+  > span {
+    border: 3px solid #757575 !important;
+    min-height: 20rem;
+    border-radius: 1rem;
+  }
+  img {
+    object-fit: cover;
+  }
+}
