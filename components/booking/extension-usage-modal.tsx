@@ -3,12 +3,10 @@ import { useActor } from "@xstate/react";
 import Button from "../button";
 import Modal from "../modal";
 import styles from "./extension-usage-modal.module.scss";
-import { bookingMachine } from "../../context/booking-machine";
+import ButtonGroupWrapper from "../button-group-wrapper";
 import { useBookingService } from '../../context/useBookingService';
 
 const ExtensionUsageModal = ({ setShowModal }) => {
-    // const [state, send] = useMachine(bookingMachine);
-
     const { bookingService } = useBookingService();
     const [state, send] = useActor(bookingService);
     const { service } = state.context;
@@ -31,7 +29,7 @@ const ExtensionUsageModal = ({ setShowModal }) => {
                     {service.name} can be done using hair extensions. Will you
                     be adding hair extensions?
                 </p>
-                <div className={styles.modalButtonGroup}>
+                <ButtonGroupWrapper style={{ justifyContent: 'right' }}>
                     <Button variant="secondary" onClick={() => {
                         send({ type: 'NOT_ADDING_EXTENSIONS', addingExtensions: false })
                         setShowModal(false)
@@ -44,7 +42,7 @@ const ExtensionUsageModal = ({ setShowModal }) => {
                     }}>
                         Yes, I will!
                     </Button>
-                </div>
+                </ButtonGroupWrapper>
             </div>
         </Modal>
     );

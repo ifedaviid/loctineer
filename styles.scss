@@ -81,6 +81,9 @@ main {
   }
   > section.gray {
     background-color: #dddddd;
+    > h2 {
+      margin-top: 1rem;
+    }
   }
 }
 

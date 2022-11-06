@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useActor } from '@xstate/react';
 import Button from "../components/button";
 import Layout from "../components/layout";
+import ButtonGroupWrapper from "../components/button-group-wrapper";
 import {
     ExtensionUsageModal,
     SelectServiceType,
@@ -74,9 +75,9 @@ export const Booking = () => {
                 {state.matches('selectSchedule') && <SelectSchedule />}
                 {state.matches('reviewInfo') && <ConfirmBooking />}
                 <div className={styles.buttonGroupContainer}>
-                    <div className={styles.stageNavigationButtonGroup}>
+                    <ButtonGroupWrapper>
                         {!state.done && renderNavigationButtons()}
-                    </div>
+                    </ButtonGroupWrapper>
                     <Button
                         variant="secondary"
                         size="large"
