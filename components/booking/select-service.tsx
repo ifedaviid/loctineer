@@ -19,14 +19,8 @@ const SelectService = () => {
         {services && services.map((option, idx) => {
           const { name, category, canUseExtensions } = option;
           return (
-            <Card
+            <div
               key={idx}
-              title={name}
-              category={category}
-              isSelected={service?.name === name}
-              description={canUseExtensions ? 'Can use hair extensions' : 'Natural hair only'}
-              onChange={() => send({ type: 'SET_SERVICE', service: option })
-              }
             />
           );
         })}

@@ -35,7 +35,7 @@ type Event =
   | { type: "NEXT" }
   | { type: "YES" }
   | { type: "NO" }
-  | { type: "SET_SERVICE_TYPE"; serviceType: ServiceType }
+  | { type: "BOOK_APPOINTMENT"; service: Service }
   | { type: "SET_SERVICE"; service: Service }
   | { type: "IGNORE_ADDING_EXTENSIONS"; addingExtensions: boolean }
   | { type: "ADDING_EXTENSIONS"; addingExtensions: boolean }
@@ -61,27 +61,15 @@ export const bookingMachine =
           /* Eventless Transition:
            This immediately transitions into its target state
            Without waiting on an event to be fired. */
-          always: [{ target: "selectServiceType" }],
+          always: [{ target: "serviceProfile" }],
           // Reset context to initial form on exit.
           exit: "resetContext",
         },
-        selectServiceType: {
+        serviceProfile: {
           on: {
-            SET_SERVICE_TYPE: {
-              internal: true,
-              target: "selectServiceType",
-              actions: "saveServiceType",
-            },
-            NEXT: {
-              target: "selectService",
-            },
-          },
-        },
-        selectService: {
-          on: {
-            SET_SERVICE: {
-              internal: true,
-              target: "selectService",
+            BOOK_APPOINTMENT: {
+              // internal: true,
+              target: "selectExtensionUsage",
               actions: "saveService",
             },
             NEXT: [
@@ -94,9 +82,6 @@ export const bookingMachine =
                 cond: "canNotUseExtensions",
               },
             ],
-            PREV: {
-              target: "selectServiceType",
-            },
           },
         },
         selectExtensionUsage: {
@@ -109,7 +94,7 @@ export const bookingMachine =
               target: "selectHairLength",
             },
             IGNORE_ADDING_EXTENSIONS: {
-              target: "selectService",
+              target: "serviceProfile",
             },
           },
         },
@@ -119,7 +104,7 @@ export const bookingMachine =
               target: "selectHairLength",
             },
             PREV: {
-              target: "selectService",
+              target: "serviceProfile",
             },
           },
         },
@@ -131,7 +116,7 @@ export const bookingMachine =
                 cond: "addingExtensions",
               },
               {
-                target: "selectService",
+                target: "idle",
                 cond: "notAddingExtensions",
               },
             ],
@@ -146,14 +131,8 @@ export const bookingMachine =
               target: "selectHairLength",
             },
             NEXT: {
-              target: "reviewInfo",
+              target: "idle",
             },
-          },
-        },
-        reviewInfo: {
-          on: {
-            NEXT: { target: "idle" },
-            PREV: { target: "selectSchedule" },
           },
         },
       },
@@ -163,9 +142,6 @@ export const bookingMachine =
     {
       // actions and guards
       actions: {
-        saveServiceType: assign({
-          serviceType: (_context, event) => event["serviceType"],
-        }),
         saveService: assign({
           service: (context, event) => {
             if (!event["service"].canUseExtensions)

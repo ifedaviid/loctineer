@@ -1,35 +1,34 @@
 import React from 'react'
-import Image, { StaticImageData } from 'next/image'
+import CustomImage from './custom-image';
 import styles from './card.module.scss';
+import { AppImage } from '../types/image';
 
 interface Props {
-    title: string;
+    title?: string;
     description?: string;
     onChange?: Function;
     category?: string;
     isSelected?: boolean;
-    image?: StaticImageData;
-    imageAlt?: string;
+    image?: AppImage;
 }
 
-const Card = ({ title, image, imageAlt, description, category, isSelected, onChange }: Props) => {
-    // const handleClick = () => onChange();
+const Card = ({
+    title,
+    description,
+    onChange,
+    category,
+    isSelected,
+    image
+}: Props) => {
+
     return (
         <div
-            className={`${styles.card} ${isSelected ? styles.highlight : null}`}
-            tabIndex={0}
+            className={`${styles.card} ${isSelected ? styles.active : styles.inactive}`}
+            // tabIndex={0}
             onClick={onChange ? () => onChange() : null}
-            onKeyDown={onChange ? () => onChange() : null}>
-            {image &&
-                <Image
-                    src={image}
-                    alt={imageAlt}
-                    // width={500} automatically provided
-                    // height={500} automatically provided
-                    // blurDataURL="data:..." automatically provided
-                    placeholder="blur" // Optional blur-up while loading
-                />
-            }
+        // onKeyDown={onChange ? () => onChange() : null}
+        >
+            {image && <CustomImage image={image} />}
             <div className={styles.cardDetails}>
                 {category && <small>{category}</small>}
                 <h4>{title}</h4>

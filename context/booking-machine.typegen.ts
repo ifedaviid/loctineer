@@ -22,8 +22,7 @@ export interface Typegen0 {
       | "IGNORE_ADDING_EXTENSIONS"
       | "NOT_ADDING_EXTENSIONS"
       | "xstate.stop";
-    saveService: "SET_SERVICE";
-    saveServiceType: "SET_SERVICE_TYPE";
+    saveService: "BOOK_APPOINTMENT";
   };
   eventsCausingServices: {};
   eventsCausingGuards: {
@@ -35,12 +34,10 @@ export interface Typegen0 {
   eventsCausingDelays: {};
   matchesStates:
     | "idle"
-    | "reviewInfo"
     | "selectExtensionLength"
     | "selectExtensionUsage"
     | "selectHairLength"
     | "selectSchedule"
-    | "selectService"
-    | "selectServiceType";
+    | "serviceProfile";
   tags: never;
 }

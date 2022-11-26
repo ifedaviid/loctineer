@@ -16,27 +16,24 @@ const Carousel = ({ images }: Props) => {
     return (
         <Swiper
             breakpoints={{
-                320: { slidesPerView: 1.1 },
-                520: { slidesPerView: 2.1 },
-                768: { slidesPerView: 2.1 },
-                968: { slidesPerView: 2.1 },
-                1120: { slidesPerView: 3.1 },
-                1400: { slidesPerView: 4.1 },
+                320: { slidesPerView: 1.2 },
+                520: { slidesPerView: 1.2 },
+                768: { slidesPerView: 2.2 },
+                968: { slidesPerView: 2.2 },
+                1120: { slidesPerView: 3.2 },
+                1400: { slidesPerView: 4.2 },
             }}
             modules={[FreeMode, Pagination]}
-            spaceBetween={15}
-            navigation
+            spaceBetween={10}
             pagination={{ clickable: true }}
             freeMode={true}
             className={styles['carousel']}
         >
-            {images.map((image, idx) => {
-                return (
-                    <SwiperSlide key={idx}>
-                        <CustomImage image={image} />
-                    </SwiperSlide>
-                );
-            })}
+            {images.map((image, idx) => (
+                <SwiperSlide key={idx}>
+                    <CustomImage image={image} />
+                </SwiperSlide>
+            ))}
         </Swiper>
     );
 }

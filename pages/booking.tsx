@@ -67,9 +67,9 @@ export const Booking = () => {
 
     return (
         <Layout>
-            <section className="dark">
-                {state.matches('selectServiceType') && <SelectServiceType />}
-                {(state.matches('selectService') || state.matches('selectExtensionUsage')) && <SelectService />}
+            <section className="booking">
+                {/* {state.matches('selectServiceType') && <SelectServiceType />} */}
+                {(state.matches('serviceProfile') || state.matches('selectExtensionUsage')) && <SelectService />}
                 {state.matches('selectExtensionLength') && <SelectExtensionLength />}
                 {state.matches('selectHairLength') && <SelectHairLength />}
                 {state.matches('selectSchedule') && <SelectSchedule />}

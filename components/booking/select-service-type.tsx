@@ -17,12 +17,8 @@ const SelectServiceType = () => {
         {serviceTypes.map((option, idx) => {
           const { name, image } = option;
           return (
-            <Card
+            <div
               key={idx}
-              title={name}
-              image={image.path}
-              isSelected={state.context.serviceType?.name === name}
-              onChange={() => send({ type: 'SET_SERVICE_TYPE', serviceType: option })}
             />
           );
         })}
