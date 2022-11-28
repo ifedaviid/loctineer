@@ -26,7 +26,7 @@ const ServiceProfile = ({ service }: Props) => {
                             {cta.primary && (
                                 <Link href={cta.primary.href}>
                                     <Button variant="primary">
-                                        {cta.primary.text}
+                                        Book Appointment
                                     </Button>
                                 </Link>
                             )}

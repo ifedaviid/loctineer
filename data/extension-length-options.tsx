@@ -1,34 +1,58 @@
 export const extensionLengthOptions = [
     {
         name: 'Short',
-        photo: require('../images/dreadlocks.jpg'),
+        image: {
+            path: require('../images/braids-and-twists.jpg'),
+            altText: '',
+        },
     },
     {
         name: 'Ear length',
-        photo: require('../images/braids-and-twists.jpg'),
+        image: {
+            path: require('../images/braids-and-twists.jpg'),
+            altText: '',
+        },
     },
     {
         name: 'Shoulder length',
-        photo: require('../images/consultation.jpg'),
+        image: {
+            path: require('../images/braids-and-twists.jpg'),
+            altText: '',
+        },
     },
     {
         name: 'Midback length',
-        photo: require('../images/dreadlocks.jpg'),
+        image: {
+            path: require('../images/braids-and-twists.jpg'),
+            altText: '',
+        },
     },
     {
-        name: 'Waist length',
-        photo: require('../images/braids-and-twists.jpg'),
+        name: 'Short',
+        image: {
+            path: require('../images/braids-and-twists.jpg'),
+            altText: '',
+        },
     },
     {
-        name: 'Butt length',
-        photo: require('../images/consultation.jpg'),
+        name: 'Ear length',
+        image: {
+            path: require('../images/braids-and-twists.jpg'),
+            altText: '',
+        },
     },
     {
-        name: 'Knee length',
-        photo: require('../images/consultation.jpg'),
+        name: 'Shoulder length',
+        image: {
+            path: require('../images/braids-and-twists.jpg'),
+            altText: '',
+        },
     },
     {
-        name: 'Wedding-gown length',
-        photo: require('../images/consultation.jpg'),
-    },
+        name: 'Midback length',
+        image: {
+            path: require('../images/braids-and-twists.jpg'),
+            altText: '',
+        },
+    }
 ];

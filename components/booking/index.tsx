@@ -1,3 +1,4 @@
+export { default as ServiceProfile } from "./service-profile"
 export { default as SelectServiceType } from "./select-service-type"
 export { default as SelectService } from "./select-service";
 export { default as ExtensionUsageModal } from "./extension-usage-modal";

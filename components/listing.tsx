@@ -31,13 +31,6 @@ const Listing = ({ image, title, description, cta }: Props) => {
                         </Button>
                     </Link>
                 )}
-                {cta.secondary && (
-                    <Link href={cta.secondary.href}>
-                        <Button variant="secondary"                  >
-                            {cta.secondary.text}
-                        </Button>
-                    </Link>
-                )}
             </div>
         </div>
     )

@@ -8,10 +8,6 @@ export const dreadlocksServices = [
         description: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         cta: {
             primary: {
-                href: `/${strings.LOCS_ID}/${strings.LOC_REPAIR_ID}/book-appointment`,
-                text: 'Book Appointment'
-            },
-            secondary: {
                 href: `/${strings.LOCS_ID}/${strings.LOC_REPAIR_ID}`,
                 text: 'See details'
             }
@@ -29,10 +25,6 @@ export const dreadlocksServices = [
         description: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         cta: {
             primary: {
-                href: `/${strings.LOCS_ID}/${strings.LOC_RETWIST_ID}/book-appointment`,
-                text: 'Book Appointment'
-            },
-            secondary: {
                 href: `/${strings.LOCS_ID}/${strings.LOC_RETWIST_ID}`,
                 text: 'See details'
             }
@@ -51,10 +43,6 @@ export const dreadlocksServices = [
         description: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         cta: {
             primary: {
-                href: `/${strings.LOCS_ID}/${strings.LOC_STYLING_ID}/book-appointment`,
-                text: 'Book Appointment'
-            },
-            secondary: {
                 href: `/${strings.LOCS_ID}/${strings.LOC_STYLING_ID}`,
                 text: 'See details'
             }
@@ -72,10 +60,6 @@ export const dreadlocksServices = [
         description: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         cta: {
             primary: {
-                href: `/${strings.LOCS_ID}/${strings.NATURAL_INSTANT_DREADLOCKS_ID}/book-appointment`,
-                text: 'Book Appointment'
-            },
-            secondary: {
                 href: `/${strings.LOCS_ID}/${strings.NATURAL_INSTANT_DREADLOCKS_ID}`,
                 text: 'See details'
             }
@@ -93,10 +77,6 @@ export const dreadlocksServices = [
         description: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         cta: {
             primary: {
-                href: `/${strings.LOCS_ID}/${strings.TWO_STRAND_STARTER_LOCS_ID}/book-appointment`,
-                text: 'Book Appointment'
-            },
-            secondary: {
                 href: `/${strings.LOCS_ID}/${strings.TWO_STRAND_STARTER_LOCS_ID}`,
                 text: 'See details'
             }
@@ -114,10 +94,6 @@ export const dreadlocksServices = [
         description: 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
         cta: {
             primary: {
-                href: `/${strings.LOCS_ID}/${strings.SISTER_LOCS_ID}/book-appointment`,
-                text: 'Book Appointment'
-            },
-            secondary: {
                 href: `/${strings.LOCS_ID}/${strings.SISTER_LOCS_ID}`,
                 text: 'See details'
             }

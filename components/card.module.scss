@@ -1,42 +1,46 @@
 @import "../common.scss";
 
 .card {
-  border: 3px solid $lighter-dark;
-  border-radius: 10px;
+  transition: all 0.2s ease-out;
+  // border-radius: 15px;
+  // opacity: 1 !important;
+  // border: 3px solid $lighter-dark;
+  // border-radius: 1rem;
   display: flex;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  animation: reveal 2s ease;
-  transition: all 0.2s ease-in;
-  background-color: black;
-  height: 20rem;
-  width: 100%;
-  opacity: 0.85 !important;
-  cursor: pointer;
-  overflow: hidden;
+  // box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+  //   rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  // animation: reveal 2s ease;
+  // transition: all 0.2s ease-in;
+  // background-color: black;
+  // height: 20rem;
+  // width: 100%;
+  // cursor: pointer;
+  // overflow: hidden;
   img {
     object-fit: cover;
-    border-radius: 15px;
-    transform: scale(1.2);
-    filter: grayscale(100%);
-    transition: all 0.2s ease-out;
   }
-  // .card:active,
-  &:hover {
-    opacity: 1;
-    img {
-      object-fit: cover;
-      // transform: scale(1.25);
-      border-radius: 10px;
-      transition: all 0.1s ease-out;
-      // filter: none;
-    }
-  }
+  // &:hover {
+  //   opacity: 1;
+  //   img {
+  //     object-fit: cover;
+  //     border-radius: 10px;
+  //     transition: all 0.1s ease-out;
+  //   }
+  // }
   > .cardDetails {
+    /* Dark-overlay for card text */
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 1rem 1rem;
+    margin-bottom: 0.3rem;
+
+
+    padding: 0.5rem 1.5rem;
     position: absolute;
     align-self: end;
-    max-width: 250px;
-    margin: 1rem;
+    width: 100%;
+    overflow: hidden;
+    // max-width: 250px;
+    // margin: 1rem;
     small {
       background-color: $dark-text;
       padding: 0.5rem 0.5rem;
@@ -46,8 +50,8 @@
       letter-spacing: 0.5px;
     }
     h4 {
-      margin-top: 1.5rem;
-      margin-bottom: unset;
+      // margin-top: 1.5rem;
+      margin: unset;
       font-size: 1.5rem;
       font-weight: 600;
       letter-spacing: 1px;
@@ -61,12 +65,15 @@
   }
 }
 .card:focus,
-.card.highlight {
-  border: 1px solid $dark-text;
-  opacity: 1 !important;
-  transform: scale(1.03);
+.card.active {
+  margin: 0 8%;
+  transform: scale(1.2);
   img {
-    transform: scale(1.2);
     filter: none;
+  }
+}
+.card.inactive {
+  img {
+    filter: grayscale(100%);
   }
 }
