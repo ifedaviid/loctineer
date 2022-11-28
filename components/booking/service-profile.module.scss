@@ -1,0 +1,21 @@
+@import "../../common.scss";
+
+.profile-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  padding: 0 5%;
+}
+
+@media (max-width: $lg-screens) {
+  .profile-container {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+  }
+}
+
+@media (max-width: $md-screens) {
+  .profile-container {
+    grid-template-columns: 1fr;
+  }
+}

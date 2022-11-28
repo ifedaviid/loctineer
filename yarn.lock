@@ -1829,6 +1829,11 @@
   "resolved" "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz"
   "version" "1.2.3"
 
+"react-calendly@^4.1.0":
+  "integrity" "sha512-a4/yHZwwmuEgUZOfRh0Hs5lt96WSlWI3GQ0fNWWUnKN11YjR5E0fq4YZSMZ3Cas8FVcdoM88JSnNPbZoeLzbtQ=="
+  "resolved" "https://registry.npmjs.org/react-calendly/-/react-calendly-4.1.0.tgz"
+  "version" "4.1.0"
+
 "react-device-detect@^2.2.2":
   "integrity" "sha512-zSN1gIAztUekp5qUT/ybHwQ9fmOqVT1psxpSlTn1pe0CO+fnJHKRLOWWac5nKxOxvOpD/w84hk1I+EydrJp7SA=="
   "resolved" "https://registry.npmjs.org/react-device-detect/-/react-device-detect-2.2.2.tgz"
@@ -1836,7 +1841,7 @@
   dependencies:
     "ua-parser-js" "^1.0.2"
 
-"react-dom@^17.0.0 || ^18.0.0", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>= 0.14.0", "react-dom@>=16.6.0", "react-dom@18.2.0":
+"react-dom@^17.0.0 || ^18.0.0", "react-dom@^17.0.2 || ^18.0.0-0", "react-dom@>= 0.14.0", "react-dom@>=16.6.0", "react-dom@>=16.8.0", "react-dom@18.2.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"

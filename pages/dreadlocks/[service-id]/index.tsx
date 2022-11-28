@@ -1,45 +1,113 @@
-import React from "react";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { useActor } from '@xstate/react';
+import {
+    ServiceProfile,
+    ExtensionUsageModal,
+    SelectExtensionLength,
+    SelectHairLength,
+    SelectSchedule
+} from '../../../components/booking/index';
 import Layout from "../../../components/layout";
-import ButtonGroupWrapper from "../../../components/button-group-wrapper";
+// import ButtonGroupWrapper from "../../../components/button-group-wrapper";
 import { Service } from "../../../types/service";
-import CustomImage from "../../../components/custom-image";
 import Button from "../../../components/button";
 import { getServicePaths } from '../../../static/paths';
 import { getServiceProps } from '../../../static/props';
+import { bookingMachine } from '../../../context/booking-machine';
+import { useBookingService } from '../../../context/useBookingService';
+import ButtonGroupWrapper from "../../../components/button-group-wrapper";
 
 interface Props {
     service: Service
 }
 
-const ServiceProfile = ({ service }: Props) => {
-    const { name, description, image, cta } = service
+const BookAppointment = ({ service }: Props) => {
+    const [showModal, setShowModal] = useState(false)
+    const { bookingService } = useBookingService()
+    const [state, send] = useActor(bookingService)
+
+    // Rules for dtermining key positions in the booking process.
+    const atFinal = state.matches('selectSchedule')
+    const atStart = (
+        state.value === bookingMachine.initialState.value || 
+        state.matches('selectExtensionUsage')
+    )
+
+    useEffect(() => {
+        if (state.matches('selectExtensionUsage')) setShowModal(true)
+    }, [state])
+
+    const handleSendEvent = (event, currentStage) => {
+        console.log("=====> now booking: ", service)
+        switch (currentStage) {
+            case 'serviceProfile':
+                if (service) {
+                    send({ type: event, service })
+                    if (service.canUseExtensions) setShowModal(true)
+                }
+                break;
+            default:
+                send(event)
+                break;
+        }
+    };
+
+    const renderNavigationButtons = () => {
+        return (
+            <>
+                {!atStart &&
+                    <Button
+                        variant="tertiary"
+                        onClick={() => send('PREV')}
+                    >
+                        {"<   Back"}
+                    </Button>
+                }
+            </>
+        );
+    }
 
     return (
         <Layout>
             <section className='gray'>
-                <div className="services-content">
-                    <div>
-                        <h3>{name}</h3>
-                        <p>{description}</p>
-                        <ButtonGroupWrapper>
-                            {cta.primary && (
-                                <Link href={cta.primary.href}>
-                                    <Button variant="primary">
-                                        {cta.primary.text}
-                                    </Button>
-                                </Link>
-                            )}
-                        </ButtonGroupWrapper>
-                    </div>
-                    <CustomImage image={image} />
-                </div>
+                {!state.done && renderNavigationButtons()}
+                {(state.matches('idle') ||
+                    state.matches('serviceProfile') ||
+                    state.matches('selectExtensionUsage')) &&
+                    <ServiceProfile service={service} />}
+                {state.matches('selectExtensionLength') && <SelectExtensionLength />}
+                {state.matches('selectHairLength') && <SelectHairLength />}
+                {state.matches('selectSchedule') && <SelectSchedule />}
+                {!atStart &&
+                    <ButtonGroupWrapper style={{ margin: '2rem 0'}}>
+                        {!atFinal &&
+                            <Button
+                                variant="secondary"
+                                onClick={() => handleSendEvent('NEXT', state.value)}
+                            >
+                                Next
+                            </Button>
+                        }
+                        < Button
+                            variant="tertiary"
+                            size="large"
+                            style={{backgroundColor: 'red'}}
+                            onClick={() => {
+                                send('EXIT')
+                                // router.push('/')
+                            }}
+                        >
+                            Exit Booking
+                        </Button>
+                    </ButtonGroupWrapper>
+                }
             </section>
-        </Layout >
+            {showModal && <ExtensionUsageModal setShowModal={setShowModal} />}
+        </Layout>
     )
 };
 
-const isDreadlocks = true;
+const isDreadlocks = true
 export const getStaticPaths = () => getServicePaths(isDreadlocks)
 export const getStaticProps = ({ params }) => getServiceProps(params, isDreadlocks)
-export default ServiceProfile
+export default BookAppointment

@@ -4,11 +4,15 @@ import Hero from "../components/hero";
 import Layout from "../components/layout";
 import Carousel from "../components/carousel";
 import Listing from "../components/listing";
-import { featuredPhotos } from "../data/featured-photos";
+import CustomImage from "../components/custom-image";
+import { SwiperSlide } from 'swiper/react';
+import { featuredImages } from "../data/featured-images";
 import { serviceTypes } from "../data";
+import { extractImages } from "../components/helpers/utils";
 
 export default function Home() {
   const router = useRouter();
+  const images = extractImages(featuredImages);
   return (
     <Layout>
       <Hero
@@ -43,23 +47,13 @@ export default function Home() {
               />
             );
           })}
-          {/* <Listing
-            key={idx}
-            image={image}
-            title={name}
-            description={description}
-            callToAction={{
-              text: 'See Related Services',
-              action: () => router.push(slug),
-            }}
-          /> */}
         </div>
       </section>
-      <section className="dark">
+      <section className="dark offset-pagination-bullets">
         <h2>Gallery</h2>
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-        <Carousel images={featuredPhotos} />
+        <Carousel images={images} />
       </section>
     </Layout >
   );
