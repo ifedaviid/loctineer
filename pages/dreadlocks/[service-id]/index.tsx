@@ -21,7 +21,7 @@ interface Props {
     service: Service
 }
 
-const BookAppointment = ({ service }: Props) => {
+const DreadlocksService = ({ service }: Props) => {
     const [showModal, setShowModal] = useState(false)
     const { bookingService } = useBookingService()
     const [state, send] = useActor(bookingService)
@@ -82,22 +82,21 @@ const BookAppointment = ({ service }: Props) => {
                     <ButtonGroupWrapper style={{ margin: '2rem 0'}}>
                         {!atFinal &&
                             <Button
-                                variant="secondary"
+                                variant="primary"
                                 onClick={() => handleSendEvent('NEXT', state.value)}
                             >
                                 Next
                             </Button>
                         }
                         < Button
-                            variant="tertiary"
+                            variant="secondary"
                             size="large"
-                            style={{backgroundColor: 'red'}}
                             onClick={() => {
                                 send('EXIT')
                                 // router.push('/')
                             }}
                         >
-                            Exit Booking
+                            X
                         </Button>
                     </ButtonGroupWrapper>
                 }
@@ -110,4 +109,4 @@ const BookAppointment = ({ service }: Props) => {
 const isDreadlocks = true
 export const getStaticPaths = () => getServicePaths(isDreadlocks)
 export const getStaticProps = ({ params }) => getServiceProps(params, isDreadlocks)
-export default BookAppointment
+export default DreadlocksService
