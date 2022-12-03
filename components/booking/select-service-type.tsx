@@ -4,7 +4,6 @@ import { useBookingService } from '../../context/useBookingService';
 import { serviceTypes } from "../../data";
 import Card from "../card";
 import Grid from "../grid";
-import styles from "./select.module.scss";
 
 const SelectServiceType = () => {
   const { bookingService } = useBookingService();
@@ -12,7 +11,7 @@ const SelectServiceType = () => {
 
   return (
     <>
-      <h2 className={styles.bookingHeader}>What are you interested in?</h2>
+      <h2>What are you interested in?</h2>
       <Grid>
         {serviceTypes.map((option, idx) => {
           const { name, image } = option;

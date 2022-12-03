@@ -2,7 +2,6 @@ import React from "react";
 import Card from "../card";
 import Grid from "../grid";
 import { useActor } from "@xstate/react";
-import styles from "./select.module.scss";
 import { useBookingService } from '../../context/useBookingService';
 
 const SelectService = () => {
@@ -14,7 +13,7 @@ const SelectService = () => {
 
   return (
     <>
-      <h2 className={styles.bookingHeader}>Choose a {serviceType.name} service</h2>
+      <h2>Choose a {serviceType.name} service</h2>
       <Grid>
         {services && services.map((option, idx) => {
           const { name, category, canUseExtensions } = option;
