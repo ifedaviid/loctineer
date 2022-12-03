@@ -1,7 +1,7 @@
 import React from "react";
 import { useActor } from "@xstate/react";
 import { useBookingService } from '../../context/useBookingService';
-import { extensionLengthOptions } from "../../data/extension-length-options";
+import { naturalHairLengthOptions } from "../../data/hair-length-options";
 import SlideSelect from "../slide-select";
 
 const SelectHairLength = () => {
@@ -10,7 +10,7 @@ const SelectHairLength = () => {
     return (
         <div style={{ width: '100%' }}>
             <h2>How long is your natural hair?</h2>
-            <SlideSelect options={extensionLengthOptions} />
+            <SlideSelect options={naturalHairLengthOptions} />
         </div>
     );
 }

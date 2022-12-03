@@ -1,26 +1,44 @@
-export const hairLengthOptions = [
+export const naturalHairLengthOptions = [
     {
-        name: 'Short'
+        name: 'Military buzz cut',
+        image: {
+            path: require('../images/consultation.jpg'),
+            altText: '',
+        },
     },
     {
-        name: 'Ear length'
+        name: 'Low cut',
+        image: {
+            path: require('../images/consultation.jpg'),
+            altText: '',
+        },
     },
     {
-        name: 'Shoulder length'
+        name: 'Initial Growth',
+        image: {
+            path: require('../images/consultation.jpg'),
+            altText: '',
+        },
     },
     {
-        name: 'Midback length'
+        name: 'Due Growth',
+        image: {
+            path: require('../images/consultation.jpg'),
+            altText: '',
+        },
     },
     {
-        name: 'Waist length'
+        name: 'Overdue Growth',
+        image: {
+            path: require('../images/consultation.jpg'),
+            altText: '',
+        },
     },
     {
-        name: 'Butt length'
-    },
-    {
-        name: 'Knee length'
-    },
-    {
-        name: 'Wedding-gown length'
-    },
+        name: 'Long asf',
+        image: {
+            path: require('../images/consultation.jpg'),
+            altText: '',
+        },
+    }
 ];
