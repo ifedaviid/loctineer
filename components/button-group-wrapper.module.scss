@@ -2,6 +2,7 @@
 
 .buttonGroupWrapper {
   display: flex;
+  justify-content: center;
   > * {
     margin-right: 1rem;
   }
@@ -10,7 +11,7 @@
   }
 }
 
-@media (max-width: $lg-screens) {
+@media (max-width: $md-screens) {
   .buttonGroupWrapper {
     flex-direction: column;
     > * {

@@ -1,41 +1,41 @@
 export const extensionLengthOptions = [
     {
-        name: 'Short',
+        category: 'Short',
         image: {
             path: require('../images/braids-and-twists.jpg'),
             altText: '',
         },
     },
     {
-        name: 'Shoulder length',
+        category: 'Shoulder length',
         image: {
             path: require('../images/braids-and-twists.jpg'),
             altText: '',
         },
     },
     {
-        name: 'Midback length',
+        category: 'Midback length',
         image: {
             path: require('../images/braids-and-twists.jpg'),
             altText: '',
         },
     },
     {
-        name: 'Waist length',
+        category: 'Waist length',
         image: {
             path: require('../images/braids-and-twists.jpg'),
             altText: '',
         },
     },
     {
-        name: 'Butt length',
+        category: 'Butt length',
         image: {
             path: require('../images/braids-and-twists.jpg'),
             altText: '',
         },
     },
     {
-        name: 'Knee length',
+        category: 'Knee length',
         image: {
             path: require('../images/braids-and-twists.jpg'),
             altText: '',

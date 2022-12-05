@@ -2,6 +2,7 @@ import { createMachine, assign } from "xstate";
 import { StaticImageData } from "next/image";
 import { ServiceType } from "../types/service-type";
 import { Service } from "../types/service";
+import { AppImage } from "../types/image";
 
 export enum ServiceCategory {
   INSTALLATION = "Installation",
@@ -9,8 +10,13 @@ export enum ServiceCategory {
 }
 
 export interface ExtensionLength {
-  name: string;
-  photo: StaticImageData;
+  category: string;
+  image: AppImage;
+}
+
+export interface HairLength {
+  category: string;
+  image: AppImage;
 }
 
 // ***********************************
@@ -21,6 +27,7 @@ interface Appointment {
   service: Service;
   addingExtensions: boolean;
   extensionLength: ExtensionLength;
+  hairLength: HairLength;
 }
 
 const initialContextState: Appointment = {
@@ -28,18 +35,18 @@ const initialContextState: Appointment = {
   service: null,
   addingExtensions: false,
   extensionLength: null,
+  hairLength: null,
 };
 
 type Event =
   | { type: "PREV" }
   | { type: "NEXT" }
-  | { type: "YES" }
-  | { type: "NO" }
   | { type: "BOOK_APPOINTMENT"; service: Service }
-  | { type: "SET_SERVICE"; service: Service }
   | { type: "IGNORE_ADDING_EXTENSIONS"; addingExtensions: boolean }
   | { type: "ADDING_EXTENSIONS"; addingExtensions: boolean }
   | { type: "NOT_ADDING_EXTENSIONS"; addingExtensions: boolean }
+  | { type: "SAVE_EXTENSION_LENGTH"; extensionLength: ExtensionLength }
+  | { type: "SAVE_HAIR_LENGTH"; hairLength: HairLength }
   | { type: "EXIT" };
 
 export const bookingMachine =
@@ -47,7 +54,6 @@ export const bookingMachine =
   createMachine(
     {
       context: { ...initialContextState },
-      tsTypes: {} as import("./booking-machine.typegen").Typegen0,
       schema: {
         context: {} as Appointment,
         events: {} as Event,
@@ -99,17 +105,22 @@ export const bookingMachine =
           },
         },
         selectExtensionLength: {
+          exit: "saveExtensionLength",
           on: {
-            NEXT: {
+            SAVE_EXTENSION_LENGTH: {
               target: "selectHairLength",
             },
             PREV: {
-              target: "serviceProfile",
+              target: "idle",
             },
           },
         },
         selectHairLength: {
+          exit: "saveHairLength",
           on: {
+            SAVE_HAIR_LENGTH: {
+              target: "selectSchedule",
+            },
             PREV: [
               {
                 target: "selectExtensionLength",
@@ -120,9 +131,6 @@ export const bookingMachine =
                 cond: "notAddingExtensions",
               },
             ],
-            NEXT: {
-              target: "selectSchedule",
-            },
           },
         },
         selectSchedule: {
@@ -152,11 +160,18 @@ export const bookingMachine =
         saveExtensionUsage: assign({
           addingExtensions: (_context, event) => event["addingExtensions"],
         }),
+        saveExtensionLength: assign({
+          extensionLength: (_context, event) => event["extensionLength"],
+        }),
+        saveHairLength: assign({
+          hairLength: (_context, event) => event["hairLength"],
+        }),
         resetContext: assign({
           serviceType: null,
           service: null,
           addingExtensions: false,
           extensionLength: null,
+          hairLength: null,
           ...initialContextState,
         }),
       },

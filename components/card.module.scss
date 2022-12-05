@@ -33,7 +33,6 @@
     border-radius: 0 0 1rem 1rem;
     margin-bottom: 0.3rem;
 
-
     padding: 0.5rem 1.5rem;
     position: absolute;
     align-self: end;
@@ -66,14 +65,16 @@
 }
 .card:focus,
 .card.active {
-  margin: 0 8%;
-  transform: scale(1.2);
+  opacity: 1;
+  width: 100%;
+  // transform: scale(1.2);
   img {
     filter: none;
   }
 }
 .card.inactive {
-  img {
-    filter: grayscale(100%);
-  }
+  opacity: 0.3;
+  // img {
+  //   filter: grayscale(100%);
+  // }
 }
