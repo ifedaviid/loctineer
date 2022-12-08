@@ -63,7 +63,7 @@ export const braidsAndTwistsServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/${strings.BRAIDS_AND_TWISTS_ID}/${strings.NATURAL_BRAIDS_AND_TWISTS_ID}`,
+        href: `/services/${strings.BRAIDS_AND_TWISTS_ID}/${strings.NATURAL_BRAIDS_AND_TWISTS_ID}`,
         text: "See details",
       },
     },
@@ -99,7 +99,7 @@ export const braidsAndTwistsServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/${strings.BRAIDS_AND_TWISTS_ID}/${strings.KINKY_PASSION_TWISTS_ID}`,
+        href: `/services/${strings.BRAIDS_AND_TWISTS_ID}/${strings.KINKY_PASSION_TWISTS_ID}`,
         text: "See details",
       },
     },
@@ -117,7 +117,7 @@ export const braidsAndTwistsServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/${strings.BRAIDS_AND_TWISTS_ID}/${strings.KNOTLESS_BRAIDS_ID}`,
+        href: `/services/${strings.BRAIDS_AND_TWISTS_ID}/${strings.KNOTLESS_BRAIDS_ID}`,
         text: "See details",
       },
     },
