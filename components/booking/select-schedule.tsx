@@ -3,6 +3,7 @@ import { useActor } from "@xstate/react";
 import { InlineWidget } from "react-calendly";
 import Button from "../button";
 import { useBookingService } from "../../context/useBookingService";
+import ButtonGroupWrapper from "../button-group-wrapper";
 
 const SelectSchedule = () => {
   const { bookingService } = useBookingService();
@@ -32,16 +33,18 @@ const SelectSchedule = () => {
         //     minHeight: '100rem'
         // }}
       />
-      <Button
-        variant="secondary"
-        size="large"
-        onClick={() => {
-          send("EXIT");
-          // router.push('/')
-        }}
-      >
-        X
-      </Button>
+      <ButtonGroupWrapper>
+        <Button
+          variant="secondary"
+          size="large"
+          onClick={() => {
+            send("EXIT");
+            // router.push('/')
+          }}
+        >
+          X
+        </Button>
+      </ButtonGroupWrapper>
     </div>
   );
 };

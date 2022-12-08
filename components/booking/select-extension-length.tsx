@@ -34,14 +34,7 @@ const SelectExtensionLength = () => {
           </SwiperSlide>
         ))}
       </SwiperSlideWrapper>
-      <div
-        style={{
-          // width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
+      <ButtonGroupWrapper>
         <Button
           variant="primary"
           onClick={() => {
@@ -64,7 +57,7 @@ const SelectExtensionLength = () => {
         >
           X
         </Button>
-      </div>
+      </ButtonGroupWrapper>
     </div>
   );
 };

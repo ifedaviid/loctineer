@@ -3,7 +3,6 @@ import { useActor } from "@xstate/react";
 import Button from "../button";
 import Modal from "../modal";
 import styles from "./adding-extensions.module.scss";
-import ButtonGroupWrapper from "../button-group-wrapper";
 import { useBookingService } from "../../context/useBookingService";
 
 const ExtensionUsageModal = ({ setShowModal }) => {
@@ -39,7 +38,7 @@ const ExtensionUsageModal = ({ setShowModal }) => {
           {service.name} can be done using hair extensions. Will you be adding
           hair extensions?
         </p>
-        <ButtonGroupWrapper style={{ justifyContent: "right" }}>
+        <div className={styles.buttonGroup}>
           <Button
             variant="secondary"
             onClick={() => {
@@ -58,7 +57,7 @@ const ExtensionUsageModal = ({ setShowModal }) => {
           >
             Yes, I will!
           </Button>
-        </ButtonGroupWrapper>
+        </div>
       </div>
     </Modal>
   );

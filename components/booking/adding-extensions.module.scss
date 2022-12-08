@@ -48,9 +48,25 @@
       }
     }
   }
+  .buttonGroup {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    > * {
+      margin-left: 1rem;
+    }
+  }
 }
 
 @media (max-width: 1120px) {
+  .buttonGroup {
+    flex-direction: column;
+    > * {
+      width: 100%;
+      margin-top: 1rem;
+      margin-left: unset !important;
+    }
+  }
   .modalContainer {
     width: 95%;
     padding: 2rem;
