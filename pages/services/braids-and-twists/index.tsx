@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "../../components/layout";
-import Listing from "../../components/listing";
-import { braidsAndTwistsServices } from "../../data";
+import Layout from "../../../components/layout";
+import Listing from "../../../components/listing";
+import { braidsAndTwistsServices } from "../../../data";
 
 export default function BraidsAndTwists() {
   return (

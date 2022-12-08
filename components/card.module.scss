@@ -67,14 +67,11 @@
 .card.active {
   opacity: 1;
   width: 100%;
-  // transform: scale(1.2);
-  img {
-    filter: none;
-  }
 }
 .card.inactive {
   opacity: 0.3;
-  // img {
-  //   filter: grayscale(100%);
-  // }
+  transform: scale(0.9);
+  img {
+    filter: grayscale(100%);
+  }
 }
