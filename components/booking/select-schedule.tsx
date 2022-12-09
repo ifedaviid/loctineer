@@ -14,7 +14,7 @@ const SelectSchedule = () => {
     const no = "No! I don't want to use extensions";
     const { addingExtensions, extensionLength } = state.context;
     const extensionUsage = addingExtensions ? yes : no;
-    const details = extensionUsage.concat(" ", extensionLength.category, " ");
+    const details = extensionUsage.concat(" ", extensionLength?.category, " ");
     return details;
   };
 
