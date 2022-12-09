@@ -42,7 +42,7 @@ const SelectSchedule = () => {
           // textColor: "ffffff",
         }}
       />
-      <ButtonGroupWrapper>
+      <ButtonGroupWrapper style={{ marginTop: "3rem" }}>
         <Button
           variant="secondary"
           size="large"
