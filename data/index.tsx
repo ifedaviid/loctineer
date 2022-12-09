@@ -1,4 +1,4 @@
-export { braidsAndTwistsServices } from './braids-and-twists-services';
-export { dreadlocksServices } from './dreadlocks-services';
-export { serviceTypes } from './service-types';
-export * as strings from './strings';
+export { braidsAndTwistsServices } from "./services/braids-and-twists";
+export { dreadlocksServices } from "./services/dreadlocks";
+export { serviceTypes } from "./services/types";
+export * as strings from "./strings";

@@ -1,5 +1,5 @@
-import { ServiceCategory } from "../types/service-category";
-import * as strings from "./strings";
+import { ServiceCategory } from "./../../types/service-category";
+import * as strings from "../strings";
 
 export const dreadlocksServices = [
   {
@@ -14,7 +14,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("../images/dreadlocks.jpg"),
+      path: require("./../../images/dreadlocks.jpg"),
       altText: "",
     },
     category: ServiceCategory.MAINTENANCE,
@@ -32,7 +32,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("../images/dreadlocks.jpg"),
+      path: require("./../../images/dreadlocks.jpg"),
       altText: "",
     },
     category: ServiceCategory.MAINTENANCE,
@@ -50,7 +50,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("../images/dreadlocks.jpg"),
+      path: require("./../../images/dreadlocks.jpg"),
       altText: "",
     },
     category: ServiceCategory.MAINTENANCE,
@@ -68,7 +68,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("../images/dreadlocks.jpg"),
+      path: require("./../../images/dreadlocks.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -86,7 +86,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("../images/dreadlocks.jpg"),
+      path: require("./../../images/dreadlocks.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -104,7 +104,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("../images/dreadlocks.jpg"),
+      path: require("./../../images/dreadlocks.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,

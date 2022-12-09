@@ -1,5 +1,5 @@
-import { ServiceCategory } from "../types/service-category";
-import * as strings from "./strings";
+import { ServiceCategory } from "../../types/service-category";
+import * as strings from "./../strings";
 
 export const braidsAndTwistsServices = [
   {
@@ -14,7 +14,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../images/braids-and-twists.jpg"),
+      path: require("../../images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -32,7 +32,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../images/braids-and-twists.jpg"),
+      path: require("../../images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -50,7 +50,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../images/braids-and-twists.jpg"),
+      path: require("../../images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -68,7 +68,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../images/braids-and-twists.jpg"),
+      path: require("../../images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -86,7 +86,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../images/braids-and-twists.jpg"),
+      path: require("../../images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -104,7 +104,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../images/braids-and-twists.jpg"),
+      path: require("../../images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -122,7 +122,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../images/braids-and-twists.jpg"),
+      path: require("../../images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
