@@ -8,6 +8,21 @@ import ButtonGroupWrapper from "../button-group-wrapper";
 const SelectSchedule = () => {
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
+
+  const getExtensionUsageDetails = () => {
+    const yes = "Yes! I will be using extensions";
+    const no = "No! I don't want to use extensions";
+    const { addingExtensions, extensionLength } = state.context;
+    const extensionUsage = addingExtensions ? yes : no;
+    const details = extensionUsage.concat(" ", extensionLength.category, " ");
+    return details;
+  };
+
+  const getNaturalHairDetails = () => {
+    const { hairLength } = state.context;
+    return hairLength.category;
+  };
+
   return (
     <div style={{ width: "100%" }}>
       <h2
@@ -19,19 +34,13 @@ const SelectSchedule = () => {
         Finally, pick a date and time.
       </h2>
       <InlineWidget
-        url="https://calendly.com/loctineer/sister-locs?hide_gdpr_banner=1"
+        url={`https://calendly.com/loctineer/sister-locs?hide_gdpr_banner=1&a2=${getExtensionUsageDetails()}&a3=${getNaturalHairDetails()}`}
         pageSettings={{
-          // hideEventTypeDetails: true,
-          backgroundColor: "201f1f",
           primaryColor: "a57b21",
-          textColor: "ffffff",
+          // hideEventTypeDetails: true,
+          // backgroundColor: "201f1f",
+          // textColor: "ffffff",
         }}
-        // styles={{
-        //     borderTop: '1px solid #a57b21',
-        //     borderBottom: '1px solid #a57b21',
-        //     minWidth: '320px',
-        //     minHeight: '100rem'
-        // }}
       />
       <ButtonGroupWrapper>
         <Button
