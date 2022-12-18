@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { useActor } from "@xstate/react";
 import {
   ServiceProfile,
@@ -7,14 +6,14 @@ import {
   SelectExtensionLength,
   SelectHairLength,
   SelectSchedule,
-} from "../../../components/booking/index";
-import Layout from "../../../components/layout";
-import { Service } from "../../../types/service";
-import Button from "../../../components/button";
-import { getServicePaths } from "../../../static/paths";
-import { getServiceProps } from "../../../static/props";
-import { bookingMachine } from "../../../context/booking-machine";
-import { useBookingService } from "../../../context/useBookingService";
+} from "../../../../components/booking/index";
+import Layout from "../../../../components/layout";
+import { Service } from "../../../../types/service";
+import Button from "../../../../components/button";
+import { getServicePaths } from "../../../../static/paths";
+import { getServiceProps } from "../../../../static/props";
+import { bookingMachine } from "../../../../context/booking-machine";
+import { useBookingService } from "../../../../context/useBookingService";
 
 interface Props {
   service: Service;
@@ -24,11 +23,6 @@ const DreadlocksService = ({ service }: Props) => {
   const [showModal, setShowModal] = useState(false);
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
-  const router = useRouter();
-
-  useEffect(() => {
-    console.log("========>>>>>>>>> here: ", router.query);
-  }, [router.query]);
 
   const atStart =
     state.value === bookingMachine.initialState.value ||

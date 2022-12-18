@@ -6,14 +6,14 @@ import {
   SelectExtensionLength,
   SelectHairLength,
   SelectSchedule,
-} from "../../../components/booking/index";
-import Layout from "../../../components/layout";
-import { Service } from "../../../types/service";
-import Button from "../../../components/button";
-import { getServicePaths } from "../../../static/paths";
-import { getServiceProps } from "../../../static/props";
-import { bookingMachine } from "../../../context/booking-machine";
-import { useBookingService } from "../../../context/useBookingService";
+} from "../../../../components/booking/index";
+import Layout from "../../../../components/layout";
+import { Service } from "../../../../types/service";
+import Button from "../../../../components/button";
+import { getServicePaths } from "../../../../static/paths";
+import { getServiceProps } from "../../../../static/props";
+import { bookingMachine } from "../../../../context/booking-machine";
+import { useBookingService } from "../../../../context/useBookingService";
 
 interface Props {
   service: Service;
