@@ -6,6 +6,7 @@ import {
   SelectExtensionLength,
   SelectHairLength,
   SelectSchedule,
+  ConfirmBooking,
 } from "../../../../components/booking/index";
 import Layout from "../../../../components/layout";
 import { Service } from "../../../../types/service";
@@ -27,8 +28,6 @@ const DreadlocksService = ({ service }: Props) => {
   const atStart =
     state.value === bookingMachine.initialState.value ||
     state.matches("selectExtensionUsage");
-
-  console.log("context - ", state.context);
 
   useEffect(() => {
     if (state.matches("selectExtensionUsage")) setShowModal(true);
@@ -52,6 +51,7 @@ const DreadlocksService = ({ service }: Props) => {
         {state.matches("selectExtensionLength") && <SelectExtensionLength />}
         {state.matches("selectHairLength") && <SelectHairLength />}
         {state.matches("selectSchedule") && <SelectSchedule />}
+        {state.matches("confirmBooking") && <ConfirmBooking />}
       </section>
       {showModal && <ExtensionUsageModal setShowModal={setShowModal} />}
     </Layout>
