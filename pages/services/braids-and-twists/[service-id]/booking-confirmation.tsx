@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../../../components/layout";
 import { Confirmation } from "../../../../components/booking";
-import { getQueryParamsFromCalendly } from "../../../../static";
+import { getQueryParamsFromCalendly } from "../../../../data-fetch";
 
 const ConfirmBooking = ({ invitee_email: email, answer_1: phoneNumber }) => {
   if (!email && !phoneNumber) return null;

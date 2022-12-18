@@ -10,8 +10,8 @@ import {
 import Layout from "../../../../components/layout";
 import { Service } from "../../../../types/service";
 import Button from "../../../../components/button";
-import { getServicePaths } from "../../../../static/paths";
-import { getServiceProps } from "../../../../static/props";
+import { getServicePaths } from "../../../../data-fetch/static-paths";
+import { getServiceProps } from "../../../../data-fetch/static-props";
 import { bookingMachine } from "../../../../context/booking-machine";
 import { useBookingService } from "../../../../hooks/useBookingService";
 
