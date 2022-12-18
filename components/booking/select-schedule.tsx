@@ -2,7 +2,7 @@ import React from "react";
 import { useActor } from "@xstate/react";
 import { InlineWidget } from "react-calendly";
 import Button from "../button";
-import { useBookingService } from "../../context/useBookingService";
+import { useBookingService } from "../../hooks/useBookingService";
 import ButtonGroupWrapper from "../button-group-wrapper";
 
 const SelectSchedule = () => {

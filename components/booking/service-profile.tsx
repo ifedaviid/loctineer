@@ -1,6 +1,6 @@
 import React from "react";
 import { useActor } from "@xstate/react";
-import { useBookingService } from "../../context/useBookingService";
+import { useBookingService } from "../../hooks/useBookingService";
 import Button from "../button";
 import CustomImage from "../custom-image";
 import styles from "./service-profile.module.scss";

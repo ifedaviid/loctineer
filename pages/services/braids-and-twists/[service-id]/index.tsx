@@ -13,7 +13,7 @@ import Button from "../../../../components/button";
 import { getServicePaths } from "../../../../static/paths";
 import { getServiceProps } from "../../../../static/props";
 import { bookingMachine } from "../../../../context/booking-machine";
-import { useBookingService } from "../../../../context/useBookingService";
+import { useBookingService } from "../../../../hooks/useBookingService";
 
 interface Props {
   service: Service;
