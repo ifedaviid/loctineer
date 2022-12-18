@@ -28,8 +28,6 @@ const BraidsAndTwistsService = ({ service }: Props) => {
     state.value === bookingMachine.initialState.value ||
     state.matches("selectExtensionUsage");
 
-  console.log("context - ", state.context);
-
   useEffect(() => {
     if (state.matches("selectExtensionUsage")) setShowModal(true);
   }, [state]);

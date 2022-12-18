@@ -38,7 +38,6 @@ const SelectExtensionLength = () => {
         <Button
           variant="primary"
           onClick={() => {
-            console.log("ext-length: ", extensionLength);
             send({
               type: "SAVE_EXTENSION_LENGTH",
               extensionLength: extensionLength,
