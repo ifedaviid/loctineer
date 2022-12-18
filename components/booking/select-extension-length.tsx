@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useActor } from "@xstate/react";
 import { useBookingService } from "../../hooks/useBookingService";
 import { SwiperSlide } from "swiper/react";
-import { extensionLengthOptions } from "../../data/extension-length-options";
+import { extensionLengthOptions } from "../../data/hair-length/extension";
 import SwiperSlideWrapper from "../swiper-slide-wrapper";
 import ButtonGroupWrapper from "../button-group-wrapper";
 import Button from "../button";

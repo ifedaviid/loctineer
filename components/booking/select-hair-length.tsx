@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useActor } from "@xstate/react";
 import { useBookingService } from "../../hooks/useBookingService";
-import { naturalHairLengthOptions } from "../../data/hair-length-options";
+import { naturalHairLengthOptions } from "../../data/hair-length/natural";
 import SwiperSlideWrapper from "../swiper-slide-wrapper";
 import { SwiperSlide } from "swiper/react";
 import Card from "../card";
