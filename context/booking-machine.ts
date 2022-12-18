@@ -139,13 +139,6 @@ export const bookingMachine =
               target: "selectHairLength",
             },
             NEXT: {
-              target: "comfirmBooking",
-            },
-          },
-        },
-        comfirmBooking: {
-          on: {
-            NEXT: {
               target: "idle",
             },
           },
