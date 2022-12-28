@@ -1,8 +1,10 @@
 import { createMachine, assign } from "xstate";
-import { StaticImageData } from "next/image";
+import { ExtensionUsage } from "./../types/extension-usage";
 import { ServiceType } from "../types/service-type";
 import { Service } from "../types/service";
 import { AppImage } from "../types/image";
+
+const { POSSIBLE, REQUIRED, NOT_OFFERED } = ExtensionUsage;
 
 export enum ServiceCategory {
   INSTALLATION = "Installation",
@@ -73,18 +75,15 @@ export const bookingMachine =
         },
         serviceProfile: {
           on: {
-            BOOK_APPOINTMENT: {
-              // internal: true,
-              target: "selectExtensionUsage",
-              actions: "saveService",
-            },
-            NEXT: [
+            BOOK_APPOINTMENT: [
               {
                 target: "selectExtensionUsage",
+                actions: "saveService",
                 cond: "canUseExtensions",
               },
               {
                 target: "selectHairLength",
+                actions: "saveService",
                 cond: "canNotUseExtensions",
               },
             ],
@@ -176,8 +175,11 @@ export const bookingMachine =
         }),
       },
       guards: {
-        canUseExtensions: (context) => context.service.canUseExtensions,
-        canNotUseExtensions: (context) => !context.service.canUseExtensions,
+        canUseExtensions: (context) =>
+          context.service.extensionUsage === POSSIBLE ||
+          context.service.extensionUsage === REQUIRED,
+        canNotUseExtensions: (context) =>
+          context.service.extensionUsage === NOT_OFFERED,
         addingExtensions: (context) => context.addingExtensions,
         notAddingExtensions: (context) => !context.addingExtensions,
       },

@@ -24,6 +24,8 @@ const DreadlocksService = ({ service }: Props) => {
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
 
+  console.log("context -", state.context);
+
   const atStart =
     state.value === bookingMachine.initialState.value ||
     state.matches("selectExtensionUsage");
@@ -51,7 +53,9 @@ const DreadlocksService = ({ service }: Props) => {
         {state.matches("selectHairLength") && <SelectHairLength />}
         {state.matches("selectSchedule") && <SelectSchedule />}
       </section>
-      {showModal && <ExtensionUsageModal setShowModal={setShowModal} />}
+      {showModal && (
+        <ExtensionUsageModal setShowModal={setShowModal} service={service} />
+      )}
     </Layout>
   );
 };

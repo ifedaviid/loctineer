@@ -1,14 +1,14 @@
 import React from "react";
-import { useActor } from "@xstate/react";
+// import { useActor } from "@xstate/react";
 import Button from "../button";
 import Modal from "../modal";
 import styles from "./adding-extensions.module.scss";
-import { useBookingService } from "../../hooks/useBookingService";
+// import { useBookingService } from "../../hooks/useBookingService";
 
-const ExtensionUsageModal = ({ setShowModal }) => {
-  const { bookingService } = useBookingService();
-  const [state, send] = useActor(bookingService);
-  const { service } = state.context;
+const ExtensionUsageModal = ({ service, setShowModal }) => {
+  // const { bookingService } = useBookingService();
+  // const [state, send] = useActor(bookingService);
+  // const { service } = state.context;
 
   return (
     <Modal>

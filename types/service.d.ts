@@ -1,3 +1,4 @@
+import { ExtensionUsage } from "./extension-usage";
 import { AppImage } from "./image";
 
 export interface Service {
@@ -5,7 +6,7 @@ export interface Service {
   name: string;
   description: string;
   category: ServiceCategory;
-  canUseExtensions: boolean;
+  extensionUsage: ExtensionUsage;
   cta: CallToAction;
   image: AppImage;
 }
