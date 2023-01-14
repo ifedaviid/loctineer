@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useActor } from "@xstate/react";
 import {
   ServiceProfile,
-  ExtensionUsageModal,
+  AddingExtensions,
   SelectExtensionLength,
   SelectHairLength,
   SelectSchedule,
@@ -23,6 +23,8 @@ const DreadlocksService = ({ service }: Props) => {
   const [showModal, setShowModal] = useState(false);
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
+
+  console.log("context -", state.context);
 
   const atStart =
     state.value === bookingMachine.initialState.value ||
@@ -51,7 +53,9 @@ const DreadlocksService = ({ service }: Props) => {
         {state.matches("selectHairLength") && <SelectHairLength />}
         {state.matches("selectSchedule") && <SelectSchedule />}
       </section>
-      {showModal && <ExtensionUsageModal setShowModal={setShowModal} />}
+      {showModal && (
+        <AddingExtensions setShowModal={setShowModal} service={service} />
+      )}
     </Layout>
   );
 };

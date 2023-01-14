@@ -1,5 +1,8 @@
 import { ServiceCategory } from "./../../types/service-category";
+import { ExtensionUsage } from "./../../types/extension-usage";
 import * as strings from "../strings";
+
+const { POSSIBLE, NOT_OFFERED } = ExtensionUsage;
 
 export const dreadlocksServices = [
   {
@@ -18,7 +21,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.MAINTENANCE,
-    canUseExtensions: true,
+    extensionUsage: NOT_OFFERED,
   },
   {
     id: strings.LOC_RETWIST_ID,
@@ -36,7 +39,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.MAINTENANCE,
-    canUseExtensions: false,
+    extensionUsage: NOT_OFFERED,
   },
   {
     id: strings.LOC_STYLING_ID,
@@ -54,7 +57,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.MAINTENANCE,
-    canUseExtensions: false,
+    extensionUsage: POSSIBLE,
   },
   {
     id: strings.NATURAL_INSTANT_DREADLOCKS_ID,
@@ -72,7 +75,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    canUseExtensions: true,
+    extensionUsage: POSSIBLE,
   },
   {
     id: strings.TWO_STRAND_STARTER_LOCS_ID,
@@ -90,7 +93,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    canUseExtensions: false,
+    extensionUsage: POSSIBLE,
   },
   {
     id: strings.SISTER_LOCS_ID,
@@ -108,6 +111,6 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    canUseExtensions: false,
+    extensionUsage: POSSIBLE,
   },
 ];

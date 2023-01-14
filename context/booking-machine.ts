@@ -1,8 +1,10 @@
 import { createMachine, assign } from "xstate";
-import { StaticImageData } from "next/image";
+import { ExtensionUsage } from "./../types/extension-usage";
 import { ServiceType } from "../types/service-type";
 import { Service } from "../types/service";
 import { AppImage } from "../types/image";
+
+const { POSSIBLE, REQUIRED, NOT_OFFERED } = ExtensionUsage;
 
 export enum ServiceCategory {
   INSTALLATION = "Installation",
@@ -40,7 +42,6 @@ const initialContextState: Appointment = {
 
 type Event =
   | { type: "PREV" }
-  | { type: "NEXT" }
   | { type: "BOOK_APPOINTMENT"; service: Service }
   | { type: "IGNORE_ADDING_EXTENSIONS"; addingExtensions: boolean }
   | { type: "ADDING_EXTENSIONS"; addingExtensions: boolean }
@@ -72,13 +73,13 @@ export const bookingMachine =
           exit: "resetContext",
         },
         serviceProfile: {
+          exit: "saveService",
           on: {
-            BOOK_APPOINTMENT: {
-              // internal: true,
-              target: "selectExtensionUsage",
-              actions: "saveService",
-            },
-            NEXT: [
+            BOOK_APPOINTMENT: [
+              {
+                target: "selectExtensionLength",
+                cond: "requiresExtensions",
+              },
               {
                 target: "selectExtensionUsage",
                 cond: "canUseExtensions",
@@ -138,9 +139,6 @@ export const bookingMachine =
             PREV: {
               target: "selectHairLength",
             },
-            NEXT: {
-              target: "idle",
-            },
           },
         },
       },
@@ -151,11 +149,7 @@ export const bookingMachine =
       // actions and guards
       actions: {
         saveService: assign({
-          service: (context, event) => {
-            if (!event["service"].canUseExtensions)
-              context.addingExtensions = false;
-            return event["service"];
-          },
+          service: (_context, event) => event["service"],
         }),
         saveExtensionUsage: assign({
           addingExtensions: (_context, event) => event["addingExtensions"],
@@ -176,8 +170,12 @@ export const bookingMachine =
         }),
       },
       guards: {
-        canUseExtensions: (context) => context.service.canUseExtensions,
-        canNotUseExtensions: (context) => !context.service.canUseExtensions,
+        requiresExtensions: (_context, event) =>
+          event["service"].extensionUsage === REQUIRED,
+        canUseExtensions: (_context, event) =>
+          event["service"].extensionUsage === POSSIBLE,
+        canNotUseExtensions: (_context, event) =>
+          event["service"].extensionUsage === NOT_OFFERED,
         addingExtensions: (context) => context.addingExtensions,
         notAddingExtensions: (context) => !context.addingExtensions,
       },

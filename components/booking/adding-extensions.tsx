@@ -5,10 +5,9 @@ import Modal from "../modal";
 import styles from "./adding-extensions.module.scss";
 import { useBookingService } from "../../hooks/useBookingService";
 
-const ExtensionUsageModal = ({ setShowModal }) => {
+const AddingExtensions = ({ service, setShowModal }) => {
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
-  const { service } = state.context;
 
   return (
     <Modal>
@@ -63,4 +62,4 @@ const ExtensionUsageModal = ({ setShowModal }) => {
   );
 };
 
-export default ExtensionUsageModal;
+export default AddingExtensions;
