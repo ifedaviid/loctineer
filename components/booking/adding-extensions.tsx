@@ -1,14 +1,13 @@
 import React from "react";
-// import { useActor } from "@xstate/react";
+import { useActor } from "@xstate/react";
 import Button from "../button";
 import Modal from "../modal";
 import styles from "./adding-extensions.module.scss";
-// import { useBookingService } from "../../hooks/useBookingService";
+import { useBookingService } from "../../hooks/useBookingService";
 
-const ExtensionUsageModal = ({ service, setShowModal }) => {
-  // const { bookingService } = useBookingService();
-  // const [state, send] = useActor(bookingService);
-  // const { service } = state.context;
+const AddingExtensions = ({ service, setShowModal }) => {
+  const { bookingService } = useBookingService();
+  const [state, send] = useActor(bookingService);
 
   return (
     <Modal>
@@ -63,4 +62,4 @@ const ExtensionUsageModal = ({ service, setShowModal }) => {
   );
 };
 
-export default ExtensionUsageModal;
+export default AddingExtensions;

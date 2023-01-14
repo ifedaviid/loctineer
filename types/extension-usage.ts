@@ -1,5 +1,5 @@
 export enum ExtensionUsage {
-  REQUIRED = "Requires Extension",
-  POSSIBLE = "Possible with Extensions",
-  NOT_OFFERED = "Not Offered",
+  REQUIRED = "required",
+  POSSIBLE = "possible",
+  NOT_OFFERED = "cant",
 }

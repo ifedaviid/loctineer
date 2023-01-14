@@ -42,7 +42,6 @@ const initialContextState: Appointment = {
 
 type Event =
   | { type: "PREV" }
-  | { type: "NEXT" }
   | { type: "BOOK_APPOINTMENT"; service: Service }
   | { type: "IGNORE_ADDING_EXTENSIONS"; addingExtensions: boolean }
   | { type: "ADDING_EXTENSIONS"; addingExtensions: boolean }
@@ -74,16 +73,19 @@ export const bookingMachine =
           exit: "resetContext",
         },
         serviceProfile: {
+          exit: "saveService",
           on: {
             BOOK_APPOINTMENT: [
               {
+                target: "selectExtensionLength",
+                cond: "requiresExtensions",
+              },
+              {
                 target: "selectExtensionUsage",
-                actions: "saveService",
                 cond: "canUseExtensions",
               },
               {
                 target: "selectHairLength",
-                actions: "saveService",
                 cond: "canNotUseExtensions",
               },
             ],
@@ -137,9 +139,6 @@ export const bookingMachine =
             PREV: {
               target: "selectHairLength",
             },
-            NEXT: {
-              target: "idle",
-            },
           },
         },
       },
@@ -150,11 +149,7 @@ export const bookingMachine =
       // actions and guards
       actions: {
         saveService: assign({
-          service: (context, event) => {
-            if (!event["service"].canUseExtensions)
-              context.addingExtensions = false;
-            return event["service"];
-          },
+          service: (_context, event) => event["service"],
         }),
         saveExtensionUsage: assign({
           addingExtensions: (_context, event) => event["addingExtensions"],
@@ -175,11 +170,12 @@ export const bookingMachine =
         }),
       },
       guards: {
-        canUseExtensions: (context) =>
-          context.service.extensionUsage === POSSIBLE ||
-          context.service.extensionUsage === REQUIRED,
-        canNotUseExtensions: (context) =>
-          context.service.extensionUsage === NOT_OFFERED,
+        requiresExtensions: (_context, event) =>
+          event["service"].extensionUsage === REQUIRED,
+        canUseExtensions: (_context, event) =>
+          event["service"].extensionUsage === POSSIBLE,
+        canNotUseExtensions: (_context, event) =>
+          event["service"].extensionUsage === NOT_OFFERED,
         addingExtensions: (context) => context.addingExtensions,
         notAddingExtensions: (context) => !context.addingExtensions,
       },

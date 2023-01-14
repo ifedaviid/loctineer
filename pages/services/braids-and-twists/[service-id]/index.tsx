@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useActor } from "@xstate/react";
 import {
   ServiceProfile,
-  ExtensionUsageModal,
+  AddingExtensions,
   SelectExtensionLength,
   SelectHairLength,
   SelectSchedule,
@@ -51,7 +51,9 @@ const BraidsAndTwistsService = ({ service }: Props) => {
         {state.matches("selectHairLength") && <SelectHairLength />}
         {state.matches("selectSchedule") && <SelectSchedule />}
       </section>
-      {showModal && <ExtensionUsageModal setShowModal={setShowModal} />}
+      {showModal && (
+        <AddingExtensions setShowModal={setShowModal} service={service} />
+      )}
     </Layout>
   );
 };
