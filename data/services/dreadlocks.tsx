@@ -22,6 +22,9 @@ export const dreadlocksServices = [
     },
     category: ServiceCategory.MAINTENANCE,
     extensionUsage: NOT_OFFERED,
+    price: 50,
+    rate: "HOURLY",
+    duration: "Between 3 to 15 hours (depending on hair health)",
   },
   {
     id: strings.LOC_RETWIST_ID,
@@ -40,6 +43,9 @@ export const dreadlocksServices = [
     },
     category: ServiceCategory.MAINTENANCE,
     extensionUsage: NOT_OFFERED,
+    price: 50,
+    rate: "HOURLY",
+    duration: "Between 3 to 15 hours (depending on hair health)",
   },
   {
     id: strings.LOC_STYLING_ID,
@@ -58,6 +64,9 @@ export const dreadlocksServices = [
     },
     category: ServiceCategory.MAINTENANCE,
     extensionUsage: POSSIBLE,
+    price: 50,
+    rate: "HOURLY",
+    duration: "Between 3 to 15 hours (depending on hair health)",
   },
   {
     id: strings.NATURAL_INSTANT_DREADLOCKS_ID,
@@ -76,6 +85,9 @@ export const dreadlocksServices = [
     },
     category: ServiceCategory.INSTALLATION,
     extensionUsage: POSSIBLE,
+    price: 50,
+    rate: "HOURLY",
+    duration: "Between 3 to 15 hours (depending on hair health)",
   },
   {
     id: strings.TWO_STRAND_STARTER_LOCS_ID,
@@ -94,6 +106,9 @@ export const dreadlocksServices = [
     },
     category: ServiceCategory.INSTALLATION,
     extensionUsage: POSSIBLE,
+    price: 50,
+    rate: "HOURLY",
+    duration: "Between 3 to 15 hours (depending on hair health)",
   },
   {
     id: strings.SISTER_LOCS_ID,
@@ -112,5 +127,8 @@ export const dreadlocksServices = [
     },
     category: ServiceCategory.INSTALLATION,
     extensionUsage: POSSIBLE,
+    price: 50,
+    rate: "HOURLY",
+    duration: "Between 3 to 15 hours (depending on hair health)",
   },
 ];
