@@ -58,7 +58,7 @@ const ServiceProfile = ({ service }) => {
           </Button>
         )}
       </div>
-      <CustomImage image={image} />
+      <CustomImage image={image} roundEdged />
     </div>
   );
 };
