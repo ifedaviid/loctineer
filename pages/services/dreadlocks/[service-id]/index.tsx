@@ -24,8 +24,6 @@ const DreadlocksService = ({ service }: Props) => {
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
 
-  console.log("context -", state.context);
-
   const atStart =
     state.value === bookingMachine.initialState.value ||
     state.matches("selectExtensionUsage");
