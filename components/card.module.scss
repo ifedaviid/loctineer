@@ -1,58 +1,5 @@
 @import "../common.scss";
 
-// .card {
-//   cursor: pointer;
-//   padding: unset;
-//   border-radius: 15px;
-//   // opacity: 1 !important;
-//   // border: 3px solid $lighter-dark;
-//   // border-radius: 1rem;
-//   display: flex;
-//   // box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-//   //   rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-//   // animation: reveal 2s ease;
-//   // transition: all 0.2s ease-in;
-//   // background-color: black;
-//   // height: 20rem;
-//   // width: 100%;
-//   // cursor: pointer;
-//   overflow: hidden;
-//   position: relative;
-//   img {
-//     object-fit: cover;
-//   }
-//   // &:hover {
-//   //   opacity: 1;
-//   //   img {
-//   //     object-fit: cover;
-//   //     border-radius: 10px;
-//   //     transition: all 0.1s ease-out;
-//   //   }
-//   // }
-//   > .cardDetails {
-//     /* Dark-overlay for card text */
-//     background: rgba(0, 0, 0, 0.4);
-//     // border-radius: 0 0 1rem 1rem;
-//     // margin-bottom: 0.3rem;
-
-//     // padding: 0.5rem 1.5rem;
-//     position: absolute;
-//     width: 100%;
-//     overflow: hidden;
-//     // max-width: 250px;
-//     // margin: 1rem;
-//     small {
-//       background-color: $dark-text;
-//       padding: 0.5rem 0.5rem;
-//       margin-bottom: 0.5rem;
-//       border-radius: 0.5rem;
-//       color: $dark-text;
-//       letter-spacing: 0.5px;
-//     }
-
-//   }
-// }
-
 $card-line-height: 1.2em;
 $card-padding: 1em;
 $card-radius: 0.5em;
@@ -76,8 +23,7 @@ $radio-size: 1.5em;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  // margin: 0.8rem;
-  // padding: $card-padding;
+  margin: 0.8rem;
 }
 .card:hover {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
@@ -92,11 +38,6 @@ $radio-size: 1.5em;
 //*****************************************
 
 .radio {
-  // -webkit-appearance: none;
-  // -moz-appearance: none;
-  // font-size: inherit;
-  // right: calc($card-padding + $radio-border-width);
-  // top: calc($card-padding + $radio-border-width);
   margin: 0;
   position: absolute;
   background: #fff;
@@ -105,8 +46,6 @@ $radio-size: 1.5em;
   cursor: pointer;
   outline: none;
   z-index: -1;
-  // height: $radio-size;
-  // width: $radio-size;
 
   &::after {
     border: $radio-border-width solid #fff;
@@ -130,18 +69,6 @@ $radio-size: 1.5em;
 
 //*****************************************
 //*****************************************
-
-// .card:hover .radio {
-//   border-color: $color-dark-gray;
-
-//   &:checked {
-//     border-color: $color-green;
-//   }
-// }
-
-// .card:hover {
-//   border-color: $color-dark-gray;
-// }
 
 .radio:checked {
   border-color: $color-green;
@@ -177,20 +104,12 @@ $radio-size: 1.5em;
   display: flex;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.4);
-  // border-radius: 0 0 1rem 1rem;
-  // margin-bottom: 0.3rem;
-
-  // padding: 0.5rem 1.5rem;
   position: absolute;
   align-self: end;
   width: 100%;
-  // overflow: hidden;
-  // max-width: 250px;
-  // margin: 1rem;
   bottom: 0;
   padding: 1rem 1rem;
   h4 {
-    // margin-top: 1.5rem;
     margin: unset;
     font-size: 1.5rem;
     font-weight: 600;
