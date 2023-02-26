@@ -15,7 +15,7 @@ interface Props {
 const Carousel = ({ images }: Props) => {
   return (
     <Swiper
-      speed={1200}
+      speed={500}
       breakpoints={{
         320: { slidesPerView: 1.3 },
         520: { slidesPerView: 1.3 },

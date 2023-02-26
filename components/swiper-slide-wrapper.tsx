@@ -6,7 +6,6 @@ import "swiper/swiper.min.css";
 const SwiperSlideWrapper = ({ children, ...rest }) => {
   return (
     <Swiper
-      speed={1200}
       className={styles["swiper-slide-wrapper"]}
       centeredSlides={true}
       breakpoints={{
