@@ -6,15 +6,16 @@ import "swiper/swiper.min.css";
 const SwiperSlideWrapper = ({ children, ...rest }) => {
   return (
     <Swiper
+      speed={1200}
       className={styles["swiper-slide-wrapper"]}
       centeredSlides={true}
       breakpoints={{
-        320: { slidesPerView: 1.1 },
-        520: { slidesPerView: 1.1 },
-        768: { slidesPerView: 2.1 },
-        968: { slidesPerView: 2.1 },
-        1120: { slidesPerView: 3.1 },
-        1400: { slidesPerView: 3.1 },
+        320: { slidesPerView: 1.3 },
+        520: { slidesPerView: 1.3 },
+        768: { slidesPerView: 2.3 },
+        968: { slidesPerView: 2.3 },
+        1120: { slidesPerView: 3.3 },
+        1400: { slidesPerView: 3.3 },
       }}
       {...rest}
     >

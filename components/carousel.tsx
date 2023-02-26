@@ -15,14 +15,14 @@ interface Props {
 const Carousel = ({ images }: Props) => {
   return (
     <Swiper
-      cssMode={true}
+      speed={1200}
       breakpoints={{
-        320: { slidesPerView: 1.2 },
-        520: { slidesPerView: 1.2 },
-        768: { slidesPerView: 2.2 },
-        968: { slidesPerView: 2.2 },
-        1120: { slidesPerView: 3.2 },
-        1400: { slidesPerView: 4.2 },
+        320: { slidesPerView: 1.3 },
+        520: { slidesPerView: 1.3 },
+        768: { slidesPerView: 2.3 },
+        968: { slidesPerView: 2.3 },
+        1120: { slidesPerView: 3.3 },
+        1400: { slidesPerView: 4.3 },
       }}
       modules={[FreeMode, Pagination]}
       spaceBetween={10}

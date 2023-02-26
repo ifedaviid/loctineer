@@ -84,14 +84,6 @@ main {
       position: relative;
       margin-top: 3rem;
     }
-  }
-  > section.gray {
-    background-color: lightgray;
-    color: black;
-  }
-  > section.dark {
-    background-color: #201f1f;
-    color: white;
     .swiper-wrapper {
       > :first-child {
         padding-left: 1rem;
@@ -104,6 +96,14 @@ main {
         padding-right: 1rem;
       }
     }
+  }
+  > section.gray {
+    background-color: lightgray;
+    color: black;
+  }
+  > section.dark {
+    background-color: #201f1f;
+    color: white;
   }
 }
 
