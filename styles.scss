@@ -92,6 +92,18 @@ main {
   > section.dark {
     background-color: #201f1f;
     color: white;
+    .swiper-wrapper {
+      > :first-child {
+        padding-left: 1rem;
+      }
+      > * {
+        margin: unset !important;
+        padding: 0.5rem;
+      }
+      > :last-child {
+        padding-right: 1rem;
+      }
+    }
   }
 }
 
