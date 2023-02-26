@@ -12,12 +12,36 @@
     > * {
       display: flex;
       flex-direction: row;
-      margin-bottom: 1rem;
       p,
       svg {
-        margin: 0 1rem 0 0;
         align-self: center;
       }
+      p {
+        margin: 0.5rem;
+      }
+      svg {
+        margin: 0 1rem 0 0;
+      }
+    }
+  }
+  .priceInfoContainer {
+    display: flex;
+    flex-direction: row;
+    > p {
+      color: black;
+      font-size: 1.1rem;
+      font-weight: bolder;
+      letter-spacing: 3px;
+    }
+    > span {
+      padding: 0.5rem;
+      background: rgb(64, 64, 64);
+      border-radius: 0.2rem;
+      color: rgb(218, 216, 216);
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      font-weight: bolder;
+      align-self: center;
     }
   }
 }

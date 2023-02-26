@@ -4,7 +4,7 @@ import { useBookingService } from "../../hooks/useBookingService";
 import Button from "../button";
 import CustomImage from "../custom-image";
 import { ExtensionUsage } from "../../types/extension-usage";
-import { Paid, AccessTime, HelpOutline } from "@mui/icons-material";
+import { PaidOutlined, AccessTime, HelpOutline } from "@mui/icons-material";
 import styles from "./service-profile.module.scss";
 
 const ServiceProfile = ({ service }) => {
@@ -14,7 +14,7 @@ const ServiceProfile = ({ service }) => {
 
   const getPriceInfo = () => {
     const hasFixedRate = rate === "FIXED";
-    return hasFixedRate ? `$${price}.00 fixed price` : `$${price} hourly rate`;
+    return hasFixedRate ? `FIXED PRICE` : `HOURLY RATE`;
   };
 
   const getExtensionsInfo = () => {
@@ -34,7 +34,6 @@ const ServiceProfile = ({ service }) => {
     <div className={styles["profile-container"]}>
       <div>
         <h3>{name}</h3>
-        <p>{description}</p>
         <div className={styles.iconInfoContainer}>
           <div>
             <HelpOutline fontSize="large" />
@@ -45,10 +44,14 @@ const ServiceProfile = ({ service }) => {
             <p>{duration}</p>
           </div>
           <div>
-            <Paid fontSize="large" />
-            <p>{getPriceInfo()}</p>
+            <PaidOutlined fontSize="large" />
+            <div className={styles.priceInfoContainer}>
+              <p>${price}</p>
+              <span>{getPriceInfo()}</span>
+            </div>
           </div>
         </div>
+        <p>{description}</p>
         {cta.primary && (
           <Button
             variant="primary"
