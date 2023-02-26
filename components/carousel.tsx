@@ -15,6 +15,7 @@ interface Props {
 const Carousel = ({ images }: Props) => {
   return (
     <Swiper
+      cssMode={true}
       breakpoints={{
         320: { slidesPerView: 1.2 },
         520: { slidesPerView: 1.2 },
