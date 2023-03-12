@@ -10,20 +10,33 @@ import Card from "../card";
 import { ExtensionLength } from "../../context/booking-machine";
 import { useBreakpoints } from "../../hooks/useBreakpoints";
 import Grid from "../grid";
+import useConfirm from "./confirm-exit";
 
 const SelectExtensionLength = () => {
   const [extensionLength, setExtensionLength] = useState<ExtensionLength>(null);
   const { bookingService } = useBookingService();
+  const [Dialog, confirmDelete] = useConfirm(
+    'Are you sure?',
+    'Are you sure you want to exit booking process?',
+  )
   const [state, send] = useActor(bookingService);
   const { mobile } = useBreakpoints();
   const { service, extensionLength: savedChoice } = state.context;
+
+  const handleExit = async () => {
+    const res = await confirmDelete()
+    if (res) {
+      send('EXIT')
+    }
+    else {/* ... */ }
+  }
 
   const swipeMenu = () => (
     <SwiperSlideWrapper>
       {extensionLengthOptions.map((option, idx) => (
         <SwiperSlide key={idx}>
           {({ isActive }) => {
-              // if (isActive) setExtensionLength(option);
+            // if (isActive) setExtensionLength(option);
             return (
               <Card
                 image={option.image}
@@ -58,33 +71,31 @@ const SelectExtensionLength = () => {
   const menu = mobile ? swipeMenu() : gridMenu();
 
   return (
-      <div style={{ width: "100%" }}>
-        <h2>{`How long do you want your ${service.name} extensions to be?`}</h2>
-        {menu}
-        <ButtonGroupWrapper>
-          <Button
-            variant="primary"
-            onClick={() => {
-              send({
-                type: "SAVE_EXTENSION_LENGTH",
-                extensionLength: extensionLength,
-              });
-            }}
-          >
-            Next
-          </Button>
-          <Button
-            variant="secondary"
-            size="large"
-            onClick={() => {
-              send("EXIT");
-              // router.push('/')
-            }}
-          >
-            X
-          </Button>
-        </ButtonGroupWrapper>
-      </div>
+    <div style={{ width: "100%" }}>
+      <h2>{`How long do you want your ${service.name} extensions to be?`}</h2>
+      {menu}
+      <ButtonGroupWrapper>
+        <Button
+          variant="primary"
+          onClick={() => {
+            send({
+              type: "SAVE_EXTENSION_LENGTH",
+              extensionLength: extensionLength,
+            });
+          }}
+        >
+          Next
+        </Button>
+        <Button
+          variant="secondary"
+          size="large"
+          onClick={handleExit}
+        >
+          X
+        </Button>
+      </ButtonGroupWrapper>
+      <Dialog />
+    </div>
   );
 };
 

@@ -4,10 +4,24 @@ import { InlineWidget } from "react-calendly";
 import Button from "../button";
 import { useBookingService } from "../../hooks/useBookingService";
 import ButtonGroupWrapper from "../button-group-wrapper";
+import useConfirm from "./confirm-exit";
 
 const SelectSchedule = () => {
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
+
+  const [Dialog, confirmDelete] = useConfirm(
+    'Are you sure?',
+    'Are you sure you want to exit booking process?',
+  )
+
+  const handleExit = async () => {
+    const res = await confirmDelete()
+    if (res) {
+      send('EXIT')
+    }
+    else {/* ... */ }
+  }
 
   const getExtensionUsageDetails = () => {
     const yes = "Yes! I will be using extensions";
@@ -46,14 +60,12 @@ const SelectSchedule = () => {
         <Button
           variant="secondary"
           size="large"
-          onClick={() => {
-            send("EXIT");
-            // router.push('/')
-          }}
+          onClick={handleExit}
         >
           X
         </Button>
       </ButtonGroupWrapper>
+      <Dialog />
     </div>
   );
 };
