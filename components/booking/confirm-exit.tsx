@@ -85,13 +85,13 @@ const useConfirm = (title: string, message: string): [() => JSX.Element, () => P
                 variant="secondary"
                 onClick={handleCancel}
               >
-                No, thanks
+                No
               </Button>
               <Button
                 variant="primary"
                 onClick={handleConfirm}
               >
-                Yes, I will!
+                Yes
               </Button>
             </div>
           </div>
