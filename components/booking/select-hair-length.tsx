@@ -10,6 +10,7 @@ import Button from "../button";
 import { HairLength } from "../../context/booking-machine";
 import { useBreakpoints } from "../../hooks/useBreakpoints";
 import Grid from "../grid";
+import useConfirm from "./confirm-exit";
 
 const SelectHairLength = () => {
   const [hairLength, setHairLength] = useState<HairLength>(null);
@@ -17,24 +18,36 @@ const SelectHairLength = () => {
   const [state, send] = useActor(bookingService);
   const { mobile } = useBreakpoints();
 
+  const [Dialog, confirmDelete] = useConfirm(
+    'Are you sure?',
+    'Are you sure you want to exit booking process?',
+  )
+
+  const handleExit = async () => {
+    const res = await confirmDelete()
+    if (res) {
+      send('EXIT')
+    }
+    else {/* ... */ }
+  }
 
   const swipeMenu = () => (
     <SwiperSlideWrapper>
-        {naturalHairLengthOptions.map((option, idx) => (
-          <SwiperSlide key={idx}>
-            {({ isActive }) => {
-             // if (isActive) setHairLength(option);
-              return (
-                <Card
-                  image={option.image}
-                  isSelected={option === hairLength}
-                  title={option.category}
-                  onChange={() => setHairLength(option)}
-                />
-              );
-            }}
-          </SwiperSlide>
-        ))}
+      {naturalHairLengthOptions.map((option, idx) => (
+        <SwiperSlide key={idx}>
+          {({ isActive }) => {
+            // if (isActive) setHairLength(option);
+            return (
+              <Card
+                image={option.image}
+                isSelected={option === hairLength}
+                title={option.category}
+                onChange={() => setHairLength(option)}
+              />
+            );
+          }}
+        </SwiperSlide>
+      ))}
     </SwiperSlideWrapper>
   );
 
@@ -73,10 +86,11 @@ const SelectHairLength = () => {
         >
           Next
         </Button>
-        <Button variant="secondary" size="large" onClick={() => send("EXIT")}>
+        <Button variant="secondary" size="large" onClick={handleExit}>
           X
         </Button>
       </ButtonGroupWrapper>
+      <Dialog />
     </div>
   );
 };
