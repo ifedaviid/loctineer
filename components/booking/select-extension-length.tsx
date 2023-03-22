@@ -13,15 +13,15 @@ import Grid from "../grid";
 import useConfirm from "./confirm-exit";
 
 const SelectExtensionLength = () => {
-  const [extensionLength, setExtensionLength] = useState<ExtensionLength>(null);
   const { bookingService } = useBookingService();
   const [Dialog, confirmDelete] = useConfirm(
     'Are you sure?',
     'Are you sure you want to exit booking process?',
   )
   const [state, send] = useActor(bookingService);
-  const { mobile } = useBreakpoints();
   const { service, extensionLength: savedChoice } = state.context;
+  const { mobile } = useBreakpoints();
+  const [extensionLength, setExtensionLength] = useState<ExtensionLength>(savedChoice);
 
   const handleExit = async () => {
     const res = await confirmDelete()

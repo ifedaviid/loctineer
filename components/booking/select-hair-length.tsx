@@ -13,9 +13,10 @@ import Grid from "../grid";
 import useConfirm from "./confirm-exit";
 
 const SelectHairLength = () => {
-  const [hairLength, setHairLength] = useState<HairLength>(null);
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
+  const { hairLength: savedHairLength } = state.context
+  const [hairLength, setHairLength] = useState<HairLength>(savedHairLength);
   const { mobile } = useBreakpoints();
 
   const [Dialog, confirmDelete] = useConfirm(
