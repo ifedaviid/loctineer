@@ -12,11 +12,7 @@ export default function FourOhFour() {
                 <br />
                 <p>Your URL is probably invalid. Make sure you have the correct one.</p>
                 <Link href="/">
-                    <Button
-                        variant="primary"
-                    >
-                        Return home
-                    </Button>
+                    <Button variant="primary">Return home</Button>
                 </Link>
             </section>
         </Layout>
