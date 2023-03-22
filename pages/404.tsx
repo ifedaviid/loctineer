@@ -15,7 +15,7 @@ export default function FourOhFour() {
                     <Button
                         variant="primary"
                     >
-                        Go back home
+                        Return home
                     </Button>
                 </Link>
             </section>
