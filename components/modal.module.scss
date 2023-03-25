@@ -1,8 +1,8 @@
-
 @import './../common.scss';
 
 // The dark transparent overlay behind the modal
 .modalOverlay {
+    z-index: 100;
     display: flex;
     flex-direction: column;
     position: fixed;
