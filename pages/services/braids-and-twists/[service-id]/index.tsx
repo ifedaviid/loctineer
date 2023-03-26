@@ -29,6 +29,9 @@ const BraidsAndTwistsService = ({ service }: Props) => {
     state.matches("selectExtensionUsage");
 
   useEffect(() => {
+    if (state.context?.service !== null && service.id !== state.context.service.id) {
+      send({ type: "EXIT" })
+    }
     if (state.matches("selectExtensionUsage")) setShowModal(true);
   }, [state]);
 
@@ -45,8 +48,8 @@ const BraidsAndTwistsService = ({ service }: Props) => {
         {(state.matches("idle") ||
           state.matches("serviceProfile") ||
           state.matches("selectExtensionUsage")) && (
-          <ServiceProfile service={service} />
-        )}
+            <ServiceProfile service={service} />
+          )}
         {state.matches("selectExtensionLength") && <SelectExtensionLength />}
         {state.matches("selectHairLength") && <SelectHairLength />}
         {state.matches("selectSchedule") && <SelectSchedule />}
