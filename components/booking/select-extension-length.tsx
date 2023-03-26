@@ -31,6 +31,14 @@ const SelectExtensionLength = () => {
     else {/* ... */ }
   }
 
+  const handleNext = () => {
+    if (extensionLength)
+      send({
+        type: "SAVE_EXTENSION_LENGTH",
+        extensionLength: extensionLength,
+      });
+  }
+
   const swipeMenu = () => (
     <SwiperSlideWrapper>
       {extensionLengthOptions.map((option, idx) => (
@@ -77,12 +85,8 @@ const SelectExtensionLength = () => {
       <ButtonGroupWrapper>
         <Button
           variant="primary"
-          onClick={() => {
-            send({
-              type: "SAVE_EXTENSION_LENGTH",
-              extensionLength: extensionLength,
-            });
-          }}
+          onClick={handleNext}
+          disabled={!extensionLength}
         >
           Next
         </Button>

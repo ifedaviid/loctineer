@@ -32,6 +32,15 @@ const SelectHairLength = () => {
     else {/* ... */ }
   }
 
+  const handleNext = () => {
+    if (hairLength) {
+      send({
+        type: "SAVE_HAIR_LENGTH",
+        hairLength,
+      })
+    }
+  }
+
   const swipeMenu = () => (
     <SwiperSlideWrapper>
       {naturalHairLengthOptions.map((option, idx) => (
@@ -78,12 +87,8 @@ const SelectHairLength = () => {
       <ButtonGroupWrapper>
         <Button
           variant="primary"
-          onClick={() =>
-            send({
-              type: "SAVE_HAIR_LENGTH",
-              hairLength,
-            })
-          }
+          onClick={handleNext}
+          disabled={!hairLength}
         >
           Next
         </Button>

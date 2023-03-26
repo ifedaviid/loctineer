@@ -42,18 +42,16 @@ const Card = ({
     // </div>
 
     <label
-      className={`${styles.card} ${
-        isSelected ? styles.active : styles.inactive
-      }`}
-      onClick={onChange ? () => onChange() : null}
+      className={`${styles.card} ${isSelected ? styles.active : styles.inactive}`}
     >
       <input
         name="plan"
         type="radio"
         className={styles.radio}
         checked={isSelected}
+        onChange={onChange ? () => onChange() : null}
       />
-      {image && <CustomImage image={image} darken={!isSelected}/>}
+      {image && <CustomImage image={image} darken={!isSelected} />}
       <div className={styles["plan-details"]}>
         {category && <span className={styles["plan-type"]}>{category}</span>}
         <h4>{title}</h4>

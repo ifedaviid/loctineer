@@ -124,12 +124,11 @@ export const bookingMachine =
             },
             PREV: [
               {
-                target: "selectExtensionLength",
-                cond: "addingExtensions",
-              },
-              {
                 target: "idle",
                 cond: "notAddingExtensions",
+              },
+              {
+                target: "selectExtensionLength",
               },
             ],
           },
@@ -155,6 +154,7 @@ export const bookingMachine =
           addingExtensions: (_context, event) => event["addingExtensions"],
         }),
         saveExtensionLength: assign({
+          addingExtensions: (_context, event) => _context.addingExtensions ? _context.addingExtensions : _context.service.extensionUsage == REQUIRED ? true : false,
           extensionLength: (_context, event) => event["extensionLength"],
         }),
         saveHairLength: assign({
