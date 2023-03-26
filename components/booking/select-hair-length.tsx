@@ -88,6 +88,7 @@ const SelectHairLength = () => {
         <Button
           variant="primary"
           onClick={handleNext}
+          disabled={!hairLength}
         >
           Next
         </Button>

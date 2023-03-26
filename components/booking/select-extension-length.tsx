@@ -86,6 +86,7 @@ const SelectExtensionLength = () => {
         <Button
           variant="primary"
           onClick={handleNext}
+          disabled={!extensionLength}
         >
           Next
         </Button>
