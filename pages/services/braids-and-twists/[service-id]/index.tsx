@@ -29,6 +29,8 @@ const BraidsAndTwistsService = ({ service }: Props) => {
     state.matches("selectExtensionUsage");
 
   useEffect(() => {
+    // check if user was booking in progress and selected another service. if true, it send EXIT event then it will redirect to IDLE state and will reset state for new booking.
+    // variable service equals current service fetched from service-id in url and state.context.service is the service stored in previous time.
     if (state.context?.service !== null && service.id !== state.context.service.id) {
       send({ type: "EXIT" })
     }
