@@ -1,7 +1,6 @@
 import React from "react";
 import Layout from "../../../../components/layout";
 import { Confirmation } from "../../../../components/booking";
-import { getQueryParamsFromCalendly } from "../../../../data-fetch";
 
 const ConfirmBooking = ({ invitee_email: email, answer_1: phoneNumber }) => {
   if (!email && !phoneNumber) return null;
@@ -15,7 +14,12 @@ const ConfirmBooking = ({ invitee_email: email, answer_1: phoneNumber }) => {
   );
 };
 
-export const getServerSideProps = (context) =>
-  getQueryParamsFromCalendly(context);
+export const getServerSideProps = ({ query }) => {
+  return {
+    props: {
+      ...query,
+    },
+  };
+};
 
 export default ConfirmBooking;
