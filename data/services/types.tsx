@@ -15,7 +15,7 @@ export const serviceTypes = [
       },
     },
     image: {
-      path: require("../../images/dreadlocks.jpg"),
+      path: require("../../data/images/dreadlocks.jpg"),
       altText: "",
     },
     services: dreadlocksServices,
@@ -32,7 +32,7 @@ export const serviceTypes = [
       },
     },
     image: {
-      path: require("../../images/braids-and-twists.jpg"),
+      path: require("../../data/images/braids-and-twists.jpg"),
       altText: "",
     },
     services: braidsAndTwistsServices,

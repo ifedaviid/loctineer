@@ -20,7 +20,7 @@ export const SOFT_LOCS = "Soft locs";
 export const BUTTERFLY_DISTRESSED_LOCS = "Butterfly / Distressed Locs";
 export const NATURAL_BRAIDS_AND_TWISTS = "Natural hair braids & twists";
 export const BOX_BRAIDS_AND_TWISTS = "Box braids & twists";
-export const KINKY_PASSION_TWISTS = "Kinky/Passion twists";
+export const KINKY_PASSION_TWISTS = "Kinky / Passion twists";
 export const KNOTLESS_BRAIDS = "Knotless braids";
 
 /******************************************************************* */

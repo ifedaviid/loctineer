@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 import Carousel from "../components/carousel";
 import Listing from "../components/listing";
 import CustomImage from "../components/custom-image";
-import { SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from "swiper/react";
 import { featuredImages } from "../data/featured-images";
 import { serviceTypes } from "../data";
 import { extractImages } from "../components/helpers/utils";
@@ -17,12 +17,12 @@ export default function Home() {
     <Layout>
       <Hero
         topText="Ottawa's favorite braider & loctician"
-        mainText='Creating your best Look'
-        bottomText='Let me help you shine!'
-        callToAction={() => router.push('/booking')}
+        mainText="Creating your best Look"
+        bottomText="Let me help you shine!"
+        callToAction={() => router.push("/booking")}
         image={{
-          path: require('../images/braids-and-twists.jpg'),
-          altText: 'ifes alt text'
+          path: require("../data/images/braids-and-twists.jpg"),
+          altText: "ifes alt text",
         }}
       />
       <section>
@@ -31,7 +31,7 @@ export default function Home() {
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
       </section>
       <section>
-        <h2 style={{ marginTop: 'unset' }}>We specialize in...</h2>
+        <h2 style={{ marginTop: "unset" }}>We specialize in...</h2>
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
         <div className="services-content">
@@ -55,6 +55,6 @@ export default function Home() {
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
         <Carousel images={images} />
       </section>
-    </Layout >
+    </Layout>
   );
 }
