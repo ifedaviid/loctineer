@@ -15,7 +15,12 @@ const Listing = ({ image, title, description, cta }: Props) => {
   return (
     <div className={styles["listing"]}>
       <div>
-        <Image src={image.path} alt={image.altText} placeholder="blur" />
+        <Image
+          src={image.path}
+          alt={image.altText}
+          placeholder="blur"
+          loading="lazy"
+        />
       </div>
       <div>
         <h3>{title}</h3>
