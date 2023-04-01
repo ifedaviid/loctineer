@@ -17,7 +17,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../images/braids-and-twists.jpg"),
+      path: require("../../data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -38,7 +38,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../images/braids-and-twists.jpg"),
+      path: require("../../data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -59,7 +59,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../images/braids-and-twists.jpg"),
+      path: require("../../data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -80,7 +80,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../images/braids-and-twists.jpg"),
+      path: require("../../data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -101,7 +101,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../images/braids-and-twists.jpg"),
+      path: require("../../data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -122,7 +122,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../images/braids-and-twists.jpg"),
+      path: require("../../data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
