@@ -92,6 +92,10 @@ main {
         padding-right: 1rem;
       }
     }
+    > .carousel {
+      width: 100%;
+      min-height: 100% !important;
+    }
   }
   > section.gray {
     background-color: lightgray;

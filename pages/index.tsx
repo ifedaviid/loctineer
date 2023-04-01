@@ -1,18 +1,36 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { useRouter } from "next/router";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode, Pagination } from "swiper";
+import "swiper/swiper.min.css";
+import "swiper/css/pagination";
+import "swiper/css/free-mode";
+
+import { AppImage } from "../types/image";
+import Modal from "../components/modal";
 import Hero from "../components/hero";
 import Layout from "../components/layout";
-import Carousel from "../components/carousel";
 import Listing from "../components/listing";
 import CustomImage from "../components/custom-image";
-import { SwiperSlide } from "swiper/react";
+import { extractImages } from "../components/helpers/utils";
 import { featuredImages } from "../data/featured-images";
 import { serviceTypes } from "../data";
-import { extractImages } from "../components/helpers/utils";
 
 export default function Home() {
   const router = useRouter();
-  const images = extractImages(featuredImages);
+  const images: Array<AppImage> = extractImages(featuredImages);
+  const initialPopUpState = {
+    showing: false,
+    image: null,
+  };
+  const [popUp, setPopUp] = useState(initialPopUpState);
+
+  const openImage = (image: AppImage) => (
+    <Modal closeModal={() => setPopUp(initialPopUpState)}>
+      <CustomImage image={image} roundEdged />
+    </Modal>
+  );
+
   return (
     <Layout>
       <Hero
@@ -49,12 +67,38 @@ export default function Home() {
           })}
         </div>
       </section>
-      <section className="dark offset-pagination-bullets">
+      <section className="dark">
         <h2>Gallery</h2>
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
           when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-        <Carousel images={images} />
+        <Swiper
+          speed={500}
+          breakpoints={{
+            320: { slidesPerView: 1.3 },
+            520: { slidesPerView: 1.3 },
+            768: { slidesPerView: 2.3 },
+            968: { slidesPerView: 2.3 },
+            1120: { slidesPerView: 3.3 },
+            1400: { slidesPerView: 4.3 },
+          }}
+          modules={[FreeMode, Pagination]}
+          spaceBetween={10}
+          pagination={{ clickable: true }}
+          freeMode={true}
+          className="carousel"
+        >
+          {images.map((image, idx) => (
+            <SwiperSlide
+              key={idx}
+              onClick={() => setPopUp({ showing: true, image })}
+            >
+              {/* Or use unselectable <Card/> */}
+              <CustomImage image={image} roundEdged />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
+      {popUp.showing && openImage(popUp.image)}
     </Layout>
   );
 }
