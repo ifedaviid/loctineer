@@ -1,30 +1,36 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
+import { Close } from "@mui/icons-material";
 import styles from "./modal.module.scss";
 
-const Modal = ({ children }) => {
-    const [isBrowser, setIsBrowser] = useState(false);
+interface Props {
+  closeModal?: Function;
+  children: React.ReactNode;
+}
 
-    useEffect(() => {
-        setIsBrowser(true);
-    }, []);
-
-    const renderModalContent = () => {
-        return (
-            <>
-                {isBrowser ?
-                    <div className={styles.modalOverlay}>
-                        {children}
-                    </div>
-                    : null}
-            </>
-        );
-    }
-
-    return ReactDOM.createPortal(
-        renderModalContent(),
-        document.getElementById("modal-root")
+const Modal = ({ closeModal, children }: Props) => {
+  const renderModalContent = () => {
+    return (
+      <>
+        <div className={styles.modalOverlay}>
+          {closeModal && (
+            <div className={styles.closeIcon}>
+              <Close
+                sx={{ fontSize: 50, color: "white" }}
+                onClick={() => closeModal()}
+              />
+            </div>
+          )}
+          {children}
+        </div>
+      </>
     );
+  };
+
+  return ReactDOM.createPortal(
+    renderModalContent(),
+    document.getElementById("modal-root")
+  );
 };
 
 export default Modal;

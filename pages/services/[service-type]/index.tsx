@@ -56,6 +56,7 @@ export const getStaticPaths = () => ({
   ],
   fallback: false,
 });
+
 export async function getStaticProps(context) {
   return {
     props: {
