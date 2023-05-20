@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "./layout.module.scss";
 import Header from "./header";
 import Drawer from "@mui/material/Drawer";
-import MobileNavBar from "../components/mobile-nav-bar";
+import MobileNavBar from "./mobile-nav-bar";
 
 interface Props {
   children: React.ReactNode;

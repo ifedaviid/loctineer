@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../../components/layout";
-import Listing from "../../components/listing";
+import Layout from "../../src/layout";
+import Listing from "../../src/listing";
 import { serviceTypes } from "../../data";
 
 export default function Services() {

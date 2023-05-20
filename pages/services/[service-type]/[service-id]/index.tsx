@@ -6,10 +6,10 @@ import {
   SelectExtensionLength,
   SelectHairLength,
   SelectSchedule,
-} from "../../../../components/booking/index";
-import Layout from "../../../../components/layout";
+} from "../../../../src/booking/index";
+import Layout from "../../../../src/layout";
 import { Service } from "../../../../types/service";
-import Button from "../../../../components/button";
+import Button from "../../../../src/button";
 import {
   braidsAndTwistsServices,
   dreadlocksServices,
