@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { PaidOutlined, AccessTime, HelpOutline } from "@mui/icons-material";
-import { useBookingService } from "../../hooks/useBookingService";
+import { useBookingService } from "../../components/hooks/useBookingService";
 import Button from "../button";
 import CustomImage from "../custom-image";
 import { ExtensionUsage } from "../../types/extension-usage";

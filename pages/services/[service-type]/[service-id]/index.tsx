@@ -16,7 +16,7 @@ import {
   strings,
 } from "../../../../data";
 import { bookingMachine } from "../../../../context/booking-machine";
-import { useBookingService } from "../../../../hooks/useBookingService";
+import { useBookingService } from "../../../../components/hooks/useBookingService";
 
 interface Props {
   service: Service;

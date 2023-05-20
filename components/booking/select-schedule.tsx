@@ -2,7 +2,7 @@ import React from "react";
 import { useActor } from "@xstate/react";
 import { InlineWidget } from "react-calendly";
 import Button from "../button";
-import { useBookingService } from "../../hooks/useBookingService";
+import { useBookingService } from "../../components/hooks/useBookingService";
 import ButtonGroupWrapper from "../button-group-wrapper";
 import useConfirm from "./confirm-exit";
 
@@ -11,17 +11,18 @@ const SelectSchedule = () => {
   const [state, send] = useActor(bookingService);
 
   const [Dialog, confirmDelete] = useConfirm(
-    'Are you sure?',
-    'Are you sure you want to exit booking process?',
-  )
+    "Are you sure?",
+    "Are you sure you want to exit booking process?"
+  );
 
   const handleExit = async () => {
-    const res = await confirmDelete()
+    const res = await confirmDelete();
     if (res) {
-      send('EXIT')
+      send("EXIT");
+    } else {
+      /* ... */
     }
-    else {/* ... */ }
-  }
+  };
 
   const getExtensionUsageDetails = () => {
     const yes = "Yes! I will be using extensions";
@@ -57,11 +58,7 @@ const SelectSchedule = () => {
         }}
       />
       <ButtonGroupWrapper style={{ marginTop: "3rem" }}>
-        <Button
-          variant="secondary"
-          size="large"
-          onClick={handleExit}
-        >
+        <Button variant="secondary" size="large" onClick={handleExit}>
           X
         </Button>
       </ButtonGroupWrapper>

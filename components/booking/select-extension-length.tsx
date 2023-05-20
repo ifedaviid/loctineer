@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useActor } from "@xstate/react";
-import { useBookingService } from "../../hooks/useBookingService";
+import { useBookingService } from "../../components/hooks/useBookingService";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { extensionLengthOptions } from "../../data/hair-length/extension";
 import SwiperSlideWrapper from "../swiper-slide-wrapper";
@@ -8,28 +8,30 @@ import ButtonGroupWrapper from "../button-group-wrapper";
 import Button from "../button";
 import Card from "../card";
 import { ExtensionLength } from "../../context/booking-machine";
-import { useBreakpoints } from "../../hooks/useBreakpoints";
+import { useBreakpoints } from "../../components/hooks/useBreakpoints";
 import Grid from "../grid";
 import useConfirm from "./confirm-exit";
 
 const SelectExtensionLength = () => {
   const { bookingService } = useBookingService();
   const [Dialog, confirmDelete] = useConfirm(
-    'Are you sure?',
-    'Are you sure you want to exit booking process?',
-  )
+    "Are you sure?",
+    "Are you sure you want to exit booking process?"
+  );
   const [state, send] = useActor(bookingService);
   const { service, extensionLength: savedChoice } = state.context;
   const { mobile } = useBreakpoints();
-  const [extensionLength, setExtensionLength] = useState<ExtensionLength>(savedChoice);
+  const [extensionLength, setExtensionLength] =
+    useState<ExtensionLength>(savedChoice);
 
   const handleExit = async () => {
-    const res = await confirmDelete()
+    const res = await confirmDelete();
     if (res) {
-      send('EXIT')
+      send("EXIT");
+    } else {
+      /* ... */
     }
-    else {/* ... */ }
-  }
+  };
 
   const handleNext = () => {
     if (extensionLength)
@@ -37,7 +39,7 @@ const SelectExtensionLength = () => {
         type: "SAVE_EXTENSION_LENGTH",
         extensionLength: extensionLength,
       });
-  }
+  };
 
   const swipeMenu = () => (
     <SwiperSlideWrapper>
@@ -90,11 +92,7 @@ const SelectExtensionLength = () => {
         >
           Next
         </Button>
-        <Button
-          variant="secondary"
-          size="large"
-          onClick={handleExit}
-        >
+        <Button variant="secondary" size="large" onClick={handleExit}>
           X
         </Button>
       </ButtonGroupWrapper>
