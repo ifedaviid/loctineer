@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import Button from "../components/button";
-import styles from "./hero.module.scss";
-import { AppImage } from "../types/image";
+import Button from "../button";
+import styles from "./header.module.scss";
+import { AppImage } from "../../types/image";
 import { useRouter } from "next/router";
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
   callToAction?: Function;
 }
 
-const Hero = ({
+const Header = ({
   topText,
   mainText,
   bottomText,
@@ -49,4 +49,4 @@ const Hero = ({
   );
 };
 
-export default Hero;
+export default Header;
