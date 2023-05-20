@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import styles from "./layout.module.scss";
-import Header from "./header";
+import styles from "./page-wrapper.module.scss";
+import Header from "./menu";
 import Drawer from "@mui/material/Drawer";
-import MobileNavBar from "../components/mobile-nav-bar";
+import MobileNavBar from "./mobile-nav-bar";
 
 interface Props {
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+const PageWrapper = ({ children }: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const showMobileMenu = (state) => setIsMobileMenuOpen(state);
   return (
@@ -54,4 +54,4 @@ const Layout = ({ children }: Props) => {
   );
 };
 
-export default Layout;
+export default PageWrapper;

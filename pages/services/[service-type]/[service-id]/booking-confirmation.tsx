@@ -1,16 +1,16 @@
 import React from "react";
-import Layout from "../../../../components/layout";
+import PageWrapper from "../../../../components/page-wrapper";
 import { Confirmation } from "../../../../components/booking";
 
 const ConfirmBooking = ({ invitee_email: email, answer_1: phoneNumber }) => {
   if (!email && !phoneNumber) return null;
 
   return (
-    <Layout>
+    <PageWrapper>
       <section className="gray">
         <Confirmation email={email} phoneNumber={phoneNumber} />
       </section>
-    </Layout>
+    </PageWrapper>
   );
 };
 

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
-import Layout from "../../../components/layout";
+import PageWrapper from "../../../components/page-wrapper";
 import Listing from "../../../components/listing";
 import {
   braidsAndTwistsServices,
@@ -25,7 +25,7 @@ export default function ServiceType({ serviceType }) {
   }
 
   return (
-    <Layout>
+    <PageWrapper>
       <section className="gray">
         <h2>{name} Services</h2>
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -45,7 +45,7 @@ export default function ServiceType({ serviceType }) {
           })}
         </div>
       </section>
-    </Layout>
+    </PageWrapper>
   );
 }
 

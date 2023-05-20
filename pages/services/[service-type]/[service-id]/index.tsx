@@ -7,7 +7,7 @@ import {
   SelectHairLength,
   SelectSchedule,
 } from "../../../../components/booking/index";
-import Layout from "../../../../components/layout";
+import PageWrapper from "../../../../components/page-wrapper";
 import { Service } from "../../../../types/service";
 import Button from "../../../../components/button";
 import {
@@ -50,7 +50,7 @@ const ServiceID = ({ service }: Props) => {
   );
 
   return (
-    <Layout>
+    <PageWrapper>
       <section className="gray">
         {!state.done && !atStart && renderBackButton()}
         {(state.matches("idle") ||
@@ -65,7 +65,7 @@ const ServiceID = ({ service }: Props) => {
       {showModal && (
         <AddingExtensions setShowModal={setShowModal} service={service} />
       )}
-    </Layout>
+    </PageWrapper>
   );
 };
 

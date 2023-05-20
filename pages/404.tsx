@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../components/button";
-import Layout from "../components/layout";
+import PageWrapper from "../components/page-wrapper";
 
 export default function FourOhFour() {
   return (
-    <Layout>
+    <PageWrapper>
       <section style={{ background: "lightgray" }}>
         <Image src="/images/404.png" alt="404" width={150} height={150} />
         <h1>We don&apos;t have this page</h1>
@@ -15,6 +15,6 @@ export default function FourOhFour() {
           <Button variant="primary">Return home</Button>
         </Link>
       </section>
-    </Layout>
+    </PageWrapper>
   );
 }

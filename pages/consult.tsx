@@ -1,12 +1,12 @@
 import React from "react";
-import Layout from "../components/layout";
+import PageWrapper from "../components/page-wrapper";
 
 const Booking = () => {
-    return (
-        <Layout>
-            <h2>Book a Consultation Appointment</h2>
-        </Layout >
-    );
+  return (
+    <PageWrapper>
+      <h2>Book a Consultation Appointment</h2>
+    </PageWrapper>
+  );
 };
 
 export default Booking;
