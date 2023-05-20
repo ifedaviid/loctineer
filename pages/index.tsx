@@ -1,20 +1,18 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
+import Socials from "../components/section/socials";
+import Services from "../components/section/services";
 import { useRouter } from "next/router";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Pagination } from "swiper";
-import "swiper/swiper.min.css";
-import "swiper/css/pagination";
-import "swiper/css/free-mode";
 
 import { AppImage } from "../types/image";
 import Modal from "../components/modal";
-import Hero from "../components/hero";
-import Layout from "../components/layout";
+import Header from "../components/section/header";
+import PageWrapper from "../components/page-wrapper";
 import Listing from "../components/listing";
 import CustomImage from "../components/custom-image";
 import { extractImages } from "../components/helpers/utils";
 import { featuredImages } from "../data/featured-images";
-import { serviceTypes } from "../data";
+import About from "../components/section/about";
+import Photos from "../components/section/photos";
 
 export default function Home() {
   const router = useRouter();
@@ -32,8 +30,8 @@ export default function Home() {
   );
 
   return (
-    <Layout>
-      <Hero
+    <PageWrapper>
+      <Header
         topText="Ottawa's favorite braider & loctician"
         mainText="Creating your best Look"
         bottomText="Let me help you shine!"
@@ -43,62 +41,11 @@ export default function Home() {
           altText: "ifes alt text",
         }}
       />
-      <section>
-        <h2>About Us</h2>
-        <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-          when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-      </section>
-      <section>
-        <h2 style={{ marginTop: "unset" }}>We specialize in...</h2>
-        <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-          when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-        <div className="services-content">
-          {serviceTypes.map((option, idx) => {
-            const { image, name, description, cta } = option;
-            return (
-              <Listing
-                key={idx}
-                image={image}
-                title={name}
-                description={description}
-                cta={cta}
-              />
-            );
-          })}
-        </div>
-      </section>
-      <section className="dark">
-        <h2>Gallery</h2>
-        <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-          when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
-        <Swiper
-          speed={500}
-          breakpoints={{
-            320: { slidesPerView: 1.3 },
-            520: { slidesPerView: 1.3 },
-            768: { slidesPerView: 2.3 },
-            968: { slidesPerView: 2.3 },
-            1120: { slidesPerView: 3.3 },
-            1400: { slidesPerView: 4.3 },
-          }}
-          modules={[FreeMode, Pagination]}
-          spaceBetween={10}
-          pagination={{ clickable: true }}
-          freeMode={true}
-          className="carousel"
-        >
-          {images.map((image, idx) => (
-            <SwiperSlide
-              key={idx}
-              onClick={() => setPopUp({ showing: true, image })}
-            >
-              {/* Or use unselectable <Card/> */}
-              <CustomImage image={image} roundEdged />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </section>
+      <About />
+      <Services />
+      <Photos images={images} setPopUp={setPopUp} />
+      <Socials />
       {popUp.showing && openImage(popUp.image)}
-    </Layout>
+    </PageWrapper>
   );
 }
