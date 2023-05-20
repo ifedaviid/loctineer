@@ -1,13 +1,18 @@
 import React from "react";
 import { useActor } from "@xstate/react";
+import { useRouter } from "next/router";
+import MuiButton from "@mui/material/Button";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import { PaidOutlined, AccessTime, HelpOutline } from "@mui/icons-material";
 import { useBookingService } from "../../hooks/useBookingService";
 import Button from "../button";
 import CustomImage from "../custom-image";
 import { ExtensionUsage } from "../../types/extension-usage";
-import { PaidOutlined, AccessTime, HelpOutline } from "@mui/icons-material";
+import { strings } from "../../data";
 import styles from "./service-profile.module.scss";
 
-const ServiceProfile = ({ service }) => {
+const ServiceProfile = ({ service, serviceTypeName }) => {
+  const router = useRouter();
   const { bookingService } = useBookingService();
   const [, send] = useActor(bookingService);
   const { name, description, image, cta, price, rate, duration } = service;
@@ -30,9 +35,45 @@ const ServiceProfile = ({ service }) => {
     }
   };
 
+  const getParentPage = () => {
+    switch (serviceTypeName) {
+      case strings.LOCS_ID:
+        return {
+          title: "Dreadlocks",
+          url: `/services/${strings.LOCS_ID}`,
+        };
+
+      case strings.BRAIDS_AND_TWISTS_ID:
+        return {
+          title: "Braid & Twists",
+          url: `/services/${strings.BRAIDS_AND_TWISTS_ID}`,
+        };
+
+      default:
+        return { title: "Return Home", url: `/` };
+    }
+  };
+
+  const parentPage = getParentPage();
+
   return (
     <div className={styles["profile-container"]}>
       <div>
+        <MuiButton
+          sx={{
+            textTransform: "none",
+            letterSpacing: "2px",
+            color: "#4a4f4f",
+            justifyContent: "flex-start",
+            padding: "0.5rem 0",
+            fontFamily: "inherit",
+          }}
+          size="medium"
+          startIcon={<ChevronLeftIcon />}
+          onClick={() => router.push(parentPage.url)}
+        >
+          {parentPage.title}
+        </MuiButton>
         <h3>{name}</h3>
         <div className={styles.iconInfoContainer}>
           <div>
