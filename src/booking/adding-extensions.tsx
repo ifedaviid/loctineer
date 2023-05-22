@@ -3,7 +3,7 @@ import { useActor } from "@xstate/react";
 import Button from "../button";
 import Modal from "../modal";
 import styles from "./adding-extensions.module.scss";
-import { useBookingService } from "../../components/hooks/useBookingService";
+import { useBookingService } from "../hooks/useBookingService";
 
 const AddingExtensions = ({ service, setShowModal }) => {
   const { bookingService } = useBookingService();

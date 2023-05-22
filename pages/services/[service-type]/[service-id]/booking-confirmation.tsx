@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../../../../components/layout";
-import { Confirmation } from "../../../../components/booking";
+import Layout from "../../../../src/layout";
+import { Confirmation } from "../../../../src/booking";
 
 const ConfirmBooking = ({ invitee_email: email, answer_1: phoneNumber }) => {
   if (!email && !phoneNumber) return null;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useActor } from "@xstate/react";
-import { useBookingService } from "../../components/hooks/useBookingService";
+import { useBookingService } from "../hooks/useBookingService";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { extensionLengthOptions } from "../../data/hair-length/extension";
 import SwiperSlideWrapper from "../swiper-slide-wrapper";
@@ -8,7 +8,7 @@ import ButtonGroupWrapper from "../button-group-wrapper";
 import Button from "../button";
 import Card from "../card";
 import { ExtensionLength } from "../../context/booking-machine";
-import { useBreakpoints } from "../../components/hooks/useBreakpoints";
+import { useBreakpoints } from "../hooks/useBreakpoints";
 import Grid from "../grid";
 import useConfirm from "./confirm-exit";
 

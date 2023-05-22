@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import Button from "../components/button";
-import Layout from "../components/layout";
+import Button from "../src/button";
+import Layout from "../src/layout";
 
 export default function FourOhFour() {
   return (
