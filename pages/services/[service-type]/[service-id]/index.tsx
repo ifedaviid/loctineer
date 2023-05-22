@@ -16,13 +16,14 @@ import {
   strings,
 } from "../../../../data";
 import { bookingMachine } from "../../../../context/booking-machine";
-import { useBookingService } from "../../../../hooks/useBookingService";
+import { useBookingService } from "../../../../components/hooks/useBookingService";
 
 interface Props {
   service: Service;
+  serviceTypeName: string;
 }
 
-const ServiceID = ({ service }: Props) => {
+const ServiceID = ({ service, serviceTypeName }: Props) => {
   const [showModal, setShowModal] = useState(false);
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
@@ -56,7 +57,7 @@ const ServiceID = ({ service }: Props) => {
         {(state.matches("idle") ||
           state.matches("serviceProfile") ||
           state.matches("selectExtensionUsage")) && (
-          <ServiceProfile service={service} />
+          <ServiceProfile service={service} serviceTypeName={serviceTypeName} />
         )}
         {state.matches("selectExtensionLength") && <SelectExtensionLength />}
         {state.matches("selectHairLength") && <SelectHairLength />}
@@ -156,7 +157,12 @@ export const getStaticProps = ({ params }) => {
       ? dreadlocksServices
       : braidsAndTwistsServices;
   const service = services.find((obj) => obj.id === params["service-id"]);
-  return { props: { service: JSON.parse(JSON.stringify(service)) } };
+  return {
+    props: {
+      service: JSON.parse(JSON.stringify(service)),
+      serviceTypeName: params["service-type"],
+    },
+  };
 };
 
 export default ServiceID;
