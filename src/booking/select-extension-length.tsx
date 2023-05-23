@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useActor } from "@xstate/react";
-import { useBookingService } from "../hooks/useBookingService";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { extensionLengthOptions } from "../../data/hair-length/extension";
-import SwiperSlideWrapper from "../swiper-slide-wrapper";
-import ButtonGroupWrapper from "../button-group-wrapper";
-import Button from "../button";
-import Card from "../card";
-import { ExtensionLength } from "../../context/booking-machine";
-import { useBreakpoints } from "../hooks/useBreakpoints";
-import Grid from "../grid";
-import useConfirm from "./confirm-exit";
+import { useBookingService } from "src/hooks/useBookingService";
+import { SwiperSlide } from "swiper/react";
+import { extensionLengthOptions } from "data/hair-length/extension";
+import SwiperSlideWrapper from "src/swiper-slide-wrapper";
+import ButtonGroupWrapper from "src/button-group-wrapper";
+import Button from "src/button";
+import Card from "src/card";
+import { ExtensionLength } from "context/booking-machine";
+import { useBreakpoints } from "src/hooks/useBreakpoints";
+import Grid from "src/grid";
+import useConfirm from "src/booking/confirm-exit";
 
 const SelectExtensionLength = () => {
   const { bookingService } = useBookingService();

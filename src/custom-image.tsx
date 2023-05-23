@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { AppImage } from "../types/image";
+import { AppImage } from "types/image";
 import classNames from "classnames";
-import styles from "./custom-image.module.scss";
+import styles from "src/custom-image.module.scss";
 
 interface Props {
   image: AppImage;

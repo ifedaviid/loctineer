@@ -1,9 +1,9 @@
 import React from "react";
 import { useActor } from "@xstate/react";
-import Button from "../button";
-import Modal from "../modal";
-import styles from "./adding-extensions.module.scss";
-import { useBookingService } from "../hooks/useBookingService";
+import Button from "src/button";
+import Modal from "src/modal";
+import styles from "src/booking/adding-extensions.module.scss";
+import { useBookingService } from "src/hooks/useBookingService";
 
 const AddingExtensions = ({ service, setShowModal }) => {
   const { bookingService } = useBookingService();

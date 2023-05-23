@@ -1,9 +1,9 @@
 import React from "react";
-import Button from "../button";
+import Button from "src/button";
 
 import { useState } from "react";
-import styles from "./confirm-exit.module.scss";
-import Modal from "../modal";
+import styles from "src/booking/confirm-exit.module.scss";
+import Modal from "src/modal";
 
 const useConfirm = (
   title: string,

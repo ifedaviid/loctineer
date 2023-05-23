@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./button";
-import styles from "./listing.module.scss";
-import { AppImage } from "../types/image";
+import Button from "src/button";
+import styles from "src/listing.module.scss";
+import { AppImage } from "types/image";
 
 interface Props {
   image: AppImage;
