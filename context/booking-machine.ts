@@ -1,8 +1,8 @@
 import { createMachine, assign } from "xstate";
-import { ExtensionUsage } from "./../types/extension-usage";
-import { ServiceType } from "../types/service-type";
-import { Service } from "../types/service";
-import { AppImage } from "../types/image";
+import { ExtensionUsage } from "types/extension-usage";
+import { ServiceType } from "types/service-type";
+import { Service } from "types/service";
+import { AppImage } from "types/image";
 
 const { POSSIBLE, REQUIRED, NOT_OFFERED } = ExtensionUsage;
 
@@ -154,7 +154,12 @@ export const bookingMachine =
           addingExtensions: (_context, event) => event["addingExtensions"],
         }),
         saveExtensionLength: assign({
-          addingExtensions: (_context, event) => _context.addingExtensions ? _context.addingExtensions : _context.service.extensionUsage == REQUIRED ? true : false,
+          addingExtensions: (_context, event) =>
+            _context.addingExtensions
+              ? _context.addingExtensions
+              : _context.service.extensionUsage == REQUIRED
+              ? true
+              : false,
           extensionLength: (_context, event) => event["extensionLength"],
         }),
         saveHairLength: assign({

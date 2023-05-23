@@ -1,9 +1,9 @@
 import React from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import LoctineerDesktopLogo from "../logo/loctineer-desktop-logo";
-import LoctineerMobileLogo from "../logo/loctineer-mobile-logo";
-import styles from "./index.module.scss";
+import LoctineerDesktopLogo from "src/logo/loctineer-desktop-logo";
+import LoctineerMobileLogo from "src/logo/loctineer-mobile-logo";
+import styles from "src/header/index.module.scss";
 
 const Header = ({ isMobileMenuOpen, showMobileMenu }) => {
   const renderNavigationMenu = () => (

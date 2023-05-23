@@ -1,6 +1,6 @@
-import { ServiceCategory } from "../../types/service-category";
-import { ExtensionUsage } from "./../../types/extension-usage";
-import * as strings from "./../strings";
+import { ServiceCategory } from "types/service-category";
+import { ExtensionUsage } from "types/extension-usage";
+import * as strings from "data/strings";
 
 const { POSSIBLE, REQUIRED } = ExtensionUsage;
 
@@ -17,7 +17,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../data/images/braids-and-twists.jpg"),
+      path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -38,7 +38,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../data/images/braids-and-twists.jpg"),
+      path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -59,7 +59,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../data/images/braids-and-twists.jpg"),
+      path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -80,7 +80,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../data/images/braids-and-twists.jpg"),
+      path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -101,7 +101,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../data/images/braids-and-twists.jpg"),
+      path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -122,7 +122,7 @@ export const braidsAndTwistsServices = [
       },
     },
     image: {
-      path: require("../../data/images/braids-and-twists.jpg"),
+      path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,

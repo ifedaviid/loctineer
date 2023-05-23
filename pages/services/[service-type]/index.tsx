@@ -1,13 +1,9 @@
 import { useRouter } from "next/router";
 import React from "react";
-import Layout from "../../../src/layout";
-import Listing from "../../../src/listing";
-import {
-  braidsAndTwistsServices,
-  dreadlocksServices,
-  strings,
-} from "../../../data";
-import { Service } from "../../../types/service";
+import Layout from "src/layout";
+import Listing from "src/listing";
+import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
+import { Service } from "types/service";
 
 let name: string, data: Array<Service>;
 

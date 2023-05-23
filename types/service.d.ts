@@ -1,5 +1,5 @@
-import { ExtensionUsage } from "./extension-usage";
-import { AppImage } from "./image";
+import { ExtensionUsage } from "types/extension-usage";
+import { AppImage } from "types/image";
 
 export interface Service {
   id: string;

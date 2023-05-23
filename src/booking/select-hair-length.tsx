@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useActor } from "@xstate/react";
-import { useBookingService } from "../hooks/useBookingService";
-import { naturalHairLengthOptions } from "../../data/hair-length/natural";
-import SwiperSlideWrapper from "../swiper-slide-wrapper";
+import { useBookingService } from "src/hooks/useBookingService";
+import { naturalHairLengthOptions } from "data/hair-length/natural";
+import SwiperSlideWrapper from "src/swiper-slide-wrapper";
 import { SwiperSlide } from "swiper/react";
-import Card from "../card";
-import ButtonGroupWrapper from "../button-group-wrapper";
-import Button from "../button";
-import { HairLength } from "../../context/booking-machine";
-import { useBreakpoints } from "../hooks/useBreakpoints";
-import Grid from "../grid";
-import useConfirm from "./confirm-exit";
+import Card from "src/card";
+import ButtonGroupWrapper from "src/button-group-wrapper";
+import Button from "src/button";
+import { HairLength } from "context/booking-machine";
+import { useBreakpoints } from "src/hooks/useBreakpoints";
+import Grid from "src/grid";
+import useConfirm from "src/booking/confirm-exit";
 
 const SelectHairLength = () => {
   const { bookingService } = useBookingService();

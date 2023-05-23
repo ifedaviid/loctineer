@@ -4,12 +4,12 @@ import { useRouter } from "next/router";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { PaidOutlined, AccessTime, HelpOutline } from "@mui/icons-material";
-import { useBookingService } from "../hooks/useBookingService";
-import Button from "../button";
-import CustomImage from "../custom-image";
-import { ExtensionUsage } from "../../types/extension-usage";
-import { strings } from "../../data";
-import styles from "./service-profile.module.scss";
+import { useBookingService } from "src/hooks/useBookingService";
+import Button from "src/button";
+import CustomImage from "src/custom-image";
+import { ExtensionUsage } from "types/extension-usage";
+import { strings } from "data";
+import styles from "src/booking/service-profile.module.scss";
 
 const ServiceProfile = ({ service, serviceTypeName }) => {
   const router = useRouter();

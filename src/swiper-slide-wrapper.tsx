@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper } from "swiper/react";
-import styles from "./swiper-slide-wrapper.module.scss";
+import styles from "src/swiper-slide-wrapper.module.scss";
 import "swiper/swiper.min.css";
 
 const SwiperSlideWrapper = ({ children, ...rest }) => {
