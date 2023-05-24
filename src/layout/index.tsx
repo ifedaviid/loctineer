@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import styles from "src/layout.module.scss";
-import Header from "src/header";
 import Drawer from "@mui/material/Drawer";
-import MobileNavBar from "src/mobile-nav-bar";
+import styles from "src/index.module.scss";
+import Menu from "src/layout/menu";
+import MobileNavBar from "src/layout/mobile-nav-bar";
 
 interface Props {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ const Layout = ({ children }: Props) => {
           <meta name="description" content="Ottawa Braider & Loctician" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Header
+        <Menu
           isMobileMenuOpen={isMobileMenuOpen}
           showMobileMenu={showMobileMenu}
         />

@@ -3,13 +3,13 @@ import { useActor } from "@xstate/react";
 import { useBookingService } from "src/hooks/useBookingService";
 import { SwiperSlide } from "swiper/react";
 import { extensionLengthOptions } from "data/hair-length/extension";
-import SwiperSlideWrapper from "src/swiper-slide-wrapper";
-import ButtonGroupWrapper from "src/button-group-wrapper";
-import Button from "src/button";
-import Card from "src/card";
-import { ExtensionLength } from "src/context/booking-machine";
+import SwiperSlideWrapper from "src/components/swiper-slide-wrapper";
+import ButtonGroupWrapper from "src/components/button-group-wrapper";
+import Button from "src/components/button";
+import Card from "src/components/card";
+import { ExtensionLength } from "src/booking/booking-machine";
 import { useBreakpoints } from "src/hooks/useBreakpoints";
-import Grid from "src/grid";
+import Grid from "src/components/grid";
 import useConfirm from "src/booking/confirm-exit";
 
 const SelectExtensionLength = () => {

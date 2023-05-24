@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Button from "src/button";
+import Button from "src/components/button";
 import Layout from "src/layout";
 
 export default function FourOhFour() {

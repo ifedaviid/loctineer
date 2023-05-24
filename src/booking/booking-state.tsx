@@ -1,6 +1,6 @@
 import React, { createContext } from "react";
 import { useInterpret } from "@xstate/react";
-import { bookingMachine } from "src/context/booking-machine";
+import { bookingMachine } from "src/booking/booking-machine";
 import { InterpreterFrom } from "xstate";
 
 export const BookingContext = createContext({

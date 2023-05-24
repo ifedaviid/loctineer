@@ -7,11 +7,11 @@ import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
 import { AppImage } from "src/types/image";
-import Modal from "src/modal";
-import Hero from "src/hero";
+import Modal from "src/components/modal";
+import Hero from "src/components/hero";
 import Layout from "src/layout";
-import Listing from "src/listing";
-import CustomImage from "src/custom-image";
+import Listing from "src/components/listing";
+import CustomImage from "src/components/custom-image";
 import { extractImages } from "helpers";
 import { featuredImages } from "data/featured-images";
 import { serviceTypes } from "data";
