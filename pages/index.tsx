@@ -12,7 +12,7 @@ import Hero from "src/components/hero";
 import Layout from "src/layout";
 import Listing from "src/components/listing";
 import CustomImage from "src/components/custom-image";
-import { extractImages } from "helpers";
+import { extractImages } from "src/helpers";
 import { featuredImages } from "data/featured-images";
 import { serviceTypes } from "data";
 

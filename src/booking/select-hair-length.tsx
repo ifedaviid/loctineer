@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useActor } from "@xstate/react";
-import { useBookingService } from "src/hooks/useBookingService";
+import { useBookingService } from "src/booking/useBookingService";
 import { naturalHairLengthOptions } from "data/hair-length/natural";
 import SwiperSlideWrapper from "src/components/swiper-slide-wrapper";
 import { SwiperSlide } from "swiper/react";
@@ -8,7 +8,7 @@ import Card from "src/components/card";
 import ButtonGroupWrapper from "src/components/button-group-wrapper";
 import Button from "src/components/button";
 import { HairLength } from "src/booking/booking-machine";
-import { useBreakpoints } from "src/hooks/useBreakpoints";
+import { useBreakpoints } from "src/helpers";
 import Grid from "src/components/grid";
 import useConfirm from "src/booking/confirm-exit";
 
