@@ -6,7 +6,7 @@ import {
   SelectExtensionLength,
   SelectHairLength,
   SelectSchedule,
-} from "src/booking/index";
+} from "src/booking/stages";
 import Layout from "src/layout";
 import { Service } from "src/types/service";
 import Button from "src/components/button";

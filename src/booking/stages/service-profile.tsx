@@ -9,7 +9,7 @@ import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
 import { ExtensionUsage } from "src/types/extension-usage";
 import { strings } from "data";
-import styles from "src/booking/service-profile.module.scss";
+import styles from "src/booking/stages/service-profile.module.scss";
 
 const ServiceProfile = ({ service, serviceTypeName }) => {
   const router = useRouter();

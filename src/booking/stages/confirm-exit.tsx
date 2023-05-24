@@ -2,7 +2,7 @@ import React from "react";
 import Button from "src/components/button";
 
 import { useState } from "react";
-import styles from "src/booking/confirm-exit.module.scss";
+import styles from "src/booking/stages/confirm-exit.module.scss";
 import Modal from "src/components/modal";
 
 const useConfirm = (

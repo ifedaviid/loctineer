@@ -4,7 +4,7 @@ import { InlineWidget } from "react-calendly";
 import Button from "src/components/button";
 import { useBookingService } from "src/booking/useBookingService";
 import ButtonGroupWrapper from "src/components/button-group-wrapper";
-import useConfirm from "src/booking/confirm-exit";
+import useConfirm from "src/booking/stages/confirm-exit";
 
 const SelectSchedule = () => {
   const { bookingService } = useBookingService();

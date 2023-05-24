@@ -1,28 +1,28 @@
 import React, { useState } from "react";
 import { useActor } from "@xstate/react";
 import { useBookingService } from "src/booking/useBookingService";
-import { SwiperSlide } from "swiper/react";
-import { extensionLengthOptions } from "data/hair-length/extension";
+import { naturalHairLengthOptions } from "data/hair-length/natural";
 import SwiperSlideWrapper from "src/components/swiper-slide-wrapper";
+import { SwiperSlide } from "swiper/react";
+import Card from "src/components/card";
 import ButtonGroupWrapper from "src/components/button-group-wrapper";
 import Button from "src/components/button";
-import Card from "src/components/card";
-import { ExtensionLength } from "src/booking/booking-machine";
+import { HairLength } from "src/booking/booking-machine";
 import { useBreakpoints } from "src/helpers";
 import Grid from "src/components/grid";
-import useConfirm from "src/booking/confirm-exit";
+import useConfirm from "src/booking/stages/confirm-exit";
 
-const SelectExtensionLength = () => {
+const SelectHairLength = () => {
   const { bookingService } = useBookingService();
+  const [state, send] = useActor(bookingService);
+  const { hairLength: savedHairLength } = state.context;
+  const [hairLength, setHairLength] = useState<HairLength>(savedHairLength);
+  const { mobile } = useBreakpoints();
+
   const [Dialog, confirmDelete] = useConfirm(
     "Are you sure?",
     "Are you sure you want to exit booking process?"
   );
-  const [state, send] = useActor(bookingService);
-  const { service, extensionLength: savedChoice } = state.context;
-  const { mobile } = useBreakpoints();
-  const [extensionLength, setExtensionLength] =
-    useState<ExtensionLength>(savedChoice);
 
   const handleExit = async () => {
     const res = await confirmDelete();
@@ -34,25 +34,26 @@ const SelectExtensionLength = () => {
   };
 
   const handleNext = () => {
-    if (extensionLength)
+    if (hairLength) {
       send({
-        type: "SAVE_EXTENSION_LENGTH",
-        extensionLength: extensionLength,
+        type: "SAVE_HAIR_LENGTH",
+        hairLength,
       });
+    }
   };
 
   const swipeMenu = () => (
     <SwiperSlideWrapper>
-      {extensionLengthOptions.map((option, idx) => (
+      {naturalHairLengthOptions.map((option, idx) => (
         <SwiperSlide key={idx}>
           {({ isActive }) => {
-            // if (isActive) setExtensionLength(option);
+            // if (isActive) setHairLength(option);
             return (
               <Card
                 image={option.image}
-                isSelected={option === extensionLength}
+                isSelected={option === hairLength}
                 title={option.category}
-                onChange={() => setExtensionLength(option)}
+                onChange={() => setHairLength(option)}
               />
             );
           }}
@@ -63,15 +64,15 @@ const SelectExtensionLength = () => {
 
   const gridMenu = () => (
     <Grid>
-      {extensionLengthOptions.map((option, idx) => {
+      {naturalHairLengthOptions.map((option, idx) => {
         const { category, image } = option;
         return (
           <Card
             key={idx}
             image={image}
-            isSelected={option === extensionLength}
+            isSelected={option === hairLength}
             title={category}
-            onChange={() => setExtensionLength(option)}
+            onChange={() => setHairLength(option)}
           />
         );
       })}
@@ -82,14 +83,10 @@ const SelectExtensionLength = () => {
 
   return (
     <div style={{ width: "100%" }}>
-      <h2>{`How long do you want your ${service.name} extensions to be?`}</h2>
+      <h2>How long is your natural hair?</h2>
       {menu}
       <ButtonGroupWrapper>
-        <Button
-          variant="primary"
-          onClick={handleNext}
-          disabled={!extensionLength}
-        >
+        <Button variant="primary" onClick={handleNext} disabled={!hairLength}>
           Next
         </Button>
         <Button variant="secondary" size="large" onClick={handleExit}>
@@ -101,4 +98,4 @@ const SelectExtensionLength = () => {
   );
 };
 
-export default SelectExtensionLength;
+export default SelectHairLength;
