@@ -12,7 +12,7 @@ import { Service } from "src/types/service";
 import Button from "src/components/button";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
 import { bookingMachine } from "src/booking/booking-machine";
-import { useBookingService } from "src/hooks/useBookingService";
+import { useBookingService } from "src/booking/useBookingService";
 
 interface Props {
   service: Service;
