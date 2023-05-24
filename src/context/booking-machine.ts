@@ -1,8 +1,8 @@
 import { createMachine, assign } from "xstate";
-import { ExtensionUsage } from "types/extension-usage";
-import { ServiceType } from "types/service-type";
-import { Service } from "types/service";
-import { AppImage } from "types/image";
+import { ExtensionUsage } from "src/types/extension-usage";
+import { ServiceType } from "src/types/service-type";
+import { Service } from "src/types/service";
+import { AppImage } from "src/types/image";
 
 const { POSSIBLE, REQUIRED, NOT_OFFERED } = ExtensionUsage;
 

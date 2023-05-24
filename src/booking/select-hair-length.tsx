@@ -7,7 +7,7 @@ import { SwiperSlide } from "swiper/react";
 import Card from "src/card";
 import ButtonGroupWrapper from "src/button-group-wrapper";
 import Button from "src/button";
-import { HairLength } from "context/booking-machine";
+import { HairLength } from "src/context/booking-machine";
 import { useBreakpoints } from "src/hooks/useBreakpoints";
 import Grid from "src/grid";
 import useConfirm from "src/booking/confirm-exit";

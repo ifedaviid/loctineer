@@ -1,4 +1,4 @@
-import { AppImage } from "types/image";
+import { AppImage } from "src/types/image";
 
 export function extractImages(data) {
   let images: Array<AppImage> = [];

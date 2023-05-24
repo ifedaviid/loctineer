@@ -1,7 +1,7 @@
 import React from "react";
 import CustomImage from "src/custom-image";
 import styles from "src/card.module.scss";
-import { AppImage } from "types/image";
+import { AppImage } from "src/types/image";
 
 interface Props {
   title?: string;
