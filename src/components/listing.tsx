@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "src/button";
-import styles from "src/listing.module.scss";
+import Button from "src/components/button";
+import styles from "src/components/listing.module.scss";
 import { AppImage } from "src/types/image";
 
 interface Props {

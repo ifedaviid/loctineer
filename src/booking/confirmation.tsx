@@ -1,6 +1,6 @@
 import React from "react";
 import { CheckCircle } from "@mui/icons-material";
-import Button from "src/button";
+import Button from "src/components/button";
 import { useRouter } from "next/router";
 
 interface Props {

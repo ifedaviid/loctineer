@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Drawer from "@mui/material/Drawer";
-import styles from "src/index.module.scss";
+import styles from "src/layout/menu.module.scss";
 import Menu from "src/layout/menu";
 import MobileNavBar from "src/layout/mobile-nav-bar";
 

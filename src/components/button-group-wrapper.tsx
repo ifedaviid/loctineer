@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "src/button-group-wrapper.module.scss";
+import styles from "src/components/button-group-wrapper.module.scss";
 
 // Use this to wrap buttons for proper space management.
 

@@ -1,6 +1,6 @@
 import React from "react";
-import CustomImage from "src/custom-image";
-import styles from "src/card.module.scss";
+import CustomImage from "src/components/custom-image";
+import styles from "src/components/card.module.scss";
 import { AppImage } from "src/types/image";
 
 interface Props {

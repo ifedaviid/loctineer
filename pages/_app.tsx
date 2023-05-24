@@ -1,7 +1,7 @@
 import React from "react";
 import type { AppProps } from "next/app";
 import { BookingProvider } from "src/booking/booking-state";
-import "styles.scss";
+import "src/styles.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

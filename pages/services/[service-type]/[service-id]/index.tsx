@@ -9,9 +9,9 @@ import {
 } from "src/booking/index";
 import Layout from "src/layout";
 import { Service } from "src/types/service";
-import Button from "src/button";
+import Button from "src/components/button";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
-import { bookingMachine } from "src/context/booking-machine";
+import { bookingMachine } from "src/booking/booking-machine";
 import { useBookingService } from "src/hooks/useBookingService";
 
 interface Props {

@@ -1,6 +1,6 @@
 import React from "react";
 import { useActor } from "@xstate/react";
-import Button from "src/button";
+import Button from "src/components/button";
 import Modal from "src/components/modal";
 import styles from "src/booking/adding-extensions.module.scss";
 import { useBookingService } from "src/hooks/useBookingService";

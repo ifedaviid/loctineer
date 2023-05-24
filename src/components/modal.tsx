@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Close } from "@mui/icons-material";
-import styles from "src/modal.module.scss";
+import styles from "src/components/modal.module.scss";
 
 interface Props {
   closeModal?: Function;
