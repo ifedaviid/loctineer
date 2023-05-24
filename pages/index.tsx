@@ -6,7 +6,7 @@ import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
-import { AppImage } from "types/image";
+import { AppImage } from "src/types/image";
 import Modal from "src/modal";
 import Hero from "src/hero";
 import Layout from "src/layout";

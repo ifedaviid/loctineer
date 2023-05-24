@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "src/button";
 import styles from "src/listing.module.scss";
-import { AppImage } from "types/image";
+import { AppImage } from "src/types/image";
 
 interface Props {
   image: AppImage;

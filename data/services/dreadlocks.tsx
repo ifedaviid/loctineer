@@ -1,5 +1,5 @@
-import { ServiceCategory } from "types/service-category";
-import { ExtensionUsage } from "types/extension-usage";
+import { ServiceCategory } from "src/types/service-category";
+import { ExtensionUsage } from "src/types/extension-usage";
 import * as strings from "data/strings";
 
 const { POSSIBLE, NOT_OFFERED } = ExtensionUsage;

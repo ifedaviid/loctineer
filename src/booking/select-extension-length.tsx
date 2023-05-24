@@ -7,7 +7,7 @@ import SwiperSlideWrapper from "src/swiper-slide-wrapper";
 import ButtonGroupWrapper from "src/button-group-wrapper";
 import Button from "src/button";
 import Card from "src/card";
-import { ExtensionLength } from "context/booking-machine";
+import { ExtensionLength } from "src/context/booking-machine";
 import { useBreakpoints } from "src/hooks/useBreakpoints";
 import Grid from "src/grid";
 import useConfirm from "src/booking/confirm-exit";

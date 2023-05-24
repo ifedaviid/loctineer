@@ -7,7 +7,7 @@ import { PaidOutlined, AccessTime, HelpOutline } from "@mui/icons-material";
 import { useBookingService } from "src/hooks/useBookingService";
 import Button from "src/button";
 import CustomImage from "src/custom-image";
-import { ExtensionUsage } from "types/extension-usage";
+import { ExtensionUsage } from "src/types/extension-usage";
 import { strings } from "data";
 import styles from "src/booking/service-profile.module.scss";
 
