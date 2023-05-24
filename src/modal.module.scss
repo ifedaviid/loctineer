@@ -1,0 +1,41 @@
+@import "common.scss";
+
+// The dark transparent overlay behind the modal
+.modalOverlay {
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 3rem 2rem;
+  overflow-y: hidden;
+  > .closeIcon {
+    position: fixed;
+    top: 4%;
+    right: 5%;
+    transition: right 0.5s ease-out;
+    z-index: 1;
+  }
+  > :last-child {
+    width: 60%;
+    transition: all 1s ease;
+    img {
+      transform: scale(1) !important;
+    }
+  }
+}
+
+@media (max-width: $lg-screens) {
+  .modalOverlay {
+    > :last-child {
+      width: 100%;
+    }
+  }
+}

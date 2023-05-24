@@ -1,6 +1,6 @@
-import * as strings from "../strings";
-import { braidsAndTwistsServices } from "./braids-and-twists";
-import { dreadlocksServices } from "./dreadlocks";
+import * as strings from "data/strings";
+import { braidsAndTwistsServices } from "data/services/braids-and-twists";
+import { dreadlocksServices } from "data/services/dreadlocks";
 
 export const serviceTypes = [
   {
@@ -15,7 +15,7 @@ export const serviceTypes = [
       },
     },
     image: {
-      path: require("../../data/images/dreadlocks.jpg"),
+      path: require("data/images/dreadlocks.jpg"),
       altText: "",
     },
     services: dreadlocksServices,
@@ -32,7 +32,7 @@ export const serviceTypes = [
       },
     },
     image: {
-      path: require("../../data/images/braids-and-twists.jpg"),
+      path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
     services: braidsAndTwistsServices,

@@ -6,15 +6,15 @@ import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
-import { AppImage } from "../types/image";
-import Modal from "../components/modal";
-import Hero from "../components/hero";
-import Layout from "../components/layout";
-import Listing from "../components/listing";
-import CustomImage from "../components/custom-image";
-import { extractImages } from "../helpers";
-import { featuredImages } from "../data/featured-images";
-import { serviceTypes } from "../data";
+import { AppImage } from "types/image";
+import Modal from "src/modal";
+import Hero from "src/hero";
+import Layout from "src/layout";
+import Listing from "src/listing";
+import CustomImage from "src/custom-image";
+import { extractImages } from "helpers";
+import { featuredImages } from "data/featured-images";
+import { serviceTypes } from "data";
 
 export default function Home() {
   const router = useRouter();
@@ -39,7 +39,7 @@ export default function Home() {
         bottomText="Let me help you shine!"
         callToAction={() => router.push("/booking")}
         image={{
-          path: require("../data/images/braids-and-twists.jpg"),
+          path: require("data/images/braids-and-twists.jpg"),
           altText: "ifes alt text",
         }}
       />

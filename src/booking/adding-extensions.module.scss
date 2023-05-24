@@ -1,0 +1,75 @@
+@import "common.scss";
+
+// The modal container
+// todo: move this block out of here (maybe to pages/booking.tsx where the buttons are)
+.modalContainer {
+  background: white;
+  color: black;
+  width: 50%;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  // The header and the cancel button
+  > :first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 25px;
+    margin-bottom: 1.5rem;
+    // The header
+    > h4 {
+      margin: unset;
+    }
+  }
+  // The subtext
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.7rem;
+  }
+  // The radio button form
+  > form {
+    label {
+      display: flex;
+      margin-bottom: 1rem;
+      input,
+      p {
+        margin: unset;
+      }
+      input[type="radio"] {
+        align-self: center;
+        accent-color: $dark-text;
+        transform: scale(1.5);
+      }
+      p {
+        margin: unset;
+        font-weight: 600;
+        margin-left: 1rem;
+      }
+    }
+  }
+  .buttonGroup {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    > * {
+      margin-left: 1rem;
+    }
+  }
+}
+
+@media (max-width: 1120px) {
+  .buttonGroup {
+    flex-direction: column;
+    > * {
+      width: 100%;
+      margin-top: 1rem;
+      margin-left: unset !important;
+    }
+  }
+  .modalContainer {
+    width: 95%;
+    padding: 2rem;
+    margin: 0 2rem;
+  }
+}
