@@ -7,7 +7,7 @@ import {
   SelectHairLength,
   SelectSchedule,
 } from "src/booking/stages";
-import Layout from "src/layout";
+import Layout from "src/page-wrapper";
 import { Service } from "src/types/service";
 import Button from "src/components/button";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";

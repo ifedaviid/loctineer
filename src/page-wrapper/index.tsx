@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Drawer from "@mui/material/Drawer";
-import Menu from "src/layout/menu";
-import MobileNavBar from "src/layout/mobile-nav-bar";
-import styles from "src/layout/index.module.scss";
+import Menu from "src/page-wrapper/menu";
+import MobileNavBar from "src/page-wrapper/mobile-nav-bar";
+import styles from "src/page-wrapper/index.module.scss";
 
 interface Props {
   children: React.ReactNode;

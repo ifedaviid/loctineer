@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "src/layout";
+import Layout from "src/page-wrapper";
 import Listing from "src/components/listing";
 import { serviceTypes } from "data";
 
