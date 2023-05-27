@@ -1,7 +1,6 @@
-import { useRouter } from "next/router";
 import React from "react";
 import Layout from "src/layout";
-import Listing from "src/listing";
+import Listing from "src/components/listing";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
 import { Service } from "src/types/service";
 

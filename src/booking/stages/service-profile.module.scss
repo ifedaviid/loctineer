@@ -1,0 +1,69 @@
+@import "src/common.scss";
+
+.profile-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  padding: 0 5%;
+  .iconInfoContainer {
+    display: block;
+    margin: 1.5rem 0;
+    // applies to every child
+    > * {
+      display: flex;
+      flex-direction: row;
+      p,
+      svg {
+        align-self: center;
+      }
+      p {
+        margin: 0.5rem;
+      }
+      svg {
+        margin: 0 1rem 0 0;
+      }
+    }
+  }
+  .priceInfoContainer {
+    display: flex;
+    flex-direction: row;
+    > p {
+      color: black;
+      font-size: 1.1rem;
+      font-weight: bolder;
+      letter-spacing: 3px;
+    }
+    > span {
+      padding: 0.5rem;
+      background: rgb(64, 64, 64);
+      border-radius: 0.2rem;
+      color: rgb(218, 216, 216);
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      font-weight: bolder;
+      align-self: center;
+    }
+  }
+}
+
+@media (max-width: $lg-screens) {
+  .profile-container {
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
+    button {
+      width: 100%;
+    }
+    .iconInfoContainer {
+      svg {
+        margin: 0 1.5rem 0 0;
+        align-self: center;
+      }
+    }
+  }
+}
+
+@media (max-width: $md-screens) {
+  .profile-container {
+    grid-template-columns: 1fr;
+  }
+}

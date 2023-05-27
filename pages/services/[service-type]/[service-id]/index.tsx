@@ -6,13 +6,13 @@ import {
   SelectExtensionLength,
   SelectHairLength,
   SelectSchedule,
-} from "src/booking/index";
+} from "src/booking/stages";
 import Layout from "src/layout";
 import { Service } from "src/types/service";
-import Button from "src/button";
+import Button from "src/components/button";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
-import { bookingMachine } from "src/context/booking-machine";
-import { useBookingService } from "src/hooks/useBookingService";
+import { bookingMachine } from "src/booking/booking-machine";
+import { useBookingService } from "src/booking/useBookingService";
 
 interface Props {
   service: Service;

@@ -1,0 +1,145 @@
+@import "src/common.scss";
+// @import "swiper/swiper.min.css";
+// @import "swiper/css/pagination";
+// @import "swiper/css/free-mode";
+
+html,
+body {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  font-family: "Domine", serif;
+}
+
+h2,
+h3 {
+  letter-spacing: 2.5px;
+}
+
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  line-height: 2rem;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 1%;
+  font-weight: 600;
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 0;
+    width: 100%;
+    h2 {
+      text-align: center;
+      margin: 3rem 10% 1rem;
+    }
+    > p {
+      line-height: 2rem;
+      text-align: center;
+      width: 70%;
+    }
+    // The menu container
+    .services-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1.5rem;
+      padding: 3%;
+    }
+    .nav-buttons {
+      width: 80%;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 3rem;
+    }
+    > .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+      position: relative;
+      margin-top: 3rem;
+    }
+    .swiper-wrapper {
+      > :first-child {
+        padding-left: 1rem;
+      }
+      > :last-child {
+        padding-right: 1rem;
+      }
+    }
+    > .carousel {
+      width: 100%;
+      min-height: 100% !important;
+    }
+  }
+  > section.gray {
+    background-color: lightgray;
+    color: black;
+  }
+  > section.dark {
+    background-color: #201f1f;
+    color: white;
+  }
+}
+
+@media (max-width: $lg-screens) {
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  main {
+    > section > p {
+      margin: 5%;
+      width: 80%;
+    }
+    > .services-content {
+      grid-template-columns: 1fr;
+      row-gap: 1rem;
+    }
+  }
+}
+
+@media (max-width: $md-screens) {
+  main > section {
+    // The menu container
+    .services-content {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// @media (prefers-color-scheme: dark) {
+//   html {
+//     color-scheme: dark;
+//   }
+//   body {
+//     color: $writing-color;
+//   }
+// }
