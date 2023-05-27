@@ -5,8 +5,12 @@ export interface Service {
   id: string;
   name: string;
   description: string;
-  category: ServiceCategory;
-  extensionUsage: ExtensionUsage;
   cta: CallToAction;
   image: AppImage;
+  category?: ServiceCategory;
+  extensionUsage?: ExtensionUsage;
+  services?: Service[];
+  price?: number;
+  rate?: string;
+  duration?: string;
 }
