@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useActor } from "@xstate/react";
-import { useBookingService } from "src/booking/useBookingService";
+import { useBookingService } from "src/helpers";
 import { naturalHairLengthOptions } from "data/hair-length/natural";
 import SwiperSlideWrapper from "src/components/swiper-slide-wrapper";
 import { SwiperSlide } from "swiper/react";

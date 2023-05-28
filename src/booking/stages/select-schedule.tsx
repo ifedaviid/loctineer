@@ -2,7 +2,7 @@ import React from "react";
 import { useActor } from "@xstate/react";
 import { InlineWidget } from "react-calendly";
 import Button from "src/components/button";
-import { useBookingService } from "src/booking/useBookingService";
+import { useBookingService } from "src/helpers";
 import ButtonGroupWrapper from "src/components/button-group-wrapper";
 import useConfirm from "src/booking/stages/confirm-exit";
 
