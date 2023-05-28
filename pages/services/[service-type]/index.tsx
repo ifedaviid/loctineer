@@ -1,14 +1,14 @@
 import React from "react";
 import { strings } from "data";
-import ServiceType from "src/pages/service-type";
+import Services from "src/pages/services";
 import { Service } from "src/types/service";
 
 interface Props {
   serviceType: Service;
 }
 
-const ServiceTypePage = ({ serviceType }: Props) => (
-  <ServiceType serviceType={serviceType} />
+const ServicesPage = ({ serviceType }: Props) => (
+  <Services serviceType={serviceType} />
 );
 
 export const getStaticPaths = () => ({
@@ -27,4 +27,4 @@ export async function getStaticProps(context) {
   };
 }
 
-export default ServiceTypePage;
+export default ServicesPage;
