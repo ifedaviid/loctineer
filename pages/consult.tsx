@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "src/layout";
+import Layout from "src/template/page-wrapper";
 
 const Booking = () => {
   return (

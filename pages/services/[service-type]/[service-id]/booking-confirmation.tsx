@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "src/layout";
+import Layout from "src/template/page-wrapper";
 import Confirmation from "src/booking/stages/confirmation";
 
 const ConfirmBooking = ({ invitee_email: email, answer_1: phoneNumber }) => {

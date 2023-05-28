@@ -1,31 +1,12 @@
 import React from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import LoctineerDesktopLogo from "src/layout/loctineer-desktop-logo";
-import LoctineerMobileLogo from "src/layout/loctineer-mobile-logo";
-import styles from "src/layout/menu.module.scss";
+import LoctineerDesktopLogo from "data/branding/loctineer-desktop-logo";
+import LoctineerMobileLogo from "data/branding/loctineer-mobile-logo";
+import styles from "src/template/menu-bar.module.scss";
+import MenuDesktop from "src/template/menu-desktop";
 
 const Menu = ({ isMobileMenuOpen, showMobileMenu }) => {
-  const renderNavigationMenu = () => (
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/">
-          <a>Services</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/">
-          <a>Contact Us</a>
-        </Link>
-      </li>
-    </ul>
-  );
-
   return (
     <div className={styles.menuContainer}>
       {/* Desktop Navigation */}
@@ -35,7 +16,7 @@ const Menu = ({ isMobileMenuOpen, showMobileMenu }) => {
             <LoctineerDesktopLogo />
           </a>
         </Link>
-        {renderNavigationMenu()}
+        <MenuDesktop />
       </div>
       {/* Mobile Navigation */}
       <div>
