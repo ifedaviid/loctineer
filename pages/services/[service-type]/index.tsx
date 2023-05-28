@@ -8,7 +8,7 @@ interface Props {
 }
 
 const ServicesPage = ({ serviceType }: Props) => (
-  <Services serviceType={serviceType} />
+  <Services serviceTypeId={serviceType.id} />
 );
 
 export const getStaticPaths = () => ({

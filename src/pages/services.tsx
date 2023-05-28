@@ -3,16 +3,15 @@ import Layout from "src/template/page-wrapper";
 import Listing from "src/components/listing";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
 import { Service } from "src/types/service";
-import { ServiceType as SrvcType } from "src/types/service-type";
 
 let name: string, data: Array<Service>;
 
 interface Props {
-  serviceType: SrvcType;
+  serviceTypeId: string;
 }
 
-export default function ServiceType({ serviceType }: Props) {
-  switch (serviceType.id) {
+export default function Services({ serviceTypeId }: Props) {
+  switch (serviceTypeId) {
     case strings.BRAIDS_AND_TWISTS_ID:
       name = strings.BRAIDS_AND_TWISTS;
       data = braidsAndTwistsServices;
