@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useActor } from "@xstate/react";
-import { useBookingService } from "src/booking/useBookingService";
+import { useBookingService } from "src/helpers";
 import { SwiperSlide } from "swiper/react";
 import { extensionLengthOptions } from "data/hair-length/extension";
 import SwiperSlideWrapper from "src/components/swiper-slide-wrapper";
