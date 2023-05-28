@@ -9,7 +9,7 @@ import "swiper/css/free-mode";
 import { AppImage } from "src/types/image";
 import Modal from "src/components/modal";
 import Hero from "src/components/hero";
-import Layout from "src/page-wrapper";
+import Layout from "src/template/page-wrapper";
 import Listing from "src/components/listing";
 import CustomImage from "src/components/custom-image";
 import { extractImages } from "src/helpers";
