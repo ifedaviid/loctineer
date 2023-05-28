@@ -2,48 +2,30 @@ import React from "react";
 import Image from "next/image";
 import Button from "src/components/button";
 import styles from "src/components/hero.module.scss";
-import { AppImage } from "src/types/image";
 import { useRouter } from "next/router";
 
-interface Props {
-  topText?: string;
-  mainText: string;
-  bottomText?: string;
-  image?: AppImage;
-  callToAction?: Function;
-}
-
-const Hero = ({
-  topText,
-  mainText,
-  bottomText,
-  image,
-  callToAction,
-}: Props) => {
+const Hero = () => {
   const router = useRouter();
   return (
     <header className={styles["heroImage"]}>
-      {image && (
-        <div>
-          <Image src={image.path} alt={image.altText} layout="fill" />
-        </div>
-      )}
-      <div
-        className={styles["content"]}
-        style={image ? null : { opacity: "unset" }}
-      >
-        {topText && <p>{topText}</p>}
-        <h1>{mainText}</h1>
-        {bottomText && <p>{bottomText}</p>}
-        {callToAction && (
-          <Button
-            variant="primary"
-            size="large"
-            onClick={() => router.push("/services")}
-          >
-            Book Online
-          </Button>
-        )}
+      <div>
+        <Image
+          src={require("data/images/braids-and-twists.jpg")}
+          alt="main-image"
+          layout="fill"
+        />
+      </div>
+      <div className={styles["content"]}>
+        <p>{"Ottawa's favorite braider & loctician"}</p>
+        <h1>Creating your best Look</h1>
+        <p>Let me help you shine!</p>
+        <Button
+          variant="primary"
+          size="large"
+          onClick={() => router.push("/services")}
+        >
+          Book Online
+        </Button>
       </div>
     </header>
   );

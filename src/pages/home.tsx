@@ -33,16 +33,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <Hero
-        topText="Ottawa's favorite braider & loctician"
-        mainText="Creating your best Look"
-        bottomText="Let me help you shine!"
-        callToAction={() => router.push("/booking")}
-        image={{
-          path: require("data/images/braids-and-twists.jpg"),
-          altText: "ifes alt text",
-        }}
-      />
+      <Hero />
       <section>
         <h2>About Us</h2>
         <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
