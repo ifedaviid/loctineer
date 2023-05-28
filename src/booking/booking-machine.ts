@@ -6,11 +6,6 @@ import { AppImage } from "src/types/image";
 
 const { POSSIBLE, REQUIRED, NOT_OFFERED } = ExtensionUsage;
 
-export enum ServiceCategory {
-  INSTALLATION = "Installation",
-  MAINTENANCE = "Maintenance",
-}
-
 export interface ExtensionLength {
   category: string;
   image: AppImage;

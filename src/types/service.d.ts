@@ -1,4 +1,5 @@
 import { ExtensionUsage } from "src/types/extension-usage";
+import { ServiceCategory } from "src/types/service-category";
 import { AppImage } from "src/types/image";
 
 export interface Service {
