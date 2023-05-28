@@ -8,7 +8,7 @@ interface Props {
   phoneNumber: string;
 }
 
-const Confirmation = ({ email, phoneNumber }: Props) => {
+const Success = ({ email, phoneNumber }: Props) => {
   const router = useRouter();
   return (
     <>
@@ -25,4 +25,4 @@ const Confirmation = ({ email, phoneNumber }: Props) => {
   );
 };
 
-export default Confirmation;
+export default Success;
