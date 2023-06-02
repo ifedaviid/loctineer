@@ -3,6 +3,7 @@ import Head from "next/head";
 import Drawer from "@mui/material/Drawer";
 import Menu from "src/template/menu-bar";
 import MenuMobile from "src/template/menu-mobile";
+import { FacebookMessengerChat } from "src/components/fb-messenger-chat";
 import styles from "src/template/page-wrapper.module.scss";
 
 interface Props {
@@ -25,7 +26,10 @@ const PageWrapper = ({ children }: Props) => {
           showMobileMenu={showMobileMenu}
         />
 
-        <main>{children}</main>
+        <main>
+          {children}
+          <FacebookMessengerChat />
+        </main>
 
         <footer className={styles.footer}>
           <p>Copyright © 2022 Loctineer Ottawa - All Rights Reserved.</p>

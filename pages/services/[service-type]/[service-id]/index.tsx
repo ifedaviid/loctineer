@@ -10,7 +10,6 @@ import {
 import Layout from "src/template/page-wrapper";
 import { Service } from "src/types";
 import Button from "src/components/button";
-import { FacebookMessengerChat } from "src/components/fb-messenger-chat";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
 import { bookingMachine } from "src/booking/booking-machine";
 import { useBookingService } from "src/helpers";
@@ -63,7 +62,6 @@ const ServiceID = ({ service, serviceTypeName }: Props) => {
       {showModal && (
         <AddingExtensions setShowModal={setShowModal} service={service} />
       )}
-      <FacebookMessengerChat />
     </Layout>
   );
 };
