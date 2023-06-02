@@ -1,5 +1,6 @@
 import React from "react";
 import { useActor } from "@xstate/react";
+import { Close } from "@mui/icons-material";
 import Button from "src/components/button";
 import Modal from "src/components/modal";
 import styles from "src/booking/stages/adding-extensions.module.scss";
@@ -19,8 +20,8 @@ const AddingExtensions = ({ service, setShowModal }) => {
         <div>
           <h4>Adding hair extensions?</h4>
           <div>
-            <a
-              href="#"
+            <Close
+              sx={{ color: "black" }}
               onClick={() => {
                 send({
                   type: "IGNORE_ADDING_EXTENSIONS",
@@ -28,9 +29,7 @@ const AddingExtensions = ({ service, setShowModal }) => {
                 });
                 setShowModal(false);
               }}
-            >
-              x
-            </a>
+            />
           </div>
         </div>
         <p>

@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { Close } from "@mui/icons-material";
 import Button from "src/components/button";
-
-import { useState } from "react";
-import styles from "src/booking/stages/confirm-exit.module.scss";
 import Modal from "src/components/modal";
+import styles from "src/booking/stages/confirm-exit.module.scss";
 
 const useConfirm = (
   title: string,
@@ -42,9 +41,7 @@ const useConfirm = (
             <div>
               <h4>{title}</h4>
               <div>
-                <a href="#" onClick={handleCancel}>
-                  x
-                </a>
+                <Close sx={{ color: "black" }} onClick={handleCancel} />
               </div>
             </div>
             <p>{message}</p>
