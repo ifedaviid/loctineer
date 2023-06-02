@@ -10,6 +10,8 @@ import CustomImage from "src/components/custom-image";
 import { ExtensionUsage } from "src/types";
 import { strings } from "data";
 import styles from "src/booking/stages/service-profile.module.scss";
+import Alert from "@mui/material/Alert";
+import Link from "next/link";
 
 const ServiceProfile = ({ service, serviceTypeName }) => {
   const router = useRouter();
@@ -19,7 +21,7 @@ const ServiceProfile = ({ service, serviceTypeName }) => {
 
   const getPriceInfo = () => {
     const hasFixedRate = rate === "FIXED";
-    return hasFixedRate ? `FIXED PRICE` : `HOURLY RATE`;
+    return hasFixedRate ? `STARTING PRICE` : `HOURLY RATE`;
   };
 
   const getExtensionsInfo = () => {
@@ -92,6 +94,12 @@ const ServiceProfile = ({ service, serviceTypeName }) => {
             </div>
           </div>
         </div>
+        <Alert className={styles.alertInfoContainer} severity="info">
+          Prices may increase due to time required for your desired style.{" "}
+          <Link href="#">
+            <a>{"Here's Why"}</a>
+          </Link>
+        </Alert>
         <p>{description}</p>
         {cta.primary && (
           <Button
