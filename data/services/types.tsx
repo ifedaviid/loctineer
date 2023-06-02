@@ -11,7 +11,7 @@ export const serviceTypes = [
     cta: {
       primary: {
         href: `/services/${strings.LOCS_ID}`,
-        text: "See related services",
+        text: "See services",
       },
     },
     image: {
@@ -28,7 +28,7 @@ export const serviceTypes = [
     cta: {
       primary: {
         href: `/services/${strings.BRAIDS_AND_TWISTS_ID}`,
-        text: "See related services",
+        text: "See services",
       },
     },
     image: {
