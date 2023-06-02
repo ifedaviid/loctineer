@@ -1,25 +1,13 @@
 import { createMachine, assign } from "xstate";
-import { ExtensionUsage } from "src/types/extension-usage";
-import { ServiceType } from "src/types/service-type";
-import { Service } from "src/types/service";
-import { AppImage } from "src/types/image";
+import {
+  ServiceType,
+  Service,
+  ExtensionUsage,
+  ExtensionLength,
+  HairLength,
+} from "src/types";
 
 const { POSSIBLE, REQUIRED, NOT_OFFERED } = ExtensionUsage;
-
-export enum ServiceCategory {
-  INSTALLATION = "Installation",
-  MAINTENANCE = "Maintenance",
-}
-
-export interface ExtensionLength {
-  category: string;
-  image: AppImage;
-}
-
-export interface HairLength {
-  category: string;
-  image: AppImage;
-}
 
 // ***********************************
 

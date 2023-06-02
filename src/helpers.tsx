@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { AppImage } from "src/types/image";
+import { AppImage } from "src/types";
 import { BookingContext } from "src/booking/booking-state";
 
 const MOBILE = 768;
