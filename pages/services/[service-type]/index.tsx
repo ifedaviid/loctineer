@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "src/template/page-wrapper";
 import Listing from "src/components/listing";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
-import { Service } from "src/types/service";
+import { Service } from "src/types";
 
 let name: string, data: Array<Service>;
 

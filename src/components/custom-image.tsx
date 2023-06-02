@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { AppImage } from "src/types/image";
+import { AppImage } from "src/types";
 import classNames from "classnames";
 import styles from "src/components/custom-image.module.scss";
 

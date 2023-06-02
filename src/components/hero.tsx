@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Button from "src/components/button";
 import styles from "src/components/hero.module.scss";
-import { AppImage } from "src/types/image";
+import { AppImage } from "src/types";
 import { useRouter } from "next/router";
 
 interface Props {

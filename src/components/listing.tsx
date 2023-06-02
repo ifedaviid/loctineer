@@ -4,8 +4,7 @@ import Link from "next/link";
 import Chip from "@mui/material/Chip";
 import Button from "src/components/button";
 import styles from "src/components/listing.module.scss";
-import { Service } from "src/types/service";
-import { ExtensionUsage } from "src/types/extension-usage";
+import { Service, ExtensionUsage } from "src/types";
 
 interface Props {
   service: Service;

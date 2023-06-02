@@ -8,7 +8,7 @@ import {
   SelectSchedule,
 } from "src/booking/stages";
 import Layout from "src/template/page-wrapper";
-import { Service } from "src/types/service";
+import { Service } from "src/types";
 import Button from "src/components/button";
 import { FacebookMessengerChat } from "src/components/fb-messenger-chat";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
