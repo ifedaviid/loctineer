@@ -3,7 +3,7 @@ import Head from "next/head";
 import Drawer from "@mui/material/Drawer";
 import Menu from "src/template/menu-bar";
 import MenuMobile from "src/template/menu-mobile";
-import { FacebookMessengerChat } from "src/components/fb-messenger-chat";
+import { FacebookMessengerChat } from "src/components/chat-button";
 import styles from "src/template/page-wrapper.module.scss";
 
 interface Props {
