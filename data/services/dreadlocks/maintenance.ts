@@ -11,7 +11,7 @@ export const dreadlockMaintenanceServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.LOC_REPAIR_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.DREADLOCKS_MAINTENANCE_ID}/${strings.LOC_REPAIR_ID}`,
         text: "See details",
       },
     },
@@ -32,7 +32,7 @@ export const dreadlockMaintenanceServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.LOC_RETWIST_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.DREADLOCKS_MAINTENANCE_ID}/${strings.LOC_RETWIST_ID}`,
         text: "See details",
       },
     },
@@ -53,7 +53,7 @@ export const dreadlockMaintenanceServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.LOC_STYLING_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.DREADLOCKS_MAINTENANCE_ID}/${strings.LOC_STYLING_ID}`,
         text: "See details",
       },
     },

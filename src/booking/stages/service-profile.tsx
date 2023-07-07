@@ -8,12 +8,11 @@ import { useBookingService } from "src/helpers";
 import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
 import { ExtensionUsage } from "src/types";
-import { strings } from "data";
 import styles from "src/booking/stages/service-profile.module.scss";
 import Alert from "@mui/material/Alert";
 import Link from "next/link";
 
-const ServiceProfile = ({ service, serviceTypeName }) => {
+const ServiceProfile = ({ service, parentServiceName }) => {
   const router = useRouter();
   const { bookingService } = useBookingService();
   const [, send] = useActor(bookingService);
@@ -37,27 +36,6 @@ const ServiceProfile = ({ service, serviceTypeName }) => {
     }
   };
 
-  const getParentPage = () => {
-    switch (serviceTypeName) {
-      case strings.LOCS_ID:
-        return {
-          title: "Dreadlocks",
-          url: `/services/${strings.LOCS_ID}`,
-        };
-
-      case strings.BRAIDS_AND_TWISTS_ID:
-        return {
-          title: "Braid & Twists",
-          url: `/services/${strings.BRAIDS_AND_TWISTS_ID}`,
-        };
-
-      default:
-        return { title: "Return Home", url: `/` };
-    }
-  };
-
-  const parentPage = getParentPage();
-
   return (
     <div className={styles["profile-container"]}>
       <div>
@@ -72,9 +50,9 @@ const ServiceProfile = ({ service, serviceTypeName }) => {
           }}
           size="medium"
           startIcon={<ChevronLeftIcon />}
-          onClick={() => router.push(parentPage.url)}
+          onClick={() => {}}
         >
-          {parentPage.title}
+          {parentServiceName}
         </MuiButton>
         <h3>{name}</h3>
         <div className={styles.iconInfoContainer}>

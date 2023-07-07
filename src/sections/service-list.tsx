@@ -3,24 +3,20 @@ import { useRouter } from "next/router";
 import Listing from "src/components/listing";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
 import { Service } from "src/types";
 
-let name: string, data: Array<Service>;
+interface Props {
+  serviceList: Service[];
+  serviceName: string;
+  parentServiceName?: string;
+}
 
-const ServiceType = ({ serviceType }) => {
+const ServiceList = ({
+  serviceList,
+  serviceName,
+  parentServiceName,
+}: Props) => {
   const router = useRouter();
-  switch (serviceType) {
-    case strings.BRAIDS_AND_TWISTS_ID:
-      name = strings.BRAIDS_AND_TWISTS;
-      data = braidsAndTwistsServices;
-      break;
-
-    default:
-      name = strings.LOCS;
-      data = dreadlocksServices;
-      break;
-  }
   return (
     <section className="gray">
       <MuiButton
@@ -36,13 +32,13 @@ const ServiceType = ({ serviceType }) => {
         startIcon={<ChevronLeftIcon />}
         onClick={() => router.push("/services")}
       >
-        All Services
+        {`Back to ${parentServiceName}`}
       </MuiButton>
-      <h2>{name} Services</h2>
+      <h2>{serviceName}</h2>
       <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
       when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
       <div className="services-content">
-        {data.map((option, idx) => (
+        {serviceList.map((option, idx) => (
           <Listing key={idx} service={option} />
         ))}
       </div>
@@ -50,4 +46,4 @@ const ServiceType = ({ serviceType }) => {
   );
 };
 
-export default ServiceType;
+export default ServiceList;

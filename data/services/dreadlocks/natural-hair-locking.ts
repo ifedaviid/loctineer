@@ -11,7 +11,7 @@ export const naturalHairLockingServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.INSTANT_DREADLOCKS_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.NATURAL_HAIR_LOCKING_ID}/${strings.INSTANT_DREADLOCKS_ID}`,
         text: "See details",
       },
     },
@@ -32,7 +32,7 @@ export const naturalHairLockingServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.TWO_STRAND_STARTER_LOCS_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.NATURAL_HAIR_LOCKING_ID}/${strings.TWO_STRAND_STARTER_LOCS_ID}`,
         text: "See details",
       },
     },
@@ -53,7 +53,7 @@ export const naturalHairLockingServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.SISTER_LOCS_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.NATURAL_HAIR_LOCKING_ID}/${strings.SISTER_LOCS_ID}`,
         text: "See details",
       },
     },
@@ -74,7 +74,7 @@ export const naturalHairLockingServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.SISTER_LOCS_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.NATURAL_HAIR_LOCKING_ID}/${strings.SISTER_LOCS_ID}`,
         text: "See details",
       },
     },
@@ -95,7 +95,7 @@ export const naturalHairLockingServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.SISTER_LOCS_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.NATURAL_HAIR_LOCKING_ID}/${strings.SISTER_LOCS_ID}`,
         text: "See details",
       },
     },
