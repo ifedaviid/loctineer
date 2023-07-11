@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {
-  ServiceProfile,
+  ServiceProfile as Details,
   SelectExtensionLength,
   SelectHairLength,
   SelectSchedule,
@@ -13,11 +13,14 @@ import { Service } from "src/types";
 
 interface Props {
   service: Service;
-  serviceTypeName: string;
+  returnRoute?: {
+    path: string;
+    name: string;
+  };
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Service = ({ service, serviceTypeName, setShowModal }: Props) => {
+const ServiceDetails = ({ service, returnRoute, setShowModal }: Props) => {
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
 
@@ -27,7 +30,7 @@ const Service = ({ service, serviceTypeName, setShowModal }: Props) => {
 
   useEffect(() => {
     // check if user was booking in progress and selected another service. if true, it send EXIT event then it will redirect to IDLE state and will reset state for new booking.
-    // variable service equals current service fetched from service-id in url and state.context.service is the service stored in previous time.
+    // variable service equals current service fetched from service-name in url and state.context.service is the service stored in previous time.
     if (
       state.context?.service !== null &&
       service.id !== state.context.service.id
@@ -49,7 +52,7 @@ const Service = ({ service, serviceTypeName, setShowModal }: Props) => {
       {(state.matches("idle") ||
         state.matches("serviceProfile") ||
         state.matches("selectExtensionUsage")) && (
-        <ServiceProfile service={service} serviceTypeName={serviceTypeName} />
+        <Details service={service} returnRoute={returnRoute} />
       )}
       {state.matches("selectExtensionLength") && <SelectExtensionLength />}
       {state.matches("selectHairLength") && <SelectHairLength />}
@@ -58,4 +61,4 @@ const Service = ({ service, serviceTypeName, setShowModal }: Props) => {
   );
 };
 
-export default Service;
+export default ServiceDetails;

@@ -1,11 +1,16 @@
 import React from "react";
 import Layout from "src/template/page-wrapper";
-import ServiceTypes from "src/sections/services-types";
+import ServiceList from "src/sections/service-list";
+import { serviceTypes as allServices } from "data";
 
-export default function ServicesTypesPage() {
+export default function ServicesPage() {
   return (
     <Layout>
-      <ServiceTypes />
+      <ServiceList
+        title={"Our Services"}
+        serviceList={allServices}
+        returnRoute={{ path: "/", name: "Back to Home" }}
+      />
     </Layout>
   );
 }

@@ -21,6 +21,11 @@
       "data/*": ["data/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "data/services/natural-hair-locking.js"
+  ],
   "exclude": ["node_modules"]
 }
