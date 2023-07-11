@@ -13,15 +13,14 @@ import { Service } from "src/types";
 
 interface Props {
   service: Service;
-  parentServiceName: string;
+  returnRoute?: {
+    path: string;
+    name: string;
+  };
   setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ServiceDetails = ({
-  service,
-  parentServiceName,
-  setShowModal,
-}: Props) => {
+const ServiceDetails = ({ service, returnRoute, setShowModal }: Props) => {
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
 
@@ -53,7 +52,7 @@ const ServiceDetails = ({
       {(state.matches("idle") ||
         state.matches("serviceProfile") ||
         state.matches("selectExtensionUsage")) && (
-        <Details service={service} parentServiceName={parentServiceName} />
+        <Details service={service} returnRoute={returnRoute} />
       )}
       {state.matches("selectExtensionLength") && <SelectExtensionLength />}
       {state.matches("selectHairLength") && <SelectHairLength />}

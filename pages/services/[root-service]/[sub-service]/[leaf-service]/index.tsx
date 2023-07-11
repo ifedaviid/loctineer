@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import { AddingExtensions } from "src/booking/stages";
 import Layout from "src/template/page-wrapper";
 import {
+  braidsAndTwistsServices,
   dreadlockMaintenanceServices,
+  dreadlocksServices,
   naturalHairLockingServices,
   strings,
 } from "data";
 import ServiceDetails from "src/sections/service-details";
 import { Service } from "src/types";
+import { BRAIDS_AND_TWISTS_ID } from "data/strings";
 
 const {
   LOCS_ID,
@@ -24,26 +27,49 @@ const {
 } = strings;
 
 interface Props {
-  serviceData: string;
-  serviceName: string;
-  parentServiceName: string;
+  leafService: string;
+  subServiceId: string;
+  rootServiceId: string;
 }
 
 export default function LeafServicePage({
-  serviceData: stringifiedServiceData,
-  parentServiceName,
+  leafService: stringifiedServiceData,
+  subServiceId,
+  rootServiceId,
 }: Props) {
   const [showModal, setShowModal] = useState(false);
-  const serviceData: Service = JSON.parse(stringifiedServiceData);
+  const leafService: Service = JSON.parse(stringifiedServiceData);
+  const getSubService = () => {
+    let subServices;
+    switch (rootServiceId) {
+      case LOCS_ID:
+        subServices = dreadlocksServices;
+        break;
+
+      case BRAIDS_AND_TWISTS_ID:
+        subServices = braidsAndTwistsServices;
+        break;
+
+      default:
+        subServices = [];
+        break;
+    }
+    const subService = subServices.find((x) => x.id === subServiceId);
+    return subService;
+  };
+
   return (
     <Layout>
       <ServiceDetails
-        service={serviceData}
-        parentServiceName={parentServiceName}
+        service={leafService}
+        returnRoute={{
+          name: getSubService().name,
+          path: getSubService().cta.primary.href,
+        }}
         setShowModal={setShowModal}
       />
       {showModal && (
-        <AddingExtensions setShowModal={setShowModal} service={serviceData} />
+        <AddingExtensions setShowModal={setShowModal} service={leafService} />
       )}
     </Layout>
   );
@@ -167,8 +193,9 @@ export const getStaticProps = ({ params }) => {
   }
   return {
     props: {
-      serviceData: JSON.stringify(serviceData),
-      parentServiceName: params["sub-service"],
+      leafService: JSON.stringify(serviceData),
+      subServiceId: params["sub-service"],
+      rootServiceId: params["root-service"],
     },
   };
 };

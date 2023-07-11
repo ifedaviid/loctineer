@@ -3,17 +3,25 @@ import Layout from "src/template/page-wrapper";
 import ServiceList from "src/sections/service-list";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
 import { Service } from "src/types";
+import {
+  LOCS,
+  LOCS_ID,
+  BRAIDS_AND_TWISTS,
+  BRAIDS_AND_TWISTS_ID,
+} from "data/strings";
 
-const { LOCS, LOCS_ID, BRAIDS_AND_TWISTS, BRAIDS_AND_TWISTS_ID } = strings;
-
-export default function RootServicePage({
-  serviceName,
-  serviceData: stringifiedServiceData,
+export default function RootServicesPage({
+  pageTitle,
+  rootServices: stringifiedRootServiceData,
 }) {
-  const serviceData: Service[] = JSON.parse(stringifiedServiceData);
+  const rootServices: Service[] = JSON.parse(stringifiedRootServiceData);
   return (
     <Layout>
-      <ServiceList serviceList={serviceData} serviceName={serviceName} />
+      <ServiceList
+        title={pageTitle}
+        serviceList={rootServices}
+        returnRoute={{ path: "/services", name: "All Services" }}
+      />
     </Layout>
   );
 }
@@ -27,22 +35,22 @@ export const getStaticPaths = () => ({
 });
 
 export const getStaticProps = ({ params }) => {
-  let serviceName: string, serviceData: Service[];
+  let rootServiceData: Service[], pageTitle: string;
   switch (params["root-service"]) {
     case BRAIDS_AND_TWISTS_ID:
-      serviceName = BRAIDS_AND_TWISTS;
-      serviceData = braidsAndTwistsServices;
+      pageTitle = BRAIDS_AND_TWISTS;
+      rootServiceData = braidsAndTwistsServices;
       break;
 
     default:
-      serviceName = LOCS;
-      serviceData = dreadlocksServices;
+      pageTitle = LOCS;
+      rootServiceData = dreadlocksServices;
       break;
   }
   return {
     props: {
-      serviceName: serviceName,
-      serviceData: JSON.stringify(serviceData),
-    }, // will be passed to the page component as props
+      pageTitle,
+      rootServices: JSON.stringify(rootServiceData),
+    },
   };
 };

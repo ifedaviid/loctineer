@@ -7,12 +7,20 @@ import { PaidOutlined, AccessTime, HelpOutline } from "@mui/icons-material";
 import { useBookingService } from "src/helpers";
 import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
-import { ExtensionUsage } from "src/types";
+import { ExtensionUsage, Service } from "src/types";
 import styles from "src/booking/stages/service-profile.module.scss";
 import Alert from "@mui/material/Alert";
 import Link from "next/link";
 
-const ServiceProfile = ({ service, parentServiceName }) => {
+interface Props {
+  service: Service;
+  returnRoute?: {
+    path: string;
+    name: string;
+  };
+}
+
+const ServiceProfile = ({ service, returnRoute }: Props) => {
   const router = useRouter();
   const { bookingService } = useBookingService();
   const [, send] = useActor(bookingService);
@@ -50,9 +58,9 @@ const ServiceProfile = ({ service, parentServiceName }) => {
           }}
           size="medium"
           startIcon={<ChevronLeftIcon />}
-          onClick={() => {}}
+          onClick={() => router.push(returnRoute.path)}
         >
-          {parentServiceName}
+          {returnRoute.name}
         </MuiButton>
         <h3>{name}</h3>
         <div className={styles.iconInfoContainer}>

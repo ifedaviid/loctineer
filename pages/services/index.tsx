@@ -6,7 +6,11 @@ import { serviceTypes as allServices } from "data";
 export default function ServicesPage() {
   return (
     <Layout>
-      <ServiceList serviceList={allServices} serviceName={"Our Services"} />
+      <ServiceList
+        title={"Our Services"}
+        serviceList={allServices}
+        returnRoute={{ path: "/", name: "Back to Home" }}
+      />
     </Layout>
   );
 }
