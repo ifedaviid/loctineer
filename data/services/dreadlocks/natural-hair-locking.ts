@@ -1,7 +1,7 @@
 import { ServiceCategory, ExtensionUsage } from "src/types";
 import * as strings from "data/strings";
 
-const { POSSIBLE, NOT_OFFERED } = ExtensionUsage;
+const { POSSIBLE } = ExtensionUsage;
 
 export const naturalHairLockingServices = [
   {
