@@ -9,6 +9,8 @@ import {
   serviceTypes,
 } from "data";
 import ServiceDetails from "src/sections/service-details";
+import PriceVariation from "src/booking/stages/price-variation";
+import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
 import ServiceList from "src/sections/service-list";
 import {
@@ -45,7 +47,12 @@ export default function SubServicesPage({
   subServices: stringifiedSubServices,
   rootServiceId,
 }: Props) {
-  const [showModal, setShowModal] = useState(false);
+  const {
+    showExtensionUsageModal,
+    setShowExtensionUsageModal,
+    showPriceVariationModal,
+    setShowPriceVariationModal,
+  } = useBookingModals();
   const subServices: Service[] = JSON.parse(stringifiedSubServices);
   const getRootService = () => serviceTypes.find((x) => x.id === rootServiceId);
   const content =
@@ -65,16 +72,20 @@ export default function SubServicesPage({
           name: getRootService().name,
           path: getRootService().cta.primary.href,
         }}
-        setShowModal={setShowModal}
+        setShowExtensionUsageModal={setShowExtensionUsageModal}
+        setShowPriceVariationModal={setShowPriceVariationModal}
       />
     );
 
   return (
     <Layout>
       {content}
-      {showModal && (
+      {showPriceVariationModal && (
+        <PriceVariation setShowModal={setShowPriceVariationModal} />
+      )}
+      {showExtensionUsageModal && (
         <AddingExtensions
-          setShowModal={setShowModal}
+          setShowModal={showExtensionUsageModal}
           service={subServices[0] || null}
         />
       )}

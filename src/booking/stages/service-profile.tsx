@@ -10,17 +10,21 @@ import CustomImage from "src/components/custom-image";
 import { ExtensionUsage, Service } from "src/types";
 import styles from "src/booking/stages/service-profile.module.scss";
 import Alert from "@mui/material/Alert";
-import Link from "next/link";
 
 interface Props {
   service: Service;
+  setShowPriceVariationModal: React.Dispatch<React.SetStateAction<boolean>>;
   returnRoute?: {
     path: string;
     name: string;
   };
 }
 
-const ServiceProfile = ({ service, returnRoute }: Props) => {
+const ServiceProfile = ({
+  service,
+  returnRoute,
+  setShowPriceVariationModal,
+}: Props) => {
   const router = useRouter();
   const { bookingService } = useBookingService();
   const [, send] = useActor(bookingService);
@@ -82,9 +86,13 @@ const ServiceProfile = ({ service, returnRoute }: Props) => {
         </div>
         <Alert className={styles.alertInfoContainer} severity="info">
           Prices may increase due to time required for your desired style.{" "}
-          <Link href="#">
-            <a>{"Here's Why"}</a>
-          </Link>
+          <Button
+            variant="link"
+            onClick={() => setShowPriceVariationModal(true)}
+            style={{ width: "unset" }}
+          >
+            {"Here's Why"}
+          </Button>
         </Alert>
         <p>{description}</p>
         {cta.primary && (

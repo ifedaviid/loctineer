@@ -8,6 +8,8 @@ import {
   naturalHairLockingServices,
 } from "data";
 import ServiceDetails from "src/sections/service-details";
+import PriceVariation from "src/booking/stages/price-variation";
+import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
 import {
   BRAIDS_AND_TWISTS_ID,
@@ -35,7 +37,12 @@ export default function LeafServicePage({
   subServiceId,
   rootServiceId,
 }: Props) {
-  const [showModal, setShowModal] = useState(false);
+  const {
+    showExtensionUsageModal,
+    setShowExtensionUsageModal,
+    showPriceVariationModal,
+    setShowPriceVariationModal,
+  } = useBookingModals();
   const leafService: Service = JSON.parse(stringifiedServiceData);
   const getSubService = () => {
     let subServices;
@@ -64,10 +71,17 @@ export default function LeafServicePage({
           name: getSubService().name,
           path: getSubService().cta.primary.href,
         }}
-        setShowModal={setShowModal}
+        setShowExtensionUsageModal={setShowExtensionUsageModal}
+        setShowPriceVariationModal={setShowPriceVariationModal}
       />
-      {showModal && (
-        <AddingExtensions setShowModal={setShowModal} service={leafService} />
+      {showPriceVariationModal && (
+        <PriceVariation setShowModal={setShowPriceVariationModal} />
+      )}
+      {showExtensionUsageModal && (
+        <AddingExtensions
+          setShowModal={setShowExtensionUsageModal}
+          service={leafService}
+        />
       )}
     </Layout>
   );
