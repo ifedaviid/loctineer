@@ -16,6 +16,32 @@
   background-color: rgba(0, 0, 0, 0.85);
   padding: 3rem 2rem;
   overflow-y: hidden;
+  > .modalContainer {
+    background: white;
+    color: black;
+    width: 50%;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    // The header and the cancel button
+    > :first-child {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 25px;
+      margin-bottom: 1.5rem;
+      // The header
+      > h4 {
+        margin: unset;
+      }
+    }
+    // The subtext
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.7rem;
+    }
+  }
   > .closeIcon {
     position: fixed;
     top: 4%;
@@ -28,6 +54,16 @@
     transition: all 1s ease;
     img {
       transform: scale(1) !important;
+    }
+  }
+}
+
+@media (max-width: $xl-screens) {
+  .modalOverlay {
+    > .modalContainer {
+      width: 95%;
+      padding: 2rem;
+      margin: 0 2rem;
     }
   }
 }

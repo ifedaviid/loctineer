@@ -33,26 +33,20 @@ const useConfirm = (
     <>
       {promise !== null && (
         <Modal>
-          {" "}
-          {/* This is the dark overlay in the background */}
-          <div className={styles.modalContainer}>
-            {" "}
-            {/* This is the modal container */}
+          <div>
+            <h4>{title}</h4>
             <div>
-              <h4>{title}</h4>
-              <div>
-                <Close sx={{ color: "black" }} onClick={handleCancel} />
-              </div>
+              <Close sx={{ color: "black" }} onClick={handleCancel} />
             </div>
-            <p>{message}</p>
-            <div className={styles.buttonGroup}>
-              <Button variant="secondary" onClick={handleCancel}>
-                No
-              </Button>
-              <Button variant="primary" onClick={handleConfirm}>
-                Yes
-              </Button>
-            </div>
+          </div>
+          <p>{message}</p>
+          <div className={styles.buttonGroup}>
+            <Button variant="secondary" onClick={handleCancel}>
+              No
+            </Button>
+            <Button variant="primary" onClick={handleConfirm}>
+              Yes
+            </Button>
           </div>
         </Modal>
       )}

@@ -12,50 +12,44 @@ const AddingExtensions = ({ service, setShowModal }) => {
 
   return (
     <Modal>
-      {" "}
-      {/* This is the dark overlay in the background */}
-      <div className={styles.modalContainer}>
-        {" "}
-        {/* This is the modal container */}
+      <div>
+        <h4>Adding hair extensions?</h4>
         <div>
-          <h4>Adding hair extensions?</h4>
-          <div>
-            <Close
-              sx={{ color: "black" }}
-              onClick={() => {
-                send({
-                  type: "IGNORE_ADDING_EXTENSIONS",
-                  addingExtensions: undefined,
-                });
-                setShowModal(false);
-              }}
-            />
-          </div>
-        </div>
-        <p>
-          {service.name} can be done using hair extensions. Will you be adding
-          hair extensions?
-        </p>
-        <div className={styles.buttonGroup}>
-          <Button
-            variant="secondary"
+          <Close
+            sx={{ color: "black" }}
             onClick={() => {
-              send({ type: "NOT_ADDING_EXTENSIONS", addingExtensions: false });
+              send({
+                type: "IGNORE_ADDING_EXTENSIONS",
+                addingExtensions: undefined,
+              });
               setShowModal(false);
             }}
-          >
-            No, thanks
-          </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              send({ type: "ADDING_EXTENSIONS", addingExtensions: true });
-              setShowModal(false);
-            }}
-          >
-            Yes, I will!
-          </Button>
+          />
         </div>
+      </div>
+      <p>
+        {service.name} can be done using hair extensions. Will you be adding
+        hair extensions?
+      </p>
+      <div className={styles.buttonGroup}>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            send({ type: "NOT_ADDING_EXTENSIONS", addingExtensions: false });
+            setShowModal(false);
+          }}
+        >
+          No, thanks
+        </Button>
+        <Button
+          variant="primary"
+          onClick={() => {
+            send({ type: "ADDING_EXTENSIONS", addingExtensions: true });
+            setShowModal(false);
+          }}
+        >
+          Yes, I will!
+        </Button>
       </div>
     </Modal>
   );
