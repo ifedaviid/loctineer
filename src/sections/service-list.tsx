@@ -19,23 +19,21 @@ const ServiceList = ({ title, serviceList, returnRoute }: Props) => {
   const { name, path } = returnRoute;
   return (
     <section className="gray">
-      {returnRoute && (
-        <MuiButton
-          sx={{
-            textTransform: "none",
-            letterSpacing: "2px",
-            color: "#4a4f4f",
-            justifyContent: "flex-start",
-            padding: "0.5rem 0",
-            fontFamily: "inherit",
-          }}
-          size="medium"
-          startIcon={<ChevronLeftIcon />}
-          onClick={() => router.push(path)}
-        >
-          {name}
-        </MuiButton>
-      )}
+      <MuiButton
+        sx={{
+          textTransform: "none",
+          letterSpacing: "2px",
+          color: "#4a4f4f",
+          justifyContent: "flex-start",
+          padding: "0.5rem 0",
+          fontFamily: "inherit",
+        }}
+        size="medium"
+        startIcon={<ChevronLeftIcon />}
+        onClick={() => router.push(path)}
+      >
+        {name}
+      </MuiButton>
       <h2>{title}</h2>
       <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
       when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>

@@ -6,13 +6,11 @@ import {
   dreadlockMaintenanceServices,
   dreadlocksServices,
   naturalHairLockingServices,
-  strings,
 } from "data";
 import ServiceDetails from "src/sections/service-details";
 import { Service } from "src/types";
-import { BRAIDS_AND_TWISTS_ID } from "data/strings";
-
-const {
+import {
+  BRAIDS_AND_TWISTS_ID,
   LOCS_ID,
   NATURAL_HAIR_LOCKING_ID,
   DREADLOCKS_MAINTENANCE_ID,
@@ -24,7 +22,7 @@ const {
   LOC_RETWIST_ID,
   LOC_REPAIR_ID,
   LOC_STYLING_ID,
-} = strings;
+} from "data/strings";
 
 interface Props {
   leafService: string;

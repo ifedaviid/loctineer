@@ -209,6 +209,7 @@ export const getStaticProps = ({ params }) => {
       break;
 
     default:
+      pageTitle = null;
       subServices = [];
       break;
   }
