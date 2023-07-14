@@ -7,7 +7,8 @@ import Hero from "src/components/hero";
 import CustomImage from "src/components/custom-image";
 import Layout from "src/template/page-wrapper";
 import About from "src/sections/about";
-import Services from "src/sections/services-types";
+import ServiceList from "src/sections/service-list";
+import { serviceTypes } from "data";
 import Photos from "src/sections/photos";
 
 export default function HomePage() {
@@ -37,7 +38,7 @@ export default function HomePage() {
         }}
       />
       <About />
-      <Services />
+      <ServiceList title={"Services"} serviceList={serviceTypes} />
       <Photos setPopUp={setPopUp} />
       {popUp.showing && openImage(popUp.image)}
     </Layout>
