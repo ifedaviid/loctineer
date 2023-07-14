@@ -85,7 +85,7 @@ export default function SubServicesPage({
       )}
       {showExtensionUsageModal && (
         <AddingExtensions
-          setShowModal={showExtensionUsageModal}
+          setShowModal={setShowExtensionUsageModal}
           service={subServices[0] || null}
         />
       )}
