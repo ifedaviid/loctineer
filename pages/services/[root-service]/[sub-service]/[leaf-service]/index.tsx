@@ -6,13 +6,13 @@ import {
   dreadlockMaintenanceServices,
   dreadlocksServices,
   naturalHairLockingServices,
-  strings,
 } from "data";
 import ServiceDetails from "src/sections/service-details";
+import PriceVariation from "src/booking/stages/price-variation";
+import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
-import { BRAIDS_AND_TWISTS_ID } from "data/strings";
-
-const {
+import {
+  BRAIDS_AND_TWISTS_ID,
   LOCS_ID,
   NATURAL_HAIR_LOCKING_ID,
   DREADLOCKS_MAINTENANCE_ID,
@@ -24,7 +24,7 @@ const {
   LOC_RETWIST_ID,
   LOC_REPAIR_ID,
   LOC_STYLING_ID,
-} = strings;
+} from "data/strings";
 
 interface Props {
   leafService: string;
@@ -37,7 +37,12 @@ export default function LeafServicePage({
   subServiceId,
   rootServiceId,
 }: Props) {
-  const [showModal, setShowModal] = useState(false);
+  const {
+    showExtensionUsageModal,
+    setShowExtensionUsageModal,
+    showPriceVariationModal,
+    setShowPriceVariationModal,
+  } = useBookingModals();
   const leafService: Service = JSON.parse(stringifiedServiceData);
   const getSubService = () => {
     let subServices;
@@ -66,10 +71,17 @@ export default function LeafServicePage({
           name: getSubService().name,
           path: getSubService().cta.primary.href,
         }}
-        setShowModal={setShowModal}
+        setShowExtensionUsageModal={setShowExtensionUsageModal}
+        setShowPriceVariationModal={setShowPriceVariationModal}
       />
-      {showModal && (
-        <AddingExtensions setShowModal={setShowModal} service={leafService} />
+      {showPriceVariationModal && (
+        <PriceVariation setShowModal={setShowPriceVariationModal} />
+      )}
+      {showExtensionUsageModal && (
+        <AddingExtensions
+          setShowModal={setShowExtensionUsageModal}
+          service={leafService}
+        />
       )}
     </Layout>
   );

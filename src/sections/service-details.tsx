@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {
-  ServiceProfile as Details,
+  ServiceProfile,
   SelectExtensionLength,
   SelectHairLength,
   SelectSchedule,
@@ -17,10 +17,16 @@ interface Props {
     path: string;
     name: string;
   };
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowExtensionUsageModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowPriceVariationModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const ServiceDetails = ({ service, returnRoute, setShowModal }: Props) => {
+const ServiceDetails = ({
+  service,
+  returnRoute,
+  setShowExtensionUsageModal,
+  setShowPriceVariationModal,
+}: Props) => {
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
 
@@ -37,7 +43,7 @@ const ServiceDetails = ({ service, returnRoute, setShowModal }: Props) => {
     ) {
       send({ type: "EXIT" });
     }
-    if (state.matches("selectExtensionUsage")) setShowModal(true);
+    if (state.matches("selectExtensionUsage")) setShowExtensionUsageModal(true);
   }, [state]);
 
   const renderBackButton = () => (
@@ -52,7 +58,11 @@ const ServiceDetails = ({ service, returnRoute, setShowModal }: Props) => {
       {(state.matches("idle") ||
         state.matches("serviceProfile") ||
         state.matches("selectExtensionUsage")) && (
-        <Details service={service} returnRoute={returnRoute} />
+        <ServiceProfile
+          service={service}
+          returnRoute={returnRoute}
+          setShowPriceVariationModal={setShowPriceVariationModal}
+        />
       )}
       {state.matches("selectExtensionLength") && <SelectExtensionLength />}
       {state.matches("selectHairLength") && <SelectHairLength />}

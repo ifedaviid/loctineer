@@ -8,15 +8,14 @@ import { Service } from "src/types";
 interface Props {
   title: string;
   serviceList: Service[];
-  returnRoute: {
+  returnRoute?: {
     path: string;
     name: string;
   };
 }
 
-const ServiceList = ({ title, serviceList, returnRoute }: Props) => {
+const ServiceList = ({ title, serviceList, returnRoute = null }: Props) => {
   const router = useRouter();
-  const { name, path } = returnRoute;
   return (
     <section className="gray">
       {returnRoute && (
@@ -31,9 +30,9 @@ const ServiceList = ({ title, serviceList, returnRoute }: Props) => {
           }}
           size="medium"
           startIcon={<ChevronLeftIcon />}
-          onClick={() => router.push(path)}
+          onClick={() => router.push(returnRoute.path)}
         >
-          {name}
+          {returnRoute.name}
         </MuiButton>
       )}
       <h2>{title}</h2>

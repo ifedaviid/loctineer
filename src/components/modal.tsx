@@ -21,7 +21,7 @@ const Modal = ({ closeModal, children }: Props) => {
               />
             </div>
           )}
-          {children}
+          <div className={styles.modalContainer}>{children}</div>
         </div>
       </>
     );
