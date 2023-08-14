@@ -27,7 +27,7 @@ export default function HomePage() {
   return (
     <Layout>
       <Hero
-        topText="Ottawa's favorite braider & loctician"
+        topText="Your community's favorite loctician"
         mainText="Creating your best Look"
         bottomText="Let me help you shine!"
         callToAction={() => router.push("/booking")}

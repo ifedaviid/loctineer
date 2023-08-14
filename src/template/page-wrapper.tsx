@@ -13,11 +13,12 @@ interface Props {
 const PageWrapper = ({ children }: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const showMobileMenu = (state) => setIsMobileMenuOpen(state);
+  const currentYear = new Date().getFullYear();
   return (
     <>
       <div className={styles.container}>
         <Head>
-          <title>Loctineer Bookings</title>
+          <title>Loc Studio</title>
           <meta name="description" content="Ottawa Braider & Loctician" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
@@ -32,7 +33,7 @@ const PageWrapper = ({ children }: Props) => {
         </main>
 
         <footer className={styles.footer}>
-          <p>Copyright © 2022 Loctineer Ottawa - All Rights Reserved.</p>
+          <p>Copyright © {currentYear} Loc Studio - All Rights Reserved.</p>
           <p>
             Designed & Developed by{" "}
             <a
