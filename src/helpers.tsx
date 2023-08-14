@@ -30,4 +30,15 @@ export const useBreakpoints = () => {
   return { mobile };
 };
 
+export const useBookingModals = () => {
+  const [showExtensionUsageModal, setShowExtensionUsageModal] = useState(false);
+  const [showPriceVariationModal, setShowPriceVariationModal] = useState(false);
+  return {
+    showExtensionUsageModal,
+    setShowExtensionUsageModal,
+    showPriceVariationModal,
+    setShowPriceVariationModal,
+  };
+};
+
 export const useBookingService = () => useContext(BookingContext);
