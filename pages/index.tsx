@@ -37,10 +37,6 @@ export default function HomePage() {
           altText: "ifes alt text",
         }}
       />
-      <About />
-      <ServiceList title={"Services"} serviceList={serviceTypes} />
-      <Photos setPopUp={setPopUp} />
-      {popUp.showing && openImage(popUp.image)}
     </Layout>
   );
 }
