@@ -27,16 +27,7 @@ export default function HomePage() {
 
   return (
     <Layout>
-      <Hero
-        topText="Your community's favorite loctician"
-        mainText="Creating your best Look"
-        bottomText="Let me help you shine!"
-        callToAction={() => router.push("/booking")}
-        image={{
-          path: require("data/images/braids-and-twists.jpg"),
-          altText: "ifes alt text",
-        }}
-      />
+      <Hero />
     </Layout>
   );
 }
