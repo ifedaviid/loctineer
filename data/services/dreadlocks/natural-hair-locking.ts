@@ -23,7 +23,7 @@ export const naturalHairLockingServices = [
     extensionUsage: POSSIBLE,
     price: 50,
     rate: "HOURLY",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.TWO_STRAND_STARTER_LOCS_ID,
@@ -44,7 +44,7 @@ export const naturalHairLockingServices = [
     extensionUsage: POSSIBLE,
     price: 50,
     rate: "HOURLY",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.SISTER_LOCS_ID,
@@ -65,7 +65,7 @@ export const naturalHairLockingServices = [
     extensionUsage: POSSIBLE,
     price: 50,
     rate: "HOURLY",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.MICRO_LOCS_ID,
@@ -86,7 +86,7 @@ export const naturalHairLockingServices = [
     extensionUsage: POSSIBLE,
     price: 50,
     rate: "HOURLY",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.WICKS_ID,
@@ -107,6 +107,6 @@ export const naturalHairLockingServices = [
     extensionUsage: POSSIBLE,
     price: 50,
     rate: "HOURLY",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
 ];

@@ -85,13 +85,13 @@ const ServiceProfile = ({
           </div>
         </div>
         <Alert className={styles.alertInfoContainer} severity="info">
-          Prices may increase due to time required for your desired style.{" "}
+          Reminder that your total cost may increase.{" "}
           <Button
             variant="link"
             onClick={() => setShowPriceVariationModal(true)}
             style={{ width: "unset" }}
           >
-            {"Here's Why"}
+            {"Here's why"}
           </Button>
         </Alert>
         <p>{description}</p>

@@ -23,7 +23,7 @@ export const braidsAndTwistsServices = [
     extensionUsage: REQUIRED,
     price: 50,
     rate: "FIXED",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.SOFT_LOCS_ID,
@@ -44,7 +44,7 @@ export const braidsAndTwistsServices = [
     extensionUsage: REQUIRED,
     price: 50,
     rate: "HOURLY",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.BUTTERFLY_DISTRESSED_LOCS_ID,
@@ -65,7 +65,7 @@ export const braidsAndTwistsServices = [
     extensionUsage: REQUIRED,
     price: 50,
     rate: "FIXED",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.BOX_BRAIDS_AND_TWISTS_ID,
@@ -86,7 +86,7 @@ export const braidsAndTwistsServices = [
     extensionUsage: POSSIBLE,
     price: 50,
     rate: "FIXED",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.KINKY_PASSION_TWISTS_ID,
@@ -107,7 +107,7 @@ export const braidsAndTwistsServices = [
     extensionUsage: REQUIRED,
     price: 50,
     rate: "FIXED",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.KNOTLESS_BRAIDS_ID,
@@ -128,6 +128,6 @@ export const braidsAndTwistsServices = [
     extensionUsage: REQUIRED,
     price: 50,
     rate: "FIXED",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
 ];
