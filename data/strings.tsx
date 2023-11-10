@@ -17,6 +17,8 @@ export const DREADLOCKS_MAINTENANCE = "Dreadlocks Maintenance";
 export const DREADLOCKS_MAINTENANCE_ID = "maintenance";
 export const LOC_EXTENSION_INSTALLATION = "Loc Extension Installation";
 export const LOC_EXTENSION_INSTALLATION_ID = "extension-installation";
+export const TEMPORARY_LOCS = "Temporary Locs";
+export const TEMPORARY_LOCS_ID = "temporary";
 
 // Options for Natural Hair Locking (Service Type Options)
 export const WICKS = "Wicks";
@@ -38,16 +40,18 @@ export const LOC_RETWIST_ID = "retwist";
 export const LOC_STYLING = "Loc Styling";
 export const LOC_STYLING_ID = "styling";
 
+// Options for Temporary Locs
+export const FAUX_LOCS = "Faux locs";
+export const FAUX_LOCS_ID = "faux";
+export const SOFT_LOCS = "Soft locs";
+export const SOFT_LOCS_ID = "soft";
+export const BUTTERFLY_DISTRESSED_LOCS = "Butterfly / Distressed Locs";
+export const BUTTERFLY_DISTRESSED_LOCS_ID = "butterfly-distressed";
+
 // ------------------------------------------------
 // Services #2:  Braids & Twists
 
 // Types of Braids & Twists Services
-export const FAUX_LOCS = "Faux locs";
-export const FAUX_LOCS_ID = "faux-locs";
-export const SOFT_LOCS = "Soft locs";
-export const SOFT_LOCS_ID = "soft-locs";
-export const BUTTERFLY_DISTRESSED_LOCS = "Butterfly / Distressed Locs";
-export const BUTTERFLY_DISTRESSED_LOCS_ID = "butterfly-distressed-locs";
 export const BOX_BRAIDS_AND_TWISTS = "Box braids & twists";
 export const BOX_BRAIDS_AND_TWISTS_ID = "box";
 export const KINKY_PASSION_TWISTS = "Kinky / Passion twists";
