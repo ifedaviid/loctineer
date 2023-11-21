@@ -24,7 +24,7 @@ const Hero = () => {
         className={styles["content"]}
         style={{ opacity: "unset" }}
       >
-        <p>Your community's favorite loctician</p>
+        <p>{"Your community's favorite loctician"}</p>
         <h1>Creating your best Look</h1>
         <p>Let me help you shine!</p>
         <Button
