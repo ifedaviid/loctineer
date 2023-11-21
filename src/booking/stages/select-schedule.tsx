@@ -3,8 +3,9 @@ import { useActor } from "@xstate/react";
 import { InlineWidget } from "react-calendly";
 import Button from "src/components/button";
 import { useBookingService } from "src/helpers";
-import ButtonGroupWrapper from "src/components/button-group-wrapper";
+import useBookingNavigation from "./use-navigation-wrapper";
 import useConfirm from "src/booking/stages/confirm-exit";
+import styles from "src/booking/stages/select-schedule.module.scss";
 
 const SelectSchedule = () => {
   const { bookingService } = useBookingService();
@@ -38,30 +39,28 @@ const SelectSchedule = () => {
     return hairLength.category;
   };
 
+  const {
+    showExitButton,
+    showBackButton,
+    renderExitbutton,
+    renderBackbutton
+  } = useBookingNavigation({ handleExit })
+
   return (
-    <div style={{ width: "100%" }}>
-      <h2
-        style={{
-          lineHeight: "3rem",
-          margin: "5rem 10% 3.75rem 10%",
-        }}
-      >
-        Finally, pick a date and time.
-      </h2>
+    <div className={styles.selectSchedule}>
+      <div className={styles.navigationButtons}>
+        {showBackButton && renderBackbutton()}
+        {showExitButton && renderExitbutton()}
+      </div>
       <InlineWidget
         url={`https://calendly.com/loctineer/sister-locs?hide_gdpr_banner=1&a2=${getExtensionUsageDetails()}&a3=${getNaturalHairDetails()}`}
         pageSettings={{
           primaryColor: "a57b21",
           // hideEventTypeDetails: true,
-          // backgroundColor: "201f1f",
-          // textColor: "ffffff",
+          backgroundColor: "201f1f",
+          textColor: "ffffff",
         }}
       />
-      <ButtonGroupWrapper style={{ marginTop: "3rem" }}>
-        <Button variant="secondary" size="large" onClick={handleExit}>
-          X
-        </Button>
-      </ButtonGroupWrapper>
       <Dialog />
     </div>
   );

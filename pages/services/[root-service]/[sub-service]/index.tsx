@@ -8,33 +8,30 @@ import {
   naturalHairLockingServices,
   serviceTypes,
 } from "data";
-import ServiceDetails from "src/sections/service-details";
+import StartBooking from "src/booking/stages";
 import PriceVariation from "src/booking/stages/price-variation";
 import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
-import ServiceList from "src/sections/service-list";
+import ServiceMenu from "src/components/service-menu";
 import {
-  BOX_BRAIDS_AND_TWISTS,
-  BUTTERFLY_DISTRESSED_LOCS,
   DREADLOCKS_MAINTENANCE,
-  FAUX_LOCS,
   KINKY_PASSION_TWISTS,
   KNOTLESS_BRAIDS,
   LOC_EXTENSION_INSTALLATION,
   NATURAL_HAIR_LOCKING,
-  SOFT_LOCS,
   LOCS_ID,
   BRAIDS_AND_TWISTS_ID,
   NATURAL_HAIR_LOCKING_ID,
   DREADLOCKS_MAINTENANCE_ID,
   LOC_EXTENSION_INSTALLATION_ID,
-  FAUX_LOCS_ID,
-  SOFT_LOCS_ID,
-  BUTTERFLY_DISTRESSED_LOCS_ID,
+  BOX_BRAIDS_AND_TWISTS,
   BOX_BRAIDS_AND_TWISTS_ID,
   KINKY_PASSION_TWISTS_ID,
   KNOTLESS_BRAIDS_ID,
+  TEMPORARY_LOCS_ID,
+  TEMPORARY_LOCS,
 } from "data/strings";
+import { temporaryLocs } from "data/services/dreadlocks/temporary";
 
 interface Props {
   pageTitle: string;
@@ -57,16 +54,16 @@ export default function SubServicesPage({
   const getRootService = () => serviceTypes.find((x) => x.id === rootServiceId);
   const content =
     subServices && subServices.length > 1 ? (
-      <ServiceList
+      <ServiceMenu
         title={pageTitle}
-        serviceList={subServices}
+        services={subServices}
         returnRoute={{
           name: getRootService().name,
           path: getRootService().cta.primary.href,
         }}
       />
     ) : (
-      <ServiceDetails
+      <StartBooking
         service={subServices[0]}
         returnRoute={{
           name: getRootService().name,
@@ -115,20 +112,8 @@ export const getStaticPaths = () => ({
     },
     {
       params: {
-        "sub-service": FAUX_LOCS_ID,
-        "root-service": BRAIDS_AND_TWISTS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": SOFT_LOCS_ID,
-        "root-service": BRAIDS_AND_TWISTS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": BUTTERFLY_DISTRESSED_LOCS_ID,
-        "root-service": BRAIDS_AND_TWISTS_ID,
+        "sub-service": TEMPORARY_LOCS_ID,
+        "root-service": LOCS_ID,
       },
     },
     {
@@ -174,28 +159,12 @@ export const getStaticProps = ({ params }) => {
       ];
       break;
 
+    case TEMPORARY_LOCS_ID:
+      pageTitle = TEMPORARY_LOCS;
+      subServices = temporaryLocs
+      break;
+
     // For services without sub-services
-    case FAUX_LOCS_ID:
-      pageTitle = FAUX_LOCS;
-      subServices = [
-        braidsAndTwistsServices.find((x) => x.id === FAUX_LOCS_ID),
-      ];
-      break;
-
-    case SOFT_LOCS_ID:
-      pageTitle = SOFT_LOCS;
-      subServices = [
-        braidsAndTwistsServices.find((x) => x.id === SOFT_LOCS_ID),
-      ];
-      break;
-
-    case BOX_BRAIDS_AND_TWISTS_ID:
-      pageTitle = BOX_BRAIDS_AND_TWISTS;
-      subServices = [
-        braidsAndTwistsServices.find((x) => x.id === BOX_BRAIDS_AND_TWISTS_ID),
-      ];
-      break;
-
     case KNOTLESS_BRAIDS_ID:
       pageTitle = KNOTLESS_BRAIDS;
       subServices = [
@@ -210,11 +179,11 @@ export const getStaticProps = ({ params }) => {
       ];
       break;
 
-    case BUTTERFLY_DISTRESSED_LOCS_ID:
-      pageTitle = BUTTERFLY_DISTRESSED_LOCS;
+    case BOX_BRAIDS_AND_TWISTS_ID:
+      pageTitle = BOX_BRAIDS_AND_TWISTS;
       subServices = [
         braidsAndTwistsServices.find(
-          (x) => x.id === BUTTERFLY_DISTRESSED_LOCS_ID
+          (x) => x.id === BOX_BRAIDS_AND_TWISTS_ID
         ),
       ];
       break;

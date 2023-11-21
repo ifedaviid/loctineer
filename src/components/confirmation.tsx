@@ -1,7 +1,7 @@
 import React from "react";
 import { CheckCircle } from "@mui/icons-material";
-import Button from "src/components/button";
 import { useRouter } from "next/router";
+import Button from "src/components/button";
 
 interface Props {
   email: string;
@@ -11,7 +11,7 @@ interface Props {
 const Confirmation = ({ email, phoneNumber }: Props) => {
   const router = useRouter();
   return (
-    <>
+    <section>
       <CheckCircle sx={{ fontSize: 100, color: "#a57b21" }} />
       <h2>Yup! We got it.</h2>
       <p>
@@ -21,7 +21,7 @@ const Confirmation = ({ email, phoneNumber }: Props) => {
       <Button variant="primary" onClick={() => router.push("/")}>
         Return to Home
       </Button>
-    </>
+    </section>
   );
 };
 

@@ -23,7 +23,7 @@ export const dreadlockMaintenanceServices = [
     extensionUsage: NOT_OFFERED,
     price: 50,
     rate: "HOURLY",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.LOC_RETWIST_ID,
@@ -44,7 +44,7 @@ export const dreadlockMaintenanceServices = [
     extensionUsage: NOT_OFFERED,
     price: 50,
     rate: "HOURLY",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
   {
     id: strings.LOC_STYLING_ID,
@@ -65,6 +65,6 @@ export const dreadlockMaintenanceServices = [
     extensionUsage: POSSIBLE,
     price: 50,
     rate: "HOURLY",
-    duration: "Between 3 to 15 hours (depending on hair health)",
+    duration: "Within 3 to 15 hours",
   },
 ];

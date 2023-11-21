@@ -5,8 +5,8 @@ import { naturalHairLengthOptions } from "data/hair-length/natural";
 import SwiperSlideWrapper from "src/components/swiper-slide-wrapper";
 import { SwiperSlide } from "swiper/react";
 import Card from "src/components/card";
-import ButtonGroupWrapper from "src/components/button-group-wrapper";
-import Button from "src/components/button";
+import styles from "src/booking/stages/select-hair-length.module.scss";
+import useBookingNavigation from "./use-navigation-wrapper";
 import { HairLength } from "src/types";
 import { useBreakpoints } from "src/helpers";
 import Grid from "src/components/grid";
@@ -81,20 +81,28 @@ const SelectHairLength = () => {
 
   const menu = mobile ? swipeMenu() : gridMenu();
 
+  const {
+    showExitButton,
+    showBackButton,
+    showNextButton,
+    renderExitbutton,
+    renderBackbutton,
+    renderNextbutton
+  } = useBookingNavigation({ handleExit, handleNext, disableNext: !hairLength })
+
   return (
-    <div style={{ width: "100%" }}>
+    <div className={styles.selectHairLength}>
+      <div className={styles.navigationButtons}>
+        {showBackButton && renderBackbutton()}
+        {showExitButton && renderExitbutton()}
+      </div>
       <h2>How long is your natural hair?</h2>
       {menu}
-      <ButtonGroupWrapper>
-        <Button variant="primary" onClick={handleNext} disabled={!hairLength}>
-          Next
-        </Button>
-        <Button variant="secondary" size="large" onClick={handleExit}>
-          X
-        </Button>
-      </ButtonGroupWrapper>
+      <div>
+        {showNextButton && renderNextbutton()}
+      </div>
       <Dialog />
-    </div>
+    </div >
   );
 };
 

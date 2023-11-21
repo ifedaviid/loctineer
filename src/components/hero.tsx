@@ -13,37 +13,27 @@ interface Props {
   callToAction?: Function;
 }
 
-const Hero = ({
-  topText,
-  mainText,
-  bottomText,
-  image,
-  callToAction,
-}: Props) => {
+const Hero = () => {
   const router = useRouter();
   return (
     <header className={styles["heroImage"]}>
-      {image && (
-        <div>
-          <Image src={image.path} alt={image.altText} layout="fill" />
-        </div>
-      )}
+      <div>
+        <Image src={require("data/images/braids-and-twists.jpg")} alt="Main Image" layout="fill" />
+      </div>
       <div
         className={styles["content"]}
-        style={image ? null : { opacity: "unset" }}
+        style={{ opacity: "unset" }}
       >
-        {topText && <p>{topText}</p>}
-        <h1>{mainText}</h1>
-        {bottomText && <p>{bottomText}</p>}
-        {callToAction && (
-          <Button
-            variant="primary"
-            size="large"
-            onClick={() => router.push("/services")}
-          >
-            Book Online
-          </Button>
-        )}
+        <p>{"Your community's favorite loctician"}</p>
+        <h1>Creating your best Look</h1>
+        <p>Let me help you shine!</p>
+        <Button
+          variant="primary"
+          size="large"
+          onClick={() => router.push("/services")}
+        >
+          Our Service Menu
+        </Button>
       </div>
     </header>
   );

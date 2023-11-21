@@ -7,7 +7,7 @@ import {
   dreadlocksServices,
   naturalHairLockingServices,
 } from "data";
-import ServiceDetails from "src/sections/service-details";
+import StartBooking from "src/booking/stages";
 import PriceVariation from "src/booking/stages/price-variation";
 import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
@@ -24,7 +24,12 @@ import {
   LOC_RETWIST_ID,
   LOC_REPAIR_ID,
   LOC_STYLING_ID,
+  TEMPORARY_LOCS_ID,
+  FAUX_LOCS_ID,
+  BUTTERFLY_DISTRESSED_LOCS_ID,
+  SOFT_LOCS_ID,
 } from "data/strings";
+import { temporaryLocs } from "data/services/dreadlocks/temporary";
 
 interface Props {
   leafService: string;
@@ -65,7 +70,7 @@ export default function LeafServicePage({
 
   return (
     <Layout>
-      <ServiceDetails
+      <StartBooking
         service={leafService}
         returnRoute={{
           name: getSubService().name,
@@ -145,6 +150,27 @@ export const getStaticPaths = () => ({
         "root-service": LOCS_ID,
       },
     },
+    {
+      params: {
+        "leaf-service": FAUX_LOCS_ID,
+        "sub-service": TEMPORARY_LOCS_ID,
+        "root-service": LOCS_ID,
+      },
+    },
+    {
+      params: {
+        "leaf-service": BUTTERFLY_DISTRESSED_LOCS_ID,
+        "sub-service": TEMPORARY_LOCS_ID,
+        "root-service": LOCS_ID,
+      },
+    },
+    {
+      params: {
+        "leaf-service": SOFT_LOCS_ID,
+        "sub-service": TEMPORARY_LOCS_ID,
+        "root-service": LOCS_ID,
+      },
+    },
   ],
   fallback: false,
 });
@@ -196,6 +222,24 @@ export const getStaticProps = ({ params }) => {
     case LOC_STYLING_ID:
       serviceData = dreadlockMaintenanceServices.find(
         (x) => x.id === LOC_STYLING_ID
+      );
+      break;
+
+    case FAUX_LOCS_ID:
+      serviceData = temporaryLocs.find(
+        (x) => x.id === FAUX_LOCS_ID
+      );
+      break;
+
+    case SOFT_LOCS_ID:
+      serviceData = temporaryLocs.find(
+        (x) => x.id === SOFT_LOCS_ID
+      );
+      break;
+
+    case BUTTERFLY_DISTRESSED_LOCS_ID:
+      serviceData = temporaryLocs.find(
+        (x) => x.id === BUTTERFLY_DISTRESSED_LOCS_ID
       );
       break;
 

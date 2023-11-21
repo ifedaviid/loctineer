@@ -9,13 +9,13 @@ import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
+const REQUIRED_NUMBER_OF_PHOTOS = 1
+
 const Photos = ({ setPopUp }) => {
-  const images: Array<AppImage> = extractImages(featuredImages);
+  if (featuredImages.length < REQUIRED_NUMBER_OF_PHOTOS) return null
+  const images: Array<AppImage> = extractImages(featuredImages)
   return (
-    <section className="dark">
-      <h2>Gallery</h2>
-      <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-          when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
+    <section className="dark" style={{ padding: '3rem 0' }}>
       <Swiper
         speed={500}
         breakpoints={{

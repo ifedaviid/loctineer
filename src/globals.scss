@@ -19,6 +19,7 @@ h3 {
 h2 {
   font-size: 2rem;
 }
+
 h3 {
   font-size: 1.5rem;
 }
@@ -49,58 +50,67 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  > section {
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: lightgray;
+  color: black;
+
+  h2 {
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  >p {
+    line-height: 2rem;
+    text-align: center;
+    width: 70%;
+  }
+
+  // The menu container
+  .services-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+    padding-top: 3%;
+  }
+
+  .nav-buttons {
+    width: 80%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4rem 0;
+    justify-content: space-between;
+    margin: 0 3rem;
+  }
+
+  >.swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    position: relative;
+    margin-top: 3rem;
+  }
+
+  .swiper-wrapper {
+    > :first-child {
+      padding-left: 1rem;
+    }
+
+    > :last-child {
+      padding-right: 1rem;
+    }
+  }
+
+  >.carousel {
     width: 100%;
-    h2 {
-      text-align: center;
-    }
-    > p {
-      line-height: 2rem;
-      text-align: center;
-      width: 70%;
-    }
-    // The menu container
-    .services-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 1.5rem;
-      padding: 3%;
-    }
-    .nav-buttons {
-      width: 80%;
-      display: flex;
-      justify-content: space-between;
-      margin: 0 3rem;
-    }
-    > .swiper-horizontal > .swiper-pagination-bullets,
-    .swiper-pagination-bullets.swiper-pagination-horizontal,
-    .swiper-pagination-custom,
-    .swiper-pagination-fraction {
-      position: relative;
-      margin-top: 3rem;
-    }
-    .swiper-wrapper {
-      > :first-child {
-        padding-left: 1rem;
-      }
-      > :last-child {
-        padding-right: 1rem;
-      }
-    }
-    > .carousel {
-      width: 100%;
-      min-height: 100% !important;
-    }
+    min-height: 100% !important;
   }
-  > section.gray {
-    background-color: lightgray;
-    color: black;
-  }
-  > section.dark {
+
+  &.dark {
     background-color: #201f1f;
     color: white;
   }
@@ -110,15 +120,18 @@ main {
   h2 {
     font-size: 1.8rem;
   }
+
   h3 {
     font-size: 1.3rem;
   }
+
   main {
-    > section > p {
+    >section>p {
       margin: 5%;
       width: 80%;
     }
-    > .services-content {
+
+    >.services-content {
       grid-template-columns: 1fr;
       row-gap: 1rem;
     }
@@ -126,7 +139,8 @@ main {
 }
 
 @media (max-width: $md-screens) {
-  main > section {
+  main>section {
+
     // The menu container
     .services-content {
       grid-template-columns: 1fr;
