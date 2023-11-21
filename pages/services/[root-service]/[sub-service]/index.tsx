@@ -12,7 +12,7 @@ import StartBooking from "src/booking/stages";
 import PriceVariation from "src/booking/stages/price-variation";
 import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
-import ServiceMenu from "src/sections/service-menu";
+import ServiceMenu from "src/components/service-menu";
 import {
   DREADLOCKS_MAINTENANCE,
   KINKY_PASSION_TWISTS,

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "src/template/page-wrapper";
-import Confirmation from "src/sections/confirmation";
+import Confirmation from "src/components/confirmation";
 
 const BookingConfirmation = ({ invitee_email: email, answer_1: phoneNumber }) => {
   if (!email && !phoneNumber) return null;
