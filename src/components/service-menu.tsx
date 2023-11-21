@@ -7,17 +7,17 @@ import { Service } from "src/types";
 
 interface Props {
   title: string;
-  serviceList: Service[];
+  services: Service[];
   returnRoute?: {
     path: string;
     name: string;
   };
 }
 
-const ServiceList = ({ title, serviceList, returnRoute = null }: Props) => {
+const ServiceMenu = ({ title, services, returnRoute = null }: Props) => {
   const router = useRouter();
   return (
-    <section className="gray">
+    <section style={{ padding: '4rem 5%' }}>
       {returnRoute && (
         <MuiButton
           sx={{
@@ -39,7 +39,7 @@ const ServiceList = ({ title, serviceList, returnRoute = null }: Props) => {
       <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
       when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
       <div className="services-content">
-        {serviceList.map((option, idx) => (
+        {services.map((option, idx) => (
           <Listing key={idx} service={option} />
         ))}
       </div>
@@ -47,4 +47,4 @@ const ServiceList = ({ title, serviceList, returnRoute = null }: Props) => {
   );
 };
 
-export default ServiceList;
+export default ServiceMenu;

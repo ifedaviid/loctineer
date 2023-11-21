@@ -7,7 +7,7 @@ import {
   dreadlocksServices,
   naturalHairLockingServices,
 } from "data";
-import ServiceDetails from "src/sections/service-details";
+import StartBooking from "src/booking/stages";
 import PriceVariation from "src/booking/stages/price-variation";
 import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
@@ -70,7 +70,7 @@ export default function LeafServicePage({
 
   return (
     <Layout>
-      <ServiceDetails
+      <StartBooking
         service={leafService}
         returnRoute={{
           name: getSubService().name,

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "src/template/page-wrapper";
-import ServiceList from "src/sections/service-list";
+import ServiceMenu from "src/sections/service-menu";
 import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
 import { Service } from "src/types";
 import {
@@ -17,9 +17,9 @@ export default function RootServicesPage({
   const rootServices: Service[] = JSON.parse(stringifiedRootServiceData);
   return (
     <Layout>
-      <ServiceList
+      <ServiceMenu
         title={pageTitle}
-        serviceList={rootServices}
+        services={rootServices}
         returnRoute={{ path: "/services", name: "All Services" }}
       />
     </Layout>

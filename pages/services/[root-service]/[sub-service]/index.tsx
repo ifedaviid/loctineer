@@ -8,11 +8,11 @@ import {
   naturalHairLockingServices,
   serviceTypes,
 } from "data";
-import ServiceDetails from "src/sections/service-details";
+import StartBooking from "src/booking/stages";
 import PriceVariation from "src/booking/stages/price-variation";
 import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
-import ServiceList from "src/sections/service-list";
+import ServiceMenu from "src/sections/service-menu";
 import {
   DREADLOCKS_MAINTENANCE,
   KINKY_PASSION_TWISTS,
@@ -54,16 +54,16 @@ export default function SubServicesPage({
   const getRootService = () => serviceTypes.find((x) => x.id === rootServiceId);
   const content =
     subServices && subServices.length > 1 ? (
-      <ServiceList
+      <ServiceMenu
         title={pageTitle}
-        serviceList={subServices}
+        services={subServices}
         returnRoute={{
           name: getRootService().name,
           path: getRootService().cta.primary.href,
         }}
       />
     ) : (
-      <ServiceDetails
+      <StartBooking
         service={subServices[0]}
         returnRoute={{
           name: getRootService().name,
