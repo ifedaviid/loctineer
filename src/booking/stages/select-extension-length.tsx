@@ -4,13 +4,13 @@ import { useBookingService } from "src/helpers";
 import { SwiperSlide } from "swiper/react";
 import { extensionLengthOptions } from "data/hair-length/extension";
 import SwiperSlideWrapper from "src/components/swiper-slide-wrapper";
-import ButtonGroupWrapper from "src/components/button-group-wrapper";
-import Button from "src/components/button";
 import Card from "src/components/card";
 import { ExtensionLength } from "src/types";
 import { useBreakpoints } from "src/helpers";
 import Grid from "src/components/grid";
 import useConfirm from "src/booking/stages/confirm-exit";
+import styles from "src/booking/stages/select-extension-length.module.scss";
+import useBookingNavigation from "./use-navigation-wrapper";
 
 const SelectExtensionLength = () => {
   const { bookingService } = useBookingService();
@@ -40,6 +40,15 @@ const SelectExtensionLength = () => {
         extensionLength: extensionLength,
       });
   };
+
+  const {
+    showExitButton,
+    showBackButton,
+    showNextButton,
+    renderExitbutton,
+    renderBackbutton,
+    renderNextbutton
+  } = useBookingNavigation({ handleExit, handleNext, disableNext: !extensionLength })
 
   const swipeMenu = () => (
     <SwiperSlideWrapper>
@@ -81,23 +90,18 @@ const SelectExtensionLength = () => {
   const menu = mobile ? swipeMenu() : gridMenu();
 
   return (
-    <div style={{ width: "100%" }}>
-      <h2>{`How long do you want your ${service.name} extensions to be?`}</h2>
+    <div className={styles.selectExtensionLength}>
+      <div className={styles.navigationButtons}>
+        {showBackButton && renderBackbutton()}
+        {showExitButton && renderExitbutton()}
+      </div>
+      <h2>{`How long do you want your extensions to be?`}</h2>
       {menu}
-      <ButtonGroupWrapper>
-        <Button
-          variant="primary"
-          onClick={handleNext}
-          disabled={!extensionLength}
-        >
-          Next
-        </Button>
-        <Button variant="secondary" size="large" onClick={handleExit}>
-          X
-        </Button>
-      </ButtonGroupWrapper>
+      <div>
+        {showNextButton && renderNextbutton()}
+      </div>
       <Dialog />
-    </div>
+    </div >
   );
 };
 
