@@ -5,11 +5,13 @@
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
-  > * {
+
+  >* {
     width: fit-content;
   }
+
   :first-child {
     margin-top: unset;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 }
