@@ -15,8 +15,6 @@ export const NATURAL_HAIR_LOCKING = "Natural Hair Locking";
 export const NATURAL_HAIR_LOCKING_ID = "natural-hair-locking";
 export const DREADLOCKS_MAINTENANCE = "Dreadlocks Maintenance";
 export const DREADLOCKS_MAINTENANCE_ID = "maintenance";
-export const LOC_EXTENSION_INSTALLATION = "Loc Extension Installation";
-export const LOC_EXTENSION_INSTALLATION_ID = "extension-installation";
 export const TEMPORARY_LOCS = "Temporary Locs";
 export const TEMPORARY_LOCS_ID = "temporary";
 

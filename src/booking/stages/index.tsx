@@ -12,7 +12,6 @@ import {
 } from "src/booking/stages";
 import { useActor } from "@xstate/react";
 import { useBookingService } from "src/helpers";
-import { bookingMachine } from '../booking-machine';
 import { Service } from "src/types";
 
 interface Props {
@@ -44,6 +43,7 @@ const StartBooking = ({
       send({ type: "EXIT" });
     }
     if (state.matches("selectExtensionUsage")) setShowExtensionUsageModal(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
 
   return (
