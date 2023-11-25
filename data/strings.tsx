@@ -1,20 +1,20 @@
 // ------------------------------------------------
 // Services (All)
-export const LOCS = "Dreadlocks";
-export const LOCS_ID = "dreadlocks";
+export const LOCS = "Locs";
+export const LOCS_ID = "locs";
 export const BRAIDS_AND_TWISTS = "Braids & Twists";
 export const BRAIDS_AND_TWISTS_ID = "braids-and-twists";
 export const CONSULTATION = "Consultation";
 export const CONSULTATION_ID = "consultation";
 
 // ------------------------------------------------
-// Service #1: Dreadlocks
+// Service #1: Locs
 
-// Types of Dreadlocks Services (Service Types)
+// Types of Locs Services (Service Types)
 export const NATURAL_HAIR_LOCKING = "Natural Hair Locking";
 export const NATURAL_HAIR_LOCKING_ID = "natural-hair-locking";
-export const DREADLOCKS_MAINTENANCE = "Dreadlocks Maintenance";
-export const DREADLOCKS_MAINTENANCE_ID = "maintenance";
+export const LOCS_MAINTENANCE = "Locs Maintenance";
+export const LOCS_MAINTENANCE_ID = "maintenance";
 export const TEMPORARY_LOCS = "Temporary Locs";
 export const TEMPORARY_LOCS_ID = "temporary";
 
@@ -23,20 +23,18 @@ export const WICKS = "Wicks";
 export const WICKS_ID = "wicks";
 export const TWO_STRAND_STARTER_LOCS = "Two-strand starter locs";
 export const TWO_STRAND_STARTER_LOCS_ID = "two-strand-starter";
-export const INSTANT_DREADLOCKS = "Instant Dreadlocks";
-export const INSTANT_DREADLOCKS_ID = "instant";
+export const INSTANT_LOCS = "Instant Locs";
+export const INSTANT_LOCS_ID = "instant";
 export const SISTER_LOCS = "Sister Locs";
 export const SISTER_LOCS_ID = "sister-locs";
 export const MICRO_LOCS = "Micro Locs";
 export const MICRO_LOCS_ID = "micro-locs";
 
-// Options for Dreadlocks Maintenance (Service Type Options)
+// Options for Locs Maintenance (Service Type Options)
 export const LOC_REPAIR = "Loc Repair";
 export const LOC_REPAIR_ID = "repair";
 export const LOC_RETWIST = "Loc Retwist";
 export const LOC_RETWIST_ID = "retwist";
-export const LOC_STYLING = "Loc Styling";
-export const LOC_STYLING_ID = "styling";
 
 // Options for Temporary Locs
 export const FAUX_LOCS = "Faux locs";

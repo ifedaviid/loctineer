@@ -3,7 +3,7 @@ import { AddingExtensions } from "src/booking/stages";
 import Layout from "src/template/page-wrapper";
 import {
   braidsAndTwistsServices,
-  dreadlocksServices,
+  locs,
   serviceTypes,
 } from "data";
 import StartBooking from "src/booking/stages";
@@ -12,7 +12,7 @@ import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
 import ServiceMenu from "src/components/service-menu";
 import {
-  INSTANT_DREADLOCKS_ID,
+  INSTANT_LOCS_ID,
   TWO_STRAND_STARTER_LOCS_ID,
   SISTER_LOCS_ID,
   MICRO_LOCS_ID,
@@ -39,7 +39,7 @@ import {
   MICRO_LOCS,
   SISTER_LOCS,
   TWO_STRAND_STARTER_LOCS,
-  INSTANT_DREADLOCKS,
+  INSTANT_LOCS,
 } from "data/strings";
 
 interface Props {
@@ -103,7 +103,7 @@ export const getStaticPaths = () => ({
   paths: [
     {
       params: {
-        "sub-service": INSTANT_DREADLOCKS_ID,
+        "sub-service": INSTANT_LOCS_ID,
         "root-service": LOCS_ID,
       },
     },
@@ -186,61 +186,61 @@ export const getStaticPaths = () => ({
 export const getStaticProps = ({ params }) => {
   let subServices, pageTitle;
   switch (params["sub-service"]) {
-    case INSTANT_DREADLOCKS_ID:
-      pageTitle = INSTANT_DREADLOCKS;
-      subServices = [dreadlocksServices.find(
-        (x) => x.id === INSTANT_DREADLOCKS_ID
+    case INSTANT_LOCS_ID:
+      pageTitle = INSTANT_LOCS;
+      subServices = [locs.find(
+        (x) => x.id === INSTANT_LOCS_ID
       )];
       break;
 
     case TWO_STRAND_STARTER_LOCS_ID:
       pageTitle = TWO_STRAND_STARTER_LOCS;
-      subServices = [dreadlocksServices.find(
+      subServices = [locs.find(
         (x) => x.id === TWO_STRAND_STARTER_LOCS_ID
       )];
       break;
 
     case SISTER_LOCS_ID:
       pageTitle = SISTER_LOCS;
-      subServices = [dreadlocksServices.find(
+      subServices = [locs.find(
         (x) => x.id === SISTER_LOCS_ID
       )];
       break;
 
     case MICRO_LOCS_ID:
       pageTitle = MICRO_LOCS;
-      subServices = [dreadlocksServices.find(
+      subServices = [locs.find(
         (x) => x.id === MICRO_LOCS_ID
       )];
       break;
 
     case WICKS_ID:
       pageTitle = WICKS;
-      subServices = [dreadlocksServices.find((x) => x.id === WICKS_ID)];
+      subServices = [locs.find((x) => x.id === WICKS_ID)];
       break;
 
     case FAUX_LOCS_ID:
       pageTitle = FAUX_LOCS;
-      subServices = [dreadlocksServices.find(
+      subServices = [locs.find(
         (x) => x.id === FAUX_LOCS_ID
       )]
       break;
 
     case SOFT_LOCS_ID:
       pageTitle = SOFT_LOCS;
-      subServices = [dreadlocksServices.find((x) => x.id === SOFT_LOCS_ID)];
+      subServices = [locs.find((x) => x.id === SOFT_LOCS_ID)];
       break;
 
     case BUTTERFLY_DISTRESSED_LOCS_ID:
       pageTitle = BUTTERFLY_DISTRESSED_LOCS;
-      subServices = [dreadlocksServices.find(
+      subServices = [locs.find(
         (x) => x.id === BUTTERFLY_DISTRESSED_LOCS_ID
       )];
       break;
 
     case LOC_RETWIST_ID:
       pageTitle = LOC_RETWIST;
-      subServices = [dreadlocksServices.find(
+      subServices = [locs.find(
         (x) => x.id === LOC_RETWIST_ID
       )];
       break;
@@ -248,7 +248,7 @@ export const getStaticProps = ({ params }) => {
     case LOC_REPAIR_ID:
       pageTitle = LOC_REPAIR;
       subServices = [
-        dreadlocksServices.find((x) => x.id === LOC_REPAIR_ID)
+        locs.find((x) => x.id === LOC_REPAIR_ID)
       ]
       break;
 

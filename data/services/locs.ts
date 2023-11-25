@@ -1,20 +1,20 @@
 import * as strings from "data/strings";
 import { ServiceCategory } from "src/types";
 
-export const dreadlocksServices = [
+export const locs = [
   {
-    id: strings.INSTANT_DREADLOCKS_ID,
-    name: strings.INSTANT_DREADLOCKS,
+    id: strings.INSTANT_LOCS_ID,
+    name: strings.INSTANT_LOCS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.INSTANT_DREADLOCKS_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.INSTANT_LOCS_ID}`,
         text: "See details",
       },
     },
     image: {
-      path: require("data/images/dreadlocks.jpg"),
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -35,7 +35,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("data/images/dreadlocks.jpg"),
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -56,7 +56,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("data/images/dreadlocks.jpg"),
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -77,7 +77,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("data/images/dreadlocks.jpg"),
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -98,7 +98,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("data/images/dreadlocks.jpg"),
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -182,7 +182,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("data/images/dreadlocks.jpg"),
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
     category: ServiceCategory.MAINTENANCE,
@@ -203,7 +203,7 @@ export const dreadlocksServices = [
       },
     },
     image: {
-      path: require("data/images/dreadlocks.jpg"),
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
     category: ServiceCategory.MAINTENANCE,

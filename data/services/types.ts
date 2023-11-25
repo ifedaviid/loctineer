@@ -1,6 +1,6 @@
 import * as strings from "data/strings";
 import { braidsAndTwistsServices } from "data/services/braids-and-twists";
-import { dreadlocksServices } from "data/services/dreadlocks";
+import { locs } from "data/services/locs";
 
 export const serviceTypes = [
   {
@@ -15,10 +15,10 @@ export const serviceTypes = [
       },
     },
     image: {
-      path: require("data/images/dreadlocks.jpg"),
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
-    services: dreadlocksServices,
+    services: locs,
   },
   {
     id: strings.BRAIDS_AND_TWISTS_ID,

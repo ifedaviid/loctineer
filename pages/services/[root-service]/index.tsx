@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "src/template/page-wrapper";
 import ServiceMenu from "src/components/service-menu";
-import { braidsAndTwistsServices, dreadlocksServices, strings } from "data";
+import { braidsAndTwistsServices, locs, strings } from "data";
 import { Service } from "src/types";
 import {
   LOCS,
@@ -44,7 +44,7 @@ export const getStaticProps = ({ params }) => {
 
     default:
       pageTitle = LOCS;
-      rootServiceData = dreadlocksServices;
+      rootServiceData = locs;
       break;
   }
   return {
