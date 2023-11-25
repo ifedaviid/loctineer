@@ -7,7 +7,7 @@ import { PaidOutlined, AccessTime, HelpOutline } from "@mui/icons-material";
 import { useBookingService } from "src/helpers";
 import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
-import { ExtensionUsage, Service } from "src/types";
+import { Service } from "src/types";
 import styles from "src/booking/stages/service-profile.module.scss";
 import Alert from "@mui/material/Alert";
 import Photos from "src/components/photos";
@@ -29,7 +29,7 @@ const ServiceProfile = ({
   const router = useRouter();
   const { bookingService } = useBookingService();
   const [, send] = useActor(bookingService);
-  const { name, description, image, cta, price, rate, duration } = service;
+  const { name, description, image, cta, price, rate, duration, requiresHairExtensions } = service;
   const initialPopUpState = {
     showing: false,
     image: null,
@@ -39,19 +39,6 @@ const ServiceProfile = ({
   const getPriceInfo = () => {
     const hasFixedRate = rate === "FIXED";
     return hasFixedRate ? `STARTING PRICE` : `HOURLY RATE`;
-  };
-
-  const getExtensionsInfo = () => {
-    switch (service.extensionUsage) {
-      case ExtensionUsage.POSSIBLE:
-        return "You can add hair extensions";
-
-      case ExtensionUsage.REQUIRED:
-        return "Requires hair extensions";
-
-      default:
-        return "Done without hair extensions";
-    }
   };
 
   return (
@@ -75,10 +62,10 @@ const ServiceProfile = ({
           </MuiButton>
           <h3>{name}</h3>
           <div className={styles.iconInfoContainer}>
-            <div>
+            {requiresHairExtensions && (<div>
               <HelpOutline fontSize="large" />
-              <p>{getExtensionsInfo()}</p>
-            </div>
+              <p>Requires Hair Extensions</p>
+            </div>)}
             <div>
               <AccessTime fontSize="large" />
               <p>{duration}</p>

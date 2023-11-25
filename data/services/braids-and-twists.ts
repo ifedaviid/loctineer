@@ -1,7 +1,5 @@
-import { ServiceCategory, ExtensionUsage } from "src/types";
+import { ServiceCategory } from "src/types";
 import * as strings from "data/strings";
-
-const { POSSIBLE, REQUIRED } = ExtensionUsage;
 
 export const braidsAndTwistsServices = [
   {
@@ -20,7 +18,7 @@ export const braidsAndTwistsServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: POSSIBLE,
+    requiresHairExtensions: false,
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",
@@ -41,7 +39,7 @@ export const braidsAndTwistsServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: REQUIRED,
+    requiresHairExtensions: true,
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",
@@ -62,7 +60,7 @@ export const braidsAndTwistsServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: REQUIRED,
+    requiresHairExtensions: true,
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",

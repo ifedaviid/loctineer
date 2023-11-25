@@ -1,19 +1,33 @@
-import React from "react";
+import React, { SetStateAction } from "react";
 import { useActor } from "@xstate/react";
 import { Close } from "@mui/icons-material";
 import Button from "src/components/button";
 import Modal from "src/components/modal";
 import styles from "src/booking/stages/adding-extensions.module.scss";
 import { useBookingService } from "src/helpers";
+import { Service } from "src/types";
 
-const AddingExtensions = ({ service, setShowModal }) => {
+interface Props {
+  service: Service
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const AddingExtensions = ({ service, setShowModal }: Props) => {
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
+  const { requiresHairExtensions } = service;
+
+  let title, description = null;
+  if (requiresHairExtensions) {
+    title = 'Do you want us to provide your hair extensions?';
+  } else {
+    title = 'Will you be using hair extensions?';
+  }
 
   return (
     <Modal>
       <div>
-        <h4>Adding hair extensions?</h4>
+        <h4>{title}</h4>
         <div>
           <Close
             sx={{ color: "black" }}
@@ -27,10 +41,6 @@ const AddingExtensions = ({ service, setShowModal }) => {
           />
         </div>
       </div>
-      <p>
-        {service.name} can be done using hair extensions. Will you be adding
-        hair extensions?
-      </p>
       <div className={styles.buttonGroup}>
         <Button
           variant="secondary"

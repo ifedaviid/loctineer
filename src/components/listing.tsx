@@ -4,32 +4,15 @@ import Link from "next/link";
 import Chip from "@mui/material/Chip";
 import Button from "src/components/button";
 import styles from "src/components/listing.module.scss";
-import { Service, ExtensionUsage } from "src/types";
+import { Info } from "@mui/icons-material";
+import { Service } from "src/types";
 
 interface Props {
   service: Service;
 }
 
 const Listing = ({ service }: Props) => {
-  const { name, image, description, cta, extensionUsage } = service;
-
-  let label = null;
-  switch (extensionUsage) {
-    case ExtensionUsage.NOT_OFFERED:
-      label = "Without hair extensions";
-      break;
-
-    case ExtensionUsage.POSSIBLE:
-      label = "Can use hair extensions";
-      break;
-
-    case ExtensionUsage.REQUIRED:
-      label = "Must use hair extensions";
-      break;
-
-    default:
-      break;
-  }
+  const { name, image, description, cta, requiresHairExtensions } = service
 
   return (
     <div className={styles["listing"]}>
@@ -42,12 +25,13 @@ const Listing = ({ service }: Props) => {
         />
       </div>
       <div>
-        {label && (
+        {requiresHairExtensions && (
           <Chip
-            label={label}
+            label='Requires hair extensions'
             variant="outlined"
             size="small"
-            style={{ fontFamily: "inherit", color: "white" }}
+            icon={<Info style={{ color: "white" }} />}
+            style={{ fontFamily: "inherit", color: "white", background: "#626262" }}
           />
         )}
         <h3>{name}</h3>

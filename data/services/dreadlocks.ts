@@ -1,7 +1,5 @@
 import * as strings from "data/strings";
-import { ExtensionUsage, ServiceCategory } from "src/types";
-
-const { POSSIBLE, NOT_OFFERED, REQUIRED } = ExtensionUsage;
+import { ServiceCategory } from "src/types";
 
 export const dreadlocksServices = [
   {
@@ -20,7 +18,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: POSSIBLE,
+    requiresHairExtensions: false,
     price: 50,
     rate: "HOURLY",
     duration: "Within 3 to 15 hours",
@@ -41,7 +39,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: POSSIBLE,
+    requiresHairExtensions: false,
     price: 50,
     rate: "HOURLY",
     duration: "Within 3 to 15 hours",
@@ -62,7 +60,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: POSSIBLE,
+    requiresHairExtensions: false,
     price: 50,
     rate: "HOURLY",
     duration: "Within 3 to 15 hours",
@@ -74,7 +72,7 @@ export const dreadlocksServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.SISTER_LOCS_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.MICRO_LOCS_ID}`,
         text: "See details",
       },
     },
@@ -83,7 +81,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: POSSIBLE,
+    requiresHairExtensions: false,
     price: 50,
     rate: "HOURLY",
     duration: "Within 3 to 15 hours",
@@ -95,7 +93,7 @@ export const dreadlocksServices = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.LOCS_ID}/${strings.SISTER_LOCS_ID}`,
+        href: `/services/${strings.LOCS_ID}/${strings.WICKS_ID}`,
         text: "See details",
       },
     },
@@ -104,7 +102,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: POSSIBLE,
+    requiresHairExtensions: false,
     price: 50,
     rate: "HOURLY",
     duration: "Within 3 to 15 hours",
@@ -125,7 +123,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: REQUIRED,
+    requiresHairExtensions: true,
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",
@@ -146,7 +144,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: REQUIRED,
+    requiresHairExtensions: true,
     price: 50,
     rate: "HOURLY",
     duration: "Within 3 to 15 hours",
@@ -167,7 +165,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: REQUIRED,
+    requiresHairExtensions: true,
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",
@@ -188,7 +186,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.MAINTENANCE,
-    extensionUsage: NOT_OFFERED,
+    requiresHairExtensions: false,
     price: 50,
     rate: "HOURLY",
     duration: "Within 3 to 15 hours",
@@ -209,7 +207,7 @@ export const dreadlocksServices = [
       altText: "",
     },
     category: ServiceCategory.MAINTENANCE,
-    extensionUsage: NOT_OFFERED,
+    requiresHairExtensions: false,
     price: 50,
     rate: "HOURLY",
     duration: "Within 3 to 15 hours",

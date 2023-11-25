@@ -1,11 +1,5 @@
 import { StaticImageData } from "next/image";
 
-export enum ExtensionUsage {
-  REQUIRED = "required",
-  POSSIBLE = "possible",
-  NOT_OFFERED = "cant",
-}
-
 export enum ServiceCategory {
   INSTALLATION = "Installation",
   MAINTENANCE = "Maintenance",
@@ -52,7 +46,7 @@ export interface Service {
   cta: CallToAction;
   image: AppImage;
   category?: ServiceCategory;
-  extensionUsage?: ExtensionUsage;
+  requiresHairExtensions?: boolean;
   services?: Service[];
   price?: number;
   rate?: string;
