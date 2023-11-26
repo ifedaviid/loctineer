@@ -14,10 +14,16 @@ export const serviceTypes = [
         text: "See services",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
+    images: [
+      {
+        path: require("data/images/locs.jpg"),
+        altText: "",
+      }
+    ],
     services: locs,
   },
   {
@@ -31,10 +37,16 @@ export const serviceTypes = [
         text: "See services",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
+    images: [
+      {
+        path: require("data/images/braids-and-twists.jpg"),
+        altText: "",
+      }
+    ],
     services: braidsAndTwistsServices,
   },
 ];

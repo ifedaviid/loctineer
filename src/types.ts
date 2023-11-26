@@ -8,6 +8,7 @@ export enum ServiceCategory {
 export interface AppImage {
   path: StaticImageData;
   altText: string;
+  isThumbnail?: boolean,
 }
 
 export interface Action {
@@ -44,7 +45,8 @@ export interface Service {
   name: string;
   description: string;
   cta: CallToAction;
-  image: AppImage;
+  thumbnail: AppImage;
+  images: AppImage[];
   category?: ServiceCategory;
   requiresHairExtensions?: boolean;
   services?: Service[];

@@ -13,8 +13,12 @@ export const braidsAndTwistsServices = [
         text: "See details",
       },
     },
-    image: {
+    images: [{
       path: require("data/images/braids-and-twists.jpg"),
+      altText: "",
+    }],
+    thumbnail: {
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
@@ -34,10 +38,14 @@ export const braidsAndTwistsServices = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/braids-and-twists.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.INSTALLATION,
     requiresHairExtensions: true,
     price: 50,
@@ -55,10 +63,14 @@ export const braidsAndTwistsServices = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/braids-and-twists.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.INSTALLATION,
     requiresHairExtensions: true,
     price: 50,

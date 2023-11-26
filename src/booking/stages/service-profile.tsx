@@ -10,7 +10,7 @@ import CustomImage from "src/components/custom-image";
 import { Service } from "src/types";
 import styles from "src/booking/stages/service-profile.module.scss";
 import Alert from "@mui/material/Alert";
-import Photos from "src/components/photos";
+import ImageCarousel from "src/components/image-carousel";
 
 interface Props {
   service: Service;
@@ -29,7 +29,7 @@ const ServiceProfile = ({
   const router = useRouter();
   const { bookingService } = useBookingService();
   const [, send] = useActor(bookingService);
-  const { name, description, image, cta, price, rate, duration, requiresHairExtensions } = service;
+  const { name, description, thumbnail, images, cta, price, rate, duration, requiresHairExtensions } = service;
   const initialPopUpState = {
     showing: false,
     image: null,
@@ -98,9 +98,9 @@ const ServiceProfile = ({
             </Button>
           )}
         </div>
-        <CustomImage image={image} roundEdged />
+        <CustomImage image={thumbnail} roundEdged />
       </div>
-      <Photos setPopUp={setPopUp} />
+      {images && images.length >= 5 ? <ImageCarousel setPopUp={setPopUp} images={images} /> : null}
     </>
   );
 };

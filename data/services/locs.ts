@@ -13,10 +13,16 @@ export const locs = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
+    images: [
+      {
+        path: require("data/images/locs.jpg"),
+        altText: "",
+      }
+    ],
     category: ServiceCategory.INSTALLATION,
     requiresHairExtensions: false,
     price: 50,
@@ -34,10 +40,16 @@ export const locs = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
+    images: [
+      {
+        path: require("data/images/locs.jpg"),
+        altText: "",
+      },
+    ],
     category: ServiceCategory.INSTALLATION,
     requiresHairExtensions: false,
     price: 50,
@@ -55,10 +67,16 @@ export const locs = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
+    images: [
+      {
+        path: require("data/images/locs.jpg"),
+        altText: "",
+      },
+    ],
     category: ServiceCategory.INSTALLATION,
     requiresHairExtensions: false,
     price: 50,
@@ -76,10 +94,14 @@ export const locs = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/locs.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.INSTALLATION,
     requiresHairExtensions: false,
     price: 50,
@@ -97,10 +119,14 @@ export const locs = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/locs.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.INSTALLATION,
     requiresHairExtensions: false,
     price: 50,
@@ -118,10 +144,14 @@ export const locs = [
         text: "See details",
       },
     },
-    image: {
-      path: require("data/images/braids-and-twists.jpg"),
+    thumbnail: {
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/locs.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.INSTALLATION,
     requiresHairExtensions: true,
     price: 50,
@@ -139,10 +169,14 @@ export const locs = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/braids-and-twists.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.INSTALLATION,
     requiresHairExtensions: true,
     price: 50,
@@ -160,10 +194,14 @@ export const locs = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/braids-and-twists.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.INSTALLATION,
     requiresHairExtensions: true,
     price: 50,
@@ -181,10 +219,14 @@ export const locs = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/locs.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.MAINTENANCE,
     requiresHairExtensions: false,
     price: 50,
@@ -202,10 +244,14 @@ export const locs = [
         text: "See details",
       },
     },
-    image: {
+    thumbnail: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/locs.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.MAINTENANCE,
     requiresHairExtensions: false,
     price: 50,
