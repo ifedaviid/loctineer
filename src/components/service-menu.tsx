@@ -25,7 +25,7 @@ const ServiceMenu = ({ title, services, returnRoute = null }: Props) => {
             letterSpacing: "2px",
             color: "#4a4f4f",
             justifyContent: "flex-start",
-            padding: "0.5rem 0",
+            padding: "0.5rem",
             fontFamily: "inherit",
           }}
           size="medium"
