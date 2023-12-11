@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { AddingExtensions } from "src/booking/stages";
 import Layout from "src/template/page-wrapper";
 import {
   braidsAndTwistsServices,
-  dreadlockMaintenanceServices,
-  dreadlocksServices,
-  naturalHairLockingServices,
+  locs,
   serviceTypes,
 } from "data";
 import StartBooking from "src/booking/stages";
@@ -14,24 +12,35 @@ import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
 import ServiceMenu from "src/components/service-menu";
 import {
-  DREADLOCKS_MAINTENANCE,
+  INSTANT_LOCS_ID,
+  TWO_STRAND_STARTER_LOCS_ID,
+  SISTER_LOCS_ID,
+  MICRO_LOCS_ID,
+  WICKS_ID,
+  LOC_RETWIST_ID,
+  LOC_REPAIR_ID,
+  FAUX_LOCS_ID,
+  BUTTERFLY_DISTRESSED_LOCS_ID,
+  SOFT_LOCS_ID,
   KINKY_PASSION_TWISTS,
   KNOTLESS_BRAIDS,
-  LOC_EXTENSION_INSTALLATION,
-  NATURAL_HAIR_LOCKING,
   LOCS_ID,
   BRAIDS_AND_TWISTS_ID,
-  NATURAL_HAIR_LOCKING_ID,
-  DREADLOCKS_MAINTENANCE_ID,
-  LOC_EXTENSION_INSTALLATION_ID,
   BOX_BRAIDS_AND_TWISTS,
   BOX_BRAIDS_AND_TWISTS_ID,
   KINKY_PASSION_TWISTS_ID,
   KNOTLESS_BRAIDS_ID,
-  TEMPORARY_LOCS_ID,
-  TEMPORARY_LOCS,
+  LOC_REPAIR,
+  LOC_RETWIST,
+  BUTTERFLY_DISTRESSED_LOCS,
+  SOFT_LOCS,
+  FAUX_LOCS,
+  WICKS,
+  MICRO_LOCS,
+  SISTER_LOCS,
+  TWO_STRAND_STARTER_LOCS,
+  INSTANT_LOCS,
 } from "data/strings";
-import { temporaryLocs } from "data/services/dreadlocks/temporary";
 
 interface Props {
   pageTitle: string;
@@ -94,25 +103,61 @@ export const getStaticPaths = () => ({
   paths: [
     {
       params: {
-        "sub-service": NATURAL_HAIR_LOCKING_ID,
+        "sub-service": INSTANT_LOCS_ID,
         "root-service": LOCS_ID,
       },
     },
     {
       params: {
-        "sub-service": DREADLOCKS_MAINTENANCE_ID,
+        "sub-service": TWO_STRAND_STARTER_LOCS_ID,
         "root-service": LOCS_ID,
       },
     },
     {
       params: {
-        "sub-service": LOC_EXTENSION_INSTALLATION_ID,
+        "sub-service": SISTER_LOCS_ID,
         "root-service": LOCS_ID,
       },
     },
     {
       params: {
-        "sub-service": TEMPORARY_LOCS_ID,
+        "sub-service": MICRO_LOCS_ID,
+        "root-service": LOCS_ID,
+      },
+    },
+    {
+      params: {
+        "sub-service": WICKS_ID,
+        "root-service": LOCS_ID,
+      },
+    },
+    {
+      params: {
+        "sub-service": FAUX_LOCS_ID,
+        "root-service": LOCS_ID,
+      },
+    },
+    {
+      params: {
+        "sub-service": SOFT_LOCS_ID,
+        "root-service": LOCS_ID,
+      },
+    },
+    {
+      params: {
+        "sub-service": BUTTERFLY_DISTRESSED_LOCS_ID,
+        "root-service": LOCS_ID,
+      },
+    },
+    {
+      params: {
+        "sub-service": LOC_REPAIR_ID,
+        "root-service": LOCS_ID,
+      },
+    },
+    {
+      params: {
+        "sub-service": LOC_RETWIST_ID,
         "root-service": LOCS_ID,
       },
     },
@@ -141,50 +186,91 @@ export const getStaticPaths = () => ({
 export const getStaticProps = ({ params }) => {
   let subServices, pageTitle;
   switch (params["sub-service"]) {
-    // For services with sub-services
-    case NATURAL_HAIR_LOCKING_ID:
-      pageTitle = NATURAL_HAIR_LOCKING;
-      subServices = naturalHairLockingServices;
+    case INSTANT_LOCS_ID:
+      pageTitle = INSTANT_LOCS;
+      subServices = [locs.find(
+        (x) => x.id === INSTANT_LOCS_ID
+      )];
       break;
 
-    case DREADLOCKS_MAINTENANCE_ID:
-      pageTitle = DREADLOCKS_MAINTENANCE;
-      subServices = dreadlockMaintenanceServices;
+    case TWO_STRAND_STARTER_LOCS_ID:
+      pageTitle = TWO_STRAND_STARTER_LOCS;
+      subServices = [locs.find(
+        (x) => x.id === TWO_STRAND_STARTER_LOCS_ID
+      )];
       break;
 
-    case LOC_EXTENSION_INSTALLATION_ID:
-      pageTitle = LOC_EXTENSION_INSTALLATION;
+    case SISTER_LOCS_ID:
+      pageTitle = SISTER_LOCS;
+      subServices = [locs.find(
+        (x) => x.id === SISTER_LOCS_ID
+      )];
+      break;
+
+    case MICRO_LOCS_ID:
+      pageTitle = MICRO_LOCS;
+      subServices = [locs.find(
+        (x) => x.id === MICRO_LOCS_ID
+      )];
+      break;
+
+    case WICKS_ID:
+      pageTitle = WICKS;
+      subServices = [locs.find((x) => x.id === WICKS_ID)];
+      break;
+
+    case FAUX_LOCS_ID:
+      pageTitle = FAUX_LOCS;
+      subServices = [locs.find(
+        (x) => x.id === FAUX_LOCS_ID
+      )]
+      break;
+
+    case SOFT_LOCS_ID:
+      pageTitle = SOFT_LOCS;
+      subServices = [locs.find((x) => x.id === SOFT_LOCS_ID)];
+      break;
+
+    case BUTTERFLY_DISTRESSED_LOCS_ID:
+      pageTitle = BUTTERFLY_DISTRESSED_LOCS;
+      subServices = [locs.find(
+        (x) => x.id === BUTTERFLY_DISTRESSED_LOCS_ID
+      )];
+      break;
+
+    case LOC_RETWIST_ID:
+      pageTitle = LOC_RETWIST;
+      subServices = [locs.find(
+        (x) => x.id === LOC_RETWIST_ID
+      )];
+      break;
+
+    case LOC_REPAIR_ID:
+      pageTitle = LOC_REPAIR;
       subServices = [
-        dreadlocksServices.find((x) => x.id === LOC_EXTENSION_INSTALLATION_ID),
-      ];
-      break;
-
-    case TEMPORARY_LOCS_ID:
-      pageTitle = TEMPORARY_LOCS;
-      subServices = temporaryLocs
+        locs.find((x) => x.id === LOC_REPAIR_ID)
+      ]
       break;
 
     // For services without sub-services
     case KNOTLESS_BRAIDS_ID:
       pageTitle = KNOTLESS_BRAIDS;
       subServices = [
-        braidsAndTwistsServices.find((x) => x.id === KNOTLESS_BRAIDS_ID),
+        braidsAndTwistsServices.find((x) => x.id === KNOTLESS_BRAIDS_ID)
       ];
       break;
 
     case KINKY_PASSION_TWISTS_ID:
       pageTitle = KINKY_PASSION_TWISTS;
       subServices = [
-        braidsAndTwistsServices.find((x) => x.id === KINKY_PASSION_TWISTS_ID),
+        braidsAndTwistsServices.find((x) => x.id === KINKY_PASSION_TWISTS_ID)
       ];
       break;
 
     case BOX_BRAIDS_AND_TWISTS_ID:
       pageTitle = BOX_BRAIDS_AND_TWISTS;
       subServices = [
-        braidsAndTwistsServices.find(
-          (x) => x.id === BOX_BRAIDS_AND_TWISTS_ID
-        ),
+        braidsAndTwistsServices.find((x) => x.id === BOX_BRAIDS_AND_TWISTS_ID)
       ];
       break;
 

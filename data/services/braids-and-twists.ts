@@ -1,7 +1,5 @@
-import { ServiceCategory, ExtensionUsage } from "src/types";
+import { ServiceCategory } from "src/types";
 import * as strings from "data/strings";
-
-const { POSSIBLE, REQUIRED } = ExtensionUsage;
 
 export const braidsAndTwistsServices = [
   {
@@ -15,12 +13,16 @@ export const braidsAndTwistsServices = [
         text: "See details",
       },
     },
-    image: {
+    images: [{
       path: require("data/images/braids-and-twists.jpg"),
+      altText: "",
+    }],
+    featuredImage: {
+      path: require("data/images/locs.jpg"),
       altText: "",
     },
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: POSSIBLE,
+    requiresHairExtensions: false,
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",
@@ -36,12 +38,16 @@ export const braidsAndTwistsServices = [
         text: "See details",
       },
     },
-    image: {
+    featuredImage: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/braids-and-twists.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: REQUIRED,
+    requiresHairExtensions: true,
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",
@@ -57,12 +63,16 @@ export const braidsAndTwistsServices = [
         text: "See details",
       },
     },
-    image: {
+    featuredImage: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
+    images: [{
+      path: require("data/images/braids-and-twists.jpg"),
+      altText: "",
+    }],
     category: ServiceCategory.INSTALLATION,
-    extensionUsage: REQUIRED,
+    requiresHairExtensions: true,
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",

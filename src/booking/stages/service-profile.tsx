@@ -7,10 +7,10 @@ import { PaidOutlined, AccessTime, HelpOutline } from "@mui/icons-material";
 import { useBookingService } from "src/helpers";
 import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
-import { ExtensionUsage, Service } from "src/types";
+import { Service } from "src/types";
 import styles from "src/booking/stages/service-profile.module.scss";
 import Alert from "@mui/material/Alert";
-import Photos from "src/components/photos";
+import ImageCarousel from "src/components/image-carousel";
 
 interface Props {
   service: Service;
@@ -29,7 +29,8 @@ const ServiceProfile = ({
   const router = useRouter();
   const { bookingService } = useBookingService();
   const [, send] = useActor(bookingService);
-  const { name, description, image, cta, price, rate, duration } = service;
+  const { name, description, featuredImage, images, cta, price, rate, duration, requiresHairExtensions } = service;
+  const showImages = images && images.length >= 5;
   const initialPopUpState = {
     showing: false,
     image: null,
@@ -39,19 +40,6 @@ const ServiceProfile = ({
   const getPriceInfo = () => {
     const hasFixedRate = rate === "FIXED";
     return hasFixedRate ? `STARTING PRICE` : `HOURLY RATE`;
-  };
-
-  const getExtensionsInfo = () => {
-    switch (service.extensionUsage) {
-      case ExtensionUsage.POSSIBLE:
-        return "You can add hair extensions";
-
-      case ExtensionUsage.REQUIRED:
-        return "Requires hair extensions";
-
-      default:
-        return "Done without hair extensions";
-    }
   };
 
   return (
@@ -64,7 +52,7 @@ const ServiceProfile = ({
               letterSpacing: "2px",
               color: "#4a4f4f",
               justifyContent: "flex-start",
-              padding: "0.5rem 0",
+              padding: "0.5rem",
               fontFamily: "inherit",
             }}
             size="medium"
@@ -75,10 +63,10 @@ const ServiceProfile = ({
           </MuiButton>
           <h3>{name}</h3>
           <div className={styles.iconInfoContainer}>
-            <div>
+            {requiresHairExtensions && (<div>
               <HelpOutline fontSize="large" />
-              <p>{getExtensionsInfo()}</p>
-            </div>
+              <p>Requires Hair Extensions</p>
+            </div>)}
             <div>
               <AccessTime fontSize="large" />
               <p>{duration}</p>
@@ -111,9 +99,9 @@ const ServiceProfile = ({
             </Button>
           )}
         </div>
-        <CustomImage image={image} roundEdged />
+        <CustomImage image={featuredImage} roundEdged />
       </div>
-      <Photos setPopUp={setPopUp} />
+      {showImages ? <ImageCarousel setPopUp={setPopUp} images={images} /> : null}
     </>
   );
 };

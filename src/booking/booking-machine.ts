@@ -2,12 +2,9 @@ import { createMachine, assign } from "xstate";
 import {
   ServiceType,
   Service,
-  ExtensionUsage,
   ExtensionLength,
   HairLength,
 } from "src/types";
-
-const { POSSIBLE, REQUIRED, NOT_OFFERED } = ExtensionUsage;
 
 // ***********************************
 
@@ -63,20 +60,9 @@ export const bookingMachine =
         serviceProfile: {
           exit: "saveService",
           on: {
-            BOOK_APPOINTMENT: [
-              {
-                target: "selectExtensionLength",
-                cond: "requiresExtensions",
-              },
-              {
-                target: "selectExtensionUsage",
-                cond: "canUseExtensions",
-              },
-              {
-                target: "selectHairLength",
-                cond: "canNotUseExtensions",
-              },
-            ],
+            BOOK_APPOINTMENT: {
+              target: "selectExtensionUsage",
+            }
           },
         },
         selectExtensionUsage: {
@@ -145,9 +131,9 @@ export const bookingMachine =
           addingExtensions: (_context, event) =>
             _context.addingExtensions
               ? _context.addingExtensions
-              : _context.service.extensionUsage == REQUIRED
-              ? true
-              : false,
+              : _context.service.requiresHairExtensions == true
+                ? true
+                : false,
           extensionLength: (_context, event) => event["extensionLength"],
         }),
         saveHairLength: assign({
@@ -163,12 +149,6 @@ export const bookingMachine =
         }),
       },
       guards: {
-        requiresExtensions: (_context, event) =>
-          event["service"].extensionUsage === REQUIRED,
-        canUseExtensions: (_context, event) =>
-          event["service"].extensionUsage === POSSIBLE,
-        canNotUseExtensions: (_context, event) =>
-          event["service"].extensionUsage === NOT_OFFERED,
         addingExtensions: (context) => context.addingExtensions,
         notAddingExtensions: (context) => !context.addingExtensions,
       },

@@ -1,19 +1,18 @@
-import React from "react";
+import React, { SetStateAction } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper";
 import CustomImage from "src/components/custom-image";
-import { extractImages } from "src/helpers";
-import { featuredImages } from "data/featured-images";
 import { AppImage } from "src/types";
 import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 
-const REQUIRED_NUMBER_OF_PHOTOS = 1
+interface Props {
+  images: AppImage[]
+  setPopUp: React.Dispatch<SetStateAction<boolean>>;
+}
 
-const Photos = ({ setPopUp }) => {
-  if (featuredImages.length < REQUIRED_NUMBER_OF_PHOTOS) return null
-  const images: Array<AppImage> = extractImages(featuredImages)
+const ImageCarousel = ({ images, setPopUp }) => {
   return (
     <section className="dark" style={{ padding: '3rem 0' }}>
       <Swiper
@@ -43,7 +42,7 @@ const Photos = ({ setPopUp }) => {
         ))}
       </Swiper>
     </section>
-  );
-};
+  )
+}
 
-export default Photos;
+export default ImageCarousel;
