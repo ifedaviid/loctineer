@@ -17,7 +17,7 @@ export const braidsAndTwistsServices = [
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     }],
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
@@ -38,7 +38,7 @@ export const braidsAndTwistsServices = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
@@ -63,7 +63,7 @@ export const braidsAndTwistsServices = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },

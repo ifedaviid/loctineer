@@ -14,7 +14,7 @@ export const serviceTypes = [
         text: "See services",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
@@ -37,7 +37,7 @@ export const serviceTypes = [
         text: "See services",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },

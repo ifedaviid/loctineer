@@ -13,7 +13,7 @@ export const locs = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
@@ -40,7 +40,7 @@ export const locs = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
@@ -67,7 +67,7 @@ export const locs = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
@@ -94,7 +94,7 @@ export const locs = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
@@ -119,7 +119,7 @@ export const locs = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
@@ -144,7 +144,7 @@ export const locs = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
@@ -169,7 +169,7 @@ export const locs = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
@@ -194,7 +194,7 @@ export const locs = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     },
@@ -219,7 +219,7 @@ export const locs = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },
@@ -244,7 +244,7 @@ export const locs = [
         text: "See details",
       },
     },
-    thumbnail: {
+    featuredImage: {
       path: require("data/images/locs.jpg"),
       altText: "",
     },

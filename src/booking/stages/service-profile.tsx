@@ -29,7 +29,7 @@ const ServiceProfile = ({
   const router = useRouter();
   const { bookingService } = useBookingService();
   const [, send] = useActor(bookingService);
-  const { name, description, thumbnail, images, cta, price, rate, duration, requiresHairExtensions } = service;
+  const { name, description, featuredImage, images, cta, price, rate, duration, requiresHairExtensions } = service;
   const initialPopUpState = {
     showing: false,
     image: null,
@@ -98,7 +98,7 @@ const ServiceProfile = ({
             </Button>
           )}
         </div>
-        <CustomImage image={thumbnail} roundEdged />
+        <CustomImage image={featuredImage} roundEdged />
       </div>
       {images && images.length >= 5 ? <ImageCarousel setPopUp={setPopUp} images={images} /> : null}
     </>

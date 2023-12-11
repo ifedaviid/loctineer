@@ -12,14 +12,14 @@ interface Props {
 }
 
 const Listing = ({ service }: Props) => {
-  const { name, thumbnail, description, cta, requiresHairExtensions } = service
+  const { name, featuredImage, description, cta, requiresHairExtensions } = service
 
   return (
     <div className={styles["listing"]}>
       <div>
         <Image
-          src={thumbnail.path}
-          alt={thumbnail.altText}
+          src={featuredImage.path}
+          alt={featuredImage.altText}
           placeholder="blur"
           loading="lazy"
         />
