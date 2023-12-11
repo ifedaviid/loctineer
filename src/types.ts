@@ -45,7 +45,7 @@ export interface Service {
   description: string;
   cta: CallToAction;
   featuredImage: AppImage;
-  images: AppImage[];
+  images?: AppImage[];
   category?: ServiceCategory;
   requiresHairExtensions?: boolean;
   services?: Service[];
