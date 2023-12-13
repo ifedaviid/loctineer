@@ -61,7 +61,7 @@ export const bookingMachine =
           exit: "saveService",
           on: {
             BOOK_APPOINTMENT: {
-              target: "selectExtensionUsage",
+              target: "selectSchedule",
             }
           },
         },
@@ -110,7 +110,7 @@ export const bookingMachine =
         selectSchedule: {
           on: {
             PREV: {
-              target: "selectHairLength",
+              target: "idle",
             },
           },
         },

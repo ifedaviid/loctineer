@@ -25,20 +25,6 @@ const SelectSchedule = () => {
     }
   };
 
-  const getExtensionUsageDetails = () => {
-    const yes = "Yes! I will be using extensions";
-    const no = "No! I don't want to use extensions";
-    const { addingExtensions, extensionLength } = state.context;
-    const extensionUsage = addingExtensions ? yes : no;
-    const details = extensionUsage.concat(" ", extensionLength?.category, " ");
-    return details;
-  };
-
-  const getNaturalHairDetails = () => {
-    const { hairLength } = state.context;
-    return hairLength.category;
-  };
-
   const {
     showExitButton,
     showBackButton,
@@ -53,7 +39,7 @@ const SelectSchedule = () => {
         {showExitButton && renderExitbutton()}
       </div>
       <InlineWidget
-        url={`https://calendly.com/loctineer/sister-locs?hide_gdpr_banner=1&a2=${getExtensionUsageDetails()}&a3=${getNaturalHairDetails()}`}
+        url={`https://calendly.com/loctineer/sister-locs?hide_gdpr_banner=1`}
         pageSettings={{
           primaryColor: "a57b21",
           // hideEventTypeDetails: true,

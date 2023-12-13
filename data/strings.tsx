@@ -21,8 +21,8 @@ export const TEMPORARY_LOCS_ID = "temporary";
 // Options for Natural Hair Locking (Service Type Options)
 export const WICKS = "Wicks";
 export const WICKS_ID = "wicks";
-export const TWO_STRAND_STARTER_LOCS = "Two-strand starter locs";
-export const TWO_STRAND_STARTER_LOCS_ID = "two-strand-starter";
+export const TWO_STRAND_STARTER_LOCS = "Two-strand twists";
+export const TWO_STRAND_STARTER_LOCS_ID = "two-strand-twists";
 export const INSTANT_LOCS = "Instant Locs";
 export const INSTANT_LOCS_ID = "instant";
 export const SISTER_LOCS = "Sister Locs";
