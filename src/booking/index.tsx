@@ -27,7 +27,7 @@ const StartBooking = ({
   return (
     <section>
       {isBookingAppointment ?
-        <SelectSchedule service={service} />
+        <SelectSchedule service={service} setIsBookingAppointment={setIsBookingAppointment} />
         :
         <ServiceProfile
           service={service}

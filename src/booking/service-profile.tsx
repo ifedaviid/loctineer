@@ -95,7 +95,7 @@ const ServiceProfile = ({
           {cta.primary && (
             <Button
               variant="primary"
-              onClick={setIsBookingAppointment(true)}
+              onClick={() => setIsBookingAppointment(true)}
             >
               Book Appointment
             </Button>

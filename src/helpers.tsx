@@ -1,14 +1,7 @@
 import { useState, useEffect, useContext } from "react";
-import { AppImage } from "src/types";
 import { BookingContext } from "src/booking/booking-state";
 
 const MOBILE = 768;
-
-export const extractImages = (data) => {
-  let images: Array<AppImage> = [];
-  data.map((obj) => images.push(obj.image));
-  return images;
-};
 
 export const useBreakpoints = () => {
   const [viewPortWidth, setViewPortWidth] = useState(window?.innerWidth);
@@ -28,17 +21,6 @@ export const useBreakpoints = () => {
   }, [viewPortWidth]);
 
   return { mobile };
-};
-
-export const useBookingModals = () => {
-  const [showExtensionUsageModal, setShowExtensionUsageModal] = useState(false);
-  const [showPriceVariationModal, setShowPriceVariationModal] = useState(false);
-  return {
-    showExtensionUsageModal,
-    setShowExtensionUsageModal,
-    showPriceVariationModal,
-    setShowPriceVariationModal,
-  };
 };
 
 export const useBookingService = () => useContext(BookingContext);
