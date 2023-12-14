@@ -26,6 +26,7 @@ export const braidsAndTwistsServices = [
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",
+    calendlyEventLinkID: "box-braids-and-twists",
   },
   {
     id: strings.KINKY_PASSION_TWISTS_ID,
@@ -51,6 +52,7 @@ export const braidsAndTwistsServices = [
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",
+    calendlyEventLinkID: "kinky-passion-twists",
   },
   {
     id: strings.KNOTLESS_BRAIDS_ID,
@@ -76,5 +78,6 @@ export const braidsAndTwistsServices = [
     price: 50,
     rate: "FIXED",
     duration: "Within 3 to 15 hours",
+    calendlyEventLinkID: "knotless-braids",
   },
 ];

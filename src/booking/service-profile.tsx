@@ -8,12 +8,13 @@ import { useBookingService } from "src/helpers";
 import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
 import { Service } from "src/types";
-import styles from "src/booking/stages/service-profile.module.scss";
+import styles from "src/booking/service-profile.module.scss";
 import Alert from "@mui/material/Alert";
 import ImageCarousel from "src/components/image-carousel";
 
 interface Props {
   service: Service;
+  setIsBookingAppointment: React.Dispatch<React.SetStateAction<boolean>>;
   setShowPriceVariationModal: React.Dispatch<React.SetStateAction<boolean>>;
   returnRoute?: {
     path: string;
@@ -24,6 +25,7 @@ interface Props {
 const ServiceProfile = ({
   service,
   returnRoute,
+  setIsBookingAppointment,
   setShowPriceVariationModal,
 }: Props) => {
   const router = useRouter();
@@ -93,7 +95,7 @@ const ServiceProfile = ({
           {cta.primary && (
             <Button
               variant="primary"
-              onClick={() => send({ type: "BOOK_APPOINTMENT", service })}
+              onClick={() => setIsBookingAppointment(true)}
             >
               Book Appointment
             </Button>
