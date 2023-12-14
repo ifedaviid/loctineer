@@ -14,6 +14,7 @@ import ImageCarousel from "src/components/image-carousel";
 
 interface Props {
   service: Service;
+  setIsBookingAppointment: React.Dispatch<React.SetStateAction<boolean>>;
   setShowPriceVariationModal: React.Dispatch<React.SetStateAction<boolean>>;
   returnRoute?: {
     path: string;
@@ -24,6 +25,7 @@ interface Props {
 const ServiceProfile = ({
   service,
   returnRoute,
+  setIsBookingAppointment,
   setShowPriceVariationModal,
 }: Props) => {
   const router = useRouter();
@@ -93,7 +95,7 @@ const ServiceProfile = ({
           {cta.primary && (
             <Button
               variant="primary"
-              onClick={() => send({ type: "BOOK_APPOINTMENT", service })}
+              onClick={setIsBookingAppointment(true)}
             >
               Book Appointment
             </Button>
