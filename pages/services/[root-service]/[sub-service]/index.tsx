@@ -78,7 +78,6 @@ export default function SubServicesPage({
           name: getRootService().name,
           path: getRootService().cta.primary.href,
         }}
-        setShowExtensionUsageModal={setShowExtensionUsageModal}
         setShowPriceVariationModal={setShowPriceVariationModal}
       />
     );
