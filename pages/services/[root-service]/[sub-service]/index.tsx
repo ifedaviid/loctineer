@@ -1,13 +1,13 @@
 import React from "react";
-import { AddingExtensions } from "src/booking/stages";
+import { AddingExtensions } from "src/booking";
 import Layout from "src/template/page-wrapper";
 import {
   braidsAndTwistsServices,
   locs,
   serviceTypes,
 } from "data";
-import StartBooking from "src/booking/stages";
-import PriceVariation from "src/booking/stages/price-variation";
+import StartBooking from "src/booking";
+import PriceVariation from "src/booking/price-variation";
 import { useBookingModals } from "src/helpers";
 import { Service } from "src/types";
 import ServiceMenu from "src/components/service-menu";

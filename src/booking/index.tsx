@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-export { default as ServiceProfile } from "src/booking/stages/service-profile";
-export { default as AddingExtensions } from "src/booking/stages/adding-extensions";
-export { default as SelectSchedule } from "src/booking/stages/select-schedule";
+export { default as ServiceProfile } from "src/booking/service-profile";
+export { default as AddingExtensions } from "src/booking/adding-extensions";
+export { default as SelectSchedule } from "src/booking/select-schedule";
 import {
   ServiceProfile,
   SelectSchedule,
-} from "src/booking/stages";
+} from "src/booking";
 import { Service } from "src/types";
 
 interface Props {

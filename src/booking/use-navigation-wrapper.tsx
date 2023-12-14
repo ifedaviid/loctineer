@@ -3,10 +3,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { IconButton } from '@mui/material';
-import { bookingMachine } from '../booking-machine';
+import { bookingMachine } from './booking-machine';
 import { useBookingService } from 'src/helpers';
 import { useActor } from '@xstate/react';
-import styles from "src/booking/stages/use-navigation-wrapper.module.scss";
+import styles from "src/booking/use-navigation-wrapper.module.scss";
 
 interface Props {
     handleExit: () => void

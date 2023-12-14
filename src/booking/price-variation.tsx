@@ -2,7 +2,7 @@ import React from "react";
 import { Close } from "@mui/icons-material";
 import Button from "src/components/button";
 import Modal from "src/components/modal";
-import styles from "src/booking/stages/adding-extensions.module.scss";
+import styles from "src/booking/adding-extensions.module.scss";
 
 const PriceVariation = ({ setShowModal }) => {
   return (

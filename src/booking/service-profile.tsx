@@ -8,7 +8,7 @@ import { useBookingService } from "src/helpers";
 import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
 import { Service } from "src/types";
-import styles from "src/booking/stages/service-profile.module.scss";
+import styles from "src/booking/service-profile.module.scss";
 import Alert from "@mui/material/Alert";
 import ImageCarousel from "src/components/image-carousel";
 

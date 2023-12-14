@@ -4,8 +4,8 @@ import { InlineWidget } from "react-calendly";
 import Button from "src/components/button";
 import { useBookingService } from "src/helpers";
 import useBookingNavigation from "./use-navigation-wrapper";
-import useConfirm from "src/booking/stages/confirm-exit";
-import styles from "src/booking/stages/select-schedule.module.scss";
+import useConfirm from "src/booking/confirm-exit";
+import styles from "src/booking/select-schedule.module.scss";
 
 const SelectSchedule = ({ service }) => {
   const { bookingService } = useBookingService();
