@@ -59,7 +59,7 @@ const StartBooking = ({
         )}
       {state.matches("selectExtensionLength") && <SelectExtensionLength />}
       {state.matches("selectHairLength") && <SelectHairLength />}
-      {state.matches("selectSchedule") && <SelectSchedule />}
+      {state.matches("selectSchedule") && <SelectSchedule service={service} />}
     </section>
   );
 };

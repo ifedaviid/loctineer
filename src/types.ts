@@ -52,4 +52,5 @@ export interface Service {
   price?: number;
   rate?: string;
   duration?: string;
+  calendlyEventLinkID: string;
 }

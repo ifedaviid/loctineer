@@ -7,9 +7,10 @@ import useBookingNavigation from "./use-navigation-wrapper";
 import useConfirm from "src/booking/stages/confirm-exit";
 import styles from "src/booking/stages/select-schedule.module.scss";
 
-const SelectSchedule = () => {
+const SelectSchedule = ({ service }) => {
   const { bookingService } = useBookingService();
   const [state, send] = useActor(bookingService);
+  const { calendlyEventLinkID } = service
 
   const [Dialog, confirmDelete] = useConfirm(
     "Are you sure?",
@@ -39,7 +40,7 @@ const SelectSchedule = () => {
         {showExitButton && renderExitbutton()}
       </div>
       <InlineWidget
-        url={`https://calendly.com/loctineer/sister-locs?hide_gdpr_banner=1`}
+        url={`https://calendly.com/loctineer/${calendlyEventLinkID}?hide_gdpr_banner=1`}
         pageSettings={{
           primaryColor: "a57b21",
           // hideEventTypeDetails: true,
