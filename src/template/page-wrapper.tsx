@@ -18,7 +18,7 @@ const PageWrapper = ({ children }: Props) => {
     <>
       <div className={styles.container}>
         <Head>
-          <title>Loc Studio</title>
+          <title>Loctineer</title>
           <meta name="description" content="Ottawa Braider & Loctician" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
@@ -34,8 +34,8 @@ const PageWrapper = ({ children }: Props) => {
 
         <footer className={styles.footer}>
           <p>Copyright © {currentYear} Loc Studio - All Rights Reserved.</p>
-          <p>
-            Designed & Developed by{" "}
+          <p className={styles.siteAuthor}>
+            Made by{" "}
             <a
               href="https://ifedaviid.com"
               target="_blank"

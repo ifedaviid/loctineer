@@ -23,7 +23,7 @@ const ServiceMenu = ({ title, services, returnRoute = null }: Props) => {
           sx={{
             textTransform: "none",
             letterSpacing: "2px",
-            color: "#4a4f4f",
+            color: "lightgray",
             justifyContent: "flex-start",
             padding: "0.5rem",
             fontFamily: "inherit",
