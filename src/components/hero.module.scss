@@ -10,19 +10,23 @@ header.heroImage {
   width: 100%;
   height: 100vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   // ****************** hero image container
   > :first-child {
     // object-fit: cover;
     opacity: 0.2;
-    > span {
+
+    >span {
       height: 100% !important;
     }
+
     img {
       object-fit: cover;
     }
   }
+
   // ****************** hero text container
-  > .content {
+  >.content {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -32,24 +36,32 @@ header.heroImage {
     color: white;
     max-width: 70%;
     padding: 5%;
+
     h1 {
       font-size: 3rem;
       line-height: 3rem;
       margin: 1rem;
       letter-spacing: 2px;
     }
+
     p {
       letter-spacing: 2px;
       font-weight: 500;
+    }
+
+    button {
+      margin: 2rem 0;
+      width: fit-content;
     }
   }
 }
 
 @media (max-width: $lg-screens) {
   header.heroImage {
-    > .content {
+    >.content {
       padding: 10%;
       max-width: 80%;
+
       h1 {
         font-size: 2rem;
       }
