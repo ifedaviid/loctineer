@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3rem;
-  padding: 4rem 5%;
+  padding: 5%;
 
   .iconInfoContainer {
     display: block;
@@ -35,7 +35,6 @@
     flex-direction: row;
 
     >p {
-      color: black;
       font-size: 1.1rem;
       font-weight: bolder;
       letter-spacing: 3px;
@@ -43,9 +42,8 @@
 
     >span {
       padding: 0.5rem;
-      background: rgb(64, 64, 64);
+      background: rgb(106, 106, 106);
       border-radius: 0.2rem;
-      color: rgb(218, 216, 216);
       letter-spacing: 1px;
       font-size: 0.8rem;
       font-weight: bolder;
@@ -54,9 +52,9 @@
   }
 
   .alertInfoContainer {
-    background-color: rgb(179 179 179);
-    color: $lighter-dark;
-    border: 0.5px solid $lighter-dark;
+    background-color: rgb(80, 79, 79);
+    color: lightgray;
+    border: 0.1px solid lightgray;
     width: fit-content;
 
     a {
@@ -65,7 +63,7 @@
 
     a,
     svg {
-      color: black;
+      color: lightgray;
     }
   }
 }

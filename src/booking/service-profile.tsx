@@ -11,9 +11,11 @@ import { Service } from "src/types";
 import styles from "src/booking/service-profile.module.scss";
 import Alert from "@mui/material/Alert";
 import ImageCarousel from "src/components/image-carousel";
+import { PopupModal } from "react-calendly";
 
 interface Props {
   service: Service;
+  isBookingAppointment: boolean;
   setIsBookingAppointment: React.Dispatch<React.SetStateAction<boolean>>;
   setShowPriceVariationModal: React.Dispatch<React.SetStateAction<boolean>>;
   returnRoute?: {
@@ -25,12 +27,11 @@ interface Props {
 const ServiceProfile = ({
   service,
   returnRoute,
+  isBookingAppointment,
   setIsBookingAppointment,
   setShowPriceVariationModal,
 }: Props) => {
   const router = useRouter();
-  const { bookingService } = useBookingService();
-  const [, send] = useActor(bookingService);
   const { name, description, featuredImage, images, cta, price, rate, duration, requiresHairExtensions } = service;
   const showImages = images && images.length >= 5;
   const initialPopUpState = {
@@ -52,7 +53,7 @@ const ServiceProfile = ({
             sx={{
               textTransform: "none",
               letterSpacing: "2px",
-              color: "#4a4f4f",
+              color: "lightgray",
               justifyContent: "flex-start",
               padding: "0.5rem",
               fontFamily: "inherit",
@@ -104,6 +105,20 @@ const ServiceProfile = ({
         <CustomImage image={featuredImage} roundEdged />
       </div>
       {showImages ? <ImageCarousel setPopUp={setPopUp} images={images} /> : null}
+      {typeof window !== 'undefined' && (
+        <PopupModal
+          open={isBookingAppointment}
+          onModalClose={() => setIsBookingAppointment(false)}
+          url={`https://calendly.com/loctineer/${service.calendlyEventLinkID}?hide_gdpr_banner=1`}
+          pageSettings={{
+            primaryColor: "a57b21",
+            // hideEventTypeDetails: true,
+            backgroundColor: "302f2f",
+            textColor: "ffffff",
+          }}
+          rootElement={typeof window !== "undefined" ? document.getElementById("__next") : null}
+        />
+      )}
     </>
   );
 };

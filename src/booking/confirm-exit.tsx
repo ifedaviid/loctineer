@@ -4,55 +4,38 @@ import Button from "src/components/button";
 import Modal from "src/components/modal";
 import styles from "src/booking/confirm-exit.module.scss";
 
-const useConfirm = (
-  title: string,
-  message: string
-): [() => JSX.Element, () => Promise<unknown>] => {
-  const [promise, setPromise] = useState(null);
+interface Props {
+  setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>,
+  setIsBookingAppointment: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-  const confirm = () =>
-    new Promise((resolve, reject) => {
-      setPromise({ resolve });
-    });
+const ConfirmExit = ({
+  setIsModalVisible,
+  setIsBookingAppointment,
+}) => {
 
-  const handleClose = () => {
-    setPromise(null);
-  };
-
-  const handleConfirm = () => {
-    promise?.resolve(true);
-    handleClose();
-  };
-
-  const handleCancel = () => {
-    promise?.resolve(false);
-    handleClose();
-  };
-
-  const ConfirmationDialog = () => (
-    <>
-      {promise !== null && (
-        <Modal>
-          <div>
-            <h4>{title}</h4>
-            <div>
-              <Close sx={{ color: "black" }} onClick={handleCancel} />
-            </div>
-          </div>
-          <p>{message}</p>
-          <div className={styles.buttonGroup}>
-            <Button variant="secondary" onClick={handleCancel}>
-              No
-            </Button>
-            <Button variant="primary" onClick={handleConfirm}>
-              Yes
-            </Button>
-          </div>
-        </Modal>
-      )}
-    </>
+  return (
+    <Modal>
+      <div>
+        <h4>Are you sure?</h4>
+        <div>
+          <Close sx={{ color: "lightgray" }} onClick={() => setIsModalVisible(false)} />
+        </div>
+      </div>
+      <p>Are you sure you want to exit booking process?</p>
+      <div className={styles.buttonGroup}>
+        <Button variant="primary" onClick={() => setIsModalVisible(false)}>
+          No
+        </Button>
+        <Button variant="secondary" onClick={() => {
+          setIsModalVisible(false);
+          setIsBookingAppointment(false);
+        }}>
+          Yes
+        </Button>
+      </div>
+    </Modal>
   );
-  return [ConfirmationDialog, confirm];
 };
 
-export default useConfirm;
+export default ConfirmExit;

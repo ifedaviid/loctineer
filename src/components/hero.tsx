@@ -24,15 +24,14 @@ const Hero = () => {
         className={styles["content"]}
         style={{ opacity: "unset" }}
       >
-        <p>{"Your community's favorite loctician"}</p>
+        <p>{"Locs & Braiding Specialist in Ottawa"}</p>
         <h1>Creating your best Look</h1>
-        <p>Let me help you shine!</p>
         <Button
           variant="primary"
           size="large"
           onClick={() => router.push("/services")}
         >
-          Our Service Menu
+          Our Services
         </Button>
       </div>
     </header>

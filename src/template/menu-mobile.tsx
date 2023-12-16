@@ -6,8 +6,8 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import LoctineerMobileLogo from "data/branding/loctineer-mobile-logo";
 import { menuOptions } from "src/template/menu-options";
+import LoctineerDesktopLogo from "data/branding/loctineer-desktop-logo";
 
 const MobileMenu = ({ showMobileMenu }) => {
   const router = useRouter();
@@ -16,9 +16,10 @@ const MobileMenu = ({ showMobileMenu }) => {
       role="presentation"
       onClick={() => showMobileMenu(false)}
       onKeyDown={() => showMobileMenu(false)}
+      sx={{ backgroundColor: '#484848', color: 'lightgray', height: '100%' }}
     >
-      <div style={{ padding: "3rem" }}>
-        <LoctineerMobileLogo />
+      <div style={{ height: "20%", display: 'flex', justifyContent: 'center' }}>
+        <LoctineerDesktopLogo style={{ alignSelf: 'center' }} />
       </div>
       <Divider />
       <List>
