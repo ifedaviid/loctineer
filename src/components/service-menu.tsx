@@ -17,7 +17,7 @@ interface Props {
 const ServiceMenu = ({ title, services, returnRoute = null }: Props) => {
   const router = useRouter();
   return (
-    <section style={{ padding: '4rem 5%' }}>
+    <section style={{ padding: '3rem 5%' }}>
       {returnRoute && (
         <MuiButton
           sx={{
