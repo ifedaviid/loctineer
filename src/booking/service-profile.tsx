@@ -3,13 +3,10 @@ import { useActor } from "@xstate/react";
 import { useRouter } from "next/router";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { PaidOutlined, AccessTime, HelpOutline } from "@mui/icons-material";
-import { useBookingService } from "src/helpers";
 import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
 import { Service } from "src/types";
 import styles from "src/booking/service-profile.module.scss";
-import Alert from "@mui/material/Alert";
 import ImageCarousel from "src/components/image-carousel";
 import { PopupModal } from "react-calendly";
 
@@ -32,18 +29,13 @@ const ServiceProfile = ({
   setShowPriceVariationModal,
 }: Props) => {
   const router = useRouter();
-  const { name, description, featuredImage, images, cta, price, rate, duration, requiresHairExtensions } = service;
+  const { name, description, featuredImage, images, cta, price, prices } = service;
   const showImages = images && images.length >= 5;
   const initialPopUpState = {
     showing: false,
     image: null,
   };
   const [, setPopUp] = useState(initialPopUpState);
-
-  const getPriceInfo = () => {
-    const hasFixedRate = rate === "FIXED";
-    return hasFixedRate ? `STARTING PRICE` : `HOURLY RATE`;
-  };
 
   return (
     <>
@@ -65,36 +57,31 @@ const ServiceProfile = ({
             {returnRoute.name}
           </MuiButton>
           <h3>{name}</h3>
-          <div className={styles.iconInfoContainer}>
-            {requiresHairExtensions && (<div>
-              <HelpOutline fontSize="large" />
-              <p>Requires Hair Extensions</p>
-            </div>)}
-            <div>
-              <AccessTime fontSize="large" />
-              <p>{duration}</p>
-            </div>
-            <div>
-              <PaidOutlined fontSize="large" />
-              <div className={styles.priceInfoContainer}>
-                <p>${price}</p>
-                <span>{getPriceInfo()}</span>
+          <p>{description}</p>
+          {price && (
+            <div className={styles.iconInfoContainer}>
+              <div>
+                <div className={styles.priceInfoContainer}>
+                  <p style={{ fontSize: '2rem' }}>${price.value}</p>
+                  <span>per hour</span>
+                </div>
               </div>
             </div>
-          </div>
-          <Alert className={styles.alertInfoContainer} severity="info">
-            Reminder that your total cost may increase.{" "}
-            <Button
-              variant="link"
-              onClick={() => setShowPriceVariationModal(true)}
-              style={{ width: "unset" }}
-            >
-              {"Here's why"}
-            </Button>
-          </Alert>
-          <p>{description}</p>
+          )}
+          {prices && (
+            <>
+              <ul style={{ padding: '0 0 0 1rem', alignItems: 'center', margin: 'unset' }}>
+                {prices.map((price, idx) => (
+                  <li key={idx} style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <p>{price.name} (<small>starts at</small> ${price.value}) </p>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
           {cta.primary && (
             <Button
+              style={{ margin: '1rem 0' }}
               variant="primary"
               onClick={() => setIsBookingAppointment(true)}
             >
