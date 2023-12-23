@@ -6,7 +6,7 @@ import Layout from "src/template/page-wrapper";
 export default function FourOhFour() {
   return (
     <Layout>
-      <section style={{ background: "lightgray" }}>
+      <section>
         <Image src="/images/404.png" alt="404" width={150} height={150} />
         <h1>We don&apos;t have this page</h1>
         <br />
