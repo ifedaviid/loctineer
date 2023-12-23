@@ -1,7 +1,7 @@
 import React from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import LoctineerDesktopLogo from "data/branding/loctineer-desktop-logo";
+import LoctineerLogo from "data/logo";
 import styles from "src/template/menu-bar.module.scss";
 import { menuOptions } from "./menu-options";
 
@@ -10,7 +10,7 @@ const Menu = ({ isMobileMenuOpen, showMobileMenu }) => {
     <div className={styles.menuContainer}>
       <Link href="/">
         <a>
-          <LoctineerDesktopLogo />
+          <LoctineerLogo />
         </a>
       </Link>
       <div className={styles.navIcon}>
