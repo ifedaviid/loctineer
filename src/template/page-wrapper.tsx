@@ -19,7 +19,7 @@ const PageWrapper = ({ children }: Props) => {
       <div className={styles.container}>
         <Head>
           <title>Loctineer</title>
-          <meta name="description" content="Ottawa Braider & Loctician" />
+          <meta name="description" content="Locs & Braiding Specialist in Ottawa" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Menu
@@ -33,7 +33,7 @@ const PageWrapper = ({ children }: Props) => {
         </main>
 
         <footer className={styles.footer}>
-          <p>Copyright © {currentYear} Loc Studio - All Rights Reserved.</p>
+          <p>Copyright © {currentYear} Loctineer - All Rights Reserved.</p>
           <p className={styles.siteAuthor}>
             Made by{" "}
             <a
@@ -48,7 +48,7 @@ const PageWrapper = ({ children }: Props) => {
       </div>
       {isMobileMenuOpen && (
         <Drawer
-          anchor={"right"}
+          anchor="right"
           open={isMobileMenuOpen}
           onClose={() => showMobileMenu(false)}
         >

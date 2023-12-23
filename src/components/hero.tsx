@@ -24,7 +24,7 @@ const Hero = () => {
         className={styles["content"]}
         style={{ opacity: "unset" }}
       >
-        <p>{"Locs & Braiding Specialist in Ottawa"}</p>
+        <p>Locs & Braiding Specialist in Ottawa</p>
         <h1>Creating your best Look</h1>
         <Button
           variant="primary"
