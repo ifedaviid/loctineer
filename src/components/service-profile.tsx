@@ -5,14 +5,12 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
 import { Service } from "src/types";
-import styles from "src/booking/service-profile.module.scss";
+import styles from "./service-profile.module.scss";
 import ImageCarousel from "src/components/image-carousel";
 import { PopupModal } from "react-calendly";
 
 interface Props {
   service: Service;
-  isBookingAppointment: boolean;
-  setIsBookingAppointment: React.Dispatch<React.SetStateAction<boolean>>;
   returnRoute?: {
     path: string;
     name: string;
@@ -21,9 +19,7 @@ interface Props {
 
 const ServiceProfile = ({
   service,
-  returnRoute,
-  isBookingAppointment,
-  setIsBookingAppointment,
+  returnRoute
 }: Props) => {
   const router = useRouter();
   const { name, description, featuredImage, images, cta, price, prices } = service;
@@ -33,9 +29,10 @@ const ServiceProfile = ({
     image: null,
   };
   const [, setPopUp] = useState(initialPopUpState);
+  const [isBookingAppointment, setIsBookingAppointment] = useState(false);
 
   return (
-    <>
+    <section>
       <div className={styles["profile-container"]}>
         <div>
           <MuiButton
@@ -103,7 +100,7 @@ const ServiceProfile = ({
           rootElement={typeof window !== "undefined" ? document.getElementById("__next") : null}
         />
       )}
-    </>
+    </section>
   );
 };
 

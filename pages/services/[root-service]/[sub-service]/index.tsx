@@ -5,7 +5,7 @@ import {
   locs,
   serviceTypes,
 } from "data";
-import StartBooking from "src/booking";
+import ServiceProfile from "src/components/service-profile";
 import { Service } from "src/types";
 import {
   INSTANT_LOCS_ID,
@@ -53,7 +53,7 @@ export default function SubServicesPage({
   const getRootService = () => serviceTypes.find((x) => x.id === rootServiceId);
   return (
     <Layout>
-      <StartBooking
+      <ServiceProfile
         service={subServices[0]}
         returnRoute={{
           name: getRootService().name,
