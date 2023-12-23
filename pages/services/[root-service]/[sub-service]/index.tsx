@@ -39,13 +39,11 @@ import {
 } from "data/strings";
 
 interface Props {
-  pageTitle: string;
   subServices: string;
   rootServiceId: string;
 }
 
 export default function SubServicesPage({
-  pageTitle,
   subServices: stringifiedSubServices,
   rootServiceId,
 }: Props) {
