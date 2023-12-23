@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext } from "react";
-import { BookingContext } from "src/booking/booking-state";
 
 const MOBILE = 768;
 
@@ -22,5 +21,3 @@ export const useBreakpoints = () => {
 
   return { mobile };
 };
-
-export const useBookingService = () => useContext(BookingContext);

@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "src/template/page-wrapper";
 import ServiceMenu from "src/components/service-menu";
-import { braidsAndTwistsServices, locs, strings } from "data";
+import { braidsAndTwistsServices, locs } from "data";
 import { Service } from "src/types";
 import {
   LOCS,

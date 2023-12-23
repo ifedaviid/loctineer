@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 export { default as ServiceProfile } from "src/booking/service-profile";
-export { default as AddingExtensions } from "src/booking/adding-extensions";
 import { ServiceProfile } from "src/booking";
 import { Service } from "src/types";
 

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { AddingExtensions } from "src/booking";
 import Layout from "src/template/page-wrapper";
 import {
   braidsAndTwistsServices,
@@ -7,7 +6,6 @@ import {
   serviceTypes,
 } from "data";
 import StartBooking from "src/booking";
-import PriceVariation from "src/booking/price-variation";
 import { Service } from "src/types";
 import ServiceMenu from "src/components/service-menu";
 import {
@@ -77,12 +75,7 @@ export default function SubServicesPage({
     );
 
   return (
-    <Layout>
-      {content}
-      {showPriceVariationModal && (
-        <PriceVariation setShowModal={setShowPriceVariationModal} />
-      )}
-    </Layout>
+    <Layout>{content}</Layout>
   );
 }
 

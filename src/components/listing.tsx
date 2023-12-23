@@ -1,10 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Chip from "@mui/material/Chip";
 import Button from "src/components/button";
 import styles from "src/components/listing.module.scss";
-import { Info } from "@mui/icons-material";
 import { Service } from "src/types";
 
 interface Props {
@@ -12,7 +10,7 @@ interface Props {
 }
 
 const Listing = ({ service }: Props) => {
-  const { name, featuredImage, description, cta, requiresHairExtensions } = service
+  const { name, featuredImage, description, cta } = service
 
   return (
     <div className={styles["listing"]}>
@@ -25,15 +23,6 @@ const Listing = ({ service }: Props) => {
         />
       </div>
       <div>
-        {requiresHairExtensions && (
-          <Chip
-            label='Requires hair extensions'
-            variant="outlined"
-            size="small"
-            icon={<Info style={{ color: "white" }} />}
-            style={{ fontFamily: "inherit", color: "white", background: "#626262" }}
-          />
-        )}
         <h3>{name}</h3>
         <p>{description}</p>
         {cta.primary && (
