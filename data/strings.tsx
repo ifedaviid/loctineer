@@ -37,9 +37,9 @@ export const LOC_RETWIST = "Loc Retwist";
 export const LOC_RETWIST_ID = "retwist";
 
 // Options for Temporary Locs
-export const FAUX_LOCS = "Faux locs";
+export const FAUX_LOCS = "Faux Locs";
 export const FAUX_LOCS_ID = "faux";
-export const SOFT_LOCS = "Soft locs";
+export const SOFT_LOCS = "Soft Locs";
 export const SOFT_LOCS_ID = "soft";
 export const BUTTERFLY_DISTRESSED_LOCS = "Butterfly / Distressed Locs";
 export const BUTTERFLY_DISTRESSED_LOCS_ID = "butterfly-distressed";
@@ -52,7 +52,7 @@ export const BOX_BRAIDS_AND_TWISTS = "Box braids & twists";
 export const BOX_BRAIDS_AND_TWISTS_ID = "box";
 export const KINKY_PASSION_TWISTS = "Kinky / Passion twists";
 export const KINKY_PASSION_TWISTS_ID = "kinky-passion-twists";
-export const KNOTLESS_BRAIDS = "Knotless braids";
+export const KNOTLESS_BRAIDS = "Knotless Braids";
 export const KNOTLESS_BRAIDS_ID = "knotless-braids";
 
 // ------------------------------------------------
