@@ -13,7 +13,6 @@ interface Props {
   service: Service;
   isBookingAppointment: boolean;
   setIsBookingAppointment: React.Dispatch<React.SetStateAction<boolean>>;
-  setShowPriceVariationModal: React.Dispatch<React.SetStateAction<boolean>>;
   returnRoute?: {
     path: string;
     name: string;
@@ -25,7 +24,6 @@ const ServiceProfile = ({
   returnRoute,
   isBookingAppointment,
   setIsBookingAppointment,
-  setShowPriceVariationModal,
 }: Props) => {
   const router = useRouter();
   const { name, description, featuredImage, images, cta, price, prices } = service;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "src/template/page-wrapper";
 import {
   braidsAndTwistsServices,
@@ -7,7 +7,6 @@ import {
 } from "data";
 import StartBooking from "src/booking";
 import { Service } from "src/types";
-import ServiceMenu from "src/components/service-menu";
 import {
   INSTANT_LOCS_ID,
   TWO_STRAND_STARTER_LOCS_ID,
@@ -50,32 +49,18 @@ export default function SubServicesPage({
   subServices: stringifiedSubServices,
   rootServiceId,
 }: Props) {
-  const [showPriceVariationModal, setShowPriceVariationModal] = useState(false);
   const subServices: Service[] = JSON.parse(stringifiedSubServices);
   const getRootService = () => serviceTypes.find((x) => x.id === rootServiceId);
-  const content =
-    subServices && subServices.length > 1 ? (
-      <ServiceMenu
-        title={pageTitle}
-        services={subServices}
-        returnRoute={{
-          name: getRootService().name,
-          path: getRootService().cta.primary.href,
-        }}
-      />
-    ) : (
+  return (
+    <Layout>
       <StartBooking
         service={subServices[0]}
         returnRoute={{
           name: getRootService().name,
           path: getRootService().cta.primary.href,
         }}
-        setShowPriceVariationModal={setShowPriceVariationModal}
       />
-    );
-
-  return (
-    <Layout>{content}</Layout>
+    </Layout>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 export { default as ServiceProfile } from "src/booking/service-profile";
 import { ServiceProfile } from "src/booking";
 import { Service } from "src/types";
@@ -9,13 +9,11 @@ interface Props {
     path: string;
     name: string;
   };
-  setShowPriceVariationModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const StartBooking = ({
   service,
   returnRoute,
-  setShowPriceVariationModal,
 }: Props) => {
   const [isBookingAppointment, setIsBookingAppointment] = useState(false);
 
@@ -26,7 +24,6 @@ const StartBooking = ({
         returnRoute={returnRoute}
         isBookingAppointment={isBookingAppointment}
         setIsBookingAppointment={setIsBookingAppointment}
-        setShowPriceVariationModal={setShowPriceVariationModal}
       />
     </section>
   );
