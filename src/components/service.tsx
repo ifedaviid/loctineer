@@ -5,7 +5,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
 import { Service } from "src/types";
-import styles from "./service-profile.module.scss";
+import styles from "./service.module.scss";
 import ImageCarousel from "src/components/image-carousel";
 import { PopupModal } from "react-calendly";
 
@@ -17,7 +17,7 @@ interface Props {
   };
 }
 
-const ServiceProfile = ({
+const Service = ({
   service,
   returnRoute
 }: Props) => {
@@ -104,4 +104,4 @@ const ServiceProfile = ({
   );
 };
 
-export default ServiceProfile;
+export default Service;
