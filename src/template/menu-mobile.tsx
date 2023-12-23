@@ -7,7 +7,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import { menuOptions } from "src/template/menu-options";
-import LoctineerDesktopLogo from "data/branding/loctineer-desktop-logo";
+import LoctineerLogo from "data/logo";
 
 const MobileMenu = ({ showMobileMenu }) => {
   const router = useRouter();
@@ -19,7 +19,7 @@ const MobileMenu = ({ showMobileMenu }) => {
       sx={{ backgroundColor: '#484848', color: 'lightgray', height: '100%' }}
     >
       <div style={{ height: "20%", display: 'flex', justifyContent: 'center' }}>
-        <LoctineerDesktopLogo style={{ alignSelf: 'center' }} />
+        <LoctineerLogo style={{ alignSelf: 'center' }} />
       </div>
       <Divider />
       <List>

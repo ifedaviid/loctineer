@@ -1,5 +1,6 @@
-import { ServiceCategory } from "src/types";
+import { Rate } from "src/types";
 import * as strings from "data/strings";
+const { MINIMUM } = Rate;
 
 export const braidsAndTwistsServices = [
   {
@@ -21,11 +22,13 @@ export const braidsAndTwistsServices = [
       path: require("data/images/locs.jpg"),
       altText: "",
     },
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: false,
-    price: 50,
-    rate: "FIXED",
-    duration: "Within 3 to 15 hours",
+    prices: [
+      { name: 'Shoulder length', value: 100, rate: MINIMUM },
+      { name: 'Mid-back length', value: 120, rate: MINIMUM },
+      { name: 'Waist length', value: 140, rate: MINIMUM },
+      { name: 'Butt length', value: 180, rate: MINIMUM },
+      { name: 'Knee length', value: 200, rate: MINIMUM }
+    ],
     calendlyEventLinkID: "box-braids-and-twists",
   },
   {
@@ -47,11 +50,13 @@ export const braidsAndTwistsServices = [
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     }],
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: true,
-    price: 50,
-    rate: "FIXED",
-    duration: "Within 3 to 15 hours",
+    prices: [
+      { name: 'Shoulder length', value: 110, rate: MINIMUM },
+      { name: 'Mid-back length', value: 130, rate: MINIMUM },
+      { name: 'Waist length', value: 150, rate: MINIMUM },
+      { name: 'Butt length', value: 190, rate: MINIMUM },
+      { name: 'Knee length', value: 210, rate: MINIMUM }
+    ],
     calendlyEventLinkID: "kinky-passion-twists",
   },
   {
@@ -73,11 +78,7 @@ export const braidsAndTwistsServices = [
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     }],
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: true,
-    price: 50,
-    rate: "FIXED",
-    duration: "Within 3 to 15 hours",
+    prices: [{ name: 'Shoulder length', value: 120, rate: MINIMUM }, { name: 'Mid-back length', value: 140, rate: MINIMUM }, { name: 'Waist length', value: 160, rate: MINIMUM }],
     calendlyEventLinkID: "knotless-braids",
   },
 ];

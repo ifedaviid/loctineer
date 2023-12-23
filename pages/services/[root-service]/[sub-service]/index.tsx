@@ -1,15 +1,12 @@
-import React, { useState } from "react";
-import { AddingExtensions } from "src/booking";
+import React from "react";
 import Layout from "src/template/page-wrapper";
 import {
   braidsAndTwistsServices,
   locs,
   serviceTypes,
 } from "data";
-import StartBooking from "src/booking";
-import PriceVariation from "src/booking/price-variation";
+import ServiceProfile from "src/components/service-profile";
 import { Service } from "src/types";
-import ServiceMenu from "src/components/service-menu";
 import {
   INSTANT_LOCS_ID,
   TWO_STRAND_STARTER_LOCS_ID,
@@ -52,36 +49,17 @@ export default function SubServicesPage({
   subServices: stringifiedSubServices,
   rootServiceId,
 }: Props) {
-  const [showPriceVariationModal, setShowPriceVariationModal] = useState(false);
   const subServices: Service[] = JSON.parse(stringifiedSubServices);
   const getRootService = () => serviceTypes.find((x) => x.id === rootServiceId);
-  const content =
-    subServices && subServices.length > 1 ? (
-      <ServiceMenu
-        title={pageTitle}
-        services={subServices}
-        returnRoute={{
-          name: getRootService().name,
-          path: getRootService().cta.primary.href,
-        }}
-      />
-    ) : (
-      <StartBooking
+  return (
+    <Layout>
+      <ServiceProfile
         service={subServices[0]}
         returnRoute={{
           name: getRootService().name,
           path: getRootService().cta.primary.href,
         }}
-        setShowPriceVariationModal={setShowPriceVariationModal}
       />
-    );
-
-  return (
-    <Layout>
-      {content}
-      {showPriceVariationModal && (
-        <PriceVariation setShowModal={setShowPriceVariationModal} />
-      )}
     </Layout>
   );
 }

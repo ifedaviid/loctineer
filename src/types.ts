@@ -39,6 +39,19 @@ export interface HairLength {
   image: AppImage;
 }
 
+export enum Rate {
+  HOURLY = "hourly", // $$$ per hour
+  FIXED = "fixed", // $$$
+  MINIMUM = "minimum", // $$$ minimum
+  MAXIMUM = "maximum", // $$$ maximum
+}
+
+export interface Price {
+  name?: string;
+  value: number;
+  rate: Rate;
+}
+
 export interface Service {
   id: string;
   name: string;
@@ -46,11 +59,8 @@ export interface Service {
   cta: CallToAction;
   featuredImage: AppImage;
   images?: AppImage[];
-  category?: ServiceCategory;
-  requiresHairExtensions?: boolean;
   services?: Service[];
-  price?: number;
-  rate?: string;
-  duration?: string;
+  price?: Price;
+  prices?: Price[]
   calendlyEventLinkID?: string;
 }

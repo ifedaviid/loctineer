@@ -1,5 +1,6 @@
 import * as strings from "data/strings";
-import { ServiceCategory } from "src/types";
+import { Rate } from "src/types";
+const { HOURLY, MINIMUM } = Rate;
 
 export const locs = [
   {
@@ -23,11 +24,7 @@ export const locs = [
         altText: "",
       }
     ],
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: false,
-    price: 50,
-    rate: "HOURLY",
-    duration: "Within 3 to 15 hours",
+    price: { value: 50, rate: HOURLY, },
     calendlyEventLinkID: "instant-locs",
   },
   {
@@ -51,11 +48,7 @@ export const locs = [
         altText: "",
       },
     ],
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: false,
-    price: 50,
-    rate: "HOURLY",
-    duration: "Within 3 to 15 hours",
+    price: { value: 50, rate: HOURLY },
     calendlyEventLinkID: "two-strand-twists",
   },
   {
@@ -79,11 +72,7 @@ export const locs = [
         altText: "",
       },
     ],
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: false,
-    price: 50,
-    rate: "HOURLY",
-    duration: "Within 3 to 15 hours",
+    price: { value: 50, rate: HOURLY, },
     calendlyEventLinkID: "sister-locs",
   },
   {
@@ -105,11 +94,7 @@ export const locs = [
       path: require("data/images/locs.jpg"),
       altText: "",
     }],
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: false,
-    price: 50,
-    rate: "HOURLY",
-    duration: "Within 3 to 15 hours",
+    price: { value: 50, rate: HOURLY, },
     calendlyEventLinkID: "micro-locs",
   },
   {
@@ -131,11 +116,7 @@ export const locs = [
       path: require("data/images/locs.jpg"),
       altText: "",
     }],
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: false,
-    price: 50,
-    rate: "HOURLY",
-    duration: "Within 3 to 15 hours",
+    price: { value: 50, rate: HOURLY },
     calendlyEventLinkID: "wicks"
   },
   {
@@ -157,11 +138,7 @@ export const locs = [
       path: require("data/images/locs.jpg"),
       altText: "",
     }],
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: true,
-    price: 50,
-    rate: "FIXED",
-    duration: "Within 3 to 15 hours",
+    prices: [{ name: 'Shoulder length', value: 120, rate: MINIMUM }, { name: 'Mid-back length', value: 140, rate: MINIMUM }, { name: 'Waist length', value: 160, rate: MINIMUM }],
     calendlyEventLinkID: "faux-locs"
   },
   {
@@ -183,11 +160,7 @@ export const locs = [
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     }],
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: true,
-    price: 50,
-    rate: "HOURLY",
-    duration: "Within 3 to 15 hours",
+    prices: [{ name: 'Shoulder length', value: 130, rate: MINIMUM }, { name: 'Mid-back length', value: 150, rate: MINIMUM }, { name: 'Waist length', value: 180, rate: MINIMUM }],
     calendlyEventLinkID: "soft-locs"
   },
   {
@@ -209,11 +182,7 @@ export const locs = [
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     }],
-    category: ServiceCategory.INSTALLATION,
-    requiresHairExtensions: true,
-    price: 50,
-    rate: "FIXED",
-    duration: "Within 3 to 15 hours",
+    prices: [{ name: 'Shoulder length', value: 130, rate: MINIMUM }, { name: 'Mid-back length', value: 150, rate: MINIMUM }, { name: 'Waist length', value: 180, rate: MINIMUM }],
     calendlyEventLinkID: "butterfly-distressed-locs"
   },
   {
@@ -235,11 +204,7 @@ export const locs = [
       path: require("data/images/locs.jpg"),
       altText: "",
     }],
-    category: ServiceCategory.MAINTENANCE,
-    requiresHairExtensions: false,
-    price: 50,
-    rate: "HOURLY",
-    duration: "Within 3 to 15 hours",
+    price: { value: 50, rate: HOURLY, },
     calendlyEventLinkID: "loc-repair"
   },
   {
@@ -261,11 +226,7 @@ export const locs = [
       path: require("data/images/locs.jpg"),
       altText: "",
     }],
-    category: ServiceCategory.MAINTENANCE,
-    requiresHairExtensions: false,
-    price: 50,
-    rate: "HOURLY",
-    duration: "Within 3 to 15 hours",
+    price: { value: 50, rate: HOURLY, },
     calendlyEventLinkID: "loc-retwist"
   },
 ];
