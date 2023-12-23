@@ -5,7 +5,7 @@ import {
   locs,
   serviceTypes,
 } from "data";
-import ServiceProfile from "src/components/service-profile";
+import ServiceComponent from "src/components/service";
 import { Service } from "src/types";
 import {
   INSTANT_LOCS_ID,
@@ -39,13 +39,11 @@ import {
 } from "data/strings";
 
 interface Props {
-  pageTitle: string;
   subServices: string;
   rootServiceId: string;
 }
 
 export default function SubServicesPage({
-  pageTitle,
   subServices: stringifiedSubServices,
   rootServiceId,
 }: Props) {
@@ -53,7 +51,7 @@ export default function SubServicesPage({
   const getRootService = () => serviceTypes.find((x) => x.id === rootServiceId);
   return (
     <Layout>
-      <ServiceProfile
+      <ServiceComponent
         service={subServices[0]}
         returnRoute={{
           name: getRootService().name,

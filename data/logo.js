@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from "react";
 
-function LoctineerDesktopLogo(props) {
+function LoctineerLogo(props) {
   return (<svg {...props} xmlns="http://www.w3.org/2000/svg" width="100" zoomAndPan="magnify" viewBox="0 0 75 74.999997" height="100" preserveAspectRatio="xMidYMid meet" version="1.0">
     <defs>
       <g />
@@ -86,4 +86,4 @@ function LoctineerDesktopLogo(props) {
   </svg>);
 }
 
-export default LoctineerDesktopLogo;
+export default LoctineerLogo;
