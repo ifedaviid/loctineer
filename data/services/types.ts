@@ -7,7 +7,7 @@ export const serviceTypes = [
     id: strings.LOCS_ID,
     name: strings.LOCS,
     description:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "We offer installation services for those interested in locs and maintenance services for those already with locs. Whatever you're looking for, you're guaranteed healthy and beautiful locs.",
     cta: {
       primary: {
         href: `/services/${strings.LOCS_ID}`,
@@ -30,7 +30,7 @@ export const serviceTypes = [
     id: strings.BRAIDS_AND_TWISTS_ID,
     name: strings.BRAIDS_AND_TWISTS,
     description:
-      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "We offer both styling and maintainance services for a variety of braids and twists styles. Check out our menu for your next look. We're sure you'll find something you love.",
     cta: {
       primary: {
         href: `/services/${strings.BRAIDS_AND_TWISTS_ID}`,
