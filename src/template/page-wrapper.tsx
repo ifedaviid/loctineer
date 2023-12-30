@@ -5,6 +5,7 @@ import Menu from "src/template/menu-bar";
 import MenuMobile from "src/template/menu-mobile";
 import { FacebookMessengerChat } from "src/components/chat-button";
 import styles from "src/template/page-wrapper.module.scss";
+import { business } from "data/index";
 
 interface Props {
   children: React.ReactNode;
@@ -14,12 +15,13 @@ const PageWrapper = ({ children }: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const showMobileMenu = (state) => setIsMobileMenuOpen(state);
   const currentYear = new Date().getFullYear();
+  const { name, description } = business;
   return (
     <>
       <div className={styles.container}>
         <Head>
-          <title>Loctineer</title>
-          <meta name="description" content="Locs & Braiding Specialist in Ottawa" />
+          <title>{name}</title>
+          <meta name="description" content={description} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Menu
@@ -33,7 +35,7 @@ const PageWrapper = ({ children }: Props) => {
         </main>
 
         <footer className={styles.footer}>
-          <p>Copyright © {currentYear} Loctineer - All Rights Reserved.</p>
+          <p>Copyright © {currentYear} {name} - All Rights Reserved.</p>
           <p className={styles.siteAuthor}>
             Made by{" "}
             <a

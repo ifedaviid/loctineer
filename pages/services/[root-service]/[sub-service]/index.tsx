@@ -1,10 +1,5 @@
 import React from "react";
 import Layout from "src/template/page-wrapper";
-import {
-  braidsAndTwistsServices,
-  locs,
-  serviceTypes,
-} from "data";
 import ServiceComponent from "src/components/service";
 import { Service } from "src/types";
 import {
@@ -18,44 +13,32 @@ import {
   FAUX_LOCS_ID,
   BUTTERFLY_DISTRESSED_LOCS_ID,
   SOFT_LOCS_ID,
-  KINKY_PASSION_TWISTS,
-  KNOTLESS_BRAIDS,
   LOCS_ID,
   BRAIDS_AND_TWISTS_ID,
-  BOX_BRAIDS_AND_TWISTS,
   BOX_BRAIDS_AND_TWISTS_ID,
   KINKY_PASSION_TWISTS_ID,
   KNOTLESS_BRAIDS_ID,
-  LOC_REPAIR,
-  LOC_RETWIST,
-  BUTTERFLY_DISTRESSED_LOCS,
-  SOFT_LOCS,
-  FAUX_LOCS,
-  WICKS,
-  MICRO_LOCS,
-  SISTER_LOCS,
-  TWO_STRAND_STARTER_LOCS,
-  INSTANT_LOCS,
 } from "data/strings";
+import { getServiceById } from "src/helpers";
 
 interface Props {
-  subServices: string;
-  rootServiceId: string;
+  service: string;
+  parentService: string;
 }
 
 export default function SubServicesPage({
-  subServices: stringifiedSubServices,
-  rootServiceId,
+  service: stringifiedService,
+  parentService: stringifiedParentService
 }: Props) {
-  const subServices: Service[] = JSON.parse(stringifiedSubServices);
-  const getRootService = () => serviceTypes.find((x) => x.id === rootServiceId);
+  const service: Service = JSON.parse(stringifiedService);
+  const parentService: Service = JSON.parse(stringifiedParentService);
   return (
     <Layout>
       <ServiceComponent
-        service={subServices[0]}
+        service={service}
         returnRoute={{
-          name: getRootService().name,
-          path: getRootService().cta.primary.href,
+          name: parentService?.name,
+          path: parentService?.cta?.primary?.href,
         }}
       />
     </Layout>
@@ -147,106 +130,10 @@ export const getStaticPaths = () => ({
 });
 
 export const getStaticProps = ({ params }) => {
-  let subServices, pageTitle;
-  switch (params["sub-service"]) {
-    case INSTANT_LOCS_ID:
-      pageTitle = INSTANT_LOCS;
-      subServices = [locs.find(
-        (x) => x.id === INSTANT_LOCS_ID
-      )];
-      break;
-
-    case TWO_STRAND_STARTER_LOCS_ID:
-      pageTitle = TWO_STRAND_STARTER_LOCS;
-      subServices = [locs.find(
-        (x) => x.id === TWO_STRAND_STARTER_LOCS_ID
-      )];
-      break;
-
-    case SISTER_LOCS_ID:
-      pageTitle = SISTER_LOCS;
-      subServices = [locs.find(
-        (x) => x.id === SISTER_LOCS_ID
-      )];
-      break;
-
-    case MICRO_LOCS_ID:
-      pageTitle = MICRO_LOCS;
-      subServices = [locs.find(
-        (x) => x.id === MICRO_LOCS_ID
-      )];
-      break;
-
-    case WICKS_ID:
-      pageTitle = WICKS;
-      subServices = [locs.find((x) => x.id === WICKS_ID)];
-      break;
-
-    case FAUX_LOCS_ID:
-      pageTitle = FAUX_LOCS;
-      subServices = [locs.find(
-        (x) => x.id === FAUX_LOCS_ID
-      )]
-      break;
-
-    case SOFT_LOCS_ID:
-      pageTitle = SOFT_LOCS;
-      subServices = [locs.find((x) => x.id === SOFT_LOCS_ID)];
-      break;
-
-    case BUTTERFLY_DISTRESSED_LOCS_ID:
-      pageTitle = BUTTERFLY_DISTRESSED_LOCS;
-      subServices = [locs.find(
-        (x) => x.id === BUTTERFLY_DISTRESSED_LOCS_ID
-      )];
-      break;
-
-    case LOC_RETWIST_ID:
-      pageTitle = LOC_RETWIST;
-      subServices = [locs.find(
-        (x) => x.id === LOC_RETWIST_ID
-      )];
-      break;
-
-    case LOC_REPAIR_ID:
-      pageTitle = LOC_REPAIR;
-      subServices = [
-        locs.find((x) => x.id === LOC_REPAIR_ID)
-      ]
-      break;
-
-    // For services without sub-services
-    case KNOTLESS_BRAIDS_ID:
-      pageTitle = KNOTLESS_BRAIDS;
-      subServices = [
-        braidsAndTwistsServices.find((x) => x.id === KNOTLESS_BRAIDS_ID)
-      ];
-      break;
-
-    case KINKY_PASSION_TWISTS_ID:
-      pageTitle = KINKY_PASSION_TWISTS;
-      subServices = [
-        braidsAndTwistsServices.find((x) => x.id === KINKY_PASSION_TWISTS_ID)
-      ];
-      break;
-
-    case BOX_BRAIDS_AND_TWISTS_ID:
-      pageTitle = BOX_BRAIDS_AND_TWISTS;
-      subServices = [
-        braidsAndTwistsServices.find((x) => x.id === BOX_BRAIDS_AND_TWISTS_ID)
-      ];
-      break;
-
-    default:
-      pageTitle = null;
-      subServices = [];
-      break;
-  }
   return {
     props: {
-      pageTitle,
-      subServices: JSON.stringify(subServices),
-      rootServiceId: params["root-service"],
+      service: JSON.stringify(getServiceById(params["sub-service"])?.service),
+      parentService: JSON.stringify(getServiceById(params["sub-service"])?.parent),
     },
   };
 };

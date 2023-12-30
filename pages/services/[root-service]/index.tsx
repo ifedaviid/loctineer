@@ -1,26 +1,20 @@
 import React from "react";
 import Layout from "src/template/page-wrapper";
 import ServiceMenu from "src/components/service-menu";
-import { braidsAndTwistsServices, locs } from "data";
+import { getServiceById } from "src/helpers";
 import { Service } from "src/types";
-import {
-  LOCS,
-  LOCS_ID,
-  BRAIDS_AND_TWISTS,
-  BRAIDS_AND_TWISTS_ID,
-} from "data/strings";
+import { LOCS_ID, BRAIDS_AND_TWISTS_ID } from "data/strings";
 
 export default function RootServicesPage({
-  pageTitle,
-  rootServices: stringifiedRootServiceData,
+  service: stringifiedServiceObj,
 }) {
-  const rootServices: Service[] = JSON.parse(stringifiedRootServiceData);
+  const service: Service = JSON.parse(stringifiedServiceObj);
   return (
     <Layout>
       <ServiceMenu
-        title={pageTitle}
-        services={rootServices}
-        returnRoute={{ path: "/services", name: "All Services" }}
+        title={service.name}
+        services={service.services}
+        returnRoute={{ path: '/services', name: 'All Services' }}
       />
     </Layout>
   );
@@ -35,22 +29,9 @@ export const getStaticPaths = () => ({
 });
 
 export const getStaticProps = ({ params }) => {
-  let rootServiceData: Service[], pageTitle: string;
-  switch (params["root-service"]) {
-    case BRAIDS_AND_TWISTS_ID:
-      pageTitle = BRAIDS_AND_TWISTS;
-      rootServiceData = braidsAndTwistsServices;
-      break;
-
-    default:
-      pageTitle = LOCS;
-      rootServiceData = locs;
-      break;
-  }
   return {
     props: {
-      pageTitle,
-      rootServices: JSON.stringify(rootServiceData),
+      service: JSON.stringify(getServiceById(params["root-service"])?.service),
     },
   };
 };
