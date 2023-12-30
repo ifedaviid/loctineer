@@ -7,8 +7,7 @@ export default function ServicesPage() {
   return (
     <Layout>
       <ServiceMenu
-        title="Services"
-        services={business.services}
+        service={{ ...business, name: 'Services', description: 'We offer both maintenance and styling services for locs and braids. Check out our menu for available services we can offer you.', logo: null }}
         returnRoute={{ path: "/", name: "Back to Home" }}
       />
     </Layout>

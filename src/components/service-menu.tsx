@@ -3,19 +3,19 @@ import { useRouter } from "next/router";
 import Listing from "src/components/listing";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { Service } from "src/types";
+import { Service, Business } from "src/types";
 
 interface Props {
-  title: string;
-  services: Service[];
+  service: Service | Business;
   returnRoute?: {
     path: string;
     name: string;
   };
 }
 
-const ServiceMenu = ({ title, services, returnRoute = null }: Props) => {
+const ServiceMenu = ({ service, returnRoute = null }: Props) => {
   const router = useRouter();
+  const { name, description, services } = service;
   return (
     <section style={{ padding: '3rem 5%' }}>
       {returnRoute && (
@@ -35,9 +35,8 @@ const ServiceMenu = ({ title, services, returnRoute = null }: Props) => {
           {returnRoute.name}
         </MuiButton>
       )}
-      <h2>{title}</h2>
-      <p>{`Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type specimen book.`}</p>
+      <h2>{name}</h2>
+      <p>{description}</p>
       <div className="services-content">
         {services.map((option, idx) => (
           <Listing key={idx} service={option} />

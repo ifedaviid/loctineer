@@ -12,8 +12,7 @@ export default function RootServicesPage({
   return (
     <Layout>
       <ServiceMenu
-        title={service.name}
-        services={service.services}
+        service={service}
         returnRoute={{ path: '/services', name: 'All Services' }}
       />
     </Layout>
