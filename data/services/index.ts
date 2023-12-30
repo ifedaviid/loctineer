@@ -2,7 +2,7 @@ import * as strings from "data/strings";
 import { braidsAndTwistsServices } from "data/services/braids-and-twists";
 import { locs } from "data/services/locs";
 
-export const serviceTypes = [
+export const allServices = [
   {
     id: strings.LOCS_ID,
     name: strings.LOCS,
