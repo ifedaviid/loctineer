@@ -47,7 +47,7 @@ export interface Business {
   description: string;
   marketingCopy: string;
   cta: CallToAction;
-  featuredImage: AppImage;
+  heroImage: AppImage;
   logo: JSX.Element;
   services: Service[];
   calendlyLink?: string;
