@@ -9,11 +9,11 @@ export const business = {
     cta: {
         primary: {
             href: `/services`,
-            text: "See services",
+            text: "Our services",
         },
     },
-    featuredImage: {
-        path: require("data/images/locs.jpg"),
+    heroImage: {
+        path: require("data/images/braids-and-twists.jpg"),
         altText: "",
     },
     logo: LoctineerLogo,
