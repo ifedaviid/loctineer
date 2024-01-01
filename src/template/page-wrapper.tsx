@@ -15,7 +15,7 @@ const PageWrapper = ({ children }: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const showMobileMenu = (state) => setIsMobileMenuOpen(state);
   const currentYear = new Date().getFullYear();
-  const { name, description } = business;
+  const { name, description, facebookPageId } = business;
   return (
     <>
       <div className={styles.container}>
@@ -31,7 +31,7 @@ const PageWrapper = ({ children }: Props) => {
 
         <main>
           {children}
-          <FacebookMessengerChat />
+          <FacebookMessengerChat facebookPageId={facebookPageId} />
         </main>
 
         <footer className={styles.footer}>
