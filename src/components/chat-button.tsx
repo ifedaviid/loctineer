@@ -1,6 +1,7 @@
 import Script from "next/script";
 
-export const FacebookMessengerChat = () => {
+export const FacebookMessengerChat = ({ facebookPageId }) => {
+  if (!facebookPageId) return null;
   return (
     <div>
       <div id="fb-root"></div>
@@ -9,7 +10,7 @@ export const FacebookMessengerChat = () => {
       <Script strategy="lazyOnload">
         {`
             var chatbox = document.getElementById('fb-customer-chat');
-            chatbox.setAttribute("page_id", "1665091083765739");
+            chatbox.setAttribute("page_id", "${facebookPageId}");
             chatbox.setAttribute("attribution", "biz_inbox");
 
             window.fbAsyncInit = function() {

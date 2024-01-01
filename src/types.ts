@@ -1,10 +1,5 @@
 import { StaticImageData } from "next/image";
 
-export enum ServiceCategory {
-  INSTALLATION = "Installation",
-  MAINTENANCE = "Maintenance",
-}
-
 export interface AppImage {
   path: StaticImageData;
   altText: string;
@@ -18,25 +13,6 @@ export interface Action {
 export interface CallToAction {
   primary: Action;
   secondary?: Action;
-}
-
-export interface ServiceType {
-  id: string;
-  name: string;
-  description?: string;
-  cta: CallToAction;
-  image: AppImage;
-  services?: Array<Service>;
-}
-
-export interface ExtensionLength {
-  category: string;
-  image: AppImage;
-}
-
-export interface HairLength {
-  category: string;
-  image: AppImage;
 }
 
 export enum Rate {
@@ -63,4 +39,16 @@ export interface Service {
   price?: Price;
   prices?: Price[]
   calendlyEventLinkID?: string;
+}
+
+export interface Business {
+  id: string;
+  name: string;
+  description: string;
+  marketingCopy: string;
+  cta: CallToAction;
+  heroImage: AppImage;
+  logo: JSX.Element;
+  services: Service[];
+  calendlyLink?: string;
 }

@@ -1,16 +1,41 @@
 import React from "react";
+import { useRouter } from "next/router";
+import MuiButton from "@mui/material/Button";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Layout from "src/template/page-wrapper";
-import ServiceMenu from "src/components/service-menu";
-import { serviceTypes as allServices } from "data";
+import Listing from "src/components/listing";
+import { business } from "data";
 
 export default function ServicesPage() {
+  const router = useRouter();
+  const returnRoute = { path: "/", name: "Back to Home" }
   return (
     <Layout>
-      <ServiceMenu
-        title={"Our Services"}
-        services={allServices}
-        returnRoute={{ path: "/", name: "Back to Home" }}
-      />
+      <section style={{ padding: '3rem 5%' }}>
+        {returnRoute && (
+          <MuiButton
+            sx={{
+              textTransform: "none",
+              letterSpacing: "2px",
+              color: "lightgray",
+              justifyContent: "flex-start",
+              padding: "0.5rem",
+              fontFamily: "inherit",
+            }}
+            size="medium"
+            startIcon={<ChevronLeftIcon />}
+            onClick={() => router.push(returnRoute.path)}
+          >
+            {returnRoute.name}
+          </MuiButton>
+        )}
+        <h2>Services</h2>
+        <div className="services-content" style={{ paddingTop: '1rem' }}>
+          {business.services.map((option, idx) => (
+            <Listing key={idx} service={option} />
+          ))}
+        </div>
+      </section>
     </Layout>
   );
 }

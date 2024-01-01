@@ -13,25 +13,26 @@ interface Props {
   callToAction?: Function;
 }
 
-const Hero = () => {
+const Hero = ({ business }) => {
   const router = useRouter();
+  const { description, marketingCopy, cta, heroImage } = business;
   return (
     <header className={styles["heroImage"]}>
       <div>
-        <Image src={require("data/images/braids-and-twists.jpg")} alt="Main Image" layout="fill" />
+        <Image src={heroImage.path} alt={heroImage.altText} layout="fill" />
       </div>
       <div
         className={styles["content"]}
         style={{ opacity: "unset" }}
       >
-        <p>Locs & Braiding Specialist in Ottawa</p>
-        <h1>Creating your best Look</h1>
+        <p>{description}</p>
+        <h1>{marketingCopy}</h1>
         <Button
           variant="primary"
           size="large"
-          onClick={() => router.push("/services")}
+          onClick={() => router.push(cta?.primary?.href)}
         >
-          Our Services
+          {cta?.primary?.text}
         </Button>
       </div>
     </header>
