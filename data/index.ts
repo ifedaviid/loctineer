@@ -9,7 +9,7 @@ export const business = {
     cta: {
         primary: {
             href: `/services`,
-            text: "Our services",
+            text: "Our Services",
         },
     },
     heroImage: {
@@ -18,4 +18,5 @@ export const business = {
     },
     logo: LoctineerLogo,
     services: allServices,
+    facebookPageId: 1665091083765739
 }
