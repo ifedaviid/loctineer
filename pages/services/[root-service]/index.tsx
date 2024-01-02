@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import Layout from "src/template";
+import Layout from "src/layout";
 import Listing from "src/components/listing";
 import { getServiceById } from "src/helpers";
 import { Service } from "src/types";

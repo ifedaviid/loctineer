@@ -16,10 +16,6 @@
     scale: 1.5;
   }
 
-  >.navIcon {
-    display: none;
-  }
-
   >ul {
     display: flex;
     flex-direction: row;
@@ -33,6 +29,10 @@
       padding: 0 1rem;
       letter-spacing: 1px;
     }
+  }
+
+  >.navIcon {
+    display: none;
   }
 }
 
