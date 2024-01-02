@@ -4,6 +4,7 @@ import Button from "src/components/button";
 import styles from "src/components/hero.module.scss";
 import { AppImage } from "src/types";
 import { useRouter } from "next/router";
+import { business } from "data/index";
 
 interface Props {
   topText?: string;
@@ -13,7 +14,7 @@ interface Props {
   callToAction?: Function;
 }
 
-const Hero = ({ business }) => {
+const Hero = () => {
   const router = useRouter();
   const { description, marketingCopy, cta, heroImage } = business;
   return (
