@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import Drawer from "@mui/material/Drawer";
-import Menu from "src/template/menu-bar";
+import Menu from "src/template/menu-desktop";
 import MenuMobile from "src/template/menu-mobile";
 import { FacebookMessengerChat } from "src/components/chat-button";
 import styles from "src/template/index.module.scss";
