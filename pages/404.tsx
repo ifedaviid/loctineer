@@ -1,9 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import Button from "src/components/button";
-import Layout from "src/template/page-wrapper";
+import Layout from "src/template";
 
-export default function FourOhFour() {
+export default function ErrorPage() {
   return (
     <Layout>
       <section style={{ padding: '5rem 0' }}>

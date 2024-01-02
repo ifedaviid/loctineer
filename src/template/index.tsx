@@ -4,14 +4,14 @@ import Drawer from "@mui/material/Drawer";
 import Menu from "src/template/menu-bar";
 import MenuMobile from "src/template/menu-mobile";
 import { FacebookMessengerChat } from "src/components/chat-button";
-import styles from "src/template/page-wrapper.module.scss";
+import styles from "src/template/index.module.scss";
 import { business } from "data/index";
 
 interface Props {
   children: React.ReactNode;
 }
 
-const PageWrapper = ({ children }: Props) => {
+const Layout = ({ children }: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const showMobileMenu = (state) => setIsMobileMenuOpen(state);
   const currentYear = new Date().getFullYear();
@@ -61,4 +61,4 @@ const PageWrapper = ({ children }: Props) => {
   );
 };
 
-export default PageWrapper;
+export default Layout;
