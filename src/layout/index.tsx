@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import Drawer from "@mui/material/Drawer";
-import Menu from "src/template/menu-bar";
-import MenuMobile from "src/template/menu-mobile";
+import MenuDesktop from "src/layout/menu-desktop";
+import MenuMobile from "src/layout/menu-mobile";
 import { FacebookMessengerChat } from "src/components/chat-button";
-import styles from "src/template/page-wrapper.module.scss";
+import styles from "src/layout/index.module.scss";
 import { business } from "data/index";
 
 interface Props {
   children: React.ReactNode;
 }
 
-const PageWrapper = ({ children }: Props) => {
+const Layout = ({ children }: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const showMobileMenu = (state) => setIsMobileMenuOpen(state);
   const currentYear = new Date().getFullYear();
@@ -24,7 +23,7 @@ const PageWrapper = ({ children }: Props) => {
           <meta name="description" content={description} />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Menu
+        <MenuDesktop
           isMobileMenuOpen={isMobileMenuOpen}
           showMobileMenu={showMobileMenu}
         />
@@ -49,16 +48,10 @@ const PageWrapper = ({ children }: Props) => {
         </footer>
       </div>
       {isMobileMenuOpen && (
-        <Drawer
-          anchor="right"
-          open={isMobileMenuOpen}
-          onClose={() => showMobileMenu(false)}
-        >
-          <MenuMobile showMobileMenu={showMobileMenu} />
-        </Drawer>
+        <MenuMobile isMobileMenuOpen={isMobileMenuOpen} showMobileMenu={showMobileMenu} />
       )}
     </>
   );
 };
 
-export default PageWrapper;
+export default Layout;

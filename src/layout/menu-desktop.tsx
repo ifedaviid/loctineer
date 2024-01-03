@@ -2,10 +2,10 @@ import React from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import LoctineerLogo from "data/logo";
-import styles from "src/template/menu-bar.module.scss";
+import styles from "src/layout/menu-desktop.module.scss";
 import { menuOptions } from "./menu-options";
 
-const Menu = ({ isMobileMenuOpen, showMobileMenu }) => {
+const MenuDesktop = ({ isMobileMenuOpen, showMobileMenu }) => {
   return (
     <div className={styles.menuContainer}>
       <Link href="/">
@@ -13,12 +13,6 @@ const Menu = ({ isMobileMenuOpen, showMobileMenu }) => {
           <LoctineerLogo />
         </a>
       </Link>
-      <div className={styles.navIcon}>
-        <Hamburger
-          onToggle={() => showMobileMenu(true)}
-          toggled={isMobileMenuOpen}
-        />
-      </div>
       <ul>
         {menuOptions.map((menuOption, idx) => {
           if (!menuOption.disabled)
@@ -29,8 +23,14 @@ const Menu = ({ isMobileMenuOpen, showMobileMenu }) => {
             );
         })}
       </ul>
+      <div className={styles.navIcon}>
+        <Hamburger
+          onToggle={() => showMobileMenu(true)}
+          toggled={isMobileMenuOpen}
+        />
+      </div>
     </div >
   );
 };
 
-export default Menu;
+export default MenuDesktop;
