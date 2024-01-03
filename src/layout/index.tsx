@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import Drawer from "@mui/material/Drawer";
 import MenuDesktop from "src/layout/menu-desktop";
 import MenuMobile from "src/layout/menu-mobile";
 import { FacebookMessengerChat } from "src/components/chat-button";
@@ -49,13 +48,7 @@ const Layout = ({ children }: Props) => {
         </footer>
       </div>
       {isMobileMenuOpen && (
-        <Drawer
-          anchor="right"
-          open={isMobileMenuOpen}
-          onClose={() => showMobileMenu(false)}
-        >
-          <MenuMobile showMobileMenu={showMobileMenu} />
-        </Drawer>
+        <MenuMobile isMobileMenuOpen={isMobileMenuOpen} showMobileMenu={showMobileMenu} />
       )}
     </>
   );
