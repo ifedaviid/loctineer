@@ -1,4 +1,4 @@
-import { Analytics } from "@mui/icons-material";
+import { Analytics } from '@vercel/analytics/react';
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
