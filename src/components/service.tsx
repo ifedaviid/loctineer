@@ -53,13 +53,9 @@ const Service = ({
           <h3>{name}</h3>
           <p>{description}</p>
           {price && (
-            <div className={styles.iconInfoContainer}>
-              <div>
-                <div className={styles.priceInfoContainer}>
-                  <p style={{ fontSize: '2rem' }}>${price.value}</p>
-                  <span>per hour</span>
-                </div>
-              </div>
+            <div className={styles.priceInfoContainer}>
+              <p style={{ fontSize: '2rem', margin: '1rem 0' }}>${price.value}</p>
+              <span>per hour</span>
             </div>
           )}
           {prices && (
@@ -73,15 +69,23 @@ const Service = ({
               </ul>
             </>
           )}
-          {cta.primary && (
-            <Button
-              style={{ margin: '1rem 0' }}
-              variant="primary"
-              onClick={() => setIsBookingAppointment(true)}
-            >
-              Book Appointment
-            </Button>
-          )}
+          <div className={styles.buttonGroup}>
+            {cta.primary && (
+              <Button
+                variant="primary"
+                onClick={() => setIsBookingAppointment(true)}
+              >
+                Book Appointment
+              </Button>
+            )}
+            {prices && (
+              <Button
+                variant="secondary"
+              >
+                See Price List
+              </Button>
+            )}
+          </div>
         </div>
         <CustomImage image={featuredImage} roundEdged />
       </div>

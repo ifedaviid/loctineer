@@ -6,30 +6,6 @@
   grid-gap: 3rem;
   padding: 5%;
 
-  .iconInfoContainer {
-    display: block;
-    margin: 1rem 0;
-
-    // applies to every child
-    >* {
-      display: flex;
-      flex-direction: row;
-
-      p,
-      svg {
-        align-self: center;
-      }
-
-      p {
-        margin: 0.5rem;
-      }
-
-      svg {
-        margin: 0 1rem 0 0;
-      }
-    }
-  }
-
   .priceInfoContainer {
     display: flex;
     flex-direction: row;
@@ -51,19 +27,9 @@
     }
   }
 
-  .alertInfoContainer {
-    background-color: rgb(80, 79, 79);
-    color: lightgray;
-    border: 0.1px solid lightgray;
-    width: fit-content;
-
-    a {
-      text-decoration: underline;
-    }
-
-    a,
-    svg {
-      color: lightgray;
+  .buttonGroup {
+    >* {
+      margin-right: 1rem;
     }
   }
 }
@@ -76,12 +42,14 @@
     button {
       width: 100%;
     }
+  }
 
-    .iconInfoContainer {
-      svg {
-        margin: 0 1rem 0 0;
-        align-self: center;
-      }
+  .buttonGroup {
+    display: flex;
+    flex-direction: column;
+
+    >* {
+      margin: 0.5rem 0;
     }
   }
 }
