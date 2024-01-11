@@ -54,7 +54,7 @@ const Service = ({
           <p>{description}</p>
           {price && (
             <div className={styles.priceInfoContainer}>
-              <p style={{ fontSize: '2rem', margin: '1rem 0' }}>${price.value}</p>
+              <p>${price.value}</p>
               <span>per hour</span>
             </div>
           )}
@@ -79,9 +79,7 @@ const Service = ({
               </Button>
             )}
             {prices && (
-              <Button
-                variant="secondary"
-              >
+              <Button variant="secondary">
                 See Price List
               </Button>
             )}

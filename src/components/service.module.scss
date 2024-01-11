@@ -9,11 +9,13 @@
   .priceInfoContainer {
     display: flex;
     flex-direction: row;
+    margin-bottom: 1rem;
 
     >p {
-      font-size: 1.1rem;
+      font-size: 2rem;
       font-weight: bolder;
       letter-spacing: 3px;
+      margin: 1rem 0;
     }
 
     >span {
@@ -24,6 +26,7 @@
       font-size: 0.8rem;
       font-weight: bolder;
       align-self: center;
+      margin: 0 0.5rem;
     }
   }
 
