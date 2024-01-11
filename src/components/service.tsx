@@ -38,7 +38,7 @@ const Service = ({
         <ul style={{ padding: '0 0 0 1rem', alignItems: 'center', margin: 'unset' }}>
           {prices.map((price, idx) => (
             <li key={idx} style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <p>{price.name} (<small>starts at</small> ${price.value}) </p>
+              <p>{price.name} (starts at ${price.value}) </p>
             </li>
           ))}
         </ul>
