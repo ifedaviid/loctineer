@@ -1,6 +1,6 @@
-import { Rate } from "src/types";
+import { PriceType } from "src/types";
 import * as strings from "data/strings";
-const { MINIMUM } = Rate;
+const { STARTING } = PriceType;
 
 export const braidsAndTwistsServices = [
   {
@@ -22,12 +22,13 @@ export const braidsAndTwistsServices = [
       path: require("data/images/locs.jpg"),
       altText: "",
     },
+    price: { value: 100, type: STARTING },
     prices: [
-      { name: 'Shoulder length', value: 100, rate: MINIMUM },
-      { name: 'Mid-back length', value: 120, rate: MINIMUM },
-      { name: 'Waist length', value: 140, rate: MINIMUM },
-      { name: 'Butt length', value: 180, rate: MINIMUM },
-      { name: 'Knee length', value: 200, rate: MINIMUM }
+      { name: 'Shoulder length', value: 100, type: STARTING },
+      { name: 'Mid-back length', value: 120, type: STARTING },
+      { name: 'Waist length', value: 140, type: STARTING },
+      { name: 'Butt length', value: 180, type: STARTING },
+      { name: 'Knee length', value: 200, type: STARTING }
     ],
     calendlyEventLinkID: "box-braids-and-twists",
   },
@@ -50,12 +51,13 @@ export const braidsAndTwistsServices = [
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     }],
+    price: { value: 110, type: STARTING },
     prices: [
-      { name: 'Shoulder length', value: 110, rate: MINIMUM },
-      { name: 'Mid-back length', value: 130, rate: MINIMUM },
-      { name: 'Waist length', value: 150, rate: MINIMUM },
-      { name: 'Butt length', value: 190, rate: MINIMUM },
-      { name: 'Knee length', value: 210, rate: MINIMUM }
+      { name: 'Shoulder length', value: 110, type: STARTING },
+      { name: 'Mid-back length', value: 130, type: STARTING },
+      { name: 'Waist length', value: 150, type: STARTING },
+      { name: 'Butt length', value: 190, type: STARTING },
+      { name: 'Knee length', value: 210, type: STARTING }
     ],
     calendlyEventLinkID: "kinky-passion-twists",
   },
@@ -78,7 +80,8 @@ export const braidsAndTwistsServices = [
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     }],
-    prices: [{ name: 'Shoulder length', value: 120, rate: MINIMUM }, { name: 'Mid-back length', value: 140, rate: MINIMUM }, { name: 'Waist length', value: 160, rate: MINIMUM }],
+    price: { value: 120, type: STARTING },
+    prices: [{ name: 'Shoulder length', value: 120, type: STARTING }, { name: 'Mid-back length', value: 140, type: STARTING }, { name: 'Waist length', value: 160, type: STARTING }],
     calendlyEventLinkID: "knotless-braids",
   },
 ];
