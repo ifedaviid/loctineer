@@ -1,7 +1,6 @@
 import Script from "next/script";
 
 export const FacebookMessengerChat = ({ facebookPageId }) => {
-  console.log(facebookPageId);
   if (!facebookPageId) return null;
   return (
     <div>
