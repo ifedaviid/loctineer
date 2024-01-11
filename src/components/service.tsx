@@ -4,6 +4,7 @@ import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "src/components/button";
 import CustomImage from "src/components/custom-image";
+import Price from "src/components/price";
 import { Service } from "src/types";
 import styles from "./service.module.scss";
 import ImageCarousel from "src/components/image-carousel";
@@ -30,6 +31,30 @@ const Service = ({
   };
   const [, setPopUp] = useState(initialPopUpState);
   const [isBookingAppointment, setIsBookingAppointment] = useState(false);
+  const showPrices = () => {
+    if (price) return <Price price={price} />;
+    if (prices?.length < 4) {
+      return (
+        <ul style={{ padding: '0 0 0 1rem', alignItems: 'center', margin: 'unset' }}>
+          {prices.map((price, idx) => (
+            <li key={idx} style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <p>{price.name} (<small>starts at</small> ${price.value}) </p>
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return null;
+  }
+  const showPriceListButton = () => {
+    if (prices?.length >= 4 || (price && prices)) {
+      return (
+        <Button variant="secondary">
+          See Price List
+        </Button>
+      );
+    }
+  }
 
   return (
     <section>
@@ -52,23 +77,9 @@ const Service = ({
           </MuiButton>
           <h3>{name}</h3>
           <p>{description}</p>
-          {price && (
-            <div className={styles.priceInfoContainer}>
-              <p>${price.value}</p>
-              <span>per hour</span>
-            </div>
-          )}
-          {prices && (
-            <>
-              <ul style={{ padding: '0 0 0 1rem', alignItems: 'center', margin: 'unset' }}>
-                {prices.map((price, idx) => (
-                  <li key={idx} style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <p>{price.name} (<small>starts at</small> ${price.value}) </p>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
+          <div className={styles.priceInfoContainer}>
+            {showPrices()}
+          </div>
           <div className={styles.buttonGroup}>
             {cta.primary && (
               <Button
@@ -78,11 +89,7 @@ const Service = ({
                 Book Appointment
               </Button>
             )}
-            {prices && (
-              <Button variant="secondary">
-                See Price List
-              </Button>
-            )}
+            {showPriceListButton()}
           </div>
         </div>
         <CustomImage image={featuredImage} roundEdged />
