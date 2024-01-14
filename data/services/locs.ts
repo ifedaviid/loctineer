@@ -1,6 +1,6 @@
 import * as strings from "data/strings";
-import { Rate } from "src/types";
-const { HOURLY, MINIMUM } = Rate;
+import { PriceType } from "src/types";
+const { HOURLY, STARTING } = PriceType;
 
 export const locs = [
   {
@@ -24,7 +24,7 @@ export const locs = [
         altText: "",
       }
     ],
-    price: { value: 50, rate: HOURLY, },
+    price: { value: 50, type: HOURLY },
     calendlyEventLinkID: "instant-locs",
   },
   {
@@ -48,7 +48,7 @@ export const locs = [
         altText: "",
       },
     ],
-    price: { value: 50, rate: HOURLY },
+    price: { value: 50, type: HOURLY },
     calendlyEventLinkID: "two-strand-twists",
   },
   {
@@ -72,7 +72,7 @@ export const locs = [
         altText: "",
       },
     ],
-    price: { value: 50, rate: HOURLY, },
+    price: { value: 50, type: HOURLY, },
     calendlyEventLinkID: "sister-locs",
   },
   {
@@ -94,7 +94,7 @@ export const locs = [
       path: require("data/images/locs.jpg"),
       altText: "",
     }],
-    price: { value: 50, rate: HOURLY, },
+    price: { value: 50, type: HOURLY, },
     calendlyEventLinkID: "micro-locs",
   },
   {
@@ -116,7 +116,7 @@ export const locs = [
       path: require("data/images/locs.jpg"),
       altText: "",
     }],
-    price: { value: 50, rate: HOURLY },
+    price: { value: 50, type: HOURLY },
     calendlyEventLinkID: "wicks"
   },
   {
@@ -138,7 +138,7 @@ export const locs = [
       path: require("data/images/locs.jpg"),
       altText: "",
     }],
-    prices: [{ name: 'Shoulder length', value: 120, rate: MINIMUM }, { name: 'Mid-back length', value: 140, rate: MINIMUM }, { name: 'Waist length', value: 160, rate: MINIMUM }],
+    prices: [{ name: 'Shoulder length', value: 120, type: STARTING }, { name: 'Mid-back length', value: 140, type: STARTING }, { name: 'Waist length', value: 160, type: STARTING }],
     calendlyEventLinkID: "faux-locs"
   },
   {
@@ -160,7 +160,7 @@ export const locs = [
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     }],
-    prices: [{ name: 'Shoulder length', value: 130, rate: MINIMUM }, { name: 'Mid-back length', value: 150, rate: MINIMUM }, { name: 'Waist length', value: 180, rate: MINIMUM }],
+    prices: [{ name: 'Shoulder length', value: 130, type: STARTING }, { name: 'Mid-back length', value: 150, type: STARTING }, { name: 'Waist length', value: 180, type: STARTING }],
     calendlyEventLinkID: "soft-locs"
   },
   {
@@ -182,7 +182,7 @@ export const locs = [
       path: require("data/images/braids-and-twists.jpg"),
       altText: "",
     }],
-    prices: [{ name: 'Shoulder length', value: 130, rate: MINIMUM }, { name: 'Mid-back length', value: 150, rate: MINIMUM }, { name: 'Waist length', value: 180, rate: MINIMUM }],
+    prices: [{ name: 'Shoulder length', value: 130, type: STARTING }, { name: 'Mid-back length', value: 150, type: STARTING }, { name: 'Waist length', value: 180, type: STARTING }],
     calendlyEventLinkID: "butterfly-distressed-locs"
   },
   {
@@ -204,7 +204,7 @@ export const locs = [
       path: require("data/images/locs.jpg"),
       altText: "",
     }],
-    price: { value: 50, rate: HOURLY, },
+    price: { value: 50, type: HOURLY, },
     calendlyEventLinkID: "loc-repair"
   },
   {
@@ -226,7 +226,7 @@ export const locs = [
       path: require("data/images/locs.jpg"),
       altText: "",
     }],
-    price: { value: 50, rate: HOURLY, },
+    price: { value: 50, type: HOURLY },
     calendlyEventLinkID: "loc-retwist"
   },
 ];

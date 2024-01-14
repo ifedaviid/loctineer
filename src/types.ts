@@ -15,17 +15,15 @@ export interface CallToAction {
   secondary?: Action;
 }
 
-export enum Rate {
-  HOURLY = "hourly", // $$$ per hour
-  FIXED = "fixed", // $$$
-  MINIMUM = "minimum", // $$$ minimum
-  MAXIMUM = "maximum", // $$$ maximum
+export enum PriceType {
+  HOURLY = "hourly",
+  STARTING = "starting"
 }
 
 export interface Price {
-  name?: string;
   value: number;
-  rate: Rate;
+  type: PriceType;
+  name?: string;
 }
 
 export interface Service {
