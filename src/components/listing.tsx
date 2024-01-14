@@ -26,7 +26,7 @@ const Listing = ({ service }: Props) => {
         <h3>{name}</h3>
         <p>{description}</p>
         {cta.primary && (
-          <Link href={cta.primary.href}>
+          <Link href={cta.primary.href} legacyBehavior>
             <Button variant="primary">{cta.primary.text}</Button>
           </Link>
         )}

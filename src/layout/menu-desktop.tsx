@@ -9,16 +9,16 @@ const MenuDesktop = ({ isMobileMenuOpen, showMobileMenu }) => {
   return (
     <div className={styles.menuContainer}>
       <Link href="/">
-        <a>
-          <LoctineerLogo />
-        </a>
+
+        <LoctineerLogo />
+
       </Link>
       <ul>
         {menuOptions.map((menuOption, idx) => {
           if (!menuOption.disabled)
             return (
               <li key={idx}>
-                <Link href={menuOption.url}>{menuOption.name}</Link>
+                <Link href={menuOption.url} legacyBehavior>{menuOption.name}</Link>
               </li>
             );
         })}

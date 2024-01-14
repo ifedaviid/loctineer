@@ -11,7 +11,7 @@ export default function ErrorPage() {
         <h1 style={{ marginBottom: 'unset' }}>We don&apos;t have this page</h1>
         <br />
         <p style={{ marginTop: 'unset' }}>Your URL is probably invalid. Make sure you have the correct one.</p>
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <Button variant="primary">Return home</Button>
         </Link>
       </section>
