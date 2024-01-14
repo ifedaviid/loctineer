@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import Button from "src/components/button";
 import styles from "src/components/listing.module.scss";
@@ -26,7 +26,7 @@ const Listing = ({ service }: Props) => {
         <h3>{name}</h3>
         <p>{description}</p>
         {cta.primary && (
-          <Link href={cta.primary.href}>
+          <Link href={cta.primary.href} legacyBehavior>
             <Button variant="primary">{cta.primary.text}</Button>
           </Link>
         )}

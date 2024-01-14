@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Button from "src/components/button";
 import styles from "src/components/hero.module.scss";
 import { AppImage } from "src/types";
