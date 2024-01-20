@@ -21,10 +21,11 @@
     color: lightgray;
     width: 50%;
     border-radius: 1rem;
-    padding: 2rem;
+    padding-top: 1.5rem;
     overflow-y: scroll;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
       rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border: 1px solid #444444;
 
     h2 {
       color: $dark-text;
@@ -32,18 +33,15 @@
       margin-top: unset;
       letter-spacing: unset;
       background: #302f2f;
+      padding: 0 1.5rem;
     }
 
     ul {
       padding: 0;
 
       >* {
-        padding: 1rem 0;
+        padding: 1rem 1.5rem;
         border-top: 0.5px solid #444444;
-      }
-
-      > :last-child {
-        border-bottom: 0.5px solid #444444;
       }
 
       >li {
@@ -80,7 +78,6 @@
   .modalOverlay {
     >.modalContainer {
       width: 95%;
-      padding: 2rem;
       margin: 0 2rem;
 
       ul {
