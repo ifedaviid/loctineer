@@ -11,9 +11,11 @@ body {
   font-family: "DM Sans", serif;
 }
 
+h1,
 h2,
 h3 {
-  letter-spacing: 2.5px;
+  letter-spacing: 2px;
+  color: $dark-text;
 }
 
 h2 {
