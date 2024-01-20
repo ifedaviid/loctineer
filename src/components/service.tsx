@@ -9,6 +9,7 @@ import { Service } from "src/types";
 import styles from "./service.module.scss";
 import ImageCarousel from "src/components/image-carousel";
 import { PopupModal } from "react-calendly";
+import PriceList from "src/components/price-list";
 
 interface Props {
   service: Service;
@@ -23,6 +24,7 @@ const Service = ({
   returnRoute
 }: Props) => {
   const router = useRouter();
+  const [showPriceListModal, setShowPriceListModal] = useState(false)
   const { name, description, featuredImage, images, cta, price, prices } = service;
   const showImages = images && images.length >= 5;
   const initialPopUpState = {
@@ -49,7 +51,7 @@ const Service = ({
   const showPriceListButton = () => {
     if (prices?.length >= 4 || (price && prices)) {
       return (
-        <Button variant="secondary">
+        <Button variant="secondary" onClick={() => setShowPriceListModal(true)}>
           See Price List
         </Button>
       );
@@ -108,6 +110,9 @@ const Service = ({
           }}
           rootElement={typeof window !== "undefined" ? document.getElementById("__next") : null}
         />
+      )}
+      {(prices && showPriceListModal) && (
+        <PriceList open={showPriceListModal} onClose={setShowPriceListModal} prices={prices} serviceName={name} />
       )}
     </section>
   );

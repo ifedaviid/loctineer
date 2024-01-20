@@ -1,0 +1,98 @@
+@import "src/common.scss";
+
+// The dark transparent overlay behind the modal
+.modalOverlay {
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 3rem 2rem;
+
+
+  >.modalContainer {
+    background: #302f2f;
+    color: lightgray;
+    width: 50%;
+    border-radius: 1rem;
+    padding: 2rem;
+    overflow-y: scroll;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+    h2 {
+      color: $dark-text;
+      font-size: x-large;
+      margin-top: unset;
+      letter-spacing: unset;
+      background: #302f2f;
+    }
+
+    ul {
+      padding: 0;
+
+      >* {
+        padding: 1rem 0;
+        border-top: 0.5px solid #444444;
+      }
+
+      > :last-child {
+        border-bottom: 0.5px solid #444444;
+      }
+
+      >li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style-type: circle;
+
+        >p {
+          margin: unset;
+        }
+
+        >small {
+          color: $dark-text;
+          align-self: center;
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+
+  >.closeIcon {
+    position: fixed;
+    top: 4%;
+    right: 5%;
+    transition: right 0.5s ease-out;
+    z-index: 1;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: $md-screens) {
+  .modalOverlay {
+    >.modalContainer {
+      width: 95%;
+      padding: 2rem;
+      margin: 0 2rem;
+
+      ul {
+        padding: 0;
+
+        >li {
+          display: block;
+
+          >p {
+            margin-bottom: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+}
