@@ -29,7 +29,7 @@ const PriceList = ({ open, onClose, prices, serviceName }: ModalProps) => {
                     </div>
                 )}
                 <div className={styles.modalContainer}>
-                    <h2>Prices - {serviceName} </h2>
+                    <h2>Prices for {serviceName} </h2>
                     <ul>
                         {prices.map((price, idx) => (
                             <li key={idx}>

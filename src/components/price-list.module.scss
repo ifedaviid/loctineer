@@ -28,7 +28,7 @@
 
     h2 {
       color: $dark-text;
-      font-size: x-large;
+      font-size: large;
       margin-top: unset;
       letter-spacing: unset;
       background: #302f2f;
@@ -54,6 +54,7 @@
 
         >p {
           margin: unset;
+          font-size: small;
         }
 
         >small {
