@@ -219,12 +219,12 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/locs.jpg"),
-      altText: "",
+      path: require("data/images/loc-retwist.jpeg"),
+      altText: "Example of a loc retwist style.",
     },
     images: [{
-      path: require("data/images/locs.jpg"),
-      altText: "",
+      path: require("data/images/loc-retwist.jpeg"),
+      altText: "Example of a loc retwist style.",
     }],
     price: { value: 50, type: HOURLY },
     calendlyEventLinkID: "loc-retwist"
