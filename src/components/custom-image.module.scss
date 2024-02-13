@@ -1,36 +1,21 @@
 @import "src/common.scss";
+/* Obtained from https://codepen.io/melissamyra/pen/abOZrWP */
 
 .custom-image {
-  font-size: 0;
   display: flex;
-  height: 100%;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 3px solid #444444;
+  object-fit: contain;
+  height: 30rem;
+}
 
-  img {
-    align-self: center;
-    object-fit: cover;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
-
-  >span {
-    width: 100%;
-    min-height: 20rem;
-  }
-
-  &.rounded {
-    >span {
-      border: 3px solid #757575 !important;
-      border-radius: 1rem;
-    }
-  }
-
-  &.darken {
-    img {
-      filter: brightness(40%);
-    }
+@media screen and (max-width: $lg-screens) {
+  .custom-image {
+    height: 100%;
   }
 }

@@ -1,25 +1,24 @@
 import React from "react";
 import Image from "next/legacy/image";
 import { AppImage } from "src/types";
-import classNames from "classnames";
+import Link from "next/link";
 import styles from "src/components/custom-image.module.scss";
 
 interface Props {
   image: AppImage;
-  roundEdged?: boolean;
-  darken?: boolean;
 }
 
-const CustomImage = ({ image, roundEdged, darken }: Props) => {
+const CustomImage = ({ image }: Props) => {
   const { path, altText } = image;
   return (
-    <div
-      className={classNames(styles["custom-image"], {
-        [styles.rounded]: roundEdged,
-        [styles.darken]: darken,
-      })}
-    >
-      <Image src={path} alt={altText} placeholder="blur" />
+
+    <div className={styles['custom-image']}>
+      <Image
+        src={path} alt={altText} placeholder="blur"
+        loading="lazy"
+        objectFit="cover"
+        className=""
+      />
     </div>
   );
 };
