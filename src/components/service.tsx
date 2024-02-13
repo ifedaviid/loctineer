@@ -94,7 +94,7 @@ const Service = ({
             {showPriceListButton()}
           </div>
         </div>
-        <CustomImage image={featuredImage} roundEdged />
+        <CustomImage image={featuredImage} />
       </div>
       {showImages ? <ImageCarousel setPopUp={setPopUp} images={images} /> : null}
       {typeof window !== 'undefined' && (
