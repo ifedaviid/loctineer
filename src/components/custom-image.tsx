@@ -14,10 +14,11 @@ const CustomImage = ({ image }: Props) => {
 
     <div className={styles['custom-image']}>
       <Image
-        src={path} alt={altText} placeholder="blur"
+        src={path}
+        alt={altText}
+        placeholder="blur"
         loading="lazy"
         objectFit="cover"
-        className=""
       />
     </div>
   );
