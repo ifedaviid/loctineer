@@ -11,14 +11,13 @@ interface Props {
 const CustomImage = ({ image }: Props) => {
   const { path, altText } = image;
   return (
-
     <div className={styles['custom-image']}>
       <Image
         src={path}
         alt={altText}
         placeholder="blur"
         loading="lazy"
-        objectFit="cover"
+      // objectFit="cover"
       />
     </div>
   );
