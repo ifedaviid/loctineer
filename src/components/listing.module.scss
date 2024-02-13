@@ -45,7 +45,7 @@
   border: 3px solid $dark-text;
 }
 
-@media screen and (max-width: $lg-screens) {
+@media (max-width: $lg-screens) {
   .listing {
     height: 15rem;
   }

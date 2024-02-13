@@ -14,7 +14,7 @@
   height: 35rem;
 }
 
-@media screen and (max-width: $lg-screens) {
+@media (max-width: $lg-screens) {
   .custom-image {
     height: 100%;
   }
