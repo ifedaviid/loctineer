@@ -15,11 +15,11 @@ export const braidsAndTwistsServices = [
       },
     },
     images: [{
-      path: require("data/images/braids-and-twists.jpg"),
+      path: require("data/images/box-braids.jpeg"),
       altText: "",
     }],
     featuredImage: {
-      path: require("data/images/locs.jpg"),
+      path: require("data/images/box-braids.jpeg"),
       altText: "",
     },
     price: { value: 100, type: STARTING },

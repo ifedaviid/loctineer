@@ -30,7 +30,7 @@ export default function ServicesPage() {
           </MuiButton>
         )}
         <h2>Services</h2>
-        <div className="services-content" style={{ paddingTop: '1rem' }}>
+        <div className="services-content">
           {business.services.map((option, idx) => (
             <Listing key={idx} service={option} />
           ))}

@@ -5,6 +5,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 3rem;
   padding: 5%;
+  overflow: scroll;
 
   .priceInfoContainer {
     display: flex;

@@ -35,7 +35,6 @@ header.heroImage {
     align-self: center;
     color: white;
     max-width: 70%;
-    padding: 5%;
 
     h1 {
       font-size: 3rem;
@@ -59,7 +58,6 @@ header.heroImage {
 @media (max-width: $lg-screens) {
   header.heroImage {
     >.content {
-      padding: 10%;
       max-width: 80%;
 
       h1 {

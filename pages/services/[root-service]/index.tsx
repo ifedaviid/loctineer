@@ -37,7 +37,7 @@ export default function RootServicesPage({
         )}
         <h2>{name}</h2>
         <p>{description}</p>
-        <div className="services-content" style={{ paddingTop: '1rem' }}>
+        <div className="services-content">
           {services.map((option, idx) => (
             <Listing key={idx} service={option} />
           ))}
