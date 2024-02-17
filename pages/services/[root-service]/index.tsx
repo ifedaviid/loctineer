@@ -2,10 +2,10 @@ import React from "react";
 import { useRouter } from "next/router";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import Layout from "src/components/layout";
-import Listing from "src/components/listing";
-import { getServiceById } from "src/helpers";
-import { Service } from "src/types";
+import Layout from "components/layout";
+import Listing from "components/listing";
+import { getServiceById } from "helpers";
+import { Service } from "types";
 import { LOCS_ID, BRAIDS_AND_TWISTS_ID } from "data/strings";
 
 export default function RootServicesPage({

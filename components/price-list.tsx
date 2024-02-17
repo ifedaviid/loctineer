@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Close } from "@mui/icons-material";
 import Modal from "@mui/material/Modal";
-import { Price } from 'src/types';
+import { Price } from 'types';
 
 interface ModalProps {
     open: boolean;

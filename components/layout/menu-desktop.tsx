@@ -2,7 +2,7 @@ import React from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import LoctineerLogo from "data/logo";
-import styles from "src/components/layout/menu-desktop.module.scss";
+import styles from "components/layout/menu-desktop.module.scss";
 import { menuOptions } from "./menu-options";
 
 const MenuDesktop = ({ isMobileMenuOpen, showMobileMenu }) => {

@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import Button from "src/components/button";
-import CustomImage from "src/components/custom-image";
-import Price from "src/components/price";
-import { Service } from "src/types";
+import Button from "components/button";
+import CustomImage from "components/custom-image";
+import Price from "components/price";
+import { Service } from "types";
 import styles from "./service.module.scss";
-import ImageCarousel from "src/components/image-carousel";
+import ImageCarousel from "components/image-carousel";
 import { PopupModal } from "react-calendly";
-import PriceList from "src/components/price-list";
+import PriceList from "components/price-list";
 
 interface Props {
   service: Service;

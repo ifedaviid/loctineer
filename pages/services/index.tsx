@@ -2,8 +2,8 @@ import React from "react";
 import { useRouter } from "next/router";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import Layout from "src/components/layout";
-import Listing from "src/components/listing";
+import Layout from "components/layout";
+import Listing from "components/listing";
 import { business } from "data";
 
 export default function ServicesPage() {

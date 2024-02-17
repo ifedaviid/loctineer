@@ -1,5 +1,5 @@
 import * as strings from "data/strings";
-import { PriceType } from "src/types";
+import { PriceType } from "types";
 const { HOURLY, STARTING } = PriceType;
 
 export const locs = [

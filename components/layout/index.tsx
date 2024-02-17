@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import MenuDesktop from "src/components/layout/menu-desktop";
-import MenuMobile from "src/components/layout/menu-mobile";
-import { FacebookMessengerChat } from "src/components/chat-button";
-import styles from "src/components/layout/index.module.scss";
+import MenuDesktop from "components/layout/menu-desktop";
+import MenuMobile from "components/layout/menu-mobile";
+import { FacebookMessengerChat } from "components/chat-button";
+import styles from "components/layout/index.module.scss";
 import { business } from "data/index";
 
 interface Props {

@@ -1,4 +1,4 @@
-@import "src/common.scss";
+@import "/common.scss";
 // @import "swiper/swiper.min.css";
 // @import "swiper/css/pagination";
 // @import "swiper/css/free-mode";
@@ -149,12 +149,3 @@ section {
     }
   }
 }
-
-// @media (prefers-color-scheme: dark) {
-//   html {
-//     color-scheme: dark;
-//   }
-//   body {
-//     color: $writing-color;
-//   }
-// }

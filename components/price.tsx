@@ -1,5 +1,5 @@
 import React from 'react'
-import { Price, PriceType } from 'src/types'
+import { Price, PriceType } from 'types'
 
 interface Props {
     price: Price

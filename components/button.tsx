@@ -1,12 +1,11 @@
 import React from "react";
-import styles from "src/components/button.module.scss";
+import styles from "components/button.module.scss";
 
 const Button = ({ children, variant, disabled = false, ...rest }) => {
   return (
     <button
-      className={` ${styles["default"]} ${styles[variant]} ${
-        disabled ? styles["disabled"] : ""
-      }`}
+      className={` ${styles["default"]} ${styles[variant]} ${disabled ? styles["disabled"] : ""
+        }`}
       {...rest}
       disabled={disabled}
     >

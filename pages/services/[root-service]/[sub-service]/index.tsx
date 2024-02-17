@@ -1,7 +1,7 @@
 import React from "react";
-import Layout from "src/components/layout";
-import ServiceComponent from "src/components/service";
-import { Service } from "src/types";
+import Layout from "components/layout";
+import ServiceComponent from "components/service";
+import { Service } from "types";
 import {
   INSTANT_LOCS_ID,
   TWO_STRAND_STARTER_LOCS_ID,
@@ -19,7 +19,7 @@ import {
   KINKY_PASSION_TWISTS_ID,
   KNOTLESS_BRAIDS_ID,
 } from "data/strings";
-import { getServiceById } from "src/helpers";
+import { getServiceById } from "helpers";
 
 interface Props {
   service: string;

@@ -1,8 +1,8 @@
 import React, { SetStateAction } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper";
-import CustomImage from "src/components/custom-image";
-import { AppImage } from "src/types";
+import CustomImage from "components/custom-image";
+import { AppImage } from "types";
 import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";

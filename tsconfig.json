@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -16,9 +20,15 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "src/*": ["src/*"],
-      "types/*": ["src/types/*"],
-      "data/*": ["data/*"]
+      "components/*": [
+        "components/*"
+      ],
+      "types/*": [
+        "types/*"
+      ],
+      "data/*": [
+        "data/*"
+      ]
     }
   },
   "include": [
@@ -27,5 +37,7 @@
     "**/*.tsx",
     "data/services/natural-hair-locking.js"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

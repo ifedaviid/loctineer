@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/legacy/image";
 import Link from "next/link";
-import styles from "src/components/listing.module.scss";
-import { Service } from "src/types";
+import styles from "components/listing.module.scss";
+import { Service } from "types";
 
 interface Props {
   service: Service;

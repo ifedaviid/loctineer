@@ -1,4 +1,4 @@
-import { PriceType } from "src/types";
+import { PriceType } from "types";
 import * as strings from "data/strings";
 const { STARTING } = PriceType;
 

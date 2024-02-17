@@ -7,7 +7,7 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import { menuOptions } from "src/components/layout/menu-options";
+import { menuOptions } from "components/layout/menu-options";
 import LoctineerLogo from "data/logo";
 
 const MobileMenu = ({ isMobileMenuOpen, showMobileMenu }) => {
