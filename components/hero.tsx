@@ -4,7 +4,7 @@ import Button from "components/button";
 import styles from "components/hero.module.scss";
 import { AppImage } from "types";
 import { useRouter } from "next/router";
-import { business } from "data/index";
+import { business } from "data/loctineer/index";
 
 interface Props {
   topText?: string;

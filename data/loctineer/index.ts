@@ -13,7 +13,7 @@ export const business = {
         },
     },
     heroImage: {
-        path: require("data/images/braids-and-twists.jpg"),
+        path: require("data/loctineer/images/braids-and-twists.jpg"),
         altText: "",
     },
     logo: LoctineerLogo,

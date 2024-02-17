@@ -4,7 +4,7 @@ import MenuDesktop from "components/layout/menu-desktop";
 import MenuMobile from "components/layout/menu-mobile";
 import { FacebookMessengerChat } from "components/chat-button";
 import styles from "components/layout/index.module.scss";
-import { business } from "data/index";
+import { business } from "data/loctineer/index";
 
 interface Props {
   children: React.ReactNode;

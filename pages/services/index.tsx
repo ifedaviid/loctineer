@@ -4,7 +4,7 @@ import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Layout from "components/layout";
 import Listing from "components/listing";
-import { business } from "data";
+import { business } from "data/loctineer";
 
 export default function ServicesPage() {
   const router = useRouter();
