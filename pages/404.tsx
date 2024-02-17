@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/legacy/image";
 import Button from "src/components/button";
-import Layout from "src/layout";
+import Layout from "src/components/layout";
 
 export default function ErrorPage() {
   return (

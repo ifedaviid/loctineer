@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import Layout from "src/layout";
+import Layout from "src/components/layout";
 import Listing from "src/components/listing";
 import { business } from "data";
 
