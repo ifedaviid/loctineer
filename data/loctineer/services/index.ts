@@ -1,4 +1,4 @@
-import * as strings from "data/strings";
+import * as strings from "data/loctineer/strings";
 import { braidsAndTwistsServices } from "data/loctineer/services/braids-and-twists";
 import { locs } from "data/loctineer/services/locs";
 

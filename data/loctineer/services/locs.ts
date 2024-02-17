@@ -1,4 +1,4 @@
-import * as strings from "data/strings";
+import * as strings from "data/loctineer/strings";
 import { PriceType } from "types";
 const { HOURLY, STARTING } = PriceType;
 

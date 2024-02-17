@@ -1,5 +1,5 @@
 import { PriceType } from "types";
-import * as strings from "data/strings";
+import * as strings from "data/loctineer/strings";
 const { STARTING } = PriceType;
 
 export const braidsAndTwistsServices = [

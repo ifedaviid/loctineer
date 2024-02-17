@@ -18,7 +18,7 @@ import {
   BOX_BRAIDS_AND_TWISTS_ID,
   KINKY_PASSION_TWISTS_ID,
   KNOTLESS_BRAIDS_ID,
-} from "data/strings";
+} from "data/loctineer/strings";
 import { getServiceById } from "helpers";
 
 interface Props {
