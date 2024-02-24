@@ -6,7 +6,7 @@ import Layout from "components/layout";
 import Listing from "components/listing";
 import { getServiceById } from "helpers";
 import { Service } from "types";
-import { LOCS_ID, BRAIDS_AND_TWISTS_ID } from "data/strings";
+import { LOCS_ID, BRAIDS_AND_TWISTS_ID } from "data/loctineer/strings";
 
 export default function RootServicesPage({
   service: stringifiedServiceObj,

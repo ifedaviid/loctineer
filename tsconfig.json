@@ -35,7 +35,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "data/services/natural-hair-locking.js"
+    "data/loctineer/services/natural-hair-locking.js"
   ],
   "exclude": [
     "node_modules"

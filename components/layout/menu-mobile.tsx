@@ -8,7 +8,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import { menuOptions } from "components/layout/menu-options";
-import LoctineerLogo from "data/logo";
+import LoctineerLogo from "data/loctineer/logo";
 
 const MobileMenu = ({ isMobileMenuOpen, showMobileMenu }) => {
   const router = useRouter();

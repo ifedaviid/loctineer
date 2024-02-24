@@ -1,4 +1,4 @@
-import { business } from "data/index";
+import { business } from "data/loctineer/index";
 
 export function getServiceById(id: string) {
     for (const service of business.services) {

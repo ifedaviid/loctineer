@@ -1,4 +1,4 @@
-import * as strings from "data/strings";
+import * as strings from "data/loctineer/strings";
 import { PriceType } from "types";
 const { HOURLY, STARTING } = PriceType;
 
@@ -15,12 +15,12 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/images/locs.jpg"),
+        path: require("data/loctineer/images/locs.jpg"),
         altText: "",
       }
     ],
@@ -39,12 +39,12 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/images/locs.jpg"),
+        path: require("data/loctineer/images/locs.jpg"),
         altText: "",
       },
     ],
@@ -63,12 +63,12 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/images/locs.jpg"),
+        path: require("data/loctineer/images/locs.jpg"),
         altText: "",
       },
     ],
@@ -87,11 +87,11 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     },
     images: [{
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     }],
     price: { value: 50, type: HOURLY, },
@@ -109,11 +109,11 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     },
     images: [{
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     }],
     price: { value: 50, type: HOURLY },
@@ -131,11 +131,11 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     },
     images: [{
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     }],
     prices: [{ name: 'Shoulder length', value: 120, type: STARTING }, { name: 'Mid-back length', value: 140, type: STARTING }, { name: 'Waist length', value: 160, type: STARTING }],
@@ -153,11 +153,11 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/braids-and-twists.jpg"),
+      path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
     },
     images: [{
-      path: require("data/images/braids-and-twists.jpg"),
+      path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
     }],
     prices: [{ name: 'Shoulder length', value: 130, type: STARTING }, { name: 'Mid-back length', value: 150, type: STARTING }, { name: 'Waist length', value: 180, type: STARTING }],
@@ -175,11 +175,11 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/braids-and-twists.jpg"),
+      path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
     },
     images: [{
-      path: require("data/images/braids-and-twists.jpg"),
+      path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
     }],
     prices: [{ name: 'Shoulder length', value: 130, type: STARTING }, { name: 'Mid-back length', value: 150, type: STARTING }, { name: 'Waist length', value: 180, type: STARTING }],
@@ -197,11 +197,11 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     },
     images: [{
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     }],
     price: { value: 50, type: HOURLY, },
@@ -219,11 +219,11 @@ export const locs = [
       },
     },
     featuredImage: {
-      path: require("data/images/loc-retwist.jpeg"),
+      path: require("data/loctineer/images/loc-retwist.jpeg"),
       altText: "Example of a loc retwist style.",
     },
     images: [{
-      path: require("data/images/loc-retwist.jpeg"),
+      path: require("data/loctineer/images/loc-retwist.jpeg"),
       altText: "Example of a loc retwist style.",
     }],
     price: { value: 50, type: HOURLY },

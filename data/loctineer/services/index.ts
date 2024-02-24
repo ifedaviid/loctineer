@@ -1,6 +1,6 @@
-import * as strings from "data/strings";
-import { braidsAndTwistsServices } from "data/services/braids-and-twists";
-import { locs } from "data/services/locs";
+import * as strings from "data/loctineer/strings";
+import { braidsAndTwistsServices } from "data/loctineer/services/braids-and-twists";
+import { locs } from "data/loctineer/services/locs";
 
 export const allServices = [
   {
@@ -15,12 +15,12 @@ export const allServices = [
       },
     },
     featuredImage: {
-      path: require("data/images/locs.jpg"),
+      path: require("data/loctineer/images/locs.jpg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/images/locs.jpg"),
+        path: require("data/loctineer/images/locs.jpg"),
         altText: "",
       }
     ],
@@ -38,12 +38,12 @@ export const allServices = [
       },
     },
     featuredImage: {
-      path: require("data/images/braids-and-twists.jpg"),
+      path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/images/braids-and-twists.jpg"),
+        path: require("data/loctineer/images/braids-and-twists.jpg"),
         altText: "",
       }
     ],

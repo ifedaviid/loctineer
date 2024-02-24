@@ -1,5 +1,5 @@
 import { PriceType } from "types";
-import * as strings from "data/strings";
+import * as strings from "data/loctineer/strings";
 const { STARTING } = PriceType;
 
 export const braidsAndTwistsServices = [
@@ -15,11 +15,11 @@ export const braidsAndTwistsServices = [
       },
     },
     images: [{
-      path: require("data/images/box-braids.jpeg"),
+      path: require("data/loctineer/images/box-braids.jpeg"),
       altText: "",
     }],
     featuredImage: {
-      path: require("data/images/box-braids.jpeg"),
+      path: require("data/loctineer/images/box-braids.jpeg"),
       altText: "",
     },
     price: { value: 100, type: STARTING },
@@ -44,11 +44,11 @@ export const braidsAndTwistsServices = [
       },
     },
     featuredImage: {
-      path: require("data/images/braids-and-twists.jpg"),
+      path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
     },
     images: [{
-      path: require("data/images/braids-and-twists.jpg"),
+      path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
     }],
     price: { value: 110, type: STARTING },
@@ -73,11 +73,11 @@ export const braidsAndTwistsServices = [
       },
     },
     featuredImage: {
-      path: require("data/images/braids-and-twists.jpg"),
+      path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
     },
     images: [{
-      path: require("data/images/braids-and-twists.jpg"),
+      path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
     }],
     price: { value: 120, type: STARTING },
