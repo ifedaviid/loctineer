@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Home, Work, Image } from "@mui/icons-material";
 
-export const menuOptions = [
+export const pages = [
   {
     name: "Home",
     url: `/`,
@@ -17,6 +18,6 @@ export const menuOptions = [
     name: "Photos",
     url: `/photos`,
     disabled: true,
-    icon: <Image alt="" />,
+    icon: <Image />,
   },
 ];

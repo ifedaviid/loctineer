@@ -49,4 +49,5 @@ export interface Business {
   logo: JSX.Element;
   services: Service[];
   calendlyLink?: string;
+  facebookPageId?: string;
 }

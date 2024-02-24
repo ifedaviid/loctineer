@@ -7,10 +7,10 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import { menuOptions } from "components/layout/menu-options";
+import { pages } from "./pages";
 import LoctineerLogo from "data/loctineer/logo";
 
-const MobileMenu = ({ isMobileMenuOpen, showMobileMenu }) => {
+const MobileDrawer = ({ isMobileMenuOpen, showMobileMenu }) => {
   const router = useRouter();
   return (
     <Drawer
@@ -29,19 +29,19 @@ const MobileMenu = ({ isMobileMenuOpen, showMobileMenu }) => {
         </div>
         <Divider />
         <List>
-          {menuOptions.map((menuOption, index) => {
-            if (!menuOption.disabled)
+          {pages.map((page, index) => {
+            if (!page.disabled)
               return (
                 <>
                   <ListItem
-                    key={menuOption.name}
+                    key={page.name}
                     disablePadding
                     style={{ padding: "1rem" }}
-                    onClick={() => router.push(menuOption.url)}
+                    onClick={() => router.push(page.url)}
                   >
                     <ListItemButton>
-                      <ListItemIcon>{menuOption.icon}</ListItemIcon>
-                      {menuOption.name}
+                      <ListItemIcon>{page.icon}</ListItemIcon>
+                      {page.name}
                     </ListItemButton>
                   </ListItem>
                   <Divider />
@@ -54,4 +54,4 @@ const MobileMenu = ({ isMobileMenuOpen, showMobileMenu }) => {
   );
 };
 
-export default MobileMenu;
+export default MobileDrawer;
