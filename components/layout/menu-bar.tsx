@@ -3,7 +3,7 @@ import { Twirl as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import LoctineerLogo from "data/loctineer/logo";
 import styles from "components/layout/menu-bar.module.scss";
-import { nav } from "./pages";
+import { pages } from "./pages";
 
 const MenuDesktop = ({ isMobileMenuOpen, showMobileMenu }) => {
   return (
