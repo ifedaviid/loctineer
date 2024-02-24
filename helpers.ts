@@ -12,3 +12,21 @@ export function getServiceById(id: string) {
     }
     return undefined;
 }
+
+export function createRootServicePaths() {
+    const servicePaths = [];
+    for (const service of business.services) {
+        servicePaths.push({ params: { "root-service": service.id } });
+    }
+    return servicePaths;
+}
+
+export function createSubServicePaths() {
+    const subServicePaths = [];
+    for (const service of business.services) {
+        for (const subService of service.services) {
+            subServicePaths.push({ params: { "root-service": service.id, "sub-service": subService.id } });
+        }
+    }
+    return subServicePaths;
+}

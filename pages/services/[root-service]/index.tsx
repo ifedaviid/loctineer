@@ -6,7 +6,7 @@ import Layout from "components/layout";
 import Listing from "components/listing";
 import { getServiceById } from "helpers";
 import { Service } from "types";
-import { LOCS_ID, BRAIDS_AND_TWISTS_ID } from "data/loctineer/strings";
+import { createRootServicePaths } from "helpers";
 
 export default function RootServicesPage({
   service: stringifiedServiceObj,
@@ -48,17 +48,12 @@ export default function RootServicesPage({
 }
 
 export const getStaticPaths = () => ({
-  paths: [
-    { params: { "root-service": LOCS_ID } },
-    { params: { "root-service": BRAIDS_AND_TWISTS_ID } },
-  ],
+  paths: createRootServicePaths(),
   fallback: false,
 });
 
-export const getStaticProps = ({ params }) => {
-  return {
-    props: {
-      service: JSON.stringify(getServiceById(params["root-service"])?.service),
-    },
-  };
-};
+export const getStaticProps = ({ params }) => ({
+  props: {
+    service: JSON.stringify(getServiceById(params["root-service"])?.service),
+  },
+});

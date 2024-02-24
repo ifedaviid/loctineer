@@ -2,23 +2,7 @@ import React from "react";
 import Layout from "components/layout";
 import ServiceComponent from "components/service";
 import { Service } from "types";
-import {
-  INSTANT_LOCS_ID,
-  TWO_STRAND_STARTER_LOCS_ID,
-  SISTER_LOCS_ID,
-  MICRO_LOCS_ID,
-  WICKS_ID,
-  LOC_RETWIST_ID,
-  LOC_REPAIR_ID,
-  FAUX_LOCS_ID,
-  BUTTERFLY_DISTRESSED_LOCS_ID,
-  SOFT_LOCS_ID,
-  LOCS_ID,
-  BRAIDS_AND_TWISTS_ID,
-  BOX_BRAIDS_AND_TWISTS_ID,
-  KINKY_PASSION_TWISTS_ID,
-  KNOTLESS_BRAIDS_ID,
-} from "data/loctineer/strings";
+import { createSubServicePaths } from "helpers";
 import { getServiceById } from "helpers";
 
 interface Props {
@@ -46,94 +30,13 @@ export default function SubServicesPage({
 }
 
 export const getStaticPaths = () => ({
-  paths: [
-    {
-      params: {
-        "sub-service": INSTANT_LOCS_ID,
-        "root-service": LOCS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": TWO_STRAND_STARTER_LOCS_ID,
-        "root-service": LOCS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": SISTER_LOCS_ID,
-        "root-service": LOCS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": MICRO_LOCS_ID,
-        "root-service": LOCS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": WICKS_ID,
-        "root-service": LOCS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": FAUX_LOCS_ID,
-        "root-service": LOCS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": SOFT_LOCS_ID,
-        "root-service": LOCS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": BUTTERFLY_DISTRESSED_LOCS_ID,
-        "root-service": LOCS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": LOC_REPAIR_ID,
-        "root-service": LOCS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": LOC_RETWIST_ID,
-        "root-service": LOCS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": BOX_BRAIDS_AND_TWISTS_ID,
-        "root-service": BRAIDS_AND_TWISTS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": KINKY_PASSION_TWISTS_ID,
-        "root-service": BRAIDS_AND_TWISTS_ID,
-      },
-    },
-    {
-      params: {
-        "sub-service": KNOTLESS_BRAIDS_ID,
-        "root-service": BRAIDS_AND_TWISTS_ID,
-      },
-    },
-  ],
+  paths: createSubServicePaths(),
   fallback: false,
 });
 
-export const getStaticProps = ({ params }) => {
-  return {
-    props: {
-      service: JSON.stringify(getServiceById(params["sub-service"])?.service),
-      parentService: JSON.stringify(getServiceById(params["sub-service"])?.parent),
-    },
-  };
-};
+export const getStaticProps = ({ params }) => ({
+  props: {
+    service: JSON.stringify(getServiceById(params["sub-service"])?.service),
+    parentService: JSON.stringify(getServiceById(params["sub-service"])?.parent),
+  },
+});
