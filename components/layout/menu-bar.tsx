@@ -5,7 +5,7 @@ import LoctineerLogo from "./logo";
 import styles from "components/layout/menu-bar.module.scss";
 import { pages } from "./pages";
 
-const MenuDesktop = ({ isMobileMenuOpen, showMobileMenu }) => {
+const MenuDesktop = ({ isDrawerOpen, showDrawer }) => {
   return (
     <div className={styles.menuContainer}>
       <Link href="/">
@@ -23,8 +23,8 @@ const MenuDesktop = ({ isMobileMenuOpen, showMobileMenu }) => {
       </ul>
       <div className={styles.navIcon}>
         <Hamburger
-          onToggle={() => showMobileMenu(true)}
-          toggled={isMobileMenuOpen}
+          onToggle={() => showDrawer(true)}
+          toggled={isDrawerOpen}
         />
       </div>
     </div >
