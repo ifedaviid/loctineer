@@ -1,8 +1,8 @@
+import { RecognizedBusinessIDs } from "types";
 import { allServices } from "./services";
-import LoctineerLogo from "./logo";
 
-export const business = {
-    id: 'loctineer',
+export const LOCTINEER = {
+    id: RecognizedBusinessIDs.LOCTINEER,
     name: 'Loctineer',
     description: "Locs & Braiding Specialist in Ottawa",
     marketingCopy: 'Creating your best look',
@@ -16,7 +16,6 @@ export const business = {
         path: require("data/loctineer/images/braids-and-twists.jpg"),
         altText: "",
     },
-    logo: LoctineerLogo,
     services: allServices,
-    facebookPageId: 156788817527257
+    facebookPageId: '156788817527257'
 }

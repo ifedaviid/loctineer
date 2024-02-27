@@ -2,19 +2,14 @@ import React from "react";
 import Image from "next/legacy/image";
 import Button from "components/button";
 import styles from "components/hero.module.scss";
-import { AppImage } from "types";
+import { Business } from "types";
 import { useRouter } from "next/router";
-import { business } from "data/loctineer/index";
 
 interface Props {
-  topText?: string;
-  mainText: string;
-  bottomText?: string;
-  image?: AppImage;
-  callToAction?: Function;
+  business: Business;
 }
 
-const Hero = () => {
+const Hero = ({ business }: Props) => {
   const router = useRouter();
   const { description, marketingCopy, cta, heroImage } = business;
   return (

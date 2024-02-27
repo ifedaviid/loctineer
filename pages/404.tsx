@@ -2,10 +2,13 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 import Button from "components/button";
 import Layout from "components/layout";
+import { Business } from "types";
+import { getBusinessById } from "helpers";
 
-export default function ErrorPage() {
+export default function ErrorPage({ business: stringifiedBusinessObj }) {
+  const business: Business = JSON.parse(stringifiedBusinessObj);
   return (
-    <Layout>
+    <Layout business={business}>
       <section style={{ padding: '5rem 0' }}>
         <Image src="/images/404.png" alt="404" width={150} height={150} />
         <h1 style={{ marginBottom: 'unset' }}>We don&apos;t have this page</h1>
@@ -15,6 +18,12 @@ export default function ErrorPage() {
           <Button variant="primary">Return home</Button>
         </Link>
       </section>
-    </Layout >
+    </Layout>
   );
 }
+
+export const getStaticProps = () => ({
+  props: {
+    business: JSON.stringify(getBusinessById(process.env.BUSINESS_ID)),
+  },
+});

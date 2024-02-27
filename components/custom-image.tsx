@@ -17,7 +17,7 @@ const CustomImage = ({ image }: Props) => {
         alt={altText}
         placeholder="blur"
         loading="lazy"
-      // objectFit="cover"
+        objectFit="cover"
       />
     </div>
   );

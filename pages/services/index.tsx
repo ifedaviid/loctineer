@@ -4,13 +4,15 @@ import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Layout from "components/layout";
 import Listing from "components/listing";
-import { business } from "data/loctineer";
+import { getBusinessById } from "helpers";
+import { Business } from "types";
 
-export default function ServicesPage() {
+export default function ServicesPage({ business: stringifiedBusinessObj }) {
   const router = useRouter();
   const returnRoute = { path: "/", name: "Back to Home" }
+  const business: Business = JSON.parse(stringifiedBusinessObj);
   return (
-    <Layout>
+    <Layout business={business}>
       <section style={{ padding: '3rem 5%' }}>
         {returnRoute && (
           <MuiButton
@@ -39,3 +41,9 @@ export default function ServicesPage() {
     </Layout>
   );
 }
+
+export const getStaticProps = () => ({
+  props: {
+    business: JSON.stringify(getBusinessById(process.env.BUSINESS_ID)),
+  },
+});
