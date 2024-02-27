@@ -1,15 +1,14 @@
-import { RecognizedBusinessIDs } from "types";
 import { allServices } from "./services";
 
 export const PHILSVISION = {
-    id: RecognizedBusinessIDs.PHILSVISION,
+    id: 'PHILSVISION',
     name: 'Phil\'s Vision',
     description: "Photography & Film Specialist in Ottawa",
-    marketingCopy: 'Capturing YOU in Your Best Light',
+    marketingCopy: 'Capturing you in your best light',
     cta: {
         primary: {
             href: `/services`,
-            text: "Our Services",
+            text: "My Services",
         },
     },
     heroImage: {

@@ -1,10 +1,10 @@
 import { LOCTINEER } from "data/loctineer/index";
 import { PHILSVISION } from "data/phils-vision/index";
-import { Business, RecognizedBusinessIDs } from "types";
+import { Business } from "types";
 
 export function getBusinessById(id: string): Business {
     switch (id) {
-        case RecognizedBusinessIDs.PHILSVISION:
+        case PHILSVISION.id:
             return PHILSVISION;
         default:
             return LOCTINEER;

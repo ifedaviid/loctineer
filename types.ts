@@ -51,8 +51,3 @@ export interface Business {
   calendlyLink?: string;
   facebookPageId?: string;
 }
-
-export enum RecognizedBusinessIDs {
-  LOCTINEER = 'LOCTINEER',
-  PHILSVISION = 'PHILSVISION',
-}

@@ -1,8 +1,7 @@
-import { RecognizedBusinessIDs } from "types";
 import { allServices } from "./services";
 
 export const LOCTINEER = {
-    id: RecognizedBusinessIDs.LOCTINEER,
+    id: 'LOCTINEER',
     name: 'Loctineer',
     description: "Locs & Braiding Specialist in Ottawa",
     marketingCopy: 'Creating your best look',

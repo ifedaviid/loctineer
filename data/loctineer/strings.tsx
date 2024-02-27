@@ -12,48 +12,33 @@ export const CONSULTATION_ID = "consultation";
 
 // Types of Locs Services (Service Types)
 export const NATURAL_HAIR_LOCKING = "Natural Hair Locking";
-export const NATURAL_HAIR_LOCKING_ID = "natural-hair-locking";
 export const LOCS_MAINTENANCE = "Locs Maintenance";
-export const LOCS_MAINTENANCE_ID = "maintenance";
 export const TEMPORARY_LOCS = "Temporary Locs";
-export const TEMPORARY_LOCS_ID = "temporary";
 
 // Options for Natural Hair Locking (Service Type Options)
 export const WICKS = "Wicks";
 export const WICKS_ID = "wicks";
 export const TWO_STRAND_STARTER_LOCS = "Two-strand twists";
-export const TWO_STRAND_STARTER_LOCS_ID = "two-strand-twists";
 export const INSTANT_LOCS = "Instant Locs";
-export const INSTANT_LOCS_ID = "instant";
 export const SISTER_LOCS = "Sister Locs";
-export const SISTER_LOCS_ID = "sister-locs";
 export const MICRO_LOCS = "Micro Locs";
-export const MICRO_LOCS_ID = "micro-locs";
 
 // Options for Locs Maintenance (Service Type Options)
 export const LOC_REPAIR = "Loc Repair";
-export const LOC_REPAIR_ID = "repair";
 export const LOC_RETWIST = "Loc Retwist";
-export const LOC_RETWIST_ID = "retwist";
 
 // Options for Temporary Locs
 export const FAUX_LOCS = "Faux Locs";
-export const FAUX_LOCS_ID = "faux";
 export const SOFT_LOCS = "Soft Locs";
-export const SOFT_LOCS_ID = "soft";
 export const BUTTERFLY_DISTRESSED_LOCS = "Butterfly / Distressed Locs";
-export const BUTTERFLY_DISTRESSED_LOCS_ID = "butterfly-distressed";
 
 // ------------------------------------------------
 // Services #2:  Braids & Twists
 
 // Types of Braids & Twists Services
 export const BOX_BRAIDS_AND_TWISTS = "Box braids & twists";
-export const BOX_BRAIDS_AND_TWISTS_ID = "box";
 export const KINKY_PASSION_TWISTS = "Kinky / Passion twists";
-export const KINKY_PASSION_TWISTS_ID = "kinky-passion-twists";
 export const KNOTLESS_BRAIDS = "Knotless Braids";
-export const KNOTLESS_BRAIDS_ID = "knotless-braids";
 
 // ------------------------------------------------
 // Other strings

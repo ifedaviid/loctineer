@@ -1,16 +1,17 @@
 import { PriceType } from "types";
+import { ServiceIDs } from "./ids";
 import * as strings from "data/loctineer/strings";
 const { STARTING } = PriceType;
 
 export const braidsAndTwistsServices = [
   {
-    id: strings.BOX_BRAIDS_AND_TWISTS_ID,
+    id: ServiceIDs.BOX_BRAIDS_AND_TWISTS,
     name: strings.BOX_BRAIDS_AND_TWISTS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.BRAIDS_AND_TWISTS_ID}/${strings.BOX_BRAIDS_AND_TWISTS_ID}`,
+        href: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}/${ServiceIDs.BOX_BRAIDS_AND_TWISTS}`,
         text: "See details",
       },
     },
@@ -33,13 +34,13 @@ export const braidsAndTwistsServices = [
     calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
-    id: strings.KINKY_PASSION_TWISTS_ID,
+    id: ServiceIDs.KINKY_PASSION_TWISTS,
     name: strings.KINKY_PASSION_TWISTS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.BRAIDS_AND_TWISTS_ID}/${strings.KINKY_PASSION_TWISTS_ID}`,
+        href: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}/${ServiceIDs.KINKY_PASSION_TWISTS}`,
         text: "See details",
       },
     },
@@ -62,13 +63,13 @@ export const braidsAndTwistsServices = [
     calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
-    id: strings.KNOTLESS_BRAIDS_ID,
+    id: ServiceIDs.KNOTLESS_BRAIDS,
     name: strings.KNOTLESS_BRAIDS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${strings.BRAIDS_AND_TWISTS_ID}/${strings.KNOTLESS_BRAIDS_ID}`,
+        href: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}/${ServiceIDs.KNOTLESS_BRAIDS}`,
         text: "See details",
       },
     },
