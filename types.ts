@@ -36,7 +36,7 @@ export interface Service {
   services?: Service[];
   price?: Price;
   prices?: Price[]
-  calendlyEventLinkID?: string;
+  calendlyEventURL?: string;
 }
 
 export interface Business {

@@ -101,7 +101,7 @@ const Service = ({
         <PopupModal
           open={isBookingAppointment}
           onModalClose={() => setIsBookingAppointment(false)}
-          url={`https://calendly.com/loctineer/${service.calendlyEventLinkID}?hide_gdpr_banner=1`}
+          url={service.calendlyEventURL}
           pageSettings={{
             primaryColor: "a57b21",
             // hideEventTypeDetails: true,

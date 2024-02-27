@@ -30,7 +30,7 @@ export const braidsAndTwistsServices = [
       { name: 'Butt length', value: 180, type: STARTING },
       { name: 'Knee length', value: 200, type: STARTING }
     ],
-    calendlyEventLinkID: "box-braids-and-twists",
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.KINKY_PASSION_TWISTS_ID,
@@ -59,7 +59,7 @@ export const braidsAndTwistsServices = [
       { name: 'Butt length', value: 190, type: STARTING },
       { name: 'Knee length', value: 210, type: STARTING }
     ],
-    calendlyEventLinkID: "kinky-passion-twists",
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.KNOTLESS_BRAIDS_ID,
@@ -82,6 +82,6 @@ export const braidsAndTwistsServices = [
     }],
     price: { value: 120, type: STARTING },
     prices: [{ name: 'Shoulder length', value: 120, type: STARTING }, { name: 'Mid-back length', value: 140, type: STARTING }, { name: 'Waist length', value: 160, type: STARTING }],
-    calendlyEventLinkID: "knotless-braids",
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
 ];

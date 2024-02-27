@@ -25,7 +25,7 @@ export const locs = [
       }
     ],
     price: { value: 50, type: HOURLY },
-    calendlyEventLinkID: "instant-locs",
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.TWO_STRAND_STARTER_LOCS_ID,
@@ -49,7 +49,7 @@ export const locs = [
       },
     ],
     price: { value: 50, type: HOURLY },
-    calendlyEventLinkID: "two-strand-twists",
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.SISTER_LOCS_ID,
@@ -73,7 +73,7 @@ export const locs = [
       },
     ],
     price: { value: 50, type: HOURLY, },
-    calendlyEventLinkID: "sister-locs",
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.MICRO_LOCS_ID,
@@ -95,7 +95,7 @@ export const locs = [
       altText: "",
     }],
     price: { value: 50, type: HOURLY, },
-    calendlyEventLinkID: "micro-locs",
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.WICKS_ID,
@@ -117,7 +117,7 @@ export const locs = [
       altText: "",
     }],
     price: { value: 50, type: HOURLY },
-    calendlyEventLinkID: "wicks"
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.FAUX_LOCS_ID,
@@ -139,7 +139,7 @@ export const locs = [
       altText: "",
     }],
     prices: [{ name: 'Shoulder length', value: 120, type: STARTING }, { name: 'Mid-back length', value: 140, type: STARTING }, { name: 'Waist length', value: 160, type: STARTING }],
-    calendlyEventLinkID: "faux-locs"
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.SOFT_LOCS_ID,
@@ -161,7 +161,7 @@ export const locs = [
       altText: "",
     }],
     prices: [{ name: 'Shoulder length', value: 130, type: STARTING }, { name: 'Mid-back length', value: 150, type: STARTING }, { name: 'Waist length', value: 180, type: STARTING }],
-    calendlyEventLinkID: "soft-locs"
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.BUTTERFLY_DISTRESSED_LOCS_ID,
@@ -183,7 +183,7 @@ export const locs = [
       altText: "",
     }],
     prices: [{ name: 'Shoulder length', value: 130, type: STARTING }, { name: 'Mid-back length', value: 150, type: STARTING }, { name: 'Waist length', value: 180, type: STARTING }],
-    calendlyEventLinkID: "butterfly-distressed-locs"
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.LOC_REPAIR_ID,
@@ -205,7 +205,7 @@ export const locs = [
       altText: "",
     }],
     price: { value: 50, type: HOURLY, },
-    calendlyEventLinkID: "loc-repair"
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
   {
     id: strings.LOC_RETWIST_ID,
@@ -227,6 +227,6 @@ export const locs = [
       altText: "Example of a loc retwist style.",
     }],
     price: { value: 50, type: HOURLY },
-    calendlyEventLinkID: "loc-retwist"
+    calendlyEventURL: `https://calendly.com/loctineer/wicks`,
   },
 ];
