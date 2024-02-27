@@ -1,18 +1,18 @@
 import React from "react";
 import Image from "next/legacy/image";
 import Link from "next/link";
-import styles from "components/listing.module.scss";
+import styles from "components/card.module.scss";
 import { Service } from "types";
 
 interface Props {
   service: Service;
 }
 
-const Listing = ({ service }: Props) => {
+const Card = ({ service }: Props) => {
   const { name, featuredImage, cta } = service
 
   return (
-    <div className={styles.listing}>
+    <div className={styles.card}>
       <Image
         src={featuredImage.path}
         alt={featuredImage.altText}
@@ -26,4 +26,4 @@ const Listing = ({ service }: Props) => {
   );
 };
 
-export default Listing;
+export default Card;

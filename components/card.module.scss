@@ -1,7 +1,7 @@
 @import "/common.scss";
 /* Obtained from https://codepen.io/melissamyra/pen/abOZrWP */
 
-.listing {
+.card {
   display: flex;
   width: 100%;
   height: 30rem;
@@ -34,19 +34,19 @@
   padding: 1rem;
 }
 
-.listing:hover {
+.card:hover {
   cursor: pointer;
   color: goldenrod;
   border: 3px solid $dark-text;
 }
 
-.listing:active {
+.card:active {
   transform: scale(0.95);
   border: 3px solid $dark-text;
 }
 
 @media (max-width: $lg-screens) {
-  .listing {
+  .card {
     height: 15rem;
   }
 }

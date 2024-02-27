@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Layout from "components/layout";
-import Listing from "components/listing";
+import Card from "components/card";
 import { getBusinessById } from "helpers";
 import { Business } from "types";
 
@@ -34,7 +34,7 @@ export default function ServicesPage({ business: stringifiedBusinessObj }) {
         <h2>Services</h2>
         <div className="services-content">
           {business.services.map((option, idx) => (
-            <Listing key={idx} service={option} />
+            <Card key={idx} service={option} />
           ))}
         </div>
       </section>
