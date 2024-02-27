@@ -46,8 +46,13 @@ export interface Business {
   marketingCopy: string;
   cta: CallToAction;
   heroImage: AppImage;
-  logo: JSX.Element;
+  logo?: JSX.Element;
   services: Service[];
   calendlyLink?: string;
   facebookPageId?: string;
+}
+
+export enum RecognizedBusinessIDs {
+  LOCTINEER = 'LOCTINEER',
+  PHILSVISION = 'PHILSVISION',
 }

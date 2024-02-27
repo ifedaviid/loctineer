@@ -4,19 +4,26 @@ import MuiButton from "@mui/material/Button";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Layout from "components/layout";
 import Listing from "components/listing";
-import { getServiceById } from "helpers";
-import { Service } from "types";
+import { getBusinessById, getServiceById } from "helpers";
+import { Business, Service } from "types";
 import { createRootServicePaths } from "helpers";
 
+interface Props {
+  business: string;
+  service: string;
+}
+
 export default function RootServicesPage({
+  business: stringifiedBusinessObj,
   service: stringifiedServiceObj,
-}) {
+}: Props) {
   const router = useRouter();
   const returnRoute = { path: '/services', name: 'All Services' }
+  const business: Business = JSON.parse(stringifiedBusinessObj);
   const service: Service = JSON.parse(stringifiedServiceObj);
   const { name, description, services } = service;
   return (
-    <Layout>
+    <Layout business={business}>
       <section style={{ padding: '3rem 5%' }}>
         {returnRoute && (
           <MuiButton
@@ -48,12 +55,17 @@ export default function RootServicesPage({
 }
 
 export const getStaticPaths = () => ({
-  paths: createRootServicePaths(),
-  fallback: false,
+  paths: createRootServicePaths(getBusinessById(process.env.BUSINESS_ID)),
+  fallback: false
 });
 
-export const getStaticProps = ({ params }) => ({
-  props: {
-    service: JSON.stringify(getServiceById(params["root-service"])?.service),
-  },
-});
+export const getStaticProps = ({ params }) => {
+  const business = getBusinessById(process.env.BUSINESS_ID)
+  const service = getServiceById(business, params["root-service"])?.service
+  return {
+    props: {
+      business: JSON.stringify(business),
+      service: JSON.stringify(service),
+    },
+  }
+};

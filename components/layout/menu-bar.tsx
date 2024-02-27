@@ -1,7 +1,7 @@
 import React from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import LoctineerLogo from "data/loctineer/logo";
+import LoctineerLogo from "./logo";
 import styles from "components/layout/menu-bar.module.scss";
 import { pages } from "./pages";
 

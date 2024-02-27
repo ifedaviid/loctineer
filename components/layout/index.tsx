@@ -4,13 +4,14 @@ import MenuDesktop from "components/layout/menu-bar";
 import MenuMobile from "components/layout/mobile-drawer";
 import { FacebookMessengerChat } from "components/chat-button";
 import styles from "components/layout/index.module.scss";
-import { business } from "data/loctineer/index";
+import { Business } from "types";
 
 interface Props {
+  business: Business;
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ business, children }: Props) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const showMobileMenu = (state) => setIsMobileMenuOpen(state);
   const currentYear = new Date().getFullYear();

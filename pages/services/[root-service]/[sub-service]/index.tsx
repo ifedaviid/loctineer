@@ -1,23 +1,26 @@
 import React from "react";
 import Layout from "components/layout";
 import ServiceComponent from "components/service";
-import { Service } from "types";
-import { createSubServicePaths } from "helpers";
+import { Business, Service } from "types";
+import { createSubServicePaths, getBusinessById } from "helpers";
 import { getServiceById } from "helpers";
 
 interface Props {
+  business: string;
   service: string;
   parentService: string;
 }
 
 export default function SubServicesPage({
+  business: stringifiedBusinessObj,
   service: stringifiedService,
   parentService: stringifiedParentService
 }: Props) {
+  const business: Business = JSON.parse(stringifiedBusinessObj);
   const service: Service = JSON.parse(stringifiedService);
   const parentService: Service = JSON.parse(stringifiedParentService);
   return (
-    <Layout>
+    <Layout business={business}>
       <ServiceComponent
         service={service}
         returnRoute={{
@@ -29,14 +32,23 @@ export default function SubServicesPage({
   );
 }
 
-export const getStaticPaths = () => ({
-  paths: createSubServicePaths(),
-  fallback: false,
-});
+export const getStaticPaths = () => {
+  const business = getBusinessById(process.env.BUSINESS_ID)
+  return {
+    paths: createSubServicePaths(business),
+    fallback: false
+  }
+};
 
-export const getStaticProps = ({ params }) => ({
-  props: {
-    service: JSON.stringify(getServiceById(params["sub-service"])?.service),
-    parentService: JSON.stringify(getServiceById(params["sub-service"])?.parent),
-  },
-});
+export const getStaticProps = ({ params }) => {
+  const business = getBusinessById(process.env.BUSINESS_ID)
+  const subService = getServiceById(business, params["sub-service"])?.service
+  const rootService = getServiceById(business, params["sub-service"])?.parent
+  return {
+    props: {
+      business: JSON.stringify(business),
+      service: JSON.stringify(subService),
+      parentService: JSON.stringify(rootService),
+    }
+  };
+};
