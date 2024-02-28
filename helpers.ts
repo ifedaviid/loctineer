@@ -35,6 +35,7 @@ export function createRootServicePaths(business: Business) {
 export function createSubServicePaths(business: Business) {
     const subServicePaths = [];
     for (const service of business.services) {
+        if (!service.services) continue;
         for (const subService of service.services) {
             subServicePaths.push({ params: { "root-service": service.id, "sub-service": subService.id } });
         }

@@ -1,4 +1,3 @@
-// ------------------------------------------------
 // Services (All)
 export const LOCS = "Locs";
 export const LOCS_ID = "locs";
@@ -6,6 +5,25 @@ export const BRAIDS_AND_TWISTS = "Braids & Twists";
 export const BRAIDS_AND_TWISTS_ID = "braids-and-twists";
 export const CONSULTATION = "Consultation";
 export const CONSULTATION_ID = "consultation";
+
+// ------------------------------------------------
+// New Strings for Phils Vision
+
+export const PERSONAL = "Personal Photoshoot";
+export const HEADSHOTS = "Head Shots";
+export const COMMERCIAL = "Commercial Photoshoot";
+export const PORTRAITS = "Portraits";
+export const FREESTYLE = "Freestyle Shoot";
+export const FORMAL_EVENT_COVERAGE = "Formal Event Coverage";
+export const WEDDING_COVERAGE = "Wedding Event Coverage";
+export const WEDDING_COVERAGE_PHOTO = "Photo Coverage";
+export const WEDDING_COVERAGE_VIDEO = "Video Coverage";
+export const WEDDING_COVERAGE_COMBO = "Full Coverage";
+export const FOOD_SHOOT = "Food";
+export const PRODUCT_SHOOT = "Product";
+export const FASHION_SHOOT = "Fashion";
+export const BIRTHDAY = "Birthday Photoshoot";
+export const CONTENT_CREATION = "Content Creation";
 
 // ------------------------------------------------
 // Service #1: Locs

@@ -25,7 +25,7 @@ const Service = ({
 }: Props) => {
   const router = useRouter();
   const [showPriceListModal, setShowPriceListModal] = useState(false)
-  const { name, description, featuredImage, images, cta, price, prices } = service;
+  const { name, description, featuredImage, images, cta, price, prices, calendlyEventURL } = service;
   const showImages = images && images.length >= 5;
   const initialPopUpState = {
     showing: false,
@@ -86,7 +86,7 @@ const Service = ({
             {cta.primary && (
               <Button
                 variant="primary"
-                onClick={() => setIsBookingAppointment(true)}
+                onClick={calendlyEventURL && (() => setIsBookingAppointment(true))}
               >
                 Book Appointment
               </Button>
@@ -97,11 +97,12 @@ const Service = ({
         <CustomImage image={featuredImage} />
       </div>
       {showImages ? <ImageCarousel setPopUp={setPopUp} images={images} /> : null}
-      {typeof window !== 'undefined' && (
+      {
+        typeof window !== 'undefined' &&
         <PopupModal
           open={isBookingAppointment}
           onModalClose={() => setIsBookingAppointment(false)}
-          url={service.calendlyEventURL}
+          url={calendlyEventURL}
           pageSettings={{
             primaryColor: "a57b21",
             // hideEventTypeDetails: true,
@@ -110,10 +111,12 @@ const Service = ({
           }}
           rootElement={typeof window !== "undefined" ? document.getElementById("__next") : null}
         />
-      )}
-      {(prices && showPriceListModal) && (
+
+      }
+      {
+        (prices && showPriceListModal) &&
         <PriceList open={showPriceListModal} onClose={setShowPriceListModal} prices={prices} serviceName={name} />
-      )}
+      }
     </section>
   );
 };

@@ -1,9 +1,7 @@
 import React from "react";
-import { useRouter } from "next/router";
-import MuiButton from "@mui/material/Button";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ServicesComponent from "components/services";
+import ServiceComponent from "components/service";
 import Layout from "components/layout";
-import Card from "components/card";
 import { getBusinessById, getServiceById } from "helpers";
 import { Business, Service } from "types";
 import { createRootServicePaths } from "helpers";
@@ -15,42 +13,21 @@ interface Props {
 
 export default function RootServicesPage({
   business: stringifiedBusinessObj,
-  service: stringifiedServiceObj,
+  service: stringifiedServiceObj
 }: Props) {
-  const router = useRouter();
-  const returnRoute = { path: '/services', name: 'All Services' }
+
   const business: Business = JSON.parse(stringifiedBusinessObj);
   const service: Service = JSON.parse(stringifiedServiceObj);
-  const { name, description, services } = service;
+  const returnRoute = { path: "/services", name: "All Services" }
+  const props = { service, returnRoute }
+  const hasSubServices = (service.services && service.services.length > 1);
+
   return (
     <Layout business={business}>
-      <section style={{ padding: '3rem 5%' }}>
-        {returnRoute && (
-          <MuiButton
-            sx={{
-              textTransform: "none",
-              letterSpacing: "2px",
-              color: "lightgray",
-              justifyContent: "flex-start",
-              padding: "0.5rem",
-              fontFamily: "inherit",
-            }}
-            size="medium"
-            startIcon={<ChevronLeftIcon />}
-            onClick={() => router.push(returnRoute.path)}
-          >
-            {returnRoute.name}
-          </MuiButton>
-        )}
-        <h2>{name}</h2>
-        <p>{description}</p>
-        <div className="services-content">
-          {services.map((option, idx) => (
-            <Card key={idx} service={option} />
-          ))}
-        </div>
-      </section>
-    </Layout>
+      {hasSubServices
+        ? <ServicesComponent {...props} />
+        : <ServiceComponent {...props} />}
+    </Layout >
   );
 }
 
