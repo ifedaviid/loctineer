@@ -36,7 +36,7 @@ export interface Service {
   services?: Service[];
   price?: Price;
   prices?: Price[]
-  calendlyEventLinkID?: string;
+  calendlyEventURL?: string;
 }
 
 export interface Business {
@@ -50,9 +50,4 @@ export interface Business {
   services: Service[];
   calendlyLink?: string;
   facebookPageId?: string;
-}
-
-export enum RecognizedBusinessIDs {
-  LOCTINEER = 'LOCTINEER',
-  PHILSVISION = 'PHILSVISION',
 }

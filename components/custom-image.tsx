@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/legacy/image";
 import { AppImage } from "types";
-import Link from "next/link";
 import styles from "components/custom-image.module.scss";
 
 interface Props {

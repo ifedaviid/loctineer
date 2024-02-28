@@ -10,18 +10,18 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import { pages } from "./pages";
 import LoctineerLogo from "./logo";
 
-const MobileDrawer = ({ isMobileMenuOpen, showMobileMenu }) => {
+const MenuBarDrawer = ({ isDrawerOpen, showDrawer }) => {
   const router = useRouter();
   return (
     <Drawer
       anchor="right"
-      open={isMobileMenuOpen}
-      onClose={() => showMobileMenu(false)}
+      open={isDrawerOpen}
+      onClose={() => showDrawer(false)}
     >
       <Box
         role="presentation"
-        onClick={() => showMobileMenu(false)}
-        onKeyDown={() => showMobileMenu(false)}
+        onClick={() => showDrawer(false)}
+        onKeyDown={() => showDrawer(false)}
         sx={{ backgroundColor: '#484848', color: 'lightgray', height: '100%' }}
       >
         <div style={{ height: "20%", display: 'flex', justifyContent: 'center' }}>
@@ -54,4 +54,4 @@ const MobileDrawer = ({ isMobileMenuOpen, showMobileMenu }) => {
   );
 };
 
-export default MobileDrawer;
+export default MenuBarDrawer;
