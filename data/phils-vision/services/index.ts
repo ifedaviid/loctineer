@@ -17,12 +17,12 @@ export const allServices = [
       },
     },
     featuredImage: {
-      path: require("data/loctineer/images/locs.jpg"),
+      path: require("data/phils-vision/images/personal.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/loctineer/images/locs.jpg"),
+        path: require("data/phils-vision/images/personal.jpeg"),
         altText: "",
       }
     ],
@@ -40,12 +40,12 @@ export const allServices = [
       },
     },
     featuredImage: {
-      path: require("data/loctineer/images/braids-and-twists.jpg"),
+      path: require("data/phils-vision/images/content-creation.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/loctineer/images/braids-and-twists.jpg"),
+        path: require("data/phils-vision/images/content-creation.jpeg"),
         altText: "",
       }
     ],
@@ -63,12 +63,12 @@ export const allServices = [
       },
     },
     featuredImage: {
-      path: require("data/loctineer/images/braids-and-twists.jpg"),
+      path: require("data/phils-vision/images/formal-event-coverage.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/loctineer/images/braids-and-twists.jpg"),
+        path: require("data/phils-vision/images/formal-event-coverage.jpeg"),
         altText: "",
       }
     ],
@@ -85,12 +85,12 @@ export const allServices = [
       },
     },
     featuredImage: {
-      path: require("data/loctineer/images/braids-and-twists.jpg"),
+      path: require("data/phils-vision/images/wedding-event-coverage.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/loctineer/images/braids-and-twists.jpg"),
+        path: require("data/phils-vision/images/wedding-event-coverage.jpeg"),
         altText: "",
       }
     ],

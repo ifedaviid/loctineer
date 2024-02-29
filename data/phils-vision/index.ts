@@ -12,7 +12,7 @@ export const PHILSVISION = {
         },
     },
     heroImage: {
-        path: require("data/loctineer/images/consultation.jpg"),
+        path: require("data/phils-vision/images/fashion-shoot.jpeg"),
         altText: "",
     },
     services: allServices,

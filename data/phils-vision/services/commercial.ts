@@ -64,12 +64,12 @@ export const commercialPhotoshootServices = [
       },
     },
     featuredImage: {
-      path: require("data/loctineer/images/locs.jpg"),
+      path: require("data/phils-vision/images/fashion-shoot.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/loctineer/images/locs.jpg"),
+        path: require("data/phils-vision/images/fashion-shoot.jpeg"),
         altText: "",
       },
     ],
@@ -88,12 +88,12 @@ export const commercialPhotoshootServices = [
       },
     },
     featuredImage: {
-      path: require("data/loctineer/images/locs.jpg"),
+      path: require("data/phils-vision/images/content-creation.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/loctineer/images/locs.jpg"),
+        path: require("data/phils-vision/images/content-creation.jpeg"),
         altText: "",
       },
     ],
