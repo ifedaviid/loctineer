@@ -106,7 +106,7 @@ const Service = ({
           pageSettings={{
             primaryColor: "a57b21",
             // hideEventTypeDetails: true,
-            backgroundColor: "302f2f",
+            backgroundColor: "282826",
             textColor: "ffffff",
           }}
           rootElement={typeof window !== "undefined" ? document.getElementById("__next") : null}
