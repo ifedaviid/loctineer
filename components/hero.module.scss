@@ -36,13 +36,6 @@ header.heroImage {
     color: white;
     max-width: 70%;
 
-    h1 {
-      font-size: 3rem;
-      line-height: 3rem;
-      margin: 1rem;
-      letter-spacing: 2px;
-    }
-
     p {
       letter-spacing: 2px;
       font-weight: 500;
@@ -59,10 +52,6 @@ header.heroImage {
   header.heroImage {
     >.content {
       max-width: 80%;
-
-      h1 {
-        font-size: 2rem;
-      }
     }
   }
 }
