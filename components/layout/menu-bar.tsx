@@ -1,15 +1,14 @@
 import React from "react";
 import { Twirl as Hamburger } from "hamburger-react";
 import Link from "next/link";
-import LoctineerLogo from "./logo";
 import styles from "components/layout/menu-bar.module.scss";
 import { pages } from "./pages";
 
-const MenuDesktop = ({ isDrawerOpen, showDrawer }) => {
+const MenuDesktop = ({ isDrawerOpen, showDrawer, logo }) => {
   return (
     <div className={styles.menuContainer}>
       <Link href="/">
-        <LoctineerLogo />
+        {logo}
       </Link>
       <ul>
         {pages.map((page, idx) => {

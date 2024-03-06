@@ -5,6 +5,7 @@ import MenuBarDrawer from "components/layout/menu-bar-drawer";
 import { FacebookMessengerChat } from "components/chat-button";
 import styles from "components/layout/index.module.scss";
 import { Business } from "types";
+import { getBusinessLogo } from "helpers";
 
 interface Props {
   business: Business;
@@ -16,6 +17,7 @@ const Layout = ({ business, children }: Props) => {
   const showDrawer = (state) => setIsDrawerOpen(state);
   const currentYear = new Date().getFullYear();
   const { name, description, facebookPageId } = business;
+  const Logo = getBusinessLogo(business.id);
   return (
     <>
       <div className={styles.container}>
@@ -27,6 +29,7 @@ const Layout = ({ business, children }: Props) => {
         <MenuBar
           isDrawerOpen={isDrawerOpen}
           showDrawer={showDrawer}
+          logo={<Logo width={100} height={100} />}
         />
 
         <main>
@@ -49,7 +52,7 @@ const Layout = ({ business, children }: Props) => {
         </footer>
       </div>
       {isDrawerOpen && (
-        <MenuBarDrawer isDrawerOpen={isDrawerOpen} showDrawer={showDrawer} />
+        <MenuBarDrawer isDrawerOpen={isDrawerOpen} showDrawer={showDrawer} logo={<Logo />} />
       )}
     </>
   );

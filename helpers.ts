@@ -1,6 +1,8 @@
 import { LOCTINEER } from "data/loctineer/index";
 import { PHILSVISION } from "data/phils-vision/index";
 import { Business } from "types";
+import { Logo as PhilsVisionLogo } from 'data/phils-vision/logo';
+import { Logo as LoctineerLogo } from 'data/loctineer/logo';
 
 export function getBusinessById(id: string): Business {
     switch (id) {
@@ -8,6 +10,15 @@ export function getBusinessById(id: string): Business {
             return PHILSVISION;
         default:
             return LOCTINEER;
+    }
+}
+
+export function getBusinessLogo(id: string) {
+    switch (id) {
+        case PHILSVISION.id:
+            return PhilsVisionLogo;
+        default:
+            return LoctineerLogo;
     }
 }
 

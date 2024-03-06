@@ -17,7 +17,7 @@
 
 
   >.modalContainer {
-    background: #302f2f;
+    background: $dark-bg;
     color: lightgray;
     width: 50%;
     max-height: 65%;
@@ -33,7 +33,7 @@
       font-size: large;
       margin-top: unset;
       letter-spacing: unset;
-      background: #302f2f;
+      background: $dark-bg;
       padding: 0 1.5rem;
     }
 

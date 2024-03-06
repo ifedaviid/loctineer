@@ -8,9 +8,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import { pages } from "./pages";
-import LoctineerLogo from "./logo";
 
-const MenuBarDrawer = ({ isDrawerOpen, showDrawer }) => {
+const MenuBarDrawer = ({ isDrawerOpen, showDrawer, logo }) => {
   const router = useRouter();
   return (
     <Drawer
@@ -22,10 +21,10 @@ const MenuBarDrawer = ({ isDrawerOpen, showDrawer }) => {
         role="presentation"
         onClick={() => showDrawer(false)}
         onKeyDown={() => showDrawer(false)}
-        sx={{ backgroundColor: '#484848', color: 'lightgray', height: '100%' }}
+        sx={{ backgroundColor: '#151515', color: 'lightgray', height: '100%' }}
       >
-        <div style={{ height: "20%", display: 'flex', justifyContent: 'center' }}>
-          <LoctineerLogo style={{ alignSelf: 'center' }} />
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          {logo}
         </div>
         <Divider />
         <List>
@@ -36,7 +35,7 @@ const MenuBarDrawer = ({ isDrawerOpen, showDrawer }) => {
                   <ListItem
                     key={page.name}
                     disablePadding
-                    style={{ padding: "1rem" }}
+                    style={{ padding: "1rem", height: "7rem" }}
                     onClick={() => router.push(page.url)}
                   >
                     <ListItemButton>
