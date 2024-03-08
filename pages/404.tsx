@@ -9,13 +9,13 @@ export default function ErrorPage({ business: stringifiedBusinessObj }) {
   const business: Business = JSON.parse(stringifiedBusinessObj);
   return (
     <Layout business={business}>
-      <section style={{ padding: '5rem 0' }}>
+      <section style={{ padding: '5rem 2rem', textAlign: "center" }}>
         <Image src="/images/404.png" alt="404" width={150} height={150} />
         <h1 style={{ marginBottom: 'unset' }}>We don&apos;t have this page</h1>
         <br />
         <p style={{ marginTop: 'unset' }}>Your URL is probably invalid. Make sure you have the correct one.</p>
         <Link href="/" legacyBehavior>
-          <Button variant="primary">Return home</Button>
+          <Button variant="primary">Return Home</Button>
         </Link>
       </section>
     </Layout>

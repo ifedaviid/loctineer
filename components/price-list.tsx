@@ -1,10 +1,12 @@
 
 import styles from './price-list.module.scss'
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { Close } from "@mui/icons-material";
 import Modal from "@mui/material/Modal";
 import { Price } from 'types';
+import { PriceType } from 'types';
+import { getPriceSuffix } from 'helpers';
 
 interface ModalProps {
     open: boolean;
@@ -34,7 +36,7 @@ const PriceList = ({ open, onClose, prices, serviceName }: ModalProps) => {
                         {prices.map((price, idx) => (
                             <li key={idx}>
                                 <p className={styles.priceName}>{price.name} </p>
-                                <small>* Starting at ${price.value}</small>
+                                <small>${price.value}{getPriceSuffix(price.type)}</small>
                             </li>
                         ))}
                     </ul>

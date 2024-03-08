@@ -15,21 +15,10 @@ body {
 h1,
 h2,
 h3 {
+  font-size: 3rem;
   letter-spacing: 2px;
   color: $dark-text;
-}
-
-h1 {
-  font-size: 4rem;
-  margin: unset;
-}
-
-h2 {
-  font-size: 4rem;
-}
-
-h3 {
-  font-size: 2rem;
+  margin: 2rem 0;
 }
 
 a {
@@ -124,15 +113,6 @@ section {
 }
 
 @media (max-width: $lg-screens) {
-
-  h1,
-  h2 {
-    font-size: 3rem;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-  }
 
   main {
     >section>p {

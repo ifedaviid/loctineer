@@ -37,7 +37,7 @@ const ImageCarousel = ({ images, setPopUp }) => {
             onClick={() => setPopUp({ showing: true, image })}
           >
             {/* Or use unselectable <Card/> */}
-            <CustomImage image={image} />
+            <CustomImage image={image} height={400} />
           </SwiperSlide>
         ))}
       </Swiper>

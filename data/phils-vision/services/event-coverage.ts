@@ -3,7 +3,7 @@ import { PriceType } from "types";
 import { ServiceIDs } from "data/phils-vision/services/ids";
 const { HOURLY } = PriceType;
 
-export const weddingEventCoverage = [
+export const eventCoverage = [
   {
     id: ServiceIDs.WEDDING_COVERAGE_PHOTO,
     name: strings.WEDDING_COVERAGE_PHOTO,
@@ -11,17 +11,17 @@ export const weddingEventCoverage = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${ServiceIDs.WEDDING_COVERAGE}/${ServiceIDs.WEDDING_COVERAGE_PHOTO}`,
+        href: `/services/${ServiceIDs.EVENT_COVERAGE}/${ServiceIDs.WEDDING_COVERAGE_PHOTO}`,
         text: "See details",
       },
     },
     featuredImage: {
-      path: require("data/loctineer/images/locs.jpg"),
+      path: require("data/phils-vision/images/wedding-coverage-4.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/loctineer/images/locs.jpg"),
+        path: require("data/phils-vision/images/wedding-coverage-4.jpeg"),
         altText: "",
       }
     ],
@@ -34,17 +34,17 @@ export const weddingEventCoverage = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${ServiceIDs.WEDDING_COVERAGE}/${ServiceIDs.WEDDING_COVERAGE_VIDEO}`,
+        href: `/services/${ServiceIDs.EVENT_COVERAGE}/${ServiceIDs.WEDDING_COVERAGE_VIDEO}`,
         text: "See details",
       },
     },
     featuredImage: {
-      path: require("data/loctineer/images/locs.jpg"),
+      path: require("data/phils-vision/images/wedding-coverage-3.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/loctineer/images/locs.jpg"),
+        path: require("data/phils-vision/images/wedding-coverage-3.jpeg"),
         altText: "",
       },
     ],
@@ -57,17 +57,17 @@ export const weddingEventCoverage = [
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     cta: {
       primary: {
-        href: `/services/${ServiceIDs.WEDDING_COVERAGE}/${ServiceIDs.WEDDING_COVERAGE_COMBO}`,
+        href: `/services/${ServiceIDs.EVENT_COVERAGE}/${ServiceIDs.WEDDING_COVERAGE_COMBO}`,
         text: "See details",
       },
     },
     featuredImage: {
-      path: require("data/loctineer/images/locs.jpg"),
+      path: require("data/phils-vision/images/wedding-coverage.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/loctineer/images/locs.jpg"),
+        path: require("data/phils-vision/images/wedding-coverage.jpeg"),
         altText: "",
       },
     ],

@@ -16,6 +16,7 @@ export interface CallToAction {
 }
 
 export enum PriceType {
+  FIXED = "fixed",
   HOURLY = "hourly",
   STARTING = "starting"
 }

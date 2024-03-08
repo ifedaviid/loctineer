@@ -1,8 +1,9 @@
 import * as strings from "data/phils-vision/strings";
-import { personalPhotoshootServices } from "data/phils-vision/services/personal";
-import { commercialPhotoshootServices } from "data/phils-vision/services/commercial";
 import { ServiceIDs } from "data/phils-vision/services/ids";
-import { weddingEventCoverage } from "./wedding";
+import { eventCoverage } from "./event-coverage";
+import { PriceType } from "types";
+
+const { HOURLY, FIXED } = PriceType;
 
 export const allServices = [
   {
@@ -17,16 +18,36 @@ export const allServices = [
       },
     },
     featuredImage: {
-      path: require("data/phils-vision/images/personal.jpeg"),
+      path: require("data/phils-vision/images/personal-shoot.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/phils-vision/images/personal.jpeg"),
+        path: require("data/phils-vision/images/personal-shoot-2.jpeg"),
+        altText: "",
+      },
+      {
+        path: require("data/phils-vision/images/personal-shoot-3.jpeg"),
+        altText: "",
+      },
+      {
+        path: require("data/phils-vision/images/personal-shoot-4.jpeg"),
+        altText: "",
+      },
+      {
+        path: require("data/phils-vision/images/personal-shoot-5.jpeg"),
+        altText: "",
+      },
+      {
+        path: require("data/phils-vision/images/personal-shoot-6.jpeg"),
         altText: "",
       }
     ],
-    services: personalPhotoshootServices,
+    prices: [
+      { name: 'Head Shots', value: 100, type: FIXED },
+      { name: 'Portraits', value: 120, type: FIXED },
+      { name: 'Birthday Shoot', value: 140, type: HOURLY }
+    ],
   },
   {
     id: ServiceIDs.COMMERCIAL,
@@ -49,7 +70,12 @@ export const allServices = [
         altText: "",
       }
     ],
-    services: commercialPhotoshootServices,
+    prices: [
+      { name: 'Food Shoot', value: 150, type: HOURLY },
+      { name: 'Product Shoot', value: 150, type: HOURLY },
+      { name: 'Fashion Shoot', value: 175, type: HOURLY },
+      { name: 'Content Creation', value: 250, type: HOURLY },
+    ],
   },
   {
     id: ServiceIDs.FORMAL_EVENT_COVERAGE,
@@ -74,26 +100,26 @@ export const allServices = [
     ],
   },
   {
-    id: ServiceIDs.WEDDING_COVERAGE,
-    name: strings.WEDDING_COVERAGE,
+    id: ServiceIDs.EVENT_COVERAGE,
+    name: strings.EVENT_COVERAGE,
     description:
       "We offer both styling and maintainance services for a variety of braids and twists styles. Check out our menu for your next look. We're sure you'll find something you love.",
     cta: {
       primary: {
-        href: `/services/${ServiceIDs.WEDDING_COVERAGE}`,
+        href: `/services/${ServiceIDs.EVENT_COVERAGE}`,
         text: "See services",
       },
     },
     featuredImage: {
-      path: require("data/phils-vision/images/wedding-event-coverage.jpeg"),
+      path: require("data/phils-vision/images/wedding-coverage.jpeg"),
       altText: "",
     },
     images: [
       {
-        path: require("data/phils-vision/images/wedding-event-coverage.jpeg"),
+        path: require("data/phils-vision/images/wedding-coverage.jpeg"),
         altText: "",
       }
     ],
-    services: weddingEventCoverage
+    services: eventCoverage
   }
 ];

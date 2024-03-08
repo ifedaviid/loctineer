@@ -10,6 +10,7 @@ import styles from "./service.module.scss";
 import ImageCarousel from "components/image-carousel";
 import { PopupModal } from "react-calendly";
 import PriceList from "components/price-list";
+import { getPriceSuffix } from "helpers";
 
 interface Props {
   service: Service;
@@ -18,6 +19,7 @@ interface Props {
     name: string;
   };
 }
+const PRICE_LIST_MAX = 5;
 
 const Service = ({
   service,
@@ -35,12 +37,12 @@ const Service = ({
   const [isBookingAppointment, setIsBookingAppointment] = useState(false);
   const showPrices = () => {
     if (price) return <Price price={price} />;
-    if (prices?.length < 4) {
+    if (prices?.length < PRICE_LIST_MAX) {
       return (
         <ul style={{ padding: '0 0 0 1rem', alignItems: 'center', margin: 'unset' }}>
           {prices.map((price, idx) => (
             <li key={idx} style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <p>{price.name} (starts at ${price.value}) </p>
+              <p>{price.name} (${price.value}{getPriceSuffix(price.type)})</p>
             </li>
           ))}
         </ul>
@@ -49,7 +51,7 @@ const Service = ({
     return null;
   }
   const showPriceListButton = () => {
-    if (prices?.length >= 4 || (price && prices)) {
+    if (prices?.length >= PRICE_LIST_MAX || (price && prices)) {
       return (
         <Button variant="secondary" onClick={() => setShowPriceListModal(true)}>
           See Price List
@@ -94,7 +96,7 @@ const Service = ({
             {showPriceListButton()}
           </div>
         </div>
-        <CustomImage image={featuredImage} />
+        <CustomImage image={featuredImage} height={800} width={1000} />
       </div>
       {showImages ? <ImageCarousel setPopUp={setPopUp} images={images} /> : null}
       {

@@ -3,6 +3,7 @@ import { PHILSVISION } from "data/phils-vision/index";
 import { Business } from "types";
 import { Logo as PhilsVisionLogo } from 'data/phils-vision/logo';
 import { Logo as LoctineerLogo } from 'data/loctineer/logo';
+import { PriceType } from "types";
 
 export function getBusinessById(id: string): Business {
     switch (id) {
@@ -53,3 +54,15 @@ export function createSubServicePaths(business: Business) {
     }
     return subServicePaths;
 }
+
+export const getPriceSuffix = (priceType: PriceType) => {
+    const { STARTING, HOURLY } = PriceType;
+    switch (priceType) {
+        case STARTING:
+            return '+';
+        case HOURLY:
+            return ' per hour';
+        default:
+            return '';
+    }
+};

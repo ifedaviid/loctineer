@@ -52,6 +52,10 @@ header.heroImage {
   header.heroImage {
     >.content {
       max-width: 80%;
+
+      h1 {
+        font-size: 3rem;
+      }
     }
   }
 }
