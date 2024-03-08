@@ -12,7 +12,6 @@ const CustomImage = ({ image, ...rest }) => {
         placeholder="blur"
         loading="lazy"
         objectFit="cover"
-        objectPosition="100% 0%"
         layout="fixed"
         {...rest}
       />
