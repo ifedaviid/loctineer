@@ -1,23 +1,23 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { Home, Work, Image } from "@mui/icons-material";
+import { HomeRounded, BallotRounded, CropOriginalRounded } from '@mui/icons-material';
 
 export const pages = [
   {
     name: "Home",
     url: `/`,
     disabled: false,
-    icon: <Home />,
+    icon: <HomeRounded sx={{ color: 'lightgray' }} />,
   },
   {
     name: "Services",
     url: `/services`,
     disabled: false,
-    icon: <Work />,
+    icon: <BallotRounded sx={{ color: 'lightgray' }} />,
   },
   {
     name: "Photos",
     url: `/photos`,
     disabled: true,
-    icon: <Image />,
+    icon: <CropOriginalRounded sx={{ color: 'lightgray' }} />,
   },
 ];

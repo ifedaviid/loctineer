@@ -14,7 +14,8 @@ interface Props {
 
 const ImageCarousel = ({ images, setPopUp }) => {
   return (
-    <section className="dark" style={{ padding: '3rem 0' }}>
+    <section className="dark" style={{ padding: '2rem 0 3rem 0', borderTop: '1px solid #a57b21', borderBottom: '1px solid #a57b21' }}>
+      <h3 style={{ padding: '0 1rem', textAlign: 'center', }}>Other Services</h3>
       <Swiper
         speed={500}
         breakpoints={{
@@ -37,7 +38,7 @@ const ImageCarousel = ({ images, setPopUp }) => {
             onClick={() => setPopUp({ showing: true, image })}
           >
             {/* Or use unselectable <Card/> */}
-            <CustomImage image={image} height={400} />
+            <CustomImage image={image} height={500} />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -11,6 +11,7 @@
     flex-direction: row;
     margin-bottom: 1rem;
 
+    // (hourly rate value)
     >p {
       font-size: 2rem;
       font-weight: bolder;
@@ -18,6 +19,7 @@
       margin: 1rem 0;
     }
 
+    // (per hour tag)
     >span {
       padding: 0.5rem;
       background: rgb(106, 106, 106);
