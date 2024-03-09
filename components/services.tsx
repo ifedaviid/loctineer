@@ -35,7 +35,7 @@ const Services = ({ service, returnRoute }: Props) => {
                     {returnRoute.name}
                 </MuiButton>
             )}
-            <h2>{name}</h2>
+            <h1 style={{ fontSize: '3rem', textAlign: 'center' }}>{name}</h1>
             <p>{description}</p>
             <div className="services-content">
                 {services.map((option, idx) => (

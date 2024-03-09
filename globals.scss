@@ -12,10 +12,21 @@ body {
   font-family: "DM Sans", serif;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
 h1,
 h2,
 h3 {
-  font-size: 3rem;
   letter-spacing: 2px;
   color: $dark-text;
   margin: 2rem 0;
@@ -55,12 +66,6 @@ section {
   align-items: center;
   width: 100%;
   color: lightgray;
-
-  h2 {
-    text-align: center;
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
 
   >p {
     line-height: 2rem;
@@ -104,11 +109,6 @@ section {
   >.carousel {
     width: 100%;
     min-height: 100% !important;
-  }
-
-  &.dark {
-    background-color: #282826;
-    color: $dark-text;
   }
 }
 

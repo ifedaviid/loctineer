@@ -10,7 +10,7 @@ import styles from "./service.module.scss";
 import ImageCarousel from "components/image-carousel";
 import { PopupModal } from "react-calendly";
 import PriceList from "components/price-list";
-import { getPriceSuffix } from "helpers";
+import { getPriceSuffix, useScreenSizeDetector } from "helpers";
 
 interface Props {
   service: Service;
@@ -27,6 +27,7 @@ const Service = ({
 }: Props) => {
   const router = useRouter();
   const [showPriceListModal, setShowPriceListModal] = useState(false)
+  const { isMobile } = useScreenSizeDetector()
   const { name, description, featuredImage, images, cta, price, prices, calendlyEventURL } = service;
   const showImages = images && images.length >= 5;
   const initialPopUpState = {
@@ -79,7 +80,7 @@ const Service = ({
           >
             {returnRoute.name}
           </MuiButton>
-          <h3>{name}</h3>
+          <h1>{name}</h1>
           <p>{description}</p>
           <div className={styles.priceInfoContainer}>
             {showPrices()}
@@ -96,7 +97,7 @@ const Service = ({
             {showPriceListButton()}
           </div>
         </div>
-        <CustomImage image={featuredImage} height={700} width={1000} />
+        <CustomImage image={featuredImage} height={isMobile ? 400 : 650} width={1000} />
       </div>
       {showImages ? <ImageCarousel setPopUp={setPopUp} images={images} /> : null}
       {

@@ -36,6 +36,10 @@ header.heroImage {
     color: white;
     max-width: 70%;
 
+    h1 {
+      margin: unset;
+    }
+
     p {
       letter-spacing: 2px;
       font-weight: 500;

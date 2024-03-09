@@ -1,9 +1,14 @@
+import { useEffect, useState } from "react";
 import { LOCTINEER } from "data/loctineer/index";
 import { PHILSVISION } from "data/phils-vision/index";
 import { Business } from "types";
 import { Logo as PhilsVisionLogo } from 'data/phils-vision/logo';
 import { Logo as LoctineerLogo } from 'data/loctineer/logo';
 import { PriceType } from "types";
+
+type Props = {
+    debounceTime?: number;
+};
 
 export function getBusinessById(id: string): Business {
     switch (id) {
@@ -65,4 +70,14 @@ export const getPriceSuffix = (priceType: PriceType) => {
         default:
             return '';
     }
+};
+
+export const useScreenSizeDetector = () => {
+    const [width, setWidth] = useState(968);
+    useEffect(() => {
+        const updateWidth = () => setWidth(window.innerWidth);
+        updateWidth();
+        return () => window.removeEventListener('resize', updateWidth);
+    }, []);
+    return { isMobile: width <= 968, isTablet: width <= 1024, isDesktop: width > 1024 };
 };

@@ -31,7 +31,7 @@ export default function ServicesPage({ business: stringifiedBusinessObj }) {
             {returnRoute.name}
           </MuiButton>
         )}
-        <h2>Services</h2>
+        <h1>Services</h1>
         <div className="services-content">
           {business.services.map((option, idx) => (
             <Card key={idx} service={option} />
