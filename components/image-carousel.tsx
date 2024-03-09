@@ -1,18 +1,22 @@
 import React, { SetStateAction } from "react";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper";
 import CustomImage from "components/custom-image";
-import { AppImage } from "types";
+import { Business } from "types";
 import "swiper/swiper.min.css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
+import { getSubServices } from "helpers";
+import Card from "./card";
 
 interface Props {
-  images: AppImage[]
-  setPopUp: React.Dispatch<SetStateAction<boolean>>;
+  business: Business;
 }
 
-const ImageCarousel = ({ images, setPopUp }) => {
+const ImageCarousel = ({ business }: Props) => {
+  const subServices = getSubServices(business)
+  const router = useRouter();
   return (
     <section className="dark" style={{ background: "transparent", padding: '1rem 0 2rem 0', borderTop: '1px solid rgb(76, 76, 76)' }}>
       <h2 style={{ padding: '0 2rem', textAlign: 'center', }}>Other Services</h2>
@@ -28,18 +32,16 @@ const ImageCarousel = ({ images, setPopUp }) => {
         }}
         modules={[FreeMode, Pagination]}
         spaceBetween={25}
-        autoplay={{ delay: 500 }}
         pagination={{ clickable: true }}
         freeMode={true}
         className="carousel"
       >
-        {images.map((image, idx) => (
+        {subServices.map((subService, idx) => (
           <SwiperSlide
             key={idx}
-            onClick={() => setPopUp({ showing: true, image })}
+            onClick={() => router.push(subService.cta.primary.href)}
           >
-            {/* Or use unselectable <Card/> */}
-            <CustomImage image={image} height={400} />
+            <Card service={subService} />
           </SwiperSlide>
         ))}
       </Swiper>

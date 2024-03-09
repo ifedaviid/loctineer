@@ -19,7 +19,7 @@ export default function RootServicesPage({
   const business: Business = JSON.parse(stringifiedBusinessObj);
   const service: Service = JSON.parse(stringifiedServiceObj);
   const returnRoute = { path: "/services", name: "All Services" }
-  const props = { service, returnRoute }
+  const props = { business, service, returnRoute }
   const hasSubServices = (service.services && service.services.length > 1);
 
   return (

@@ -22,6 +22,7 @@ export default function SubServicesPage({
   return (
     <Layout business={business}>
       <ServiceComponent
+        business={business}
         service={service}
         returnRoute={{
           name: parentService?.name,

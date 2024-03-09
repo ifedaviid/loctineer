@@ -81,3 +81,18 @@ export const useScreenSizeDetector = () => {
     }, []);
     return { isMobile: width <= 968, isTablet: width <= 1024, isDesktop: width > 1024 };
 };
+
+export function getSubServices(business: Business) {
+    const subServices = [];
+    for (const service of business.services) {
+        if (service.services) {
+            for (const subService of service.services) {
+                subServices.push(subService);
+            }
+        } else {
+            subServices.push(service);
+        }
+
+    }
+    return subServices;
+}

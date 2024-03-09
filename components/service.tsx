@@ -5,7 +5,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "components/button";
 import CustomImage from "components/custom-image";
 import Price from "components/price";
-import { Service } from "types";
+import { Business, Service } from "types";
 import styles from "./service.module.scss";
 import ImageCarousel from "components/image-carousel";
 import { PopupModal } from "react-calendly";
@@ -13,6 +13,7 @@ import PriceList from "components/price-list";
 import { getPriceSuffix, useScreenSizeDetector } from "helpers";
 
 interface Props {
+  business: Business;
   service: Service;
   returnRoute?: {
     path: string;
@@ -22,6 +23,7 @@ interface Props {
 const PRICE_LIST_MAX = 5;
 
 const Service = ({
+  business,
   service,
   returnRoute
 }: Props) => {
@@ -29,7 +31,6 @@ const Service = ({
   const [showPriceListModal, setShowPriceListModal] = useState(false)
   const { isMobile } = useScreenSizeDetector()
   const { name, description, featuredImage, images, cta, price, prices, calendlyEventURL } = service;
-  const showImages = images && images.length >= 5;
   const initialPopUpState = {
     showing: false,
     image: null,
@@ -99,7 +100,7 @@ const Service = ({
         </div>
         <CustomImage image={featuredImage} height={isMobile ? 400 : 650} width={1000} />
       </div>
-      {showImages ? <ImageCarousel setPopUp={setPopUp} images={images} /> : null}
+      <ImageCarousel business={business} />
       {
         typeof window !== 'undefined' &&
         <PopupModal
