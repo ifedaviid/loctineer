@@ -14,11 +14,11 @@ interface Props {
   business: Business;
 }
 
-const ImageCarousel = ({ business }: Props) => {
+const SubServicesCarousel = ({ business }: Props) => {
   const subServices = getSubServices(business)
   const router = useRouter();
   return (
-    <section className="dark" style={{ background: "transparent", padding: '1rem 0 2rem 0', borderTop: '1px solid rgb(76, 76, 76)' }}>
+    <section style={{ background: "#151515", padding: '1rem 0 2rem 0', borderTop: '1px solid rgb(76, 76, 76)' }}>
       <h2 style={{ padding: '0 2rem', textAlign: 'center', }}>Other Services</h2>
       <Swiper
         speed={500}
@@ -49,4 +49,4 @@ const ImageCarousel = ({ business }: Props) => {
   )
 }
 
-export default ImageCarousel;
+export default SubServicesCarousel;
