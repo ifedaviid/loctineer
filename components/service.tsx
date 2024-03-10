@@ -31,11 +31,6 @@ const Service = ({
   const [showPriceListModal, setShowPriceListModal] = useState(false)
   const { isMobile } = useScreenSizeDetector()
   const { name, description, featuredImage, images, cta, price, prices, calendlyEventURL } = service;
-  const initialPopUpState = {
-    showing: false,
-    image: null,
-  };
-  const [, setPopUp] = useState(initialPopUpState);
   const [isBookingAppointment, setIsBookingAppointment] = useState(false);
   const showPrices = () => {
     if (price) return <Price price={price} />;

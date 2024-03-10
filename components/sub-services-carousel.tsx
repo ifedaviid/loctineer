@@ -1,8 +1,7 @@
-import React, { SetStateAction } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper";
-import CustomImage from "components/custom-image";
 import { Business } from "types";
 import "swiper/swiper.min.css";
 import "swiper/css/pagination";
@@ -18,8 +17,7 @@ const SubServicesCarousel = ({ business }: Props) => {
   const subServices = getSubServices(business)
   const router = useRouter();
   return (
-    <section style={{ background: "#151515", padding: '1rem 0 2rem 0', borderTop: '1px solid rgb(76, 76, 76)' }}>
-      <h2 style={{ padding: '0 2rem', textAlign: 'center', }}>Other Services</h2>
+    <section style={{ background: "#0c0c0c", padding: '1.7rem 0', borderTop: '1px solid rgb(76, 76, 76)' }}>
       <Swiper
         speed={500}
         breakpoints={{
@@ -32,7 +30,6 @@ const SubServicesCarousel = ({ business }: Props) => {
         }}
         modules={[FreeMode, Pagination]}
         spaceBetween={25}
-        pagination={{ clickable: true }}
         freeMode={true}
         className="carousel"
       >

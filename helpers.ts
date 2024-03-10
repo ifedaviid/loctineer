@@ -86,6 +86,7 @@ export function getSubServices(business: Business) {
     const subServices = [];
     for (const service of business.services) {
         if (service.services) {
+            // subServices.push(service); // Optional
             for (const subService of service.services) {
                 subServices.push(subService);
             }
