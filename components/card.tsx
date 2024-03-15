@@ -6,13 +6,14 @@ import { Service } from "types";
 
 interface Props {
   service: Service;
+  height: string;
 }
 
-const Card = ({ service }: Props) => {
+const Card = ({ service, height = null }: Props) => {
   const { name, featuredImage, cta } = service
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} style={{ height }}>
       <Image
         src={featuredImage.path}
         alt={featuredImage.altText}

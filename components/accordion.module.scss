@@ -1,0 +1,54 @@
+@import "/common.scss";
+
+.accordion {
+  background: rgb(17, 16, 16);
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+
+  .accordionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    padding: 3rem 1rem;
+    z-index: 9;
+    font-weight: bolder;
+    border: 1px solid #282828;
+
+    >p {
+      color: $dark-text;
+      font-size: 1.2rem;
+    }
+  }
+
+  .accordionRows {
+    .accordionSummary {
+      .accordionSummaryContent {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .priceValue {
+          font-weight: bold;
+          font-size: 1.1rem;
+          color: goldenrod;
+        }
+      }
+
+      :last-child>svg>path {
+        color: lightgray;
+      }
+    }
+
+    >* {
+      background: transparent;
+      color: lightgray;
+      margin: 0 !important;
+    }
+  }
+
+
+}

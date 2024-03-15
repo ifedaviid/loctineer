@@ -38,7 +38,7 @@ const SubServicesCarousel = ({ business }: Props) => {
             key={idx}
             onClick={() => router.push(subService.cta.primary.href)}
           >
-            <Card service={subService} />
+            <Card service={subService} height='20rem' />
           </SwiperSlide>
         ))}
       </Swiper>

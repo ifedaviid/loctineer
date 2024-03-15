@@ -1,54 +1,33 @@
 
 import styles from './price-list.module.scss'
 import React from "react";
-import ReactDOM from "react-dom";
-import { Close } from "@mui/icons-material";
-import Modal from "@mui/material/Modal";
+import { Box } from "@mui/system";
+import Drawer from "@mui/material/Drawer";
 import { Price } from 'types';
-import { PriceType } from 'types';
-import { getPriceSuffix } from 'helpers';
+import ControlledAccordions from './accordion';
 
 interface ModalProps {
     open: boolean;
-    onClose: React.Dispatch<React.SetStateAction<boolean>>;
+    onClose: (event: React.KeyboardEvent | React.MouseEvent) => void;
     prices: Price[];
     serviceName: string;
 }
 
 const PriceList = ({ open, onClose, prices, serviceName }: ModalProps) => {
-    const renderModalContent = () => (
-        <Modal
+    return (
+        <Drawer
+            anchor='bottom'
             open={open}
             onClose={onClose}
+            className={styles.drawer}
         >
-            <div className={styles.modalOverlay}>
-                {onClose && (
-                    <div className={styles.closeIcon}>
-                        <Close
-                            sx={{ fontSize: 35, color: "white" }}
-                            onClick={() => onClose(false)}
-                        />
-                    </div>
-                )}
-                <div className={styles.modalContainer}>
-                    <h2>Prices for {serviceName} </h2>
-                    <ul>
-                        {prices.map((price, idx) => (
-                            <li key={idx}>
-                                <p className={styles.priceName}>{price.name} </p>
-                                <small>${price.value}{getPriceSuffix(price.type)}</small>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </Modal>
-    );
-
-
-    return ReactDOM.createPortal(
-        renderModalContent(),
-        document.getElementById("modal-root")
+            <Box
+                role="presentation"
+                sx={{ backgroundColor: '#151515', color: 'lightgray', height: '100%' }}
+            >
+                <ControlledAccordions prices={prices} onClose={onClose} />
+            </Box>
+        </Drawer>
     );
 };
 

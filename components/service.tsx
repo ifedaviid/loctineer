@@ -30,7 +30,7 @@ const Service = ({
   const router = useRouter();
   const [showPriceListModal, setShowPriceListModal] = useState(false)
   const { isMobile } = useScreenSizeDetector()
-  const { name, description, featuredImage, images, cta, price, prices, calendlyEventURL } = service;
+  const { name, description, featuredImage, cta, price, prices, calendlyEventURL } = service;
   const [isBookingAppointment, setIsBookingAppointment] = useState(false);
   const showPrices = () => {
     if (price) return <Price price={price} />;
@@ -56,6 +56,16 @@ const Service = ({
       );
     }
   }
+  const toggleDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
+        (event as React.KeyboardEvent).key === 'Shift')
+    ) {
+      return;
+    }
+    setShowPriceListModal(!showPriceListModal);
+  };
 
   return (
     <section>
@@ -114,7 +124,7 @@ const Service = ({
       }
       {
         (prices && showPriceListModal) &&
-        <PriceList open={showPriceListModal} onClose={setShowPriceListModal} prices={prices} serviceName={name} />
+        <PriceList open={showPriceListModal} onClose={toggleDrawer} prices={prices} serviceName={name} />
       }
     </section>
   );
