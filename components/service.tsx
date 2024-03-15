@@ -30,7 +30,7 @@ const Service = ({
   const router = useRouter();
   const [showPriceListModal, setShowPriceListModal] = useState(false)
   const { isMobile } = useScreenSizeDetector()
-  const { name, description, featuredImage, cta, price, prices, calendlyEventURL } = service;
+  const { name, description, featuredImage, price, prices, calendlyEventURL } = service;
   const [isBookingAppointment, setIsBookingAppointment] = useState(false);
   const showPrices = () => {
     if (price) return <Price price={price} />;
