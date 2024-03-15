@@ -39,7 +39,7 @@ const Services = ({ service, returnRoute }: Props) => {
             <p>{description}</p>
             <div className="services-content">
                 {services.map((option, idx) => (
-                    <Card key={idx} service={option} height='30rem' />
+                    <Card key={idx} service={option} height='25rem' />
                 ))}
             </div>
         </section>

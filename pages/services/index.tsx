@@ -34,7 +34,7 @@ export default function ServicesPage({ business: stringifiedBusinessObj }) {
         <h1>Services</h1>
         <div className="services-content">
           {business.services.map((option, idx) => (
-            <Card key={idx} service={option} height='30rem' />
+            <Card key={idx} service={option} height='25rem' />
           ))}
         </div>
       </section>
