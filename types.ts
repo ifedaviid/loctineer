@@ -10,11 +10,6 @@ export interface Action {
   text?: string;
 }
 
-export interface CallToAction {
-  primary: Action;
-  secondary?: Action;
-}
-
 export enum PriceType {
   FIXED = "fixed",
   HOURLY = "hourly",
@@ -31,9 +26,8 @@ export interface Service {
   id: string;
   name: string;
   description: string;
-  cta: CallToAction;
+  pagePath: string;
   featuredImage: AppImage;
-  images?: AppImage[];
   services?: Service[];
   price?: Price;
   prices?: Price[]
@@ -45,7 +39,7 @@ export interface Business {
   name: string;
   description: string;
   marketingCopy: string;
-  cta: CallToAction;
+  pagePath: string;
   heroImage: AppImage;
   logo?: JSX.Element;
   services: Service[];

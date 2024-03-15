@@ -9,12 +9,7 @@ export const braidsAndTwistsServices = [
     name: strings.BOX_BRAIDS_AND_TWISTS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}/${ServiceIDs.BOX_BRAIDS_AND_TWISTS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}/${ServiceIDs.BOX_BRAIDS_AND_TWISTS}`,
     images: [{
       path: require("data/loctineer/images/box-braids.jpeg"),
       altText: "",
@@ -38,12 +33,7 @@ export const braidsAndTwistsServices = [
     name: strings.KINKY_PASSION_TWISTS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}/${ServiceIDs.KINKY_PASSION_TWISTS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}/${ServiceIDs.KINKY_PASSION_TWISTS}`,
     featuredImage: {
       path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
@@ -67,12 +57,7 @@ export const braidsAndTwistsServices = [
     name: strings.KNOTLESS_BRAIDS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}/${ServiceIDs.KNOTLESS_BRAIDS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}/${ServiceIDs.KNOTLESS_BRAIDS}`,
     featuredImage: {
       path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",

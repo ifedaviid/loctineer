@@ -36,7 +36,7 @@ const SubServicesCarousel = ({ business }: Props) => {
         {subServices.map((subService, idx) => (
           <SwiperSlide
             key={idx}
-            onClick={() => router.push(subService.cta.primary.href)}
+            onClick={() => router.push(subService.pagePath)}
           >
             <Card service={subService} height='20rem' />
           </SwiperSlide>

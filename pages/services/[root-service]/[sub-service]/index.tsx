@@ -26,7 +26,7 @@ export default function SubServicesPage({
         service={service}
         returnRoute={{
           name: parentService?.name,
-          path: parentService?.cta?.primary?.href,
+          path: parentService?.pagePath,
         }}
       />
     </Layout>

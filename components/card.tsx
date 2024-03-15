@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Card = ({ service, height = null }: Props) => {
-  const { name, featuredImage, cta } = service
+  const { name, featuredImage, pagePath } = service
 
   return (
     <div className={styles.card} style={{ height }}>
@@ -21,8 +21,8 @@ const Card = ({ service, height = null }: Props) => {
         loading="lazy"
         objectFit="cover"
       />
-      <Link href={cta?.primary?.href} className={styles.overlay} />
-      <Link href={cta?.primary?.href} className={styles.title}>{name}</Link>
+      <Link href={pagePath} className={styles.overlay} />
+      <Link href={pagePath} className={styles.title}>{name}</Link>
     </div >
   );
 };

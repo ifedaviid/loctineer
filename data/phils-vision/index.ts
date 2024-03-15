@@ -5,12 +5,7 @@ export const PHILSVISION = {
     name: 'Phil\'s Vision',
     description: "Photography & Film Specialist in Ottawa",
     marketingCopy: 'Capturing you in your best light',
-    cta: {
-        primary: {
-            href: `/services`,
-            text: "My Services",
-        },
-    },
+    pagePath: `/services`,
     heroImage: {
         path: require("data/phils-vision/images/fashion-shoot.jpeg"),
         altText: "",

@@ -92,14 +92,12 @@ const Service = ({
             {showPrices()}
           </div>
           <div className={styles.buttonGroup}>
-            {cta.primary && (
-              <Button
-                variant="primary"
-                onClick={calendlyEventURL && (() => setIsBookingAppointment(true))}
-              >
-                Book Appointment
-              </Button>
-            )}
+            <Button
+              variant="primary"
+              onClick={calendlyEventURL && (() => setIsBookingAppointment(true))}
+            >
+              Book Appointment
+            </Button>
             {showPriceListButton()}
           </div>
         </div>

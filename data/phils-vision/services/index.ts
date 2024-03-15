@@ -11,42 +11,15 @@ export const allServices = [
     name: strings.PERSONAL,
     description:
       "We offer installation services for those interested in locs and maintenance services for those already with locs. Whatever you're looking for, you're guaranteed healthy and beautiful locs.",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.PERSONAL}`,
-        text: "See services",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.PERSONAL}`,
     featuredImage: {
       path: require("data/phils-vision/images/personal-shoot.jpeg"),
       altText: "",
     },
-    images: [
-      {
-        path: require("data/phils-vision/images/personal-shoot-2.jpeg"),
-        altText: "",
-      },
-      {
-        path: require("data/phils-vision/images/personal-shoot-3.jpeg"),
-        altText: "",
-      },
-      {
-        path: require("data/phils-vision/images/personal-shoot-4.jpeg"),
-        altText: "",
-      },
-      {
-        path: require("data/phils-vision/images/personal-shoot-5.jpeg"),
-        altText: "",
-      },
-      {
-        path: require("data/phils-vision/images/personal-shoot-6.jpeg"),
-        altText: "",
-      }
-    ],
     prices: [
-      { name: 'Head Shots', value: 100, type: FIXED },
-      { name: 'Portraits', value: 120, type: FIXED },
-      { name: 'Birthday Shoot', value: 140, type: HOURLY }
+      { name: 'Head Shots', value: 75, type: FIXED },
+      { name: 'Portraits', value: 125, type: FIXED },
+      { name: 'Birthday Shoot', value: 200, type: HOURLY }
     ],
   },
   {
@@ -54,22 +27,11 @@ export const allServices = [
     name: strings.COMMERCIAL,
     description:
       "We offer both styling and maintainance services for a variety of braids and twists styles. Check out our menu for your next look. We're sure you'll find something you love.",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.COMMERCIAL}`,
-        text: "See services",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.COMMERCIAL}`,
     featuredImage: {
       path: require("data/phils-vision/images/content-creation.jpeg"),
       altText: "",
     },
-    images: [
-      {
-        path: require("data/phils-vision/images/content-creation.jpeg"),
-        altText: "",
-      }
-    ],
     prices: [
       { name: 'Food Shoot', value: 150, type: HOURLY },
       { name: 'Product Shoot', value: 150, type: HOURLY },
@@ -82,44 +44,23 @@ export const allServices = [
     name: strings.FORMAL_EVENT_COVERAGE,
     description:
       "We offer both styling and maintainance services for a variety of braids and twists styles. Check out our menu for your next look. We're sure you'll find something you love.",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.FORMAL_EVENT_COVERAGE}`,
-        text: "See services",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.FORMAL_EVENT_COVERAGE}`,
     featuredImage: {
       path: require("data/phils-vision/images/formal-event-coverage.jpeg"),
       altText: "",
     },
-    images: [
-      {
-        path: require("data/phils-vision/images/formal-event-coverage.jpeg"),
-        altText: "",
-      }
-    ],
+    price: { value: 250, type: HOURLY },
   },
   {
     id: ServiceIDs.EVENT_COVERAGE,
     name: strings.EVENT_COVERAGE,
     description:
       "We offer both styling and maintainance services for a variety of braids and twists styles. Check out our menu for your next look. We're sure you'll find something you love.",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.EVENT_COVERAGE}`,
-        text: "See services",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.EVENT_COVERAGE}`,
     featuredImage: {
       path: require("data/phils-vision/images/wedding-coverage.jpeg"),
       altText: "",
     },
-    images: [
-      {
-        path: require("data/phils-vision/images/wedding-coverage.jpeg"),
-        altText: "",
-      }
-    ],
     services: eventCoverage
   }
 ];

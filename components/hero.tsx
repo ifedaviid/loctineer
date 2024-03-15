@@ -11,7 +11,7 @@ interface Props {
 
 const Hero = ({ business }: Props) => {
   const router = useRouter();
-  const { description, marketingCopy, cta, heroImage } = business;
+  const { description, marketingCopy, pagePath, heroImage } = business;
   return (
     <header className={styles["heroImage"]}>
       <div>
@@ -26,9 +26,9 @@ const Hero = ({ business }: Props) => {
         <Button
           variant="primary"
           size="large"
-          onClick={() => router.push(cta?.primary?.href)}
+          onClick={() => router.push(pagePath.toString())}
         >
-          {cta?.primary?.text}
+          See Services
         </Button>
       </div>
     </header>

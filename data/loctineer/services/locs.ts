@@ -9,12 +9,7 @@ export const locs = [
     name: strings.INSTANT_LOCS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}/${ServiceIDs.INSTANT_LOCS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}/${ServiceIDs.INSTANT_LOCS}`,
     featuredImage: {
       path: require("data/loctineer/images/locs.jpg"),
       altText: "",
@@ -33,12 +28,7 @@ export const locs = [
     name: strings.TWO_STRAND_STARTER_LOCS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}/${ServiceIDs.TWO_STRAND_STARTER_LOCS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}/${ServiceIDs.TWO_STRAND_STARTER_LOCS}`,
     featuredImage: {
       path: require("data/loctineer/images/locs.jpg"),
       altText: "",
@@ -57,12 +47,7 @@ export const locs = [
     name: strings.SISTER_LOCS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}/${ServiceIDs.SISTER_LOCS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}/${ServiceIDs.SISTER_LOCS}`,
     featuredImage: {
       path: require("data/loctineer/images/locs.jpg"),
       altText: "",
@@ -81,12 +66,7 @@ export const locs = [
     name: strings.MICRO_LOCS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}/${ServiceIDs.MICRO_LOCS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}/${ServiceIDs.MICRO_LOCS}`,
     featuredImage: {
       path: require("data/loctineer/images/locs.jpg"),
       altText: "",
@@ -103,12 +83,7 @@ export const locs = [
     name: strings.WICKS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}/${ServiceIDs.WICKS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}/${ServiceIDs.WICKS}`,
     featuredImage: {
       path: require("data/loctineer/images/locs.jpg"),
       altText: "",
@@ -125,12 +100,7 @@ export const locs = [
     name: strings.FAUX_LOCS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}/${ServiceIDs.FAUX_LOCS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}/${ServiceIDs.FAUX_LOCS}`,
     featuredImage: {
       path: require("data/loctineer/images/locs.jpg"),
       altText: "",
@@ -147,12 +117,7 @@ export const locs = [
     name: strings.SOFT_LOCS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}/${ServiceIDs.SOFT_LOCS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}/${ServiceIDs.SOFT_LOCS}`,
     featuredImage: {
       path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
@@ -169,12 +134,7 @@ export const locs = [
     name: strings.BUTTERFLY_DISTRESSED_LOCS,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}/${ServiceIDs.BUTTERFLY_DISTRESSED_LOCS}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}/${ServiceIDs.BUTTERFLY_DISTRESSED_LOCS}`,
     featuredImage: {
       path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",
@@ -191,12 +151,7 @@ export const locs = [
     name: strings.LOC_REPAIR,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}/${ServiceIDs.LOC_REPAIR}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}/${ServiceIDs.LOC_REPAIR}`,
     featuredImage: {
       path: require("data/loctineer/images/locs.jpg"),
       altText: "",
@@ -213,12 +168,7 @@ export const locs = [
     name: strings.LOC_RETWIST,
     description:
       "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}/${ServiceIDs.LOC_RETWIST}`,
-        text: "See details",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}/${ServiceIDs.LOC_RETWIST}`,
     featuredImage: {
       path: require("data/loctineer/images/loc-retwist.jpeg"),
       altText: "Example of a loc retwist style.",

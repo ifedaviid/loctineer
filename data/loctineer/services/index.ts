@@ -9,12 +9,7 @@ export const allServices = [
     name: strings.LOCS,
     description:
       "We offer installation services for those interested in locs and maintenance services for those already with locs. Whatever you're looking for, you're guaranteed healthy and beautiful locs.",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.LOCS}`,
-        text: "See services",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.LOCS}`,
     featuredImage: {
       path: require("data/loctineer/images/locs.jpg"),
       altText: "",
@@ -32,12 +27,7 @@ export const allServices = [
     name: strings.BRAIDS_AND_TWISTS,
     description:
       "We offer both styling and maintainance services for a variety of braids and twists styles. Check out our menu for your next look. We're sure you'll find something you love.",
-    cta: {
-      primary: {
-        href: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}`,
-        text: "See services",
-      },
-    },
+    pagePath: `/services/${ServiceIDs.BRAIDS_AND_TWISTS}`,
     featuredImage: {
       path: require("data/loctineer/images/braids-and-twists.jpg"),
       altText: "",

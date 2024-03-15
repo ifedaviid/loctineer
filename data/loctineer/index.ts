@@ -5,12 +5,7 @@ export const LOCTINEER = {
     name: 'Loctineer',
     description: "Locs & Braiding Specialist in Ottawa",
     marketingCopy: 'Creating your best look',
-    cta: {
-        primary: {
-            href: `/services`,
-            text: "Our Services",
-        },
-    },
+    pagePath: '/services',
     heroImage: {
         path: require("data/loctineer/images/braids-and-twists.jpg"),
         altText: "",
