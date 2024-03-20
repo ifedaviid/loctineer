@@ -22,7 +22,8 @@
     // (per hour tag)
     >span {
       padding: 0.5rem;
-      background: rgb(106, 106, 106);
+      background: transparent;
+      border: 1px solid lightgray;
       border-radius: 0.2rem;
       letter-spacing: 1px;
       font-size: 0.8rem;

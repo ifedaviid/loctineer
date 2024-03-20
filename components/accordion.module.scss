@@ -1,5 +1,7 @@
 @import "/common.scss";
 
+$accordion-row-padding: 0 2rem;
+
 .accordion {
   background: rgb(17, 16, 16);
   letter-spacing: 1px;
@@ -13,7 +15,7 @@
     justify-content: space-between;
     align-items: center;
     height: 5rem;
-    padding: 3rem 1rem;
+    padding: $accordion-row-padding;
     z-index: 9;
     font-weight: bolder;
     border-bottom: 1px solid #282828;
@@ -26,10 +28,13 @@
 
   .accordionRows {
     .accordionSummary {
+      padding: 0 !important;
+
       .accordionSummaryContent {
         display: flex;
         width: 100%;
         justify-content: space-between;
+
 
         .priceValue {
           font-weight: bold;
@@ -47,6 +52,7 @@
       background: transparent;
       color: lightgray;
       margin: 0 !important;
+      padding: $accordion-row-padding;
     }
   }
 
